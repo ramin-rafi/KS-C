@@ -33,8 +33,15 @@
     "ie >= 10"
   ],
   "paths": {
-
     "base": "../storefront-reference-architecture-master/cartridges/app_storefront_base/"
-
+  },
+  "dependencies": {
+    "bootstrap": "^4.5.3",
+    "fancybox": "^3.0.1",
+    "flag-icon-css": "^3.5.0",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.5.1",
+    "makefile-help": "0.0.2",
+    "slick-carousel": "^1.8.1"
   }
 }
