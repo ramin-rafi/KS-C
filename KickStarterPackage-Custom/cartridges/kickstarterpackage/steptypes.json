@@ -1,0 +1,70 @@
+{
+    "step-types": {
+        "script-module-step": [{
+                "@type-id": "custom.fileConvertorCSVToXML",
+                "@supports-parallel-execution": "false",
+                "@supports-site-context": "true",
+                "@supports-organization-context": "false",
+                "description": "Convert CSV to XML for price books by using steptype extension.",
+                "module": "kickstarterpackage/cartridge/scripts/convertor.js",
+                "function": "fileConvertor",
+                "transactional":"true",
+                "timeout-in-seconds": "600000",
+                "parameters": {
+                    "parameter": [
+                        {
+                            "@name": "priceBookID",
+                            "@type": "string",
+                            "@required": "true",
+                            "@trim": "true",
+                            "description": "Price Book ID used for making XML.",
+                            "default-value": "cny-m-list-prices"
+                        }
+                    ]
+                },
+                "status-codes": {
+                    "status": [{
+                            "@code": "ERROR",
+                            "description": "Used when an error occurred."
+                        },
+                        {
+                            "@code": "OK",
+                            "description": "Used when execution was successful."
+                        }
+                    ]
+                }
+            },{
+            "@type-id": "custom.convertInventoryCsvToXml",
+            "module": "kickstarterpackage/cartridge/scripts/inventory.js",
+            "description": "Convert CSV to XML for inventory",
+            "function": "execute",
+            "transactional":"true",
+            "parameters": {
+                "parameter": [
+                    {
+                        "@name": "inventoryID",
+                        "@type": "string",
+                        "@required": "true",
+                        "@trim": "true",
+                        "description": "Inventory List ID",
+                        "default-value": "inventory_m"
+                    }
+                ]
+            },
+            "status-codes": {
+                "status": [
+                    {
+                        "@code": "ERROR",
+                        "description": "Used when an error occurred."
+                    },
+                    {
+                        "@code": "OK",
+                        "description": "Used when execution was successful."
+                    }
+                ]
+            }
+        }
+
+    ]
+    }
+}
