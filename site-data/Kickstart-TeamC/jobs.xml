@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jobs xmlns="http://www.demandware.com/xml/impex/jobs/2015-07-01">
+   
+
+    <job job-id="readCSVImportBySteptypeInventory" priority="0">
+        <description>This job converts CSV into XML then auto-imports that XML into BM.</description>
+        <parameters/>
+        <flow>
+            <context site-id="RefArch"/>
+            <step step-id="inventoryxml" type="custom.convertInventoryCsvToXml" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="inventoryID">inventory_m</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <flow>
+            <context site-id="Sites"/>
+            <step step-id="importinventory" type="ImportInventoryLists" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="WorkingFolder">InventoryXMLDir</parameter>
+                    <parameter name="FileNamePattern">inventoryList.xml</parameter>
+                    <parameter name="NoFilesFoundHandling">NO_FILES_FOUND</parameter>
+                    <parameter name="ImportMode">Merge</parameter>
+                    <parameter name="ImportFailedHandling">WARN</parameter>
+                    <parameter name="AfterImportFileHandling">Archive</parameter>
+                    <parameter name="ArchiveFolder">archive</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2022-03-16Z</date>
+                <time>12:02:39.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+
+    <job job-id="readCSVImportBySteptype" priority="0">
+        <description>This job used steptype.json file extension to make the job</description>
+        <parameters/>
+        <flow>
+            <context site-id="RefArch"/>
+            <step step-id="CSVToXMLBySteptype" type="custom.fileConvertorCSVToXML" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="priceBookID">cny-m-list-prices</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <flow>
+            <context site-id="Sites"/>
+            <step step-id="xmlImport" type="ImportPriceBook" enforce-restart="false">
+                <description>This job auto-import the given path XML file.</description>
+                <parameters>
+                    <parameter name="WorkingFolder">fileConversionxml</parameter>
+                    <parameter name="FileNamePattern">importedPricebook.xml</parameter>
+                    <parameter name="NoFilesFoundHandling">NO_FILES_FOUND</parameter>
+                    <parameter name="ImportMode">Merge</parameter>
+                    <parameter name="ImportFailedHandling">WARN</parameter>
+                    <parameter name="AfterImportFileHandling">Archive</parameter>
+                    <parameter name="ArchiveFolder">archive</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2022-03-15Z</date>
+                <time>08:38:39.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
+</jobs>
