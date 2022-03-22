@@ -1,0 +1,26 @@
+{
+	"name": "Slick Slider",
+	"description": "--description here--",
+	"group": "assets",
+	"attribute_definition_groups": [
+		{
+			"id": "slickSlider",
+			"name": "Slick Slider Configuration",
+			"description": "--description here--",
+			"attribute_definitions": [
+				{
+					"id": "addClass",
+					"name": "Add Custom Class",
+					"type": "string",
+					"required": false
+				}
+			]
+		}
+	],
+	"region_definitions": [
+		{
+			"id": "slickSliderRegion",
+			"name": "Add Component"
+		}
+	]
+}

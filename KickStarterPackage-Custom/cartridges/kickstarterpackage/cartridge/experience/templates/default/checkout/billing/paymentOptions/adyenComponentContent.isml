@@ -1,0 +1,104 @@
+<isscript>
+    var selectedPaymentInstruments = pdict.order.billing.payment.selectedPaymentInstruments;
+    var selectedPaymentInstrument = selectedPaymentInstruments && selectedPaymentInstruments.length ? selectedPaymentInstruments[0] : null;
+    var isActive = selectedPaymentInstrument && selectedPaymentInstrument.paymentMethod === paymentOption.ID;
+</isscript>
+<!--- Generic Component--->
+<div class="tab-pane <isif condition="${ isActive }">active</isif> adyen-component-content" id="adyen-component-content" role="tabpanel" data-adyen-method="${selectedPaymentInstrument ? selectedPaymentInstrument.selectedAdyenPMID : pdict.prefferedPaymentInstrument}">
+    <div class="offered-cards">
+        <span class = "offered-cards__credit-card-message">${Resource.msg('message.credit.card','checkout',null)}</span>
+        <ul class="credit-cards-list adyen-option offered-cards__credit-card-list">
+            <li class="visa">
+                <img class="card-img"
+                    src="${URLUtils.staticURL('/images/visa.svg')}"
+                    height="32"
+                    alt="${paymentOption.name}"
+                    title="${paymentOption.name}"
+                >
+            </li>
+            <li class="mc">
+                <img class="card-img"
+                    src="${URLUtils.staticURL('/images/Mastercard.svg')}"
+                    height="32"
+                    alt="${paymentOption.name}"
+                    title="${paymentOption.name}"
+                >
+            </li>
+            <li class="">
+                <img class="card-img"
+                    src="${URLUtils.staticURL('/images/Mastercard1.svg')}"
+                    height="32"
+                    alt="${paymentOption.name}"
+                    title="${paymentOption.name}"
+                >
+            </li>
+            <li class="diners">
+                <img class="card-img"
+                    src="${URLUtils.staticURL('/images/DinersClub.svg')}"
+                    height="32"
+                    alt="${paymentOption.name}"
+                    title="${paymentOption.name}"
+                >
+            </li>
+            <li class="discover">
+                <img class="card-img"
+                    src="${URLUtils.staticURL('/images/Discover.svg')}"
+                    height="32"
+                    alt="${paymentOption.name}"
+                    title="${paymentOption.name}"
+                >
+            </li>
+            <li class="amex">
+                <img class="card-img"
+                    src="${URLUtils.staticURL('/images/amex.svg')}"
+                    height="32"
+                    alt="${paymentOption.name}"
+                    title="${paymentOption.name}"
+                >
+            </li>
+            <li class="jcb">
+                <img class="card-img"
+                    src="${URLUtils.staticURL('/images/JCB.svg')}"
+                    height="32"
+                    alt="${paymentOption.name}"
+                    title="${paymentOption.name}"
+                >
+            </li>
+            <li class="cup">
+                <img class="card-img"
+                    src="${URLUtils.staticURL('/images/UPI.svg')}"
+                    height="32"
+                    alt="${paymentOption.name}"
+                    title="${paymentOption.name}"
+                >
+            </li>
+        </ul>
+    </div>
+    <fieldset class="payment-form-fields"> 
+        <input type="hidden" class="form-control"
+               name="${pdict.forms.billingForm.paymentMethod.htmlName}"
+               value="AdyenComponent"
+        >
+        <isif condition="${pdict.customer.registeredUser}">
+            <input type="hidden" class="form-control"
+                name="useNewCard"
+                value="${session.privacy.useNewCard && session.privacy.useNewCard == 'true' ? true : false}"
+            >
+        </isif>
+        <div class="row d-none">
+            <div class="col">
+                <isif condition="${pdict.customer.registeredUser}">
+                    <div class="save-credit-card custom-control custom-checkbox ">
+                        <input type="checkbox" class="custom-control-input" id="saveCreditCard" name="${creditFields.saveCard.htmlName}" value="true" checked>
+                        <label class="custom-control-label" for="saveCreditCard">
+                            ${creditFields.saveCard.label}
+                        </label>
+                    </div>
+                </isif>
+            </div>
+        </div>
+        <fieldset class="">
+            <isinclude template="checkout/billing/adyenComponentForm" />
+        </fieldset>
+    </fieldset>
+</div>

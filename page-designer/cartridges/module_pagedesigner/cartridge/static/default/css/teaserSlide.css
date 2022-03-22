@@ -1,0 +1,94 @@
+
+@media (min-width: 992px){
+    /* Beauty Teaser */
+    .beauty-teaser{
+        max-width: 1140px;
+        margin: 0 auto;
+    }
+    .mainteaser .beauty-teaser .col-lg-7{
+        max-width: none;
+        flex: none;
+    }
+    .mainteaser .beauty-teaser .btn-overlay{
+        font-size: 20px;
+        line-height: 146.62%;
+        letter-spacing: 0.02em;
+    }
+    .beauty-teaser .caption {
+        padding: 0;
+    }
+    /* Slim Teaser */
+
+    .slim-teaser{
+        padding: 0 0 70px;
+    }
+    .mainteaser .slim-teaser .image , .mainteaser .beauty-teaser .image {
+        height: auto;
+    }
+    .mainteaser .slim-teaser .image img, .mainteaser .beauty-teaser .image img {
+        width: 100%;
+    }
+
+    .slim-teaser .caption , .beauty-teaser .caption {
+        position: absolute;
+        top: 50%;
+        bottom: auto;
+        transform: translateY(-50%);
+    }
+    .slim-teaser .caption{
+        padding: 0;
+    }
+    .slide.slim-teaser .col-lg-7{
+        max-width: none;
+        flex: none;
+        overflow: hidden;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+
+
+    }
+    .slimteaser-left{
+        width: 75%;
+    }
+    .slide.slim-teaser .caption h1 {
+        font-weight: 500;
+        font-size: 26px;
+        line-height: 146.62%;
+        letter-spacing: 0.02em;
+        margin-bottom: 0;
+    }
+
+    .slide.slim-teaser .clp-teaser-text_subheading{
+        width: 70%;
+    }
+
+    .slide.slim-teaser .caption p {
+        font-size: 26px;
+        line-height: 33px;
+        margin-bottom: 0;
+        font-weight: normal;
+    }
+    .slide.slim-teaser .btn-overlay{
+        font-size: 20px;
+        line-height: 146.62%;
+        letter-spacing: 0.02em;
+    }
+}
+
+.mainteaser .slick-slider .slick-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+.mainteaser .slick-slider .slick-arrow.slick-prev {
+    left: 7px;
+}
+.mainteaser .slick-slider .slick-arrow.slick-next {
+    right: 7px;
+}
+
+img {
+    max-width: 100%;
+}

@@ -1,0 +1,61 @@
+.brmc-pdp {
+    padding: 40px 0;
+}
+
+.brmc-pdp-inner {
+    max-width: 730px;
+    margin: 0 auto;
+}
+
+.brmc-pdp h2 {
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 38px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #000000;
+    margin: 0 0 10px 0;
+}
+
+.brmc-pdp .description {
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000;
+    margin: 0;
+}
+
+.brmc-pdp .top-pos {
+    margin-bottom: 20px;
+}
+
+.brmc-pdp .center-pos {
+    margin-bottom: 20px;
+}
+
+.brmc-pdp .bottom-pos {
+    margin-top: 20px;
+}
+
+.brmc-pdp .img-holder img{
+    max-width: 100%;
+}
+
+.brmc-pdp .video-wrapper{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%;
+    height: 100%;
+}
+
+.brmc-pdp iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #F9F9F9;
+}
+

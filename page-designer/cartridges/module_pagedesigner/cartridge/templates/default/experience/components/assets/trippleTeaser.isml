@@ -1,0 +1,35 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/trippleTeaser.css');
+</isscript>
+<iscomment> Tripple Teaser  </iscomment>
+<section class="slide pdp-tripple-teaser">
+    <div class="container">
+        <div class="${pdict.backgroundColour} tripple-teaser-wrapper">
+            <isif condition="${pdict.headline}">
+                <div class="${pdict.headingPosition} title-header">
+                    <h2>${pdict.headline}</h2>
+                </div>
+            </isif>
+            <div class="row">
+                <isloop items="${pdict.teaserArray}" var="teaser" status="loopstatus">
+                    <div class="col-sm-4">
+                        <div class="content-holder">
+                            <isif condition="${!empty(teaser.image)}">
+                                <div class="image-holder dl-promo" data-slot = "slot ${loopstatus.index + 1}" data-id="${pdict.headline} > ${teaser.title}" data-creative="PDP > Triple Teaser">
+                                    <img src="${teaser.image.src.desktop}" alt="${teaser.image.alt}" class="img-fluid">
+                                </div>
+                            </isif>
+                            <isif condition="${!empty(teaser.title)}">
+                                <h5>${teaser.title}</h5>
+                            </isif>
+                            <isif condition="${!empty(teaser.contentCopy)}">
+                                <p>${teaser.contentCopy}</p>
+                            </isif>
+                        </div>
+                    </div>
+                </isloop>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,11 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/component.css');
+</isscript>
+
+<isif condition="${pdict.ctaLabel}">
+    <button class="${pdict.addClass ? pdict.addClass : 'js-meet-event'} btn btn-primary btn-float" type="button">
+        <i class="icon-calendar"></i>
+        ${pdict.ctaLabel}
+    </button>
+</isif>

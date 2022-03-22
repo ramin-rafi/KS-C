@@ -1,0 +1,67 @@
+{
+    "name": "Home: Teaser Text-SL",
+    "description": "--description here--",
+    "group": "assets",
+    "attribute_definition_groups": [
+        {
+            "id": "cardTextConfig",
+            "name": "Card Text Basic Configuration",
+            "description": "--description here--",
+            "attribute_definitions": [
+                {
+                    "id": "addClass",
+                    "name": "Add Custom Class",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "contentLayout",
+                    "name": "Content Layout",
+                    "type": "enum",
+                    "values": ["Column-2", "Column-3", "Column-4"],
+                    "required": false
+                },
+                {
+                    "id": "textAlign",
+                    "name": "Card Text Align",
+                    "type": "enum",
+                    "values": ["text-center", "text-right"],
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "cardContentConfig",
+            "name": "Card Content Configuration",
+            "description": "--description here--",
+            "attribute_definitions": [
+                {
+                    "id": "cardHeading",
+                    "name": "Card Heading",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "cardContent",
+                    "name": "Card Content",
+                    "description": "--description here--",
+                    "type": "markup",
+                    "required": false
+                },
+                {
+                    "id": "teaserCtaLabel",
+                    "name": "Teaser CTA Label",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "teaserCtaLink",
+                    "name": "URL For CTA",
+                    "type": "url",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

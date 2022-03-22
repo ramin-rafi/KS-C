@@ -1,0 +1,61 @@
+@import "variables";
+@import "utilities/mixins";
+@import "~base/cart";
+
+.empty-cart {
+    p {
+        @include rem-font-size(14px, 21px);
+    }
+
+    h4 {
+        @include rem-font-size(20px, 23px);
+
+        margin-bottom: 20px;
+        text-transform: uppercase;
+    }
+
+    .nav {
+        .nav-link {
+            border-bottom: 1px solid $black;
+            padding: 5px 10px;
+
+            @include rem-font-size(20px, 29px);
+        }
+
+        .nav-item {
+            &:not(:last-child) {
+                margin-right: 20px;
+
+                @include media-breakpoint-up(sm) {
+                    margin-right: 25px;
+                }
+            }
+        }
+    }
+
+    .section,
+    .best-sellings {
+        padding: 40px 0;
+    }
+
+    .cta-group {
+        .btn {
+            width: 100%;
+
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+        }
+
+        @include media-breakpoint-up(sm) {
+            .btn {
+                max-width: 350px;
+
+                &:not(:last-child) {
+                    margin-right: 30px;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}

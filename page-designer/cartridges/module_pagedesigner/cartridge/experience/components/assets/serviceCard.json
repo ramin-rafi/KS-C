@@ -1,0 +1,165 @@
+{
+    "name": "Card - Service",
+    "description": "Card for Service Entry",
+    "group": "assets",
+    "attribute_definition_groups": [
+        {
+            "id": "cardConfig",
+            "name": "Card Basic Configuration",
+            "description": "--description here--",
+            "attribute_definitions": [
+                {
+                    "id": "addClass",
+                    "name": "Add Custom Class",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "cardBg",
+                    "name": "Card Style",
+                    "type": "enum",
+                    "values": ["bg-light", "bg-dark", "bg-primary", "bg-secondary", "bg-warning"],
+                    "required": false
+                },
+                {
+                    "id": "cardTextColor",
+                    "name": "Card Text Color",
+                    "type": "enum",
+                    "values": ["text-dark", "text-white"],
+                    "required": false
+                },
+                {
+                    "id": "cardTextAlign",
+                    "name": "Card Text Align",
+                    "type": "enum",
+                    "values": ["text-center", "text-right"],
+                    "required": false
+                },
+                {
+                    "id": "colPadding",
+                    "name": "Remove Padding (Horizontal)",
+                    "type": "enum",
+                    "values": ["px-0"],
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "cardContentConfig",
+            "name": "Card Content Configuration",
+            "description": "--description here--",
+            "attribute_definitions": [
+                {
+                    "id": "cardImage",
+                    "name": "Card Image",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "cardImageAlt",
+                    "name": "Add Image Alt Text",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "cardImageLink",
+                    "name": "Make Image Clickable",
+                    "type": "boolean",
+                    "required": false
+                },
+                {
+                    "id": "cardHeading",
+                    "name": "Card Heading",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "cardContactDetail",
+                    "name": "Contact Details (Phone/Mobile)",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "cardFloorDetail",
+                    "name": "Floor Details",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "cardDescriptionContent",
+                    "name": "Card Description (Show more/less)",
+                    "description": "--description here--",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "id": "cardContentLimit",
+                    "name": "Card Description Overflow Limit",
+                    "description": "--description here--",
+                    "type": "string",
+                    "required": true
+                }
+            ]
+        },
+        {
+            "id": "cardCtaConfig",
+            "name": "Card CTA Configuration",
+            "description": "--description here--",
+            "attribute_definitions": [
+                {
+                    "id": "ctaMeetGreet",
+                    "name": "Meet & Greet",
+                    "type": "boolean",
+                    "required": false
+                },
+                {
+                    "id": "ctaLabel",
+                    "name": "CTA Label",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "ctaLink",
+                    "name": "URL For CTA",
+                    "type": "url",
+                    "required": false
+                },
+                {
+                    "id": "ctaTarget",
+                    "name": "Open in New Window (CTA Target)",
+                    "description": "--Check this option to open link in new browser tab--",
+                    "type": "boolean",
+                    "required": false
+                },
+                {
+                    "id": "ctaDisplay",
+                    "name": "CTA Display",
+                    "type": "enum",
+                    "values": ["btn-block"],
+                    "required": false
+                },
+                {
+                    "id": "ctaStyle",
+                    "name": "CTA Style",
+                    "type": "enum",
+                    "values": [
+                        "btn-underline",
+                        "btn-light",
+                        "btn-dark",
+                        "btn-primary",
+                        "btn-secondary",
+                        "btn-warning",
+                        "btn-outline-light",
+                        "btn-outline-dark",
+                        "btn-outline-primary",
+                        "btn-outline-secondary",
+                        "btn-outline-warning"
+                    ],
+                    "default_value": "btn-outline-primary",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

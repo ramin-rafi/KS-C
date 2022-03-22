@@ -1,0 +1,62 @@
+<!--- TEMPLATENAME: addressSugestion.isml --->
+
+<span class="enter-message sr-only">${Resource.msg("address.suggest", 'loqate', null)}</span>
+    <div class="modal-dialog address-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <isif condition="${pdict.verficationData.Status[0] == 'invalid' && (!pdict.verficationDataExtended || (pdict.verficationDataExtended && pdict.verficationDataExtended == 'invalid'))}">
+                    <strong class="modal-title">${Resource.msg("address.book.novalidation.text", 'loqate', null)}</strong>
+                    <p>${Resource.msg("modal-info-text.novalidation", 'loqate', null)}</p>
+                <iselse/>
+                    <isif condition="${pdict.formType == 'shipping'}">
+                        <strong class="modal-title">${Resource.msg("shipping.validation.text", 'loqate', null)}</strong>
+                        <p>${Resource.msg("modal-info-text.shipping", 'loqate', null)}</p>
+                    <iselseif condition="${pdict.formType == 'billing'}" >
+                        <strong class="modal-title">${Resource.msg("billing.validation.text", 'loqate', null)}</strong>
+                        <p>${Resource.msg("modal-info-text.billing", 'loqate', null)}</p>
+                    <iselseif condition="${pdict.formType == 'address'}" >
+                        <strong class="modal-title">${Resource.msg("address.book.validation.text", 'loqate', null)}</strong>
+                        <p>${Resource.msg("modal-info-text.address", 'loqate', null)}</p>
+                    </isif>
+                </isif>
+            </div>
+            <div class="modal-body">
+                <input type="hidden" id="addressValidated" value="${true}">
+                <div class='${pdict.formType == 'billing' ? 'billing' : 'shipping'} address-container'>
+                    <isset name="verficationData" value="${pdict.verficationData}" scope="page"/>
+                    <isif condition = "${pdict.verficationDataExtended}">
+                        <div class="title-area">
+                            <span class="address-title">
+                                ${Resource.msg("shipping.address.title", 'loqate', null)}
+                            </span>
+                            <button type="button" class="close pull-right" data-dismiss="modal" data-form-field-set=".shipping-address-block">
+                                ${Resource.msg("modal-change-address", 'loqate', null)}
+                            </button>
+                        </div>
+                    </isif>
+                    <isinclude template="components/loqate/addressSuggestionContainer">
+                    <isif condition = "${!pdict.verficationDataExtended}">
+                        <button type="button" class="close" data-dismiss="modal" data-form-field-set="${pdict.formType === 'billing' ? '.billing-address' : '.shipping-address-block'}">
+                            ${Resource.msg("modal-change-address", 'loqate', null)}
+                        </button>
+                    </isif>
+                </div>
+                <isif condition = "${pdict.verficationDataExtended}">
+                    <div class='billing address-container'>
+                        <isset name="verficationData" value="${pdict.verficationDataExtended}" scope="page"/>
+                        <isif condition = "${pdict.verficationDataExtended}">
+                            <div class="title-area">
+                                <span class="address-title">
+                                    ${Resource.msg("billing.address.title", 'loqate', null)}
+                                </span>
+                                <button type="button" class="close pull-right" data-dismiss="modal" data-form-field-set=".billing-address">
+                                    ${Resource.msg("modal-change-address", 'loqate', null)}
+                                </button>
+                            </div>
+                        </isif>
+                        <isinclude template="components/loqate/addressSuggestionContainer">
+                    </div>
+                </isif>
+            </div>
+        </div>
+    </div>

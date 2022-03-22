@@ -1,0 +1,65 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/component.css');
+    assets.addCss('/css/smallTeaserSlide.css');
+
+</isscript>
+<div class="visual-top-banner">
+    <div class="small-teaser-wrapper">
+        <div class="mainteaser small-teaser-banner">
+            <section class="slide ${pdict.customOpacity ? 'has-overlay' : ''} <isif condition=" ${pdict.htmlclass}">
+                <isprint value="${pdict.htmlclass}" encoding="off" />
+                </isif> ">
+                <isif condition="${pdict.categoryLink}">
+                    <a class='dl-promo' data-id="${pdict.text_headline1}" href="${pdict.categoryLink}">
+                <iselse>
+                    <div>
+                </isif>
+
+                <div class="small-teaser-text small-teaser-text_heading d-md-none">
+                    <isif condition="${pdict.text_headline1}">
+                        <h2 class="teaser-title">
+                            <isprint value="${pdict.text_headline1}" encoding="off" />
+                        </h2>
+                    </isif>
+                    <isif condition="${pdict.text_headline2}">
+                        <h5 class="teaser-title-optional">
+                            <isprint value="${pdict.text_headline2}" encoding="off" />
+                        </h5>
+                    </isif>
+                </div>
+                <picture class="image-holder">
+                    <div class="image img-desktop focuspoint d-none d-md-block" data-focus-x="${pdict.focusX}"
+                        data-focus-y="${pdict.focusY}">
+                        <img src="${pdict.image.src.desktop}" alt="${pdict.alt_desktop}" />
+                    </div>
+                    <div class="image img-mobile d-md-none">
+                        <img src="${pdict.mobileImage.src.mobile}" alt="${pdict.alt_mobile}" />
+                    </div>
+                </picture>
+                <div class="small-teaser-wrapper caption d-none d-md-block ${pdict.SlideColor} ${pdict.headline_copy_allignment}">
+                    <div class="small-teaser-text small-teaser-text_heading">
+                        <h2 class="teaser-title">
+                            <isprint value="${pdict.text_headline1}" encoding="off" />
+                        </h2>
+                        <isif condition="${pdict.text_headline2}">
+                            <h5 class="teaser-title-optional">
+                                <isprint value="${pdict.text_headline2}" encoding="off" />
+                            </h5>
+                        </isif>
+                    </div>
+                    <isif condition="${pdict.text_link}">
+                        <div class="btn-overlay">
+                            <isprint value="${pdict.text_link}" encoding="off" />
+                        </div>
+                    </isif>
+                </div>
+                <isif condition="${pdict.categoryLink}">
+                    </a>
+                <iselse>
+                    </div>
+                </isif>
+            </section>
+        </div>
+    </div>
+</div>

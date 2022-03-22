@@ -1,0 +1,116 @@
+{
+    "name": "Editorial Teaser",
+    "description": "-- description --",
+    "group": "assets",
+    "attribute_definition_groups": [{
+        "id": "editorialTeaserConfig",
+        "name": "Editorial Teaser Configuration",
+        "description": "-- description --",
+        "attribute_definitions": [
+        {
+            "id": "addClass",
+            "name": "Add Custom Class",
+            "type": "string",
+            "required": false
+        },
+        {
+            "id": "teaserLayoutPadY",
+            "name": "Teaser Layout Top/Bottom Space",
+            "type": "enum",
+            "values": ["Bottom-40px", "Top/Bottom-40px"],
+            "required": false
+        },
+        {
+            "id": "teaserConfig",
+            "name": "Teaser Style/Layout",
+            "description": "The visual display of editorial teaser fixed height Or full screen.",
+            "type": "enum",
+            "values": ["Single", "Double"],
+            "default_value": "Single",
+            "required": true
+        },
+        {
+            "id": "teaserCapConfig",
+            "name": "Double caption teaser slide",
+            "description": "Check this optoin for double caption teaser to make it responsive for mobile accordingly.",
+            "type": "boolean",
+            "required": false
+        },
+        {
+            "id": "teaserLayoutConfig",
+            "name": "Layout Configuration",
+            "description": "Please select the container layout as fixed width Or full width",
+            "type": "enum",
+            "values": ["Fixed", "Full"],
+            "default_value": "Full",
+            "required": false
+        },
+        {
+            "id": "indicatorConfig",
+            "name": "Show Slider Indicators",
+            "description": "Select this option to show slider indicators and unselect to hide it",
+            "type": "boolean"
+        },
+        {
+            "id": "navigationConfig",
+            "name": "Show Slider Navigation/Arrows",
+            "description": "Select this option to show slider arrows and unselect to hide it",
+            "type": "boolean"
+        },
+        {
+            "id": "autoPlayConfig",
+            "name": "Auto Scroll Slides",
+            "description": "Select this option to auto scroll slides",
+            "type": "boolean"
+        },
+        {
+            "id": "teaserColor",
+            "name": "Teaser Control Color Options",
+            "description": "Teaser Control Color Options.",
+            "type": "enum",
+            "values": ["Black", "White"],
+            "default_value": "Black",
+            "required": false
+        },
+        {
+            "id": "opacityOverlayConfig",
+            "name": "Add Opacity Overlay (20% of black)",
+            "type": "boolean",
+            "required": false
+        },
+        {
+            "id": "addtransparency",
+            "name": "check to add transparency for header",
+            "type": "boolean",
+            "required": false,
+            "default_value": false
+        }
+    ]
+    }],
+    "region_definitions": [{
+        "id": "addEidtorialSlide",
+        "name": "Add Slide",
+        "component_type_exclusions": [{
+                "type_id": "layouts.1column"
+            },
+            {
+                "type_id": "layouts.2column"
+            },
+            {
+                "type_id": "layouts.3column"
+            },
+            {
+                "type_id": "layouts.4column"
+            },
+            {
+                "type_id": "layouts.gridcomponentlayout"
+            },
+            {
+                "type_id": "einstein.noanchorgrid"
+            },
+            {
+                "type_id": "layouts.carousel"
+            }
+        ]
+    }]
+}

@@ -1,0 +1,34 @@
+<isinclude template="/components/modules" />
+
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+</isscript>
+
+<div id="${pdict.cont_id}" class="${pdict.addClass ? 'card ' + pdict.addClass : 'card'}">
+    <isif condition="${pdict.titleHeading}">
+        <div id="${'heading-' + pdict.idHash}" class="card-header">
+            <isif condition="${pdict.titleHeading}">
+                <h3 class="mb-0">
+                    <button class="btn btn-link btn-block js-accordion-service" type="button" data-target="${'#collapse-' + pdict.idHash}"
+                        data-toggle="collapse" aria-expanded="false" aria-controls="${'collapse-' + pdict.idHash}">
+                        ${pdict.titleHeading}
+                    </button>
+                </h3>
+            </isif>
+        </div>
+    </isif>
+
+    <isif condition="${pdict.accordionDescription || pdict.accordionContentAsset}">
+        <iscomment> <div id="${'collapse-' + pdict.idHash}" class="collapse" aria-labelledby="${'heading-' + pdict.idHash}" data-parent="${'#accordion-' + pdict.parentGroupName}"> </iscomment>
+        <div id="${'collapse-' + pdict.idHash}" class="collapse" aria-labelledby="${'heading-' + pdict.idHash}">
+            <div class="card-body">
+                <isif condition="${pdict.accordionDescription}">
+                    <isprint value="${pdict.accordionDescription}" encoding="off" />
+                </isif>
+                <isif condition="${pdict.accordionContentAsset}">
+                    <iscontentasset aid="${pdict.accordionContentAsset}" />
+                </isif>
+            </div>
+        </div>
+    </isif>
+</div>

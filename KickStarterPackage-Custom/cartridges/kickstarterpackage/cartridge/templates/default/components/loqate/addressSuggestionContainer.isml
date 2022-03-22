@@ -1,0 +1,30 @@
+<div class="address-box">
+    <div class="address">
+        <div class="address-item" data-address="${JSON.stringify(verficationData.Input)}">
+            <span class="address1">${verficationData.Input.Address1}</span>
+            <span class="more-data">
+                <span class="postalCode">${verficationData.Input.PostalCode},</span>
+                <span class="city">${verficationData.Input.Locality}</span>
+                <span class="country"> -  ${Resource.msg('country.' + verficationData.Input.Country.toLowerCase(), 'common', null)}</span>
+            </span>
+        </div>
+    </div>
+</div>
+<isif condition="${verficationData.Status[0] != 'invalid'}">
+    <isloop items="${verficationData.Matches}" var="match" status="loopstatus">
+        <isif condition="${match.Address1 && match.Address1 && match.PostalCode}">
+            <div class="address-box">
+                <div class="address">
+                    <div class="address-item" data-address="${JSON.stringify(match)}">
+                        <span class="address1 ${verficationData.Input.Address1 !== match.Address1 ? 'faulty' : ''}">${match.Address1}</span>
+                        <span class="more-data">
+                            <span class="postalCode ${verficationData.Input.PostalCode !== match.PostalCode ? 'faulty' : ''}">${match.PostalCode},</span>
+                            <span class="city ${verficationData.Input.Locality !== match.Locality ? 'faulty' : ''}">${match.Locality}</span>
+                            <span class="country ${Resource.msg('country.' + verficationData.Input.Country.toLowerCase(), 'common', null) !== match.CountryName ? 'faulty' : ''}"> - ${match.CountryName}</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </isif>
+    </isloop>
+</isif>

@@ -1,0 +1,3 @@
+<div style="font-family: Times New Roman, Times, serif;">
+    <p>${Resource.msg('msg.placed.order.thank.you1', 'confirmation', null)} <span>${pdict.order.orderNumber}</span> ${Resource.msg('msg.placed.order.thank.you2', 'confirmation', null)}</p>
+</div>

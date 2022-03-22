@@ -1,0 +1,13 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/component.css');
+    assets.addCss('/css/richtext.css');
+</isscript>
+<div
+    class="rich-text-wrapper ${pdict.fontSize === '10px' ? 'fs-10' : ''} ${pdict.fontSize === '12px' ? 'fs-12' : ''} ${pdict.fontSize === '14px' ? 'fs-14' : ''} ${pdict.fontSize === '16px' ? 'fs-16' : ''}">
+    <div class="row">
+        <div class="col-${pdict.colWidth}">
+            <isprint value="${pdict.richtext}" encoding="off" />
+        </div>
+    </div>
+</div>

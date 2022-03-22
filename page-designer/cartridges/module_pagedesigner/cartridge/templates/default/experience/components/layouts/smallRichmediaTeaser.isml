@@ -1,0 +1,35 @@
+
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('css/clp-teaser.css');
+    assets.addCss('/css/component.css');
+    assets.addCss('/css/smallrichmedia-teaser.css');
+</isscript>
+
+<div class="visual-top-banner srm-teaser ${pdict.headline_copy_allignment}">
+    <div class="row align-items-center">
+        <div class="mainteaser col-lg-8 ${pdict.sliderOption}">
+            <isprint value="${pdict.regions.slides.setClassName("small-richmedia-teaser-slide").render()}" encoding="off"/>
+        </div>
+    
+        <div class="col-lg-4 teaser-inner-content">
+            <isif condition="${pdict.text_headline}">
+                <h2>${pdict.text_headline}</h2>
+            </isif>
+            <isif condition="${pdict.teaser_text}">
+                <div class="srm-content">
+                    <isif condition="${pdict.teaser_text.length > 631}">
+                        ${pdict.teaser_text.substring(0, 631)}...
+                    <iselse/>
+                        ${pdict.teaser_text}
+                    </isif>
+                </div>
+            </isif>
+            <isif condition="${pdict.text_link && pdict.categoryUrl}">
+                <a class="srm-link btn-overlay no-underline dl-promo" data-id="${pdict.text_headline}" href="${pdict.categoryUrl}" >
+                    <isprint value="${pdict.text_link}" encoding="off" />
+                </a>
+            </isif>
+        </div>
+    </div>
+</div>

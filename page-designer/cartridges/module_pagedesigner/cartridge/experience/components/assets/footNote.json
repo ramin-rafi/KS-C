@@ -1,0 +1,81 @@
+{
+    "name": "Footnote",
+    "description": "--description here--",
+    "group": "assets",
+    "attribute_definition_groups": [
+        {
+            "id": "noteConfig",
+            "name": "Footnote Basic Configuration",
+            "description": "--description here--",
+            "attribute_definitions": [
+                {
+                    "id": "addClass",
+                    "name": "Add Custom Class",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "ctaOrder",
+                    "name": "Display CTA at Bottom",
+                    "type": "boolean",
+                    "required": false
+                },
+                {
+                    "id": "noteBg",
+                    "name": "Footnote Style",
+                    "type": "enum",
+                    "values": ["bg-light", "bg-dark"],
+                    "required": false
+                },
+                {
+                    "id": "noteTextColor",
+                    "name": "Footnote Text Color",
+                    "type": "enum",
+                    "values": ["text-dark", "text-white"],
+                    "required": false
+                },
+                {
+                    "id": "noteTextAlign",
+                    "name": "Footnote Text Align",
+                    "type": "enum",
+                    "values": ["text-center", "text-right"],
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "cardContentConfig",
+            "name": "Footnote Content Configuration",
+            "description": "--description here--",
+            "attribute_definitions": [
+                {
+                    "id": "noteDescription",
+                    "name": "Card Text",
+                    "description": "--description here--",
+                    "type": "markup",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "noteCtaConfig",
+            "name": "Footnote Configuration - Show More / Less",
+            "description": "--description here--",
+            "attribute_definitions": [
+                {
+                    "id": "ctaShowMore",
+                    "name": "CTA Label - Show More",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "ctaShowLess",
+                    "name": "CTA Label - Show Less",
+                    "type": "string",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

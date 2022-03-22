@@ -1,0 +1,289 @@
+@import '../variables';
+@import '../utilities/mixins';
+@import 'bootstrap/scss/mixins/breakpoints';
+
+.contact-wrapper {
+    padding: 60px 0;
+
+    @include media-breakpoint-down(sm) {
+        padding: 30px 0;
+    }
+
+    .help-contact-label {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 18px;
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 26px;
+        line-height: 38px;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: #101010;
+        margin-bottom: 20px;
+
+        @include media-breakpoint-down(sm) {
+            margin-bottom: 30px;
+        }
+    }
+}
+
+.lists-wrapper {
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        overflow: hidden;
+        column-count: 3;
+
+        @include media-breakpoint-down(md) {
+            column-count: 2;
+        }
+
+        @include media-breakpoint-down(sm) {
+            column-count: 1;
+        }
+    }
+
+    li {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 26px;
+        line-height: 38px;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+        color: #000;
+        display: inline-block;
+        vertical-align: top;
+        margin-bottom: 5px;
+        width: 100%;
+
+        @include media-breakpoint-down(lg) {
+            font-size: 22px;
+            line-height: 34px;
+        }
+
+        @include media-breakpoint-down(md) {
+            margin-bottom: 20px;
+            display: block;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        @include media-breakpoint-down(sm) {
+            font-size: 26px;
+            line-height: 38px;
+        }
+
+        a {
+            vertical-align: middle;
+            display: block;
+            position: relative;
+
+            .item-text {
+                width: 80%;
+                display: block;
+
+                @include media-breakpoint-down(sm) {
+                    width: 90%;
+                }
+
+                &::after {
+                    content: $icon-arrow-right;
+                    font-family: icomoon !important;
+                    speak: none;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-variant: normal;
+                    text-transform: none;
+                    line-height: 1;
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                    margin-left: 15px;
+                    font-size: 15px;
+                    margin-top: 12px;
+                    position: absolute;
+
+                    @include media-breakpoint-down(sm) {
+                        right: 0;
+                        top: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.help-header {
+    padding-left: 205px;
+
+    @include media-breakpoint-down(sm) {
+        padding: 0;
+
+        h2 {
+            font-weight: 500;
+            font-size: 26px;
+            line-height: 38px;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+    }
+
+    .help-breadcum {
+        font-weight: bold;
+        font-size: 14px;
+        line-height: 18px;
+        color: #101010;
+        margin-bottom: 10px;
+        display: block;
+    }
+}
+
+.contact-content-wrapper {
+    padding: 60px 0 30px;
+
+    @include media-breakpoint-down(sm) {
+        padding: 30px 0;
+    }
+
+    .tab-heading {
+        position: relative;
+        z-index: 9;
+
+        a {
+            font-weight: 500;
+            font-size: 26px;
+            line-height: 38px;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            display: block;
+            position: relative;
+            padding-right: 40px;
+
+            // &:hover,
+            // &:focus,
+            // &:active {
+            //     text-decoration: none !important;
+            // }
+
+            [class^='icon-'] {
+                position: absolute;
+                top: 10px;
+                right: 5px;
+                font-size: 15px;
+                transition: all 0.2s;
+            }
+        }
+    }
+
+    @include media-breakpoint-down(sm) {
+        .tab-item {
+            margin-bottom: 20px;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .tab-content {
+        .font-large {
+            font-size: 16px;
+            line-height: 21px;
+        }
+
+        h2 {
+            font-weight: 500;
+            font-size: 26px;
+            line-height: 38px;
+            letter-spacing: 0.02em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+
+            @include media-breakpoint-down(sm) {
+                display: none;
+            }
+        }
+
+        .inner-content {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 18px;
+            color: #000;
+            margin-top: 20px;
+
+            .ques {
+                font-weight: 700;
+            }
+
+            a {
+                color: #000;
+                text-decoration: underline;
+
+                &:hover {
+                    color: #666 !important;
+                    text-decoration: none !important;
+                }
+            }
+        }
+    }
+
+    .active-tab {
+        .tab-heading {
+            a {
+                [class^='icon-'] {
+                    top: 15px;
+                    transform: rotate(90deg);
+                }
+            }
+        }
+    }
+}
+
+.right-content-section {
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    max-width: calc(100% - 205px);
+
+    @include media-breakpoint-down(sm) {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+.sidebar-tab {
+    display: inline-block;
+    width: 200px;
+    vertical-align: top;
+    margin-top: 10px;
+
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 23px;
+        text-transform: capitalize;
+    }
+
+    .active {
+        a {
+            font-weight: 700;
+        }
+    }
+}

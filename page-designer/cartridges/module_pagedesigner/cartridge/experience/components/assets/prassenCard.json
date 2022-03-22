@@ -1,0 +1,169 @@
+{
+    "name": "Card - PRASENT",
+    "group": "assets",
+    "attribute_definition_groups": [
+        {
+            "id": "cardConfig",
+            "name": "Card Basic Configuration",
+            "description": "--description here--",
+            "attribute_definitions": [
+                {
+                    "id": "addClass",
+                    "name": "Add Custom Class",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "cardTextAlign",
+                    "name": "Card Text Align",
+                    "type": "enum",
+                    "values": ["text-center", "text-right"],
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "cardContentConfig",
+            "name": "Card Content Configuration",
+            "description": "--description here--",
+            "attribute_definitions": [
+                {
+                    "id": "cardImage",
+                    "name": "Card Image",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "cardImageAlt",
+                    "name": "Add Image Alt Text",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "cardImageLink",
+                    "name": "Make Image Clickable",
+                    "type": "boolean",
+                    "required": false
+                },
+                {
+                    "id": "cardFilters",
+                    "name": "Card Filters (Comma Separated)",
+                    "description":"Comma Separated filters",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "cardHeading",
+                    "name": "Card Heading",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "cardPrice",
+                    "name": "Price",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "cardDescriptionContent",
+                    "name": "Card Description",
+                    "type": "markup",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "cardAccordionConfig",
+            "name": "Card Accordion Configuration",
+            "attribute_definitions": [
+                {
+                    "id": "cardAccordionTitle",
+                    "name": "Card Accordion Title",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "idHash",
+                    "name": "Accordion id",
+                    "description": "It should be unique, no special characters and no  spaces.",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "cardAccordionDesc",
+                    "name": "Card Accordion Description",
+                    "type": "string",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "cardCtaConfig",
+            "name": "Card CTA Configuration",
+            "description": "--description here--",
+            "attribute_definitions": [
+                {
+                    "id": "ctaLabel",
+                    "name": "CTA Label",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "ctaLink",
+                    "name": "URL For CTA",
+                    "type": "url",
+                    "required": false
+                },
+                {
+                    "id": "ctaTarget",
+                    "name": "Open in New Window (CTA Target)",
+                    "description": "--Check this option to open link in new browser tab--",
+                    "type": "boolean",
+                    "required": false
+                },
+                {
+                    "id": "ctaStyle",
+                    "name": "CTA Style",
+                    "type": "enum",
+                    "values": [
+                        "btn-primary",
+                        "btn-outline-light"
+                    ],
+                    "default_value": "btn-primary",
+                    "required": false
+                },
+                {
+                    "id": "cta2Label",
+                    "name": "CTA Label 2",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "cta2Link",
+                    "name": "URL For CTA 2",
+                    "type": "url",
+                    "required": false
+                },
+                {
+                    "id": "cta2Target",
+                    "name": "Open in New Window (CTA Target) 2",
+                    "description": "--Check this option to open link in new browser tab--",
+                    "type": "boolean",
+                    "required": false
+                },
+                {
+                    "id": "cta2Style",
+                    "name": "CTA Style 2",
+                    "type": "enum",
+                    "values": [
+                        "btn-primary",
+                        "btn-outline-light"
+                    ],
+                    "default_value": "btn-outline-light",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

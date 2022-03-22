@@ -1,0 +1,34 @@
+.region div.experience-component {
+    position: unset;
+}
+
+div.region_landscape-large:before {
+    padding-top:unset;
+}
+
+div.region_square:before {
+    padding-top:unset;
+}
+
+div.region_landscape-small:before {
+    padding-top:unset;
+}
+
+div.region_portrait-small:before {
+    padding-top:unset;
+}
+
+.rich-text-wrapper {
+    /* margin-bottom: 20px; */
+    padding: 40px 0;
+}
+.rich-text-wrapper p {
+    margin-bottom: 20px;
+    /* font-size: 14px; */
+    line-height: 16px;
+    color: #000;
+}
+
+.rich-text-wrapper p:last-child {
+    margin-bottom: 0;
+}

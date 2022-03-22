@@ -1,0 +1,16 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+</isscript>
+
+<isset name="classCombination" value="${'row' + " " + (pdict.plmLayoutCol === 'Column-3/9' ? 'row-cols-3-9' : '') + " " + (pdict.plmLayoutCol === 'Column-4/8' ? 'row-cols-4-8' : '')}" scope="page" />
+<div class="plm-layout ${pdict.addClass ? pdict.addClass : ''} ${pdict.plmLayoutPadY === '20px' ? 'py-3' : ''} ${pdict.plmLayoutPadY === '' ? '40px' : 'py-5'}">
+    <div class="${pdict.plmLayoutConfig === 'Full' ? 'container-fluid' : 'container'}">
+        <isif condition="${pdict.plmLayoutHeading}">
+            <h3
+                class="section-title ${pdict.plmHeadingAlignment === 'Center' ? 'text-center' : ''} ${pdict.plmHeadingAlignment === 'Right' ? 'text-right' : ''}">
+                <isprint value="${pdict.plmLayoutHeading}" encoding="off" />
+            </h3>
+        </isif>
+        <isprint value=" ${pdict.regions.plmLayoutRegion.setClassName(classCombination).render()}" encoding="off" />
+    </div>
+</div>

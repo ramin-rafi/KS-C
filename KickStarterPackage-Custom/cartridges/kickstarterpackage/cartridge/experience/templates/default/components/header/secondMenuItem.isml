@@ -1,0 +1,138 @@
+  <div class="dropdown-menu third-level ${firstLevelCategory}" role="menu" aria-hidden="true" aria-label="${menuItem.id}">
+    <div class="dropdown-menu-wrapper">
+        <isset name="categoryCount" value="${0}" scope="page" />
+        <isset name="categoryIterator" value="${0}" scope="page" />
+        <div class="d-block d-xl-none">
+            <isslot id="cat-menu-banners" context="category" description="Category Menu Banner" context-object="${dw.catalog.CatalogMgr.getCategory(subCategory.id)}"/>
+        </div>
+        <div class="${thirdLevelDisplayLayout === null ? 'default-list-layout' : thirdLevelDisplayLayout} dropdown-list-holder column-1">
+            <isif condition="${menuItem.subCategories && !menuItem.hideAllArticle}">
+                <isset name="categoryCount" value="${categoryCount + 1}" scope="page" />
+                <div class="dropdown-item default-list-item" role="presentation">
+                    <a href="${menuItem.isSale === true ? firstLevel.saleUrl : (menuItem.isNew === true ? firstLevel.newArrivalUrl : menuItem.url)}" id="${category.id}" class="dropdown-link third-level-link" data-first-level-menu="${firstLevelCategory}" data-second-level-menu ="${subCategory.id}" role="button" tabindex="0">${Resource.msg('label.alle.artikel', 'search', null)}</a>
+                </div>
+            </isif>
+            <isloop items="${menuItem.subCategories}" var="category" begin="${categoryIterator}">
+                <isif condition="${categoryCount == 6}">
+                    <isbreak/>
+                </isif>
+                <isif condition="${hasOnlineNavigationCategories(category) || category.isSale === true || category.isNew === true || category.isCategoryLabel === true}">
+                    <isset name="categoryCount" value="${categoryCount + 1}" scope="page" />
+                    <div class="${ category.categoryImageUrl === null ? 'default-list-item' : ''} dropdown-item" role="presentation">
+                        <isif condition="${category.isCategoryLabel === true}">
+                            <span id="${category.id}" class="dropdown-link isCategoryLabel" tabindex="0">
+                                ${category.name}
+                            </span>
+                        <iselse/>
+                            <a href="${ category.isCategoryLabel === true? '' : (category.isSale === true ? category.saleUrl : (category.isNew === true ? category.newArrivalUrl : category.url ))}" id="${category.id}" class="${category.isCategoryLabel === true ? 'dropdown-link isCategoryLabel': 'dropdown-link third-level-link'}" data-first-level-menu="${firstLevelCategory}" data-second-level-menu ="${subCategory.id}" role="button" tabindex="0">
+                            <isif condition="${!empty(category.categoryImageUrl)}">
+                                <div class="image-holder">
+                                    <img src="${URLUtils.staticURL(URLUtils.CONTEXT_LIBRARY, null, category.categoryImageUrl)}" alt="banner image"/>
+                                </div>
+                            </isif>
+                            <span>${category.name}</span>
+                        </a>
+                        </isif>
+                    </div>
+                </isif>
+                <isset name="categoryIterator" value="${categoryIterator + 1}" scope="page" />
+            </isloop>
+        </div>
+        <isif condition="${!empty(menuItem.subCategories[categoryIterator])}">
+            <isset name="categoryCount" value="${0}" scope="page" />
+            <div class="${thirdLevelDisplayLayout === null ? 'default-list-layout' : thirdLevelDisplayLayout} dropdown-list-holder column-2">
+                <isloop items="${menuItem.subCategories}" var="category" begin="${categoryIterator}">
+                    <isif condition="${categoryCount == 6}">
+                        <isbreak/>
+                    </isif>
+                    <isif condition="${hasOnlineNavigationCategories(category) || category.isSale === true || category.isNew === true || category.isCategoryLabel === true}">
+                    <isset name="categoryCount" value="${categoryCount + 1}" scope="page" />
+                    <div class="${ category.categoryImageUrl === null ? 'default-list-item' : ''} dropdown-item" role="presentation">
+                        <isif condition="${category.isCategoryLabel === true}">
+                            <span id="${category.id}" class="dropdown-link isCategoryLabel" tabindex="0">
+                                ${category.name}
+                            </span>
+                        <iselse/>
+                            <a href="${ category.isCategoryLabel === true? '' : (category.isSale === true ? category.saleUrl : (category.isNew === true ? category.newArrivalUrl : category.url ))}" id="${category.id}" class="${category.isCategoryLabel === true ? 'dropdown-link isCategoryLabel': 'dropdown-link third-level-link'}" data-first-level-menu="${firstLevelCategory}" data-second-level-menu ="${subCategory.id}" role="button" tabindex="0">
+                            <isif condition="${!empty(category.categoryImageUrl)}">
+                                <div class="image-holder">
+                                    <img src="${URLUtils.staticURL(URLUtils.CONTEXT_LIBRARY, null, category.categoryImageUrl)}" alt="banner image"/>
+                                </div>
+                            </isif>
+                            <span>${category.name}</span>
+                        </a>
+                        </isif>
+                    </div>
+                </isif>
+                <isset name="categoryIterator" value="${categoryIterator + 1}" scope="page" />
+                </isloop>
+            </div>
+        </isif>
+        <isif condition="${!empty(menuItem.subCategories[categoryIterator])}">
+            <isset name="categoryCount" value="${0}" scope="page" />
+            <div class="${thirdLevelDisplayLayout === null ? 'default-list-layout' : thirdLevelDisplayLayout} dropdown-list-holder column-3">
+                <isloop items="${menuItem.subCategories}" var="category" begin="${categoryIterator}">
+                    <isif condition="${categoryCount == 6}">
+                        <isbreak/>
+                    </isif>
+                    <isif condition="${hasOnlineNavigationCategories(category) || category.isSale === true || category.isNew === true || category.isCategoryLabel === true}">
+                    <isset name="categoryCount" value="${categoryCount + 1}" scope="page" />
+                    <div class="${ category.categoryImageUrl === null ? 'default-list-item' : ''} dropdown-item" role="presentation">
+                        <isif condition="${category.isCategoryLabel === true}">
+                            <span id="${category.id}" class="dropdown-link isCategoryLabel" tabindex="0">
+                                ${category.name}
+                            </span>
+                        <iselse/>
+                            <a href="${ category.isCategoryLabel === true? '' : (category.isSale === true ? category.saleUrl : (category.isNew === true ? category.newArrivalUrl : category.url ))}" id="${category.id}" class="${category.isCategoryLabel === true ? 'dropdown-link isCategoryLabel': 'dropdown-link third-level-link'}" data-first-level-menu="${firstLevelCategory}" data-second-level-menu ="${subCategory.id}" role="button" tabindex="0">
+                            <isif condition="${!empty(category.categoryImageUrl)}">
+                                <div class="image-holder">
+                                    <img src="${URLUtils.staticURL(URLUtils.CONTEXT_LIBRARY, null, category.categoryImageUrl)}" alt="banner image"/>
+                                </div>
+                            </isif>
+                            <span>${category.name}</span>
+                        </a>
+                        </isif>
+                    </div>
+                </isif>
+                <isset name="categoryIterator" value="${categoryIterator + 1}" scope="page" />
+                </isloop>
+            </div>
+        </isif>
+        <isif condition="${!empty(menuItem.subCategories[categoryIterator])}">
+            <isset name="categoryCount" value="${0}" scope="page" />
+            <div class="${thirdLevelDisplayLayout === null ? 'default-list-layout' : thirdLevelDisplayLayout} dropdown-list-holder column-4">
+                <isloop items="${menuItem.subCategories}" var="category" begin="${categoryIterator}">
+                    <isif condition="${categoryCount == 6}">
+                        <isbreak/>
+                    </isif>
+                    <isif condition="${hasOnlineNavigationCategories(category) || category.isSale === true || category.isNew === true || category.isCategoryLabel === true}">
+                    <isset name="categoryCount" value="${categoryCount + 1}" scope="page" />
+                    <div class="${ category.categoryImageUrl === null ? 'default-list-item' : ''} dropdown-item" role="presentation">
+                        <isif condition="${category.isCategoryLabel === true}">
+                            <span id="${category.id}" class="dropdown-link isCategoryLabel" tabindex="0">
+                                ${category.name}
+                            </span>
+                        <iselse/>
+                            <a href="${ category.isCategoryLabel === true? '' : (category.isSale === true ? category.saleUrl : (category.isNew === true ? category.newArrivalUrl : category.url ))}" id="${category.id}" class="${category.isCategoryLabel === true ? 'dropdown-link isCategoryLabel': 'dropdown-link third-level-link'}" data-first-level-menu="${firstLevelCategory}" data-second-level-menu ="${subCategory.id}" role="button" tabindex="0">
+                            <isif condition="${!empty(category.categoryImageUrl)}">
+                                <div class="image-holder">
+                                    <img src="${URLUtils.staticURL(URLUtils.CONTEXT_LIBRARY, null, category.categoryImageUrl)}" alt="banner image"/>
+                                </div>
+                            </isif>
+                            <span>${category.name}</span>
+                        </a>
+                        </isif>
+                    </div>
+                </isif>
+                <isset name="categoryIterator" value="${categoryIterator + 1}" scope="page" />
+                </isloop>
+            </div>
+        </isif>
+
+        <div class="dropdown-list-holder flex-grow-1">
+            <div class="d-none d-xl-block">
+                <isslot id="cat-menu-banners" context="category" description="Category Menu Banner" context-object="${dw.catalog.CatalogMgr.getCategory(subCategory.id)}"/>
+            </div>
+        </div>
+    </div>
+</div>

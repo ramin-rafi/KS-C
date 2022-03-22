@@ -1,0 +1,7 @@
+<div style="font-family: Times New Roman, Times, serif;">
+    <strong style="font-size:22px; display:block; margin:0 0 10px; font-family: Arial, Helvetica, sans-serif;">${Resource.msg('label.email.order.completed.title', 'confirmation', null)}</strong>
+    <p style="margin:0 0 10px;">${Resource.msg('label.email.your.order', 'confirmation', null)} <strong>${pdict.order.orderNumber}</strong> ${Resource.msg('label.email.order.completed.msg1', 'confirmation', null)}</p>
+    <p style="margin:0 0 10px;">${Resource.msg('label.email.order.completed.msg2', 'confirmation', null)}</p>
+    <p style="margin:0 0 10px;">${Resource.msg('label.email.order.completed.msg3', 'confirmation', null)}</p>
+    <p style="margin:0 0 10px;">${Resource.msg('label.email.order.completed.msg4', 'confirmation', null)}</p>
+</div>

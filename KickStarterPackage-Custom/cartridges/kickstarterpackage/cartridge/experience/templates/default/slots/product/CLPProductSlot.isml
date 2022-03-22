@@ -1,0 +1,16 @@
+<isinclude template="/components/modules" />
+
+<div class="best-sellings">
+    <div class="container">
+        <isprint value="${slotcontent.calloutMsg}" encoding="off"/>
+        <div class="products-slider-holder">
+            <div class="products-slider">
+                <isloop items="${slotcontent.content}" var="product" status="loopState">
+                    <div class="slide">
+                        <isinclude url="${URLUtils.url('Tile-Show', 'pid', product.ID, 'pview', 'tile', 'ratings', true, 'swatches', false)}"/>
+                    </div>
+                </isloop>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,45 @@
+.livebuy-slot-module {
+    margin-bottom: 78px;
+}
+
+.livebuy-slot-module .content-holder  {
+    text-align: center;
+    margin-bottom: 36px;
+    font-family: futura-pt,sans-serif;
+}
+
+.livebuy-slot-module .content-holder h2 {
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 56px;
+    display: block;
+    align-items: center;
+    letter-spacing: 0.02em;
+    margin-bottom: 14px;
+}
+
+.livebuy-slot-module .content-holder .slogan-text {
+    font-size: 26px;
+    line-height: 30px;
+    font-weight: 400;
+}
+
+.livebuy-banner-section {
+    display: flex;
+    justify-content: center;
+}
+
+.livebuy-banner-item {
+    position: relative;
+}
+
+.livebuy-banner-item .icon-wrap {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    width: 52px;
+    height: 52px;
+    margin: 0 auto;
+    transform: translateY(-50%);
+}

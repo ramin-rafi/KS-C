@@ -1,0 +1,12 @@
+<isinclude template="/components/modules" sf-toolkit="off" />
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/einstenCarousel.css');
+</isscript>
+<div class="content-header-position ${pdict.titleAlignment ? pdict.titleAlignment : ''}">
+    <isslot id="pdp-recommendations-1" 
+        context="global" 
+        description="PDP You Might Like Section" 
+        context-object="${pdict.product}"
+    />
+</div>

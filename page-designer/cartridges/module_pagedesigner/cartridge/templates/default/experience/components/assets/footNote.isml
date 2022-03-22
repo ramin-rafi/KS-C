@@ -1,0 +1,30 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    // assets.addCss('/css/card.css');
+</isscript>
+
+<div
+    class="footnote ${pdict.ctaOrder === true ? 'd-flex flex-column-reverse' : ''} ${pdict.addClass ? pdict.addClass : ''} ${pdict.noteTextColor ? pdict.noteTextColor : ''} ${pdict.noteBg ? pdict.noteBg : ''} ${pdict.noteTextAlign ? pdict.noteTextAlign : ''}">
+    <isif condition="${pdict.ctaShowMore}">
+        <div class="note-header ${pdict.ctaShowLess !== '' ? 'show-less' : ''}">
+            <a class="cta collapsed" data-toggle="collapse" href="#footNote" role="button" aria-expanded="false"
+                aria-controls="footNote">
+                <span>${pdict.ctaShowMore}</span>
+                <isif condition="${pdict.ctaShowLess}">
+                    <span class="label-show-less">${pdict.ctaShowLess}</span>
+                <iselse/>
+                    <span class="label-show-less">${pdict.ctaShowMore}</span>
+                </isif>
+            </a>
+        </div>
+    </isif>
+
+    <isif condition="${pdict.noteDescription}">
+        <div id="footNote" class="collapse">
+            <div class="note-body">
+                <isprint value="${pdict.noteDescription}" encoding="off" />
+            </div>
+        </div>
+    </isif>
+
+</div>

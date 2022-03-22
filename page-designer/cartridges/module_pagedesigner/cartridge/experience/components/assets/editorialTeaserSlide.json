@@ -1,0 +1,157 @@
+{
+    "name": "Editorial Teaser Slide",
+    "description": "Image, text overlay that links user to a category using the markup editor",
+    "group": "assets",
+    "attribute_definition_groups": [
+        {
+            "id": "background",
+            "name": "Images",
+            "description": "The visual display of the banner image in the background.",
+            "attribute_definitions": [
+                {
+                    "id": "addClass",
+                    "name": "Add Custom Class",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "image",
+                    "name": "Desktop Image",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "alt_desktop",
+                    "name": "Alt Text",
+                    "description": "The image alt text shown by the component.",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "mobileImage",
+                    "name": "Mobile Image",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "alt_mobile",
+                    "name": "Alt Text",
+                    "description": "The image alt text shown by the component.",
+                    "type": "string",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "focuspoint",
+            "name": "Image focus points for desktop",
+            "description": "Values of image focuspoints",
+            "attribute_definitions": [{
+                    "id": "focusX",
+                    "name": "Focus points x",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "focusY",
+                    "name": "Focus points y",
+                    "type": "string",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "videoDetails",
+            "name": "Video Details",
+            "description": "Please provide the following video data.",
+            "attribute_definitions": [
+                {
+                    "id": "video_url",
+                    "name": "Video URL",
+                    "type": "string",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "text_link",
+            "name": "CTAs Text and Links",
+            "description": "The explore more link on the banner image",
+            "attribute_definitions": [{
+                "id": "cta_text_1",
+                "name": "Explore More text",
+                "type": "string",
+                "required": false
+            },{
+                "id": "cta_link_1",
+                "name": "URL For CTA",
+                "type": "url",
+                "required": false
+            },{
+                "id": "cta_text_2",
+                "name": "Explore More text",
+                "type": "string",
+                "required": false
+            },{
+                "id": "cta_link_2",
+                "name": "URL For CTA",
+                "type": "url",
+                "required": false
+            },{
+                "id": "cta_text_3",
+                "name": "Explore More text",
+                "type": "string",
+                "required": false
+            },{
+                "id": "cta_link_3",
+                "name": "URL For CTA",
+                "type": "url",
+                "required": false
+            }]
+        },
+        {
+            "id": "captionConfig",
+            "name": "Teaser Caption config",
+            "description": "The overlay text on top of the banner image.",
+            "attribute_definitions": [{
+                    "id": "teaserCaption",
+                    "name": "Teaser Caption",
+                    "type": "markup",
+                    "required": false
+                },
+                {
+                    "id": "captionResize",
+                    "name": "Caption Resize in mobile",
+                    "description": "Check this if you want to resize text in mobile",
+                    "type": "boolean",
+                    "required": false
+                },
+                {
+                    "id": "captionTextColor",
+                    "name": "Caption Text Color",
+                    "type": "enum",
+                    "values": ["Black", "White"],
+                    "default_value": "Black",
+                    "required": false
+                },
+                {
+                    "id": "captionTextAlign",
+                    "name": "Caption Text Align",
+                    "type": "enum",
+                    "values": ["Left", "Center", "Right"],
+                    "default_value": "Center",
+                    "required": false
+                },
+                {
+                    "id": "captionPosition",
+                    "name": "Caption Position (Horizontal/Vertical)",
+                    "type": "enum",
+                    "values": ["TL", "ML", "BL", "TC", "MC", "BC", "TR", "MR", "BR"],
+                    "default_value": "MC",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

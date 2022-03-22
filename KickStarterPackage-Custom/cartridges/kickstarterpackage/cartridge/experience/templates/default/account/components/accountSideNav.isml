@@ -1,0 +1,27 @@
+<ul class="nav nav-tabs my-account-tab-links">
+  <li class="nav-item">
+    <a id="overview" class="nav-link" href="${URLUtils.url('Account-Show')}">${Resource.msg('link.profile.sidenav.overview', 'account', null)}</a>
+  </li>
+  <li class="nav-item">
+    <a id="data" class="nav-link" href="${URLUtils.url('Account-Data')}">${Resource.msg('link.profile.sidenav.yourdata', 'account', null)}</a>
+  </li>
+  <li class="nav-item">
+    <a id="address" class="nav-link" href="${URLUtils.url('Address-List')}">${Resource.msg('link.profile.sidenav.addresses', 'account', null)}</a>
+  </li>
+  <li class="nav-item">
+    <a id="order" class="nav-link" href="${URLUtils.url('Order-History')}">${Resource.msg('link.profile.sidenav.orders', 'account', null)}</a>
+  </li>
+  <li class="nav-item">
+    <a id="newsletter" class="nav-link" href="${URLUtils.url('Page-Show', 'cid', 'newsletter')}">${Resource.msg('link.profile.sidenav.newsletter', 'account', null)}</a>
+  </li>
+  <iscomment>
+  <li class="nav-item">
+    <a id="delete-account" class="nav-link" href="${URLUtils.url('Order-History')}">${Resource.msg('link.profile.sidenav.deleteaccount', 'account', null)}</a>
+  </li> </iscomment>
+  <li class="nav-item">
+    <a id="help-contact" class="nav-link" href="${URLUtils.url('Page-Show', 'cid', 'hilfe-kontakt')}">${Resource.msg('link.profile.sidenav.helpandcontact', 'account', null)}</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="${URLUtils.url('Login-Logout')}">${Resource.msg('link.profile.sidenav.logout', 'account', null)}</a>
+  </li>
+</ul>

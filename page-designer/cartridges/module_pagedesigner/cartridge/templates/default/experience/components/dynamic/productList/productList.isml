@@ -1,0 +1,88 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets');
+    assets.addJs('/js/search.js');
+    assets.addCss('/css/search.css');
+</isscript>
+
+<isinclude template="/components/modules" sf-toolkit="off" />
+<div class="product-list-module" data-moduleProductLimit="${pdict.moduleProductLimit}">
+    <div class="breadcrumbs-wrap plp-breadcrumbs">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-10 col-md-6 col-lg-7">
+                    <span class="module-product-count d-md-none"> ${pdict.productSearch.count} Artikel</span>
+                </div>
+                <div class="col-2 col-md-6 col-lg-5">
+                    <isif condition="${pdict.productSearch.productIds.length > 0}">
+                        <div class="row grid-header justify-content-end">
+                            <div class="align-items-center d-none d-md-flex">
+                                <div class="result-count category-search-breadcrumbs" data-breadcrumbPath="${breadcrumbPath}">
+                                    <isinclude template="search/resultsCount" />
+                                </div>
+                                <isinclude template="search/sortOrderMenu" />
+                            </div>
+
+                            <div class="d-md-none">
+                                <button type="button" class="filter-results">
+                                    <span class="icon-filter"></span>
+                                </button>
+                            </div>
+                        </div>
+                    <iselseif condition="${pdict.productSearch.productIds.length == 0 && pdict.fromAjaxSearch == true}">
+                        <div class="row grid-header justify-content-end">
+                            <div class="d-md-none">
+                                <button type="button" class="filter-results">
+                                    <span class="icon-filter"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </isif>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container search-results">
+        <div class="tab-content">
+            <div class="tab-pane active" id="product-search-results" role="tabpanel" aria-labelledby="product-tab">
+                <isif condition="${pdict.productSearch.productIds.length > 0}">
+                    <div class="row">
+                        <!--- Refinement bar --->
+                        <div class="refinement-bar col-md-3">
+                            <isinclude url="${pdict.refineurl}"/>
+                        </div>
+
+                        <div class="col-sm-12 col-md-9">
+                            <!--- Selected filters bar --->
+                            <div class="row filter-bar">
+                                <div class="${pdict.fontForBrand ? 'fontclass-' + pdict.fontForBrand : ''} ${(pdict.brandForBSLP && pdict.productSearch.selectedFilters.length > 1) || (!pdict.brandForBSLP && pdict.productSearch.selectedFilters.length > 0) ? '' : 'd-none'}">
+                                    <isinclude template="search/filterBar" />
+                                </div>
+                            </div>
+                            <!--- Product Grid --->
+                            <div class="product-grid" itemtype="http://schema.org/SomeProducts" itemid="#product">
+                                <div class="row ${pdict.fontForBrand ? 'fontclass-' + pdict.fontForBrand : ''}">
+                                    <isinclude template="search/productGrid" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <iselseif condition="${pdict.productSearch.productIds.length == 0}" />
+                    <div class="row product-grid">
+                        <div class="container">
+                            <div class="no-search-result-page ${pdict.productSearch.productIds.length == 0 ? 'no-products-in-result' : ''} ${pdict.fontForBrand ? 'fontclass-' + pdict.fontForBrand : ''}">
+                                <isinclude template="search/resultsCount" />
+                            </div>
+                        </div>
+                    </div>
+                </isif>
+            </div>
+            <!--- Content Grid --->
+            <div class="tab-pane container" id="content-search-results-pane" role="tabpanel" aria-labelledby="articles-tab">
+                <div id="content-search-results" class="content-grid-header"></div>
+            </div>
+
+            <input type="hidden" name="pageTitle" value="<isprint value=${pdict.pageTitle} encoding="off" />"/>
+        </div>
+    </div>
+</div>

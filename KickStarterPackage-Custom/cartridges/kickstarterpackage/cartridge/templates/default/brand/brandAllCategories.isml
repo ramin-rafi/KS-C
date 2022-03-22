@@ -1,0 +1,69 @@
+<isset name="preferencesUrl" value="${pdict.preferencesUrl ? '?' + pdict.preferencesUrl : ''}" scope="page"/>
+<isset name="hasOnlineNavigationCategories" value="${require('*/cartridge/scripts/helpers/searchHelpers').hasOnlineNavigationCategories}" scope="page"/>
+<isset name="displayCats" value="${false}" scope="page"/>
+<isset name="categories" value="${pdict.refinementValues}" scope="page"/>
+<isset name="showCats" value="true" scope="page"/>
+<isset name="allArtLink" value="${URLUtils.url('Search-Show','cgid',pdict.cgid,'prefn1','brand','prefv1',pdict.brand,'plp','true')}" scope="page" />
+
+<iscomment> <isif condition="${categories[0].id === 'root'}">
+    <isset name="categories" value="${categories[0].subCategories}" scope="page"/>
+</isif> </iscomment>
+
+<iscomment> Mobile View </iscomment>
+<div class="brand-categories-nav for-desktop">
+    <isif condition="${pdict.hideBrandName === true || pdict.hideBrandName === 'true'}">
+    <iselse/>
+        <div class="brand-title">${pdict.brand}</div>
+    </isif>
+    <isif condition="${pdict.showAllArticle === true || pdict.showAllArticle === 'true'}">
+        <div class="brand-list-item ${showCats}"><a class="" href="${allArtLink}" data-name="${Resource.msg('label.alle.artikel','search',null)}">${Resource.msg('label.alle.artikel','search',null)}</a></div>    
+    </isif>
+    <isloop items="${categories}" var="category">
+        <iscomment> <isif condition="${category.selected === true}">
+            <isloop items="${category.subCategories}" var="topCategory">
+                <div class="brand-list-item"><a class="" href="${URLUtils.url('Search-Show', 'cgid', topCategory.id) + preferencesUrl}" data-name="${topCategory.displayValue}">${topCategory.displayValue.replace(',', ' & ')}</a></div>
+            </isloop>
+        </isif> </iscomment>
+        <isif condition="${category.teaserCategory != true && category.brandshopHideCategory !== true && category.value !== pdict.cgid && showCats === 'true' && category.value !== 'master_beauty'}">
+            <div class="brand-list-item ${showCats}"><a class="" href="${URLUtils.url('Search-Show', 'cgid', category.id, 'prefn1', 'brand', 'prefv1', pdict.brand)}" data-name="${category.displayValue}">${category.displayValue.replace(',', ' & ')}</a></div>
+        <iselseif condition="${category.value === pdict.cgid}">
+            <isset name="showCats" value="true" scope="page"/>
+        </isif>
+    </isloop>
+</div>
+<isset name="showCats" value="true" scope="page"/>
+
+<iscomment> Desktop View </iscomment>
+<div class="filter-header brand-category-filter">
+    <div class="header-bar d-md-none clearfix">
+        <div class="pull-left d-md-none">
+            <iscomment> <strong class="filters-heading text-uppercase">${Resource.msg('button.filters', 'search', null)}</strong> </iscomment>
+            <isif condition="${pdict.hideBrandName === true || pdict.hideBrandName === 'true'}">
+            <iselse/>
+                <div class="brand-title"> ${pdict.brand}</div>
+            </isif>
+        </div>
+        <button class="pull-right close">
+            <span class="icon-cross"></span>
+        </button>
+    </div>
+</div>
+<nav class="brand-categories-nav for-mobile">
+    <ul class="vertical-list">
+    <isif condition="${pdict.showAllArticle === true || pdict.showAllArticle === 'true'}">
+        <div class="brand-list-item ${showCats}"><a class="" href="${allArtLink}" data-name="${Resource.msg('label.alle.artikel','search',null)}">${Resource.msg('label.alle.artikel','search',null)}</a></div>
+    </isif>
+        <isloop items="${categories}" var="category">
+            <iscomment> <isif condition="${category.selected === true}">
+                <isloop items="${category.subCategories}" var="topCategory">
+                    <li class="nav-list-item"><a href="${URLUtils.url('Search-Show', 'cgid', topCategory.id) + preferencesUrl}" data-name="${topCategory.displayValue}">${topCategory.displayValue.replace(',', ' & ')}</a></li>
+                </isloop>
+            </isif> </iscomment>
+            <isif condition="${category.teaserCategory != true && category.brandshopHideCategory !== true && category.value !== pdict.cgid && showCats === 'true' && category.value !== 'master_beauty'}">
+                <div class="brand-list-item"><a class="" href="${URLUtils.url('Search-Show', 'cgid', category.id, 'prefn1', 'brand', 'prefv1', pdict.brand)}" data-name="${category.displayValue}">${category.displayValue.replace(',', ' & ')}</a></div>
+            <iselseif condition="${category.value === pdict.cgid}">
+                <isset name="showCats" value="true" scope="page"/>
+            </isif>
+        </isloop>
+    </ul>
+</nav>

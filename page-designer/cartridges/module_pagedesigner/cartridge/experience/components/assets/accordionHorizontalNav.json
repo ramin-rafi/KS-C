@@ -1,0 +1,36 @@
+{
+    "name": "Accordion Horizontal Nav",
+    "description": "--description here--",
+    "group": "assets",
+    "attribute_definition_groups": [
+        {
+            "id": "horizontalNavConfig",
+            "name": "Horizontal Nav Configuration",
+            "description": "--description here--",
+            "attribute_definitions": [
+                {
+					"id": "addClass",
+					"name": "Add Custom Class",
+					"type": "string",
+					"required": false
+				},
+				{
+					"id": "containerType",
+					"name": "Container Type",
+					"type": "enum",
+					"values": ["container", "container-fluid"],
+					"default_value": "container",
+					"required": false
+				},
+                {
+					"id": "sectionPaddingY",
+					"name": "Section Padding Space (Vertical)",
+					"type": "enum",
+					"values": ["py-0", "py-1", "py-2", "py-3", "py-4", "py-5"],
+					"required": false
+				}
+            ]
+        }
+    ],
+    "region_definitions": []
+}

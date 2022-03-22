@@ -1,0 +1,59 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+</isscript>
+<div class="cat-teaser">
+    <div class="container">
+        <isif condition="${pdict.content_headline}">
+            <h3 class="heading ${pdict.headingPosition === 'Center' ?  'text-center' : ''} ${pdict.headingPosition === 'Right' ?  'text-right' : ''}">
+                <isprint value="${pdict.content_headline}" encoding="off" />
+            </h3>
+        </isif>
+
+        <div class="teaser-track row row-cols-3 ${pdict.layout === true ? 'vertical' : ''}">
+            <iscomment> Slide #1 </iscomment>
+            <div class="col slide">
+                <a class="dl-promo" data-slot="slot1" data-id="${pdict.category1name}" href="${pdict.category1url}" >
+                    <div class="img-holder">
+                        <img src="${pdict.image1.src.desktop}" alt="${pdict.image1.alt}" />
+                    </div>
+
+                    <isif condition="${pdict.category1name}">
+                        <strong class="slide-title">
+                            <isprint value="${pdict.category1name}" encoding="off" />
+                        </strong>
+                    </isif>
+                </a>
+            </div>
+
+            <iscomment> Slide #2 </iscomment>
+            <div class="col slide">
+                <a class="dl-promo" data-slot="slot2" data-id="${pdict.category2name}"  href="${pdict.category2url}" >
+                    <div class="img-holder">
+                        <img src="${pdict.image2.src.desktop}" alt="${pdict.image2.alt}" />
+                    </div>
+
+                    <isif condition="${pdict.category2name}">
+                        <strong class="slide-title">
+                            <isprint value="${pdict.category2name}" encoding="off" />
+                        </strong>
+                    </isif>
+                </a>
+            </div>
+
+            <iscomment> Slide #3 </iscomment>
+            <div class="col slide">
+                <a class="dl-promo" data-slot="slot3" data-id="${pdict.category3name}" href="${pdict.category3url}" >
+                    <div class="img-holder">
+                        <img src="${pdict.image3.src.desktop}" alt="${pdict.image3.alt}" />
+                    </div>
+
+                    <isif condition="${pdict.category3name}">
+                        <strong class="slide-title">
+                            <isprint value="${pdict.category3name}" encoding="off" />
+                        </strong>
+                    </isif>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<!--- TEMPLATENAME: pixel.isml --->
+<isset name="pixelID" value="${dw.system.Site.getCurrent().getCustomPreferenceValue('pixelID')}" scope="page" />
+<isset name="enablePixel" value="${dw.system.Site.getCurrent().getCustomPreferenceValue('enablePixel')}" scope="page" />
+<isset name="pixelConversionValue" value="${pdict.order ? parseInt(pdict.order.totals.grandTotal.replace(/\u20AC/g,'').replace(/\u00A3/g,'').replace('.',',').replace(/,([^,]*)$/,'\.$1')) : null}" scope="page" />
+<isset name="pixelCatalogID" value="${dw.system.Site.getCurrent().getCustomPreferenceValue('pixelCatalogID')}" scope="page" />
+<isif condition="${pdict.facebookTracking && enablePixel && pixelID && !empty(pixelID)}">
+    <isif condition="${pdict.actualAction == 'Order-Confirm'}">
+		<script>var contentObject = [];</script>
+		<isloop items="${pdict.order.shipping}" var="shippingModel">
+			<isloop items="${shippingModel.productLineItems.items}" var="lineItem">
+				<script>
+				contentObject.push({
+				      id: "${lineItem.id}",
+				      quantity: ${lineItem.quantity}
+				});
+				</script>
+			</isloop>
+		</isloop>
+		<script>	
+			var purchaseObject =  {
+			   value: ${pixelConversionValue ? pixelConversionValue : 0},
+			   currency: "${session.currency.currencyCode}",
+			   contents: contentObject,
+			   content_type: "product",
+			   product_catalog_id: "${pixelCatalogID ? pixelCatalogID : ''}"
+			 };
+		 	fbq('track', 'Purchase', purchaseObject);   
+		</script>
+	</isif>
+	<input type="hidden" id="enablePixel" value="${enablePixel}">
+	<input type="hidden" id="pixelCurrencyCode" value="${session.currency.currencyCode}">
+	<input type="hidden" id="pixelConversionValue" value="${pixelConversionValue}">
+	<input type="hidden" id="pixelCatalogID" value="${pixelCatalogID ? pixelCatalogID : ''}">
+<iselse>
+	<input type="hidden" id="enablePixel" value="${false}">
+</isif>

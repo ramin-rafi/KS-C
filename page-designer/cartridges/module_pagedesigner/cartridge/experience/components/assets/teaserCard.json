@@ -1,0 +1,129 @@
+{
+    "name": "Home: Teaser Card-SL",
+    "description": "--description here--",
+    "group": "assets",
+    "attribute_definition_groups": [
+        {
+            "id": "teaserCardConfig",
+            "name": "Teaser Basic Configuration",
+            "description": "--description here--",
+            "attribute_definitions": [
+                {
+                    "id": "addClass",
+                    "name": "Add Custom Class",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "teaserCardTextColor",
+                    "name": "Card Text Color",
+                    "type": "enum",
+                    "values": ["text-dark", "text-white"],
+                    "required": false
+                },
+                {
+                    "id": "teaserCardTextAlign",
+                    "name": "Card Text Align",
+                    "type": "enum",
+                    "values": ["text-center", "text-right"],
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "teaserCardContentConfig",
+            "name": "Teaser Card Content Configuration",
+            "attribute_definitions": [
+                {
+                    "id": "teaserCardOverlay",
+                    "name": "Teaser Card Overlay",
+                    "description": "Check this option to change card caption into card overlay with 20% opacity of back overlay.",
+                    "type": "boolean",
+                    "required": false
+                },
+                {
+                    "id": "teaserCardImage",
+                    "name": "Teaser Card Image",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "teaserCardImageAlt",
+                    "name": "Add Image Alt Text",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "teaserCardHeading",
+                    "name": "Teaser Card Heading",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "teaserCardDescription",
+                    "name": "Teaser Card Content",
+                    "description": "--description here--",
+                    "type": "markup",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "teaserCardCtaConfig",
+            "name": "Teaser Card CTA Configuration",
+            "attribute_definitions": [
+                {
+                    "id": "teaserCtaLabel",
+                    "name": "Teaser CTA Label",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "teaserCtaLink",
+                    "name": "URL For CTA",
+                    "type": "url",
+                    "required": false
+                },
+                {
+                    "id": "teaserCtaStyle",
+                    "name": "Teaser CTA Style",
+                    "type": "enum",
+                    "values": ["btn-underline", "btn-light", "btn-dark", "btn-primary", "btn-secondary", "btn-outline-dark", "btn-outline-primary", "btn-outline-secondary"],
+                    "required": false
+                },
+                {
+                    "id": "teaserImageAsCta",
+                    "name": "Make Teaser Image Clickable (CTA)",
+                    "type": "boolean",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "teaserCardMagazineIframe",
+            "name": "Teaser Card Magazine Iframe Configuration",
+            "attribute_definitions": [
+                {
+                    "id": "teaserCardMagazineTarget",
+                    "name": "Check this if you want to target magazine iframe",
+                    "type": "boolean",
+                    "required": false
+                },
+                {
+                    "id": "teaserCardMagazineTargetName",
+                    "name": "Teaser Card Magazine - Target Name",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "teaserCardMagazineIframeURL",
+                    "name": "URL for Teaser Card Magazine Iframe",
+                    "type": "url",
+                    "required": false
+                }
+            ]
+        }
+
+    ],
+    "region_definitions": []
+}

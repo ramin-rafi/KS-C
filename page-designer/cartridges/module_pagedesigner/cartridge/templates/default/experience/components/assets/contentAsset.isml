@@ -1,0 +1,9 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    // assets.addCss('/css/accordion.css');
+</isscript>
+
+<isinclude template="/components/modules" sf-toolkit="off" />
+<div class="${pdict.addClass ? pdict.addClass : ''}">
+    <iscontentasset aid="${pdict.contentAssetId}" />
+</div>

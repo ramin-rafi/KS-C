@@ -1,0 +1,22 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+</isscript>
+<isif condition="${pdict.breadcrumbs}">
+    <nav aria-label="breadcrumb">
+        <div class="${pdict.layoutType === 'Full Width' ? 'container-fluid' : 'container'}">
+            <ol class="breadcrumb">
+                <isloop items="${pdict.breadcrumbs}" var="breadcrumb" status="st">
+                    <isif condition="${breadcrumb.link}">
+                        <li class="breadcrumb-item">
+                            <a href="${breadcrumb.link}">${breadcrumb.name}</a>
+                        </li>
+                    <iselse/>
+                        <li class="breadcrumb-item">
+                            ${breadcrumb.name}
+                        </li>
+                    </isif>
+                </isloop>
+            </ol>
+        </div>
+    </nav>
+</isif>

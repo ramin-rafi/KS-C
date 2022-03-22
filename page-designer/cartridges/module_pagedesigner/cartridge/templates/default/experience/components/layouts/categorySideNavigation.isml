@@ -1,0 +1,35 @@
+
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/search.css');
+    assets.addCss('/css/categorySideNav.css');
+    assets.addJs('/js/search.js');
+</isscript>
+
+<div class="visual-top-banner">
+    <div class="container">
+        <div class="grid-header">
+            <div class="d-md-none">
+                <button type="button" class="filter-results">
+                    <span class="icon-filter"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="container search-results">
+        <div class="tab-content">
+            <div class="tab-pane active" id="product-search-results" role="tabpanel" aria-labelledby="product-tab">
+                <div class="row">
+                    <div class="refinement-bar category-nav-bar">
+                        <div class="category-side-nav">
+                            <isinclude url="${URLUtils.url('Brand-ShowAllCategories', 'cgid', pdict.category.ID, 'prefn1', 'brand', 'prefv1', pdict.brand, 'hideBrandName', pdict.hideBrandName, 'showAllArticle', pdict.showAllArticle)}"/>
+                        </div>
+                    </div>
+                    <div class="col-sm-9">
+                        <isprint value="${pdict.regions.trippleCategories.setClassName("category-teaser").render()}" encoding="off"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

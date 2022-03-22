@@ -1,0 +1,79 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/component.css');
+    assets.addCss('/css/doubleteaser.css');
+</isscript>
+<section id="${pdict.container_id ? pdict.container_id : ''}" class="${pdict.addContainer ? 'double-teaser' : 'double-teaser container'} ${pdict.customOpacity ? 'has-overlay' : ''}">
+    <div class="row">
+        <div class="col-md-6">
+                <div class="image-holder">
+                    <isif condition="${pdict.url1}">
+                        <a class = "dl-promo d-block" data-slot = "slot1" data-id='${pdict.text_headline1}' data-creative='CLP > Double Teaser'  href="${pdict.url1}">
+                    <iselse/>
+                        <div>
+                    </isif>
+                        <picture>
+                            <source media="(min-width:992px)" srcset="${pdict.image1.src.desktop}">
+                            <img class="img-fluid" src="${pdict.mblimage1.src.mobile}" alt="${pdict.image1.alt}" />
+                        </picture>
+                        <div class="caption ${pdict.font_option1} ${pdict.font_color1}">
+                            <isif condition="${pdict.text_headline1}">
+                                <span class="caption__title">
+                                    <isprint value="${pdict.text_headline1}" encoding="off" />
+                                </span>
+                            </isif>
+                            <isif condition="${pdict.text_subline1}">
+                                <p>
+                                    <isprint value="${pdict.text_subline1}" encoding="off" />
+                                </p>
+                            </isif>
+                            <isif condition="${pdict.text_link1}">
+                                <span class="btn-overlay">
+                                    <isprint value="${pdict.text_link1}" encoding="off" />
+                                </span>
+                            </isif>
+                        </div>
+                    <isif condition="${pdict.url1}">
+                        </a>
+                    <iselse/>
+                        </div>
+                    </isif>
+                </div>
+        </div>
+        <div class="col-md-6">
+                <div class="image-holder">
+                    <isif condition="${pdict.url2}">
+                        <a class = "dl-promo d-block" data-slot = "slot2" data-id='${pdict.text_headline2}' data-creative='CLP > Double Teaser' href="${pdict.url2}">
+                    <iselse/>
+                        <div>
+                    </isif>
+                        <picture>
+                            <source media="(min-width:992px)" srcset="${pdict.image2.src.desktop}">
+                            <img class="img-fluid" src="${pdict.mblimage2.src.mobile}" alt="${pdict.image2.alt}" />
+                        </picture>
+                        <div class="caption ${pdict.font_option2} ${pdict.font_color2}">
+                            <isif condition="${pdict.text_headline2}">
+                                <span class="caption__title">
+                                    <isprint value="${pdict.text_headline2}" encoding="off" />
+                                </span>
+                            </isif>
+                            <isif condition="${pdict.text_subline2}">
+                                <p>
+                                    <isprint value="${pdict.text_subline2}" encoding="off" />
+                                </p>
+                            </isif>
+                            <isif condition="${pdict.text_link2}">
+                                <span class="btn-overlay">
+                                    <isprint value="${pdict.text_link2}" encoding="off" />
+                                </span>
+                            </isif>
+                        </div>
+                    <isif condition="${pdict.url2}">
+                        </a>
+                    <iselse/>
+                        </div>
+                    </isif>
+                </div>
+        </div>
+    </div>
+</section>

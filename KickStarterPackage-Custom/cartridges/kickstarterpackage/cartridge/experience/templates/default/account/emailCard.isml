@@ -1,0 +1,18 @@
+<div class="card profile-card email-profile-card">
+    <div class="card-header clearfix">
+        <h2 class="card-header-title">${Resource.msg('heading.profile.email','account',null)}</h2>
+        <span data-form-name="Change Email" data-form="#email-form" class="icon-edit no-underline show-case-data" title="Bearbeiten" aria-label="${Resource.msg('label.profile.changepassword','account',null)}"></span>
+    </div>
+    <div class="card-body show-case-data">
+        <dl>
+            <dt class="dashboard-info d-none">${Resource.msg('label.profile.email','account',null)}</dt>
+            <dd>${pdict.account.profile.email}</dd>
+        </dl>
+    </div>
+    <div id="email-form" class="email-form edit-form d-none">
+        <div class="current-email-cont">
+            ${Resource.msg('account.current.email','account',null)} <span class="current-email">${pdict.account.profile.email}</span>
+        </div>
+        <isinclude template="account/changeEmailForm"/>
+    </div>
+</div>

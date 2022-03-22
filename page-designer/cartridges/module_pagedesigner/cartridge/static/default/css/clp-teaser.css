@@ -1,0 +1,13 @@
+
+.experience-main {
+    display: block;
+    width: 100%;
+}
+
+
+@media (min-width: 992px) {
+    .mainteaser .caption h1 {
+        font-size: 4.25rem;
+        line-height: 4.5rem;
+    }
+}

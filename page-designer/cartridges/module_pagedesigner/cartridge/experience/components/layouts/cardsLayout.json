@@ -1,0 +1,20 @@
+{
+    "name": "Cards Layout",
+    "group": "assets",
+    "attribute_definition_groups": [{
+        "id": "cardLayout",
+        "name": "Row Grid Column Configuration",
+        "attribute_definitions": [
+            {
+                "id": "addClass",
+                "name": "Add Custom Class",
+                "type": "string",
+                "required": false
+            }
+        ]
+    }],
+    "region_definitions": [{
+        "id": "cardsRegion",
+        "name": "Add Card"
+    }]
+}

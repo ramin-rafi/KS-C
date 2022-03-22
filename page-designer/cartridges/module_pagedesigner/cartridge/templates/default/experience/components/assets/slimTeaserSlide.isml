@@ -1,0 +1,46 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/teaserSlide.css');
+</isscript>
+<section id="${pdict.container_id ? pdict.container_id : ''}" class="slide <isif condition="${pdict.htmlclass}"><isprint value="${pdict.htmlclass}" encoding="off" /></isif> ">
+    <a href="${pdict.categoryLink}">
+        <figure class="component-figure">
+            <picture class="image-holder">
+                <div class="image img-desktop d-none d-md-block">
+                    <img src="${pdict.image.src.desktop}"
+                        alt="${pdict.alt_desktop}" />
+                </div>
+                <div class="image img-mobile d-md-none">
+                    <img src="${pdict.mobileImage.src.mobile}"
+                        alt="${pdict.alt_mobile}" />
+                </div>
+            </picture>
+            <figcaption class="clp-teaser-text_container caption ${pdict.SlideColor}">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="slimteaser-left">
+                                <div class="clp-teaser-text clp-teaser-text_heading">
+                                    <h1 class="clp-teaser-wrap">
+                                        <isprint value="${pdict.text_headline}" encoding="off" />
+                                    </h1>
+                                </div>
+
+                                <isif condition="${pdict.text_subline}">
+                                    <div class="clp-teaser-text clp-teaser-text_subheading">
+                                        <p>
+                                            <isprint value="${pdict.text_subline}" encoding="off" />
+                                        </p>
+                                    </div>
+                                </isif>
+                            </div>
+                            <div class="slimteaser-right">
+                                <span class="btn-overlay"><isprint value="${pdict.text_link}" encoding="off" /></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </figcaption>
+        </figure>
+    </a>
+</section>

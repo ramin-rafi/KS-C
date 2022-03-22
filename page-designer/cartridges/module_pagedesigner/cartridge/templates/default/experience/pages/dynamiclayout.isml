@@ -1,0 +1,17 @@
+<iscontent type="text/html" charset="UTF-8" compact="true"/>
+<isdecorate template="${pdict.decorator}">
+	<isscript>
+	    var assets = require('*/cartridge/scripts/assets.js');
+	    assets.addCss('/css/layout.css');
+	</isscript>
+	<script defer type="text/javascript" src="https://f.vimeocdn.com/js/froogaloop2.min.js"></script>
+	<!--- the page markup --->
+	<div class="container-fluid px-2 page-designer-reference js-category-data" data-maincategory="${pdict.cookieCat ? pdict.cookieCat : ''}">
+	    <div id="${pdict.page.ID}" class="d-block row mx-n2 pd-cat">
+			<div class="container px-0 ${pdict.fontForBrand ? 'fontclass-' + pdict.fontForBrand : ''}">
+                <isprint value="${pdict.regions.top.setClassName("").render()}" encoding="off" />
+            </div>	
+				<isprint value="${pdict.regions.main.render()}" encoding="off"/>
+	    </div>
+	</div>
+</isdecorate>

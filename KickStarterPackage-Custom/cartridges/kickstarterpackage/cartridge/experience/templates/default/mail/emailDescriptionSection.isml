@@ -1,0 +1,30 @@
+Content-Type: multipart/related; boundary="------------000001030701020908040700"
+
+--------------000001030701020908040700
+Content-Type: multipart/alternative; boundary="------------000001030701020908040800"
+
+--------------000001030701020908040800
+Content-Type: text/html; charset=iso-8859-1
+Content-Transfer-Encoding: 8bit
+
+<html>
+    <head></head>
+    <body>
+        <p>The attachment contains the list of offline products and their missing attributes as per the description below.</p>
+        <br />
+        <p> Mandatory for upload validation and front displaying are the following product informations:</p>
+        <ul>
+            <li>Refinement color - For Variant Product</li>
+            <li>Pattern - For Variant Product</li>
+            <li>Material - For Master Product</li>
+            <li>Short description - For Master Product</li>
+            <li>Price - For Variant Product</li>
+            <li>Images - Both For Variant and Master Product</li>
+
+        </ul>
+    </body>
+</html>
+
+--------------000001030701020908040800--
+
+--------------000001030701020908040700--

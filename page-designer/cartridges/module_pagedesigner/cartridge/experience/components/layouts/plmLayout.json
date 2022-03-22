@@ -1,0 +1,58 @@
+{
+    "name": "PLM Layout-SL",
+    "description": "--description here--",
+    "group": "assets",
+    "attribute_definition_groups": [{
+        "id": "plmLayout",
+        "name": "PLM Component Configuration",
+        "description": "--description here--",
+        "attribute_definitions": [
+            {
+                "id": "addClass",
+                "name": "Add Custom Class",
+                "type": "string",
+                "required": false
+            },
+            {
+                "id": "plmLayoutConfig",
+                "name": "PLM Layout Configuration",
+                "description": "Please select the container layout as fixed width Or full width",
+                "type": "enum",
+                "values": ["Fixed", "Full"],
+                "default_value": "Full",
+                "required": true
+            },
+            {
+                "id": "plmLayoutPadY",
+                "name": "PLM Layout Space (Vertical/Y)",
+                "type": "enum",
+                "values": ["20px", "40px"],
+                "required": false
+            },
+            {
+                "id": "plmLayoutCol",
+                "name": "PLM Column Layout (Desktop)",
+                "type": "enum",
+                "values": ["Column-3/9", "Column-4/8"],
+                "required": true
+            },
+            {
+                "id": "plmLayoutHeading",
+                "name": "PLM Layout Heading",
+                "type": "string",
+                "required": false
+            },
+            {
+                "id": "plmHeadingAlignment",
+                "name": "Heading Text Align",
+                "type": "enum",
+                "values": ["Center", "Right"],
+                "required": false
+            }
+        ]
+    }],
+    "region_definitions": [{
+        "id": "plmLayoutRegion",
+        "name": "Add PLM Module"
+    }]
+}

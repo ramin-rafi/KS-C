@@ -1,0 +1,77 @@
+{
+	"name": "Breadcrumb",
+	"description": "breadcrumb for a static page",
+	"group": "assets",
+	"attribute_definition_groups": [
+		{
+			"id": "breadcrumbLayout",
+			"name": "Breadcrumb Configuration",
+			"description": "Select the container layout for this component. Fixed width is 1140px and Full width is 100%",
+			"attribute_definitions": [
+				{
+					"id": "layoutType",
+					"name": "Layout Type",
+					"type": "enum",
+					"values": ["Fixed Width", "Full Width"],
+					"required": true
+				}
+			]
+		},
+		{
+			"id": "breadcrumbLinks",
+			"name": "Breadcrumb Links Configuration",
+			"description": "Add Breadcrumbs and link for Breadcrumbs tray",
+			"attribute_definitions": [
+				{
+					"id": "breadcrumb1",
+					"name": "Breadcrumb 1",
+					"type": "string",
+					"required": false
+				},
+				{
+					"id": "breadcrumb1_link",
+					"name": "Breadcrumb 1 Link",
+					"type": "url",
+					"required": false
+				},
+				{
+					"id": "breadcrumb2",
+					"name": "Breadcrumb 2",
+					"type": "string",
+					"required": false
+				},
+				{
+					"id": "breadcrumb2_link",
+					"name": "Breadcrumb 2 Link",
+					"type": "url",
+					"required": false
+				},
+				{
+					"id": "breadcrumb3",
+					"name": "Breadcrumb 3",
+					"type": "string",
+					"required": false
+				},
+				{
+					"id": "breadcrumb3_link",
+					"name": "Breadcrumb 3 Link",
+					"type": "url",
+					"required": false
+				},
+				{
+					"id": "breadcrumb4",
+					"name": "Breadcrumb 4",
+					"type": "string",
+					"required": false
+				},
+				{
+					"id": "breadcrumb4_link",
+					"name": "Breadcrumb 4 Link",
+					"type": "url",
+					"required": false
+				}
+			]
+		}
+	],
+	"region_definitions": []
+}

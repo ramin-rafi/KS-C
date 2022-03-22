@@ -1,0 +1,44 @@
+{
+    "name": "CTA Redirect",
+    "description": "Add CTA for redirection to an external URL/Link",
+    "group": "assets",
+    "attribute_definition_groups": [{
+        "id": "ctaImageConfig",
+        "name": "CTA Image Configuration",
+        "description": "--description here--",
+        "attribute_definitions": [
+            {
+                "id": "ctaImage",
+                "name": "Select an image",
+                "type": "image",
+                "required": true
+            },
+            {
+                "id": "imageAlt",
+                "name": "Add alt text of an image",
+                "type": "string",
+                "required": false
+            }
+        ]
+        },
+        {
+        "id": "ctaOptions",
+        "name": "CTA Link/URL Configuration",
+        "description": "Add link/url to an image for redirection",
+        "attribute_definitions": [
+            {
+                "id": "ctaLink",
+                "name": "Add link/url",
+                "type": "string",
+                "required": true
+            },
+            {
+                "id": "ctaOverlay",
+                "name": "Add Overlay Text",
+                "type": "string",
+                "required": false
+            }
+        ]
+    }],
+    "region_definitions": []
+}

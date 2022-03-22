@@ -1,0 +1,30 @@
+.live-module-head {
+    margin-bottom: 78px;
+    font-family: futura-pt,sans-serif;
+}
+.live-module-head .content-holder h2 {
+    font-size: 68px;
+    font-weight: 500;
+    line-height: 79px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #000;
+    margin-bottom: 24px;
+    padding-top: 20px;
+}
+
+.live-module-head .content-holder .slogan-text {
+    font-size: 16px;
+    line-height: 19px;
+    font-weight: 400;
+    margin-bottom: 24px;
+}
+
+.live-module-head .content-holder .content-description {
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 400;
+    margin-bottom: 24px;
+}

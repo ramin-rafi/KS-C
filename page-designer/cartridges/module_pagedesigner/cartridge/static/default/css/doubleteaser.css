@@ -1,0 +1,101 @@
+.double-teaser {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.double-teaser .image-holder {
+  position: relative;
+  /* margin: 24px 0 24px; */
+}
+.double-teaser .caption .caption__title {
+  font-size: 1.625rem;
+  display: block;
+  margin-bottom: 10px;
+}
+.double-teaser .caption {
+  background-color: #f5f5f5;
+  padding: 30px 20px;
+  font-size: 0.875rem;
+  font-family: futura-pt,sans-serif;
+}
+.double-teaser .caption p {
+  margin-bottom: 25px;
+}
+.double-teaser .image-holder img {
+  width: 100%;
+}
+.double-teaser .caption.option3 .caption__title {
+  margin-bottom: 5px;
+}
+.double-teaser .caption.option3 p {
+  margin-bottom: 26px;
+}
+
+
+@media only screen and (min-width: 992px) {
+  .double-teaser .image-holder {
+    /* margin: 24px 0; */
+  }
+  .double-teaser .caption {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 30px;
+    background-color: transparent;
+  }
+}
+@media only screen and (min-width: 992px) {
+  .double-teaser .caption.white {
+    color: #fff;
+  }
+
+  .double-teaser .caption.white .btn-overlay {
+    color: #fff !important;
+    border-bottom-color: #fff;
+  }
+
+  .double-teaser .caption.black {
+    color: #000;
+  }
+
+  .double-teaser .caption.black .btn-overlay {
+    color: #000 !important;
+    border-bottom-color: #000;
+  }
+  .double-teaser .caption.black .btn-overlay:hover {
+    color: #fff !important;
+  }
+  .double-teaser .caption.option3 p {
+    margin-bottom: 26px;
+    max-width: 150px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .double-teaser .caption .caption__title {
+    margin-bottom: 20px;
+  }
+  .double-teaser .caption.option1 .caption__title {
+    font-size: 1.625rem;
+  }
+  .double-teaser .caption.option2 .caption__title {
+    font-size: 62px;
+  }
+  .double-teaser .image-holder img {
+    width: auto;
+  }
+  .double-teaser .caption.option1 p,
+  .double-teaser .caption.option1 {
+    font-size: 36px;
+  }
+  .double-teaser .caption.option2 {
+    font-size: 1.425rem;
+  }
+  .double-teaser .caption p {
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+  .double-teaser .caption.option3 p {
+    margin-bottom: 87px;
+  }
+}

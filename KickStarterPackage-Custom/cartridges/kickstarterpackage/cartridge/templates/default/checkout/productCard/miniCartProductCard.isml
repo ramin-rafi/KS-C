@@ -1,0 +1,140 @@
+<div class="cart-item ${lineItem.productStorefrontPrefs && lineItem.productStorefrontPrefs.blackPriceCategories && lineItem.productStorefrontPrefs.blackPriceCategories.indexOf(lineItem.primaryRootCategory) > -1 ? 'black-price' : ''}">
+    <div class="gtm item-cart-list product-line-item uuid-${lineItem.UUID}" data-product-line-item="${lineItem.UUID}">
+        <span class="product-details-gtm"
+            data-id="${lineItem.id}"
+            data-name="${lineItem.productName}"
+            data-price="${(lineItem.price && lineItem.price.sales) ? lineItem.price.sales.value : (lineItem.price && lineItem.price.list) ? lineItem.price.list.value : ''}"
+            data-brand="${lineItem.brand}"
+            data-category="${lineItem.primaryCategory}"
+            data-dimension5="${lineItem.isNew === 'true' || lineItem.isNew === true ? Resource.msg('label.isNew', 'product', null) : (lineItem.percentageOff && lineItem.percentageOff > 0 ? lineItem.percentageOff + '%' : null)}"
+            data-dimension6="${lineItem.percentageOff && lineItem.percentageOff > 0 ? 'true' : 'false'}"
+            data-dimension10="Own"
+            data-dimension18="${lineItem.EAN}"
+            data-metric1="${(lineItem.price && lineItem.price.list) ? lineItem.price.list.value : (lineItem.price && lineItem.price.sales) ? lineItem.price.sales.value : ''}"
+            data-metric3="null"
+        ></span>
+        <isif condition="${lineItem.productType === 'bundle'}">
+            <div class="bundle-includes">${Resource.msg('msg.bundle.includes','cart',null)}</div>
+            <!--- individual bundled line items --->
+            <isinclude template="cart/productCard/cartProductCardBundledItems" />
+        <iselse/>
+            <div class="product-line-item-details d-flex flex-row">
+                <div class="item-image">
+                    <a class="no-underscore product-link" href="${URLUtils.url('Product-Show', 'pid', lineItem.id)}">
+                        <img class="product-image"
+                        src="${lineItem.images.small[0].url}"
+                        alt="${lineItem.images.small[0].alt}"
+                        title="${lineItem.images.small[0].title}">
+                    </a>
+                </div>
+                <div class="item-attributes">
+                    <div class="product-details">
+                        <div class="attributes-holder">
+                            <a class="no-underscore product-link" href="${URLUtils.url('Product-Show', 'pid', lineItem.orderableVariantID ? lineItem.orderableVariantID : lineItem.id)}">
+                                <div class="line-item-header">
+                                    <isinclude template="checkout/productCard/productCardProductName" />
+                                </div>
+                                
+                                <isloop items="${lineItem.variationAttributes}" var="attribute">
+                                    <isif condition="${attribute.id == 'size'}">
+                                        <p class="line-item-attributes">
+                                        <strong>${attribute.displayName}: </strong>
+                                        ${attribute.displayValue}</p>
+                                    </isif>
+                                </isloop>
+
+                                <isloop items="${lineItem.variationAttributes}" var="attribute">
+                                    <isif condition="${attribute.id == 'color'}">
+                                        <p class="color-variant line-item-attributes colorAttribute" data-color-variant-name="${attribute.displayValue}">
+                                        <strong>${attribute.displayName}: </strong>
+                                        ${lineItem.primaryRootCategory === 'Damen' || lineItem.primaryRootCategory === 'Herren' || lineItem.primaryRootCategory === 'Kids' ? lineItem.refinementColor : attribute.displayValue}</p>
+                                    </isif>
+                                </isloop>
+                            
+
+                                <div class="item-options">
+                                    <isif condition="${!isOutOfStockSection}"/>
+                                        <isloop items="${lineItem.options}" var="option">
+                                            <div class="line-item-option">${option.displayName}</div>
+                                        </isloop>
+                                    </isif>
+                                </div>
+                                <!--- quantity --->
+                                <div class="line-item-quantity">
+                                    <isinclude template="checkout/productCard/productCardQuantityDisplay" />
+                                </div>
+                            </a>
+                            <isif condition = "${pdict.outOfStockProducts.outOfStockHashMap.get(outOfStockSection).products.length > 0}">
+                                <isset name="outOfStockSectionMessage" value="${false}" scope="page" />
+                                <isif condition="${outOfStockSection == 'size'}">
+                                    <isset name="outOfStockSectionMessage" value="${Resource.msg('info.cart.outofstock.color', 'cart', null)}" scope="page" />
+                                <iselseif condition="${outOfStockSection == 'color'}">
+                                    <isset name="outOfStockSectionMessage" value="${Resource.msg('info.cart.outofstock.size', 'cart', null)}" scope="page" />
+                                <iselseif condition="${outOfStockSection == 'noVariation'}">
+                                    <isset name="outOfStockSectionMessage" value="${Resource.msg('info.cart.outofstock.novariation', 'cart', null)}" scope="page" />            
+                                <iselseif condition="${outOfStockSection == 'unAvaialable'}">
+                                    <isset name="outOfStockSectionMessage" value="${Resource.msg('info.cart.outofstock.unavailable', 'cart', null)}" scope="page" />            
+                                </isif>
+                                <div class="out-of-stock-msg">${outOfStockSectionMessage} 
+                                    <span class="cart-delete-confirmation-btn" data-pid="${!isOutOfStockSection ? lineItem.id : lineItem.pid}"
+                                            data-name="${lineItem.productName}"
+                                            data-action="${URLUtils.url('Cart-RemoveOutOfStockLineItem')}"
+                                            data-uuid="${lineItem.UUID}"
+                                            aria-label="${Resource.msgf('text.remove.line.item','cart', null, lineItem.productName)}">
+                                        OK
+                                    </span>
+                                </div>
+                            </isif>
+                        </div>
+                        <!--- line item total price --->
+                        <div class="line-item-total-price">
+                            <div class="item-total-${lineItem.UUID} price">
+                                <isif condition="${isOutOfStockSection}">
+                                    <isinclude template="cart/productCard/cartProductCardOutOfStockProductPrice" />
+                                <iselse/>
+                                    <isinclude template="checkout/productCard/productCardProductTotalPrice" />
+                                </isif>
+                            </div>
+                        </div>
+                    </div>
+                    <isif condition="${lineItem.lowStockThreshold}">
+                        <div class="available-only">	
+                            <isset name="product" value="${dw.catalog.ProductMgr.getProduct(lineItem.id)}" scope="page"/>
+                            <isset name="ATS" value="${product.getAvailabilityModel().getInventoryRecord().getATS() ? product.getAvailabilityModel().getInventoryRecord().getATS().value : null;}" scope="page"/>
+                            <span>${Resource.msg('notification.low.stock.pre', 'cart', null)} ${ATS.toFixed()}${Resource.msg('notification.low.stock.post', 'cart', null)}</span>
+                        </div>
+                    </isif>
+                    <ul class="minicart-links-list list-unstyled d-flex">
+                        <li class="d-none">
+                            <a href="javascript:void(0)">Move to Wishlist</a>
+                        </li>
+                        <li> 
+                            <isif condition="${!isOutOfStockSection}"/>
+                                <isif condition="${!lineItem.isBonusProductLineItem}"/>
+                                    <div class="remove-line-item">
+                                        <button type="button" class="remove-btn cart-delete-confirmation-btn"
+                                                data-pid="${lineItem.id}"
+                                                data-name="${lineItem.productName}"
+                                                data-action="${pdict.actionUrls ? pdict.actionUrls.removeProductLineItemUrl : ''}"
+                                                data-uuid="${lineItem.UUID}"
+                                                aria-label="${Resource.msgf('text.remove.line.item','cart', null, lineItem.productName)}">
+                                            <span aria-hidden="true">${Resource.msg('title.remove.cart','cart',null)}</span>
+                                        </button>
+                                    </div>
+                                </isif>
+                            </isif>
+                                
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </isif>
+        <isif condition="${lineItem.productType === 'bundle' && ((pdict.order && !pdict.order.orderStatus) || miniCart)}">
+            <isinclude template="cart/productCard/cartProductCardAvailability" />
+        </isif>
+    </div>
+    <div class="product-notification">
+        ${Resource.msg('notification.product.remove','cart',null)}
+        <a href="${URLUtils.url('Cart-AddProduct')}" class="undo-product" data-pid="${lineItem.id}">${Resource.msg('notification.product.undo','cart',null)}</a>
+    </div>
+</div>

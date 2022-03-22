@@ -1,0 +1,9 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    // assets.addCss('/css/rowGrid.css');
+</isscript>
+
+
+
+<isset name="classList" value="${'card-slider'}" scope="page" />
+<isprint value="${pdict.regions.slickSliderRegion.setClassName(classList).render()}" encoding="off" />

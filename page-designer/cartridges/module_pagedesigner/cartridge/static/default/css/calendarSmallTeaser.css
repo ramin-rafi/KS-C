@@ -1,0 +1,456 @@
+.experience-main {
+    display: block;
+    width: 100%;
+}
+.content-holder-block .text-block-item {
+    color: #fff;
+    background: #000;
+    padding: 32px;
+    margin: 24px 0;
+    display: block;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 134px;
+}
+
+.content-holder-block .text-block-item .content-section {
+    flex-grow: 1;
+    margin-right: 24px;
+}
+
+.content-holder-block .text-block-item .content-section h2 {
+    font-weight: 700;
+    margin: 0 0 24px;
+    font-size: 20px;
+    line-height: 23px;
+    text-transform: uppercase;
+}
+
+.content-holder-block .text-block-item .content-section p {
+    font-size: 26px;
+    line-height: 31px;
+    font-weight: 300;
+}
+
+.content-holder-block .text-block-item .content-section p:last-child {
+    margin: 0;
+}
+
+.content-holder-block .text-block-item .btn-item {
+    color: #fff;
+    position: relative;
+    border: 1px solid #fff;
+    text-decoration: none;
+    transition-property: color;
+    transition-duration: 0.3s;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    min-height: 40px;
+    min-width: 281px;
+    padding: 4px 16px 4px 17px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.content-holder-block .text-block-item .btn-item::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid #fff;
+    position: absolute;
+    right: 17px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 0;
+}
+
+.content-holder-block .text-block-item .btn-item.event-added::after {
+    display: none;
+}
+
+.content-holder-block .text-block-item .btn-item.event-added::before {
+    content: "";
+    display: inline-block;
+    height: 20px;
+    width: 10px;
+    border-bottom: 3px solid #fff;
+    border-right: 3px solid #fff;
+    top: 6px;
+    right: 14px;
+    position: absolute;
+    transform: rotate(45deg);
+}
+
+
+
+.content-holder-block .text-block-item .item-dropdown {
+    position: relative;
+}
+
+.content-holder-block .text-block-item .item-dropdown .v-list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    top: calc(100% + 1px);
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    z-index: 1000;
+}
+
+.content-holder-block .text-block-item .item-dropdown .v-list li a {
+    padding: 10px 22px;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    min-height: 40px;
+}
+
+.content-holder-block .text-block-item .item-dropdown .v-list li a span {
+    display: block;
+}
+
+.content-holder-block .text-block-item .item-dropdown .v-list li a:hover,
+.content-holder-block .text-block-item .item-dropdown .v-list li a:focus,
+.content-holder-block .text-block-item .item-dropdown .v-list li a:active {
+    text-decoration: none !important;
+}
+
+.item-dropdown .v-list li a img {
+    min-width: 20px;
+    max-width: 20px;
+    margin-right: 12px;
+}
+
+
+.content-holder-block .text-block-item .calendar-options-open .btn-item {
+    background-color: #fff;
+    color: #000;
+    border-bottom-color:#000;
+}
+
+.content-holder-block .text-block-item .calendar-options-open .btn-item::after {
+    border-top-color: #000;
+    transform: rotate(-180deg);
+    top: 16px;
+}
+
+.content-holder-block .text-block-item .calendar-options-open .btn-item.event-added {
+    background-color: #000;
+    border-color: #fff;
+    color: #fff;
+}
+
+@media(max-width:1199px) {
+    .content-holder-block .text-block-item {
+        height: 167px;
+    }
+}
+
+@media(max-width:767px) {
+    .content-holder-block .text-block-item {
+        height: 287px;
+    }
+}
+
+@media(max-width:768px){
+    .content-holder-block .text-block-item .btn-item {
+        min-height: 56px;
+    }
+    .content-holder-block .text-block-item .calendar-options-open .btn-item::after {
+        top: 24px;
+    }
+    .content-holder-block .text-block-item .btn-item.event-added::before {
+        top: 14px;
+        right: 18px;
+    }
+}
+@media(max-width:767px) {
+    .content-holder-block .text-block-item .content-section {
+        margin-right: 0;
+    }
+
+    .content-holder-block .text-block-item {
+        flex-wrap: wrap;
+    }
+
+    .content-holder-block .text-block-item .btn-item {
+        margin-top: 24px;
+    }
+}
+
+@media(max-width:370px) {
+    .content-holder-block .text-block-item .btn-section {
+        width: 100%;
+    }
+    .content-holder-block .text-block-item .btn-item {
+        min-width: 100%;
+    }
+}
+
+/* option one black */
+.content-holder-block.option-one-black .text-block-item {
+    color: #fff;
+    background-color: #000;
+    border: 1px solid #fff;
+}
+
+.content-holder-block.option-one-black .text-block-item .btn-item {
+    border-color:#fff;
+    color: #fff;
+}
+
+.content-holder-block.option-one-black .text-block-item .btn-item:hover {
+    background-color: #fff;
+    color: #000;
+    transition: all 0.5s ease;
+}
+
+.content-holder-block.option-one-black .text-block-item .btn-item:hover::after {
+    border-top-color: #000;
+}
+
+.content-holder-block.option-one-black .text-block-item .calendar-options-open .btn-item {
+    background-color: #fff;
+    color: #000;
+    border-bottom-color:#000;
+}
+
+.content-holder-block.option-two-black .text-block-item .btn-item::after {
+    border-top-color: #fff;
+}
+
+.content-holder-block.option-two-black .text-block-item .calendar-options-open  .btn-item::after {
+    border-top-color: #000;
+}
+
+.content-holder-block.option-one-black .text-block-item .calendar-options-open .btn-item.event-added {
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.content-holder-block.option-one-black .text-block-item .btn-item.event-added::before {
+    border-bottom-color: #fff;
+    border-right-color:#fff;
+}
+
+/* option two black */
+.content-holder-block.option-two-black .text-block-item {
+    color: #fff;
+    background-color: #000;
+    border: 1px solid #fff;
+}
+
+.content-holder-block.option-two-black .text-block-item .calendar-options-open .btn-item {
+    background-color: #fff;
+    color: #000;
+    border-bottom-color:#000;
+}
+
+.content-holder-block.option-two-black .text-block-item .btn-item:hover {
+    background-color: #fff;
+    color: #000;
+    transition: all 0.5s ease;
+}
+
+.content-holder-block.option-two-black .text-block-item .btn-item:hover::after {
+    border-top-color: #000;
+}
+
+.content-holder-block.option-two-black .text-block-item .btn-item {
+    border-color:#fff;
+    color: #fff;
+}
+
+.content-holder-block.option-two-black .text-block-item .btn-item::after {
+    border-top-color: #fff;
+}
+
+.content-holder-block.option-two-black .text-block-item .calendar-options-open  .btn-item::after {
+    border-top-color: #000;
+}
+
+.content-holder-block.option-two-black .text-block-item .calendar-options-open .btn-item.event-added {
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.content-holder-block.option-two-black .text-block-item .btn-item.event-added::before {
+    border-bottom-color: #fff;
+    border-right-color:#fff;
+}
+
+/* option three black */
+.content-holder-block.option-three-black .text-block-item {
+    color: #fff;
+    background-color: #000;
+    border: 1px solid #fff;
+}
+
+.content-holder-block.option-three-black .text-block-item .calendar-options-open .btn-item {
+    background-color: #fff;
+    color: #000;
+    border-bottom-color:#000;
+}
+
+.content-holder-block.option-three-black .text-block-item .btn-item:hover {
+    background-color: #fff;
+    color: #000;
+    transition: all 0.5s ease;
+}
+
+.content-holder-block.option-three-black .text-block-item .btn-item:hover::after {
+    border-top-color: #000;
+}
+
+.content-holder-block.option-three-black .text-block-item .btn-item {
+    border-color:#fff;
+    color: #fff;
+}
+
+.content-holder-block.option-three-black .text-block-item .btn-item::after {
+    border-top-color: #fff;
+}
+
+.content-holder-block.option-three-black .text-block-item .calendar-options-open  .btn-item::after {
+    border-top-color: #000;
+}
+
+.content-holder-block.option-three-black .text-block-item .calendar-options-open .btn-item.event-added {
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+.content-holder-block.option-three-black .text-block-item .btn-item.event-added::before {
+    border-bottom-color: #fff;
+    border-right-color:#fff;
+}
+
+/* option one white  */
+.content-holder-block.option-one-white .text-block-item {
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #000;
+}
+
+.content-holder-block.option-one-white .text-block-item .btn-item {
+    border-color:#000;
+    color: #000;
+}
+
+.content-holder-block.option-one-white .text-block-item .btn-item:hover {
+    background-color: #000;
+    color: #fff;
+    transition: all 0.5s ease;
+}
+
+.content-holder-block.option-one-white .text-block-item .btn-item:hover:after{
+    border-top-color: #fff;
+}
+
+
+.content-holder-block.option-one-white .text-block-item .btn-item::after {
+    border-top-color: #000;
+}
+
+.content-holder-block.option-one-white .text-block-item .calendar-options-open .btn-item.event-added {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
+
+.content-holder-block.option-one-white .text-block-item .btn-item.event-added::before {
+    border-bottom-color: #000;
+    border-right-color:#000;
+}
+
+
+
+/* option two white  */
+.content-holder-block.option-two-white .text-block-item {
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #000;
+}
+
+.content-holder-block.option-two-white .text-block-item .btn-item {
+    border-color:#000;
+    color: #000;
+}
+
+.content-holder-block.option-two-white .text-block-item .btn-item:hover {
+    background-color: #000;
+    color: #fff;
+    transition: all 0.5s ease;
+}
+
+.content-holder-block.option-two-white .text-block-item .btn-item:hover:after{
+    border-top-color: #fff;
+}
+
+.content-holder-block.option-two-white .text-block-item .btn-item::after {
+    border-top-color: #000;
+}
+
+.content-holder-block.option-two-white .text-block-item .calendar-options-open .btn-item.event-added {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
+
+.content-holder-block.option-two-white .text-block-item .btn-item.event-added::before {
+    border-bottom-color: #000;
+    border-right-color:#000;
+}
+
+
+/* option three white  */
+.content-holder-block.option-three-white .text-block-item {
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #000;
+}
+
+.content-holder-block.option-three-white .text-block-item .btn-item {
+    border-color:#000;
+    color: #000;
+}
+
+.content-holder-block.option-three-white .text-block-item .btn-item:hover {
+    background-color: #000;
+    color: #fff;
+    transition: all 0.5s ease;
+}
+
+.content-holder-block.option-three-white .text-block-item .btn-item:hover:after{
+    border-top-color: #fff;
+}
+
+.content-holder-block.option-three-white .text-block-item .btn-item::after {
+    border-top-color: #000;
+}
+
+.content-holder-block.option-three-white .text-block-item .calendar-options-open .btn-item.event-added {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
+
+.content-holder-block.option-three-white .text-block-item .btn-item.event-added::before {
+    border-bottom-color: #000;
+    border-right-color:#000;
+}

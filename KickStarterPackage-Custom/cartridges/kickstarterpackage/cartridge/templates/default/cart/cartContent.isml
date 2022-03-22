@@ -1,0 +1,222 @@
+<section class="cart-wrap empty-cart ${pdict.outOfStockProducts.outOfStockSections.length > 0 && pdict.items.length === 0 ? 'empty-oos' : ''}">
+    <isset name="isPayPalEnabled" value="${require('dw/system/Site').getCurrent().getCustomPreferenceValue('enablePayPal')}" scope="page" />
+    <isif condition="${pdict.items.length > 0 || pdict.outOfStockProducts.outOfStockSections.length > 0}">
+        <div class="container containerCart cart cart-page" data-homeurl="${URLUtils.url('Home-Show')}" data-continuetext='${Resource.msg('link.continue.shopping','cart',null)}'>
+            <input id="numItemInBasket" type="hidden" name="numItemInBasket" value="${pdict.minicartNumItems.toFixed(0)}">
+            <div class="row justify-content-xl-center">
+                <div class="col-12 col-xl-10">
+                    <div class="cart-error-messaging cart-error">
+                        <isif condition="${isPayPalEnabled}">
+                            <isinclude template="paypal/errorMessage" />
+                        </isif>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-xl-center cols-wrap">
+                <!---product cards--->
+                <div class="col-12 col-md-6 col-xl-6 cart-cards">
+                    <isif condition="${pdict.items.length !== 0}">
+                        <h2 class="number-of-items">
+                            <span class="text-uppercase">${Resource.msgf('label.number.items.in.cart','cart', null, pdict.numItems)}</span>
+                            <div class="notification-area">
+                                <span class="icon-notification"></span>
+                                <span>${Resource.msg('notification.reserved.products', 'cart', null)}</span>
+                            </div>
+                        </h2>
+                        <iscomment> KaDeWe Group Title </iscomment>
+                        <isif condition="${pdict.items.length !== 0 && pdict.minicartNumItems - pdict.fdcProdCount !== 0}">
+                            <div class="product-group notFDCBlock">
+                                <i class="icon icon-package"></i>
+                                <span> Paket 1 versand durch The KaDeWe Group in 3-5 Werktagen</span>
+                            </div>
+                        </isif>
+                        <isset name="isOutOfStockSection" value="${false}" scope="page" />
+                        <isloop items="${pdict.items}" var="lineItem">
+                            <isif condition="${!lineItem.isFDCProduct}">
+                                <isif condition="${lineItem.productType === 'bundle'}">
+                                    <isinclude template="cart/productCard/cartBundleCard" />
+                                <iselse/>
+                                    <isif condition="${lineItem.noProduct === true}">
+                                        <isinclude template="cart/productCard/uncategorizedCartProductCard" />
+                                    <iselse/>
+                                        <isinclude template="cart/productCard/cartProductCard" />
+                                    </isif>
+                                </isif>
+                            </isif>
+                        </isloop>
+
+
+                        <iscomment> Mirakl Group Title </iscomment>
+                        <isif condition="${pdict.isHavingFDC}">
+                            <div class="product-group isFDCBlock">
+                                <i class="icon icon-package"></i>
+                                <span> Paket ${pdict.minicartNumItems - pdict.fdcProdCount > 0 ? '2' : '1'} versand durch Partner in 3-5 Werktagen</span>
+                            </div>
+                        <isset name="isOutOfStockSection" value="${false}" scope="page" />
+                        <isloop items="${pdict.items}" var="lineItem">
+                            <isif condition="${lineItem.isFDCProduct}">
+                                <isif condition="${lineItem.productType === 'bundle'}">
+                                    <isinclude template="cart/productCard/cartBundleCard" />
+                                <iselse/>
+                                    <isif condition="${lineItem.noProduct === true}">
+                                        <isinclude template="cart/productCard/uncategorizedCartProductCard" />
+                                    <iselse/>
+                                        <isinclude template="cart/productCard/cartProductCard" />
+                                    </isif>
+                                </isif>
+                            </isif>
+                        </isloop>
+                        </isif>
+                    </isif>
+                    <isinclude template="cart/cartApproachingDiscount" />
+                    <isif condition="${isPayPalEnabled}">
+                        <isset name="paypalCalculatedCost" value="${pdict.paypalCalculatedCost}" scope="page" />
+                        <isinclude template="paypalCreditFinancingOptions/lowerCostPerMonthBanner" />
+                    </isif>
+
+                    <isif condition = "${pdict.outOfStockProducts.outOfStockSections.length > 0}">
+                        <isset name="isOutOfStockSection" value="${true}" scope="page" />
+                        <div class="out-of-stock-area ${pdict.items.length === 0 ? 'stand-alone' : ''}">
+                            <div class="head-part">
+                                <h4>${Resource.msg('label.outofstock', 'common', null)}</h4>
+                            </div>
+                            <isloop items="${pdict.outOfStockProducts.outOfStockSections}" var="outOfStockSection">
+                                <isset name="outOfStockLinkMsg" value="${null}" scope="page" />
+                                <div id="section-${outOfStockSection}" class="oos-section">
+                                    <isif condition = "${pdict.outOfStockProducts.outOfStockHashMap.get(outOfStockSection).products.length > 0}">
+                                            <isif condition="${outOfStockSection == 'size'}">
+                                                <h2 class="item-header">
+                                                    <div class="notification-area">
+                                                        <span class="icon-notification"></span>
+                                                        <span class="notification-text">
+                                                            <span class="msg-text">${Resource.msg('info.cart.outofstock.color', 'cart', null)}</span>
+                                                            <isset name="outOfStockLinkMsg" value="${Resource.msg('error.cart.outofstock.color', 'cart', null)}" scope="page" />
+                                                        </span>
+                                                    </div>
+                                                </h2>
+                                            <iselseif condition="${outOfStockSection == 'color'}">
+                                                <h2 class="item-header">
+                                                    <div class="notification-area">
+                                                        <span class="icon-notification"></span>
+                                                        <span class="notification-text">
+                                                            <span class="msg-text">${Resource.msg('info.cart.outofstock.size', 'cart', null)}</span>
+                                                            <isset name="outOfStockLinkMsg" value="${Resource.msg('error.cart.outofstock.size', 'cart', null)}" scope="page" />
+                                                        </span>
+                                                    </div>
+                                                </h2>
+                                            <iselseif condition="${outOfStockSection == 'noVariation'}">
+                                                <h2 class="item-header">
+                                                    <div class="notification-area">
+                                                        <span class="icon-notification"></span>
+                                                        <span class="notification-text">
+                                                            <span class="msg-text">${Resource.msg('info.cart.outofstock.novariation', 'cart', null)}</span>
+                                                            <isset name="outOfStockLinkMsg" value="${Resource.msg('error.cart.outofstock.novariation', 'cart', null)}" scope="page" />
+                                                        </span>
+                                                    </div>
+                                                </h2>
+                                            <iselseif condition="${outOfStockSection == 'unAvaialable'}">
+                                                <h2 class="item-header">
+                                                    <span class="notification-area"><span class="icon-notification"></span>
+                                                    ${Resource.msg('info.cart.outofstock.unavailable', 'cart', null)}</span>
+                                                </h2>
+                                            </isif>
+                                    </isif>
+
+                                    <div class="oos-products section-${outOfStockSection}">
+                                        <isloop items="${pdict.outOfStockProducts.outOfStockHashMap.get(outOfStockSection).products}" var="lineItem">
+                                            <isif condition="${lineItem.productType === 'bundle'}">
+                                                <isinclude template="cart/productCard/cartBundleCard" />
+                                            <iselse/>
+                                                <isif condition="${lineItem.noProduct === true}">
+                                                    <isinclude template="cart/productCard/uncategorizedCartProductCard" />
+                                                <iselse/>
+                                                    <isinclude template="cart/productCard/cartProductCard" />
+                                                </isif>
+                                            </isif>
+                                        </isloop>
+                                    </div>
+                                </div>
+                            </isloop>
+                        </div>
+                    </isif>
+                    <isif condition="${pdict.items.length > 0}">
+                        <div class="continue-shopping">
+                            <a class="home-link btn btn-primary-outline d-md-inline-block continue-shopping-link d-none" href="${URLUtils.url('Home-Show')}" title="${Resource.msg('link.continue.shopping','cart',null)}">
+                                ${Resource.msg('link.continue.shopping','cart',null)}
+                            </a>
+                        </div>
+                    </isif>
+                </div>
+                <!---totals, and checkout actions--->
+                <div class="col-12 col-md-6 col-xl-4 totals text-uppercase">
+                    <div class="cart-right-part">
+                        <h2 class="overview-title cart-header-title">${Resource.msg('order.review','cart',null)}</h2>
+                        <div class="cart-order-wrapper">
+                            <isinclude template="cart/cartTotals" />
+                        </div>
+                        <isset name="maxPromos" value="${JSON.parse(dw.system.Site.current.getCustomPreferenceValue('storefrontConfigs'))}" scope="page"/>
+                        <div class="cart-promoCode-holder">
+                            <isif condition="${maxPromos && (maxPromos.promoCodeEnabled === 'true' || maxPromos.promoCodeEnabled === true)}">
+                                <isinclude template="cart/cartPromoCode" />
+                            </isif>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 cart-buttons">
+                                <isinclude template="cart/checkoutButtons" />
+                                <isif condition="${isPayPalEnabled && pdict.items.length > 0}">
+                                    <div class="paypal-btns text-center ${pdict.valid.error ? 'paypal-button-pointer-events-none' : ''}">
+                                        <span>${Resource.msg('order.paypal.label','cart',null)}</span>
+                                        <div class="paypal-btn-wrapper">
+                                            <div class="paypal-btn-item btn-item">
+                                                <isinclude template="paypal/cart/paypalButton" />
+                                                <isinclude template="paypal/assets/paypalcreditbanner" />
+                                            </div>
+                                            <div class="layered-btn-item btn-item">
+                                                <div class="btn-content">
+                                                    <div class="icon-holder">
+                                                        <img src="${URLUtils.staticURL('/images/paypal-icon.svg')}" alt="Paypal Icon" />
+                                                    </div>
+                                                    <h2>Checkout</h2>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <span>${Resource.msg('paypal.express.checkout.label','cart',null)}</span>
+                                    </div>
+                                </isif>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sticky-btns-area d-sm-none">
+                <div class="cart-totals">
+                    <div class="row">
+                        <div class="col-8 pr-0">
+                            <strong class="estimated-tota">${Resource.msg('label.estimatedtotal','cart',null)}</strong>
+                        </div>
+                        <div class="col-4 pl-0">
+                            <p class="text-right grand-total">${pdict.totals.grandTotal}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-checkout-btn">
+                    <input type="submit" data-href="${URLUtils.https('Checkout-Login')}"
+                        class="btn btn-primary bg-black btn-block checkout-btn ${pdict.valid.error ? 'disabled' : ''}" role="button" value="${Resource.msg('button.checkout', 'cart', null)}" />
+                </div>
+            </div>
+            <isif condition="${pdict.items.length > 0}">
+                <div class="col-12 d-md-none">
+                    <div class="continue-shopping-cta">
+                        <a class="btn btn-primary-outline continue-shopping-link" href="${URLUtils.url('Home-Show')}" title="${Resource.msg('link.continue.shopping','cart',null)}">
+                            ${Resource.msg('link.continue.shopping','cart',null)}
+                        </a>
+                    </div>
+                </div>
+            </isif>
+        </div>
+
+        <iscomment> <isinclude template="cart/cartRemoveCouponModal" /> </iscomment>
+    </isif>
+
+    <isinclude template="cart/emptyCartContent"/>
+</section>

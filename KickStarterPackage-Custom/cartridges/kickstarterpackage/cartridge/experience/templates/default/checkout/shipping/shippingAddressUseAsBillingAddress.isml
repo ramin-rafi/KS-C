@@ -1,0 +1,14 @@
+<div class="same-billing">
+    <label class="form-check-label shipping-method-option" for="shippingMethod-shippingAddressUseAsBillingAddress-${lineItem ? lineItem.UUID : 'default'}">
+        <input
+            id="shippingMethod-shippingAddressUseAsBillingAddress-${lineItem ? lineItem.UUID : 'default'}"
+            type="checkbox" class="form-check-input"
+            <isprint value="${pdict.forms.shippingForm.shippingAddress.shippingAddressUseAsBillingAddress.attributes}" encoding="off" />
+            <isif condition="${useDifferentBillingAddress}">checked</isif>
+            >
+        <span class="chckbx-slider"></span>
+        <span class="fake-label">
+            <span class="display-name">${Resource.msg('check.shipping.billing.different','checkout',null)}</span>    
+        </span>
+    </label>
+</div>

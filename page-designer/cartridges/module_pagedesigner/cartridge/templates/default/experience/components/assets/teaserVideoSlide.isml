@@ -1,0 +1,18 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/teaserVideoSlide.css');
+</isscript>
+<section class="slide banner-video-slide <isif condition="${pdict.htmlclass}"><isprint value="${pdict.htmlclass}" encoding="off" /></isif> ">
+    <div class="iframe-video-wrapper">
+        <button class="slick-prev slick-arrow" aria-label="Previous" type="button"></button>
+        <iframe src="${pdict.url}" width="${pdict.width}" height="${pdict.height}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture"  webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+        <button class="slick-next slick-arrow" aria-label="Previous" type="button"></button>
+    </div>
+    <isif condition="${pdict.teaser_text}">
+        <div class="container">
+            <div class="main-teaser-description">
+                <div class="offset-md-3">${pdict.teaser_text}</div>
+            </div>
+        </div>
+    </isif>
+</section>

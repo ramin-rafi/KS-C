@@ -1,0 +1,185 @@
+{
+    "name": "Three Column Teaser",
+    "description": "Three Column Teaser for CLP",
+    "group": "assets",
+    "attribute_definition_groups": [
+        {
+            "id": "main",
+            "name": "Main",
+            "description": "Main teaser configuration",
+            "attribute_definitions": [
+                {
+                    "id": "teaserConfig",
+                    "name": "Teaser cnfiguration small or medium.",
+                    "type": "enum",
+                    "values": ["medium", "small", "large"],
+                    "default_value": "medium",
+                    "required": true
+                },
+                {
+                    "id": "teaserColumnCount",
+                    "name": "Teaser Column Count",
+                    "type": "enum",
+                    "values": ["2", "3"],
+                    "default_value": "2",
+                    "required": true
+                },
+                {
+                    "id": "backgroundColour",
+                    "name": "Background Colour",
+                    "type" : "enum",
+                    "values" : ["white","grey"],
+                    "default_value": "white",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "20perOpacity",
+            "name": "Custom Opacity",
+            "attribute_definitions": [{
+                "id": "customOpacity",
+                "name": "Add 20% black opacity",
+                "type": "boolean",
+                "required": false,
+                "default_value": false
+              }]
+          },
+        {
+            "id": "teaser1",
+            "name": "Teaser 1",
+            "description": "please give the following data.",
+            "attribute_definitions": [
+                {
+                    "id": "title1",
+                    "name": "Teaser 1 Title",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "id": "copy1",
+                    "name": "Teaser 1 Copy",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "id": "image1",
+                    "name": "Teaser 1 Image",
+                    "type": "image",
+                    "required": true
+                },
+                {
+                    "id": "mobileImage1",
+                    "name": "Mobile Image",
+                    "type": "image",
+                    "required": true
+                },
+                {
+                    "id": "textColor1",
+                    "name": "Text color for tile 1",
+                    "type": "enum",
+                    "values": ["white", "black"],
+                    "default_value": "black",
+                    "required": true
+                },
+                {
+                    "id": "url1",
+                    "name": "Link for teaser",
+                    "type": "url",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "teaser2",
+            "name": "Teaser 2",
+            "description": "please give the following data.",
+            "attribute_definitions": [
+                {
+                    "id": "title2",
+                    "name": "Teaser 2 Title",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "id": "copy2",
+                    "name": "Teaser 2 Copy",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "id": "image2",
+                    "name": "Teaser 2 Image",
+                    "type": "image",
+                    "required": true
+                },
+                {
+                    "id": "mobileImage2",
+                    "name": "Mobile Image",
+                    "type": "image",
+                    "required": true
+                },
+                {
+                    "id": "textColor2",
+                    "name": "Text color for tile 2",
+                    "type": "enum",
+                    "values": ["white", "black"],
+                    "default_value": "black",
+                    "required": true
+                },
+                {
+                    "id": "url2",
+                    "name": "Link for teaser",
+                    "type": "url",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "teaser3",
+            "name": "Teaser 3",
+            "description": "please give the following data.",
+            "attribute_definitions": [
+                {
+                    "id": "title3",
+                    "name": "Teaser 3 Title",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "copy3",
+                    "name": "Teaser 3 Copy",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "image3",
+                    "name": "Teaser 3 Image",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "mobileImage3",
+                    "name": "Mobile Image",
+                    "type": "image",
+                    "required": false
+                },
+                {
+                    "id": "textColor3",
+                    "name": "Text color for tile 3",
+                    "type": "enum",
+                    "values": ["white", "black"],
+                    "default_value": "black",
+                    "required": false
+                },
+                {
+                    "id": "url3",
+                    "name": "Link for teaser",
+                    "type": "url",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

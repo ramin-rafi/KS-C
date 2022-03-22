@@ -1,0 +1,38 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/teaserSlide.css');
+    assets.addCss('/css/richMediaGallery.css');
+</isscript>
+<section class="slide">
+    <div class="row">
+        <div class="col-lg-8">
+            <isif condition="${pdict.url && pdict.width && pdict.height}">
+                <div class="video-wrapper">
+                    <button class="slick-prev slick-arrow ${pdict.arrowColor === 'white' ? 'white-arrow' : 'black-arrow'}" aria-label="Previous" type="button" style="">Previous</button>
+                    <iframe src="${pdict.url}" width="${pdict.width}" height="${pdict.height}" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+                    <button class="slick-next slick-arrow ${pdict.arrowColor === 'white' ? 'white-arrow' : 'black-arrow'}" aria-label="Next" type="button" style="">Next</button>
+                </div>
+            <iselseif condition="${pdict.image}">
+                <div class="img-holder">
+                <button class="slick-prev slick-arrow ${pdict.arrowColor === 'white' ? 'white-arrow' : 'black-arrow'}" aria-label="Previous" type="button" style="">Previous</button>
+                    <img class='dl-promo' data-id="${pdict.headline}" data-creative='${pdict.headline} > Gallery Media' src="${pdict.image.src.desktop}" alt="${pdict.image.alt}">
+                    <button class="slick-next slick-arrow ${pdict.arrowColor === 'white' ? 'white-arrow' : 'black-arrow'}" aria-label="Next" type="button" style="">Next</button>
+                </div>
+            </isif>
+        </div>
+        <div class="col-lg-4">
+            <div class="rich-content-wrapper">
+                <isif condition="${pdict.topline}">
+                    <h4><isprint value="${pdict.topline}" encoding="off"></h4>
+                </isif>
+                <div class="rich-content-holder">
+                    <h2><isprint value="${pdict.headline}" encoding="off"></h2>
+                    <p class="description"><isprint value="${pdict.contentCopy}" encoding="off"></p>
+                </div>
+                <isif condition="${pdict.disclaimer}">
+                    <div class="disclaimer-txt"><p><isprint value="${pdict.disclaimer}" encoding="off"></p></div>
+                </isif>
+            </div>
+        </div>
+    </div>
+</section>

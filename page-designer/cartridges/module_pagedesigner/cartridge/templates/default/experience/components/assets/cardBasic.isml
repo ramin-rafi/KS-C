@@ -1,0 +1,62 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    // assets.addCss('/css/card.css');
+</isscript>
+
+<div class="${pdict.colPadding ? 'col ' + pdict.colPadding : 'col'}">
+    <div
+        class="card ${pdict.addClass ? pdict.addClass : ''} ${pdict.cardTextColor ? pdict.cardTextColor : ''} ${pdict.cardBg ? pdict.cardBg : ''} ${pdict.cardTextAlign ? pdict.cardTextAlign : ''}">
+        <isif condition="${pdict.cardHeading || pdict.cardSubHeading || pdict.cardSubLine}">
+            <div class="card-header">
+                <isif condition="${pdict.cardHeading}">
+                    <h3 class="card-title">
+                        <isprint value="${pdict.cardHeading}" encoding="off" />
+                    </h3>
+                </isif>
+
+                <isif condition="${pdict.cardSubHeading}">
+                    <h4 class="card-sub-title">
+                        <isprint value="${pdict.cardSubHeading}" encoding="off" />
+                    </h4>
+                </isif>
+
+                <isif condition="${pdict.cardSubLine}">
+                    <strong>
+                        <isprint value="${pdict.cardSubLine}" encoding="off" />
+                    </strong>
+                </isif>
+            </div>
+        </isif>
+
+        <isif condition="${pdict.cardImage}">
+            <div class="card-img">
+                <isif condition="${pdict.cardImageLink}">
+                    <a href="${pdict.ctaLink}" target="">
+                        <img class="card-img-top" src="${pdict.cardImage}"
+                            alt="${pdict.cardImageAlt ? pdict.cardImageAlt : 'Image'}" />
+                    </a>
+
+                <iselse/>
+
+                    <img class="card-img-top" src="${pdict.cardImage}"
+                        alt="${pdict.cardImageAlt ? pdict.cardImageAlt : 'Image'}" />
+
+                </isif>
+
+            </div>
+        </isif>
+
+        <isif condition="${pdict.cardDescription}">
+            <div class="card-body">
+                <isprint value="${pdict.cardDescription}" encoding="off" />
+            </div>
+        </isif>
+
+        <isif condition="${pdict.ctaLabel && pdict.ctaLink}">
+            <div class="card-footer">
+                <a class="btn ${pdict.ctaStyle ? pdict.ctaStyle : ''} ${pdict.ctaDsiplay ? pdict.ctaDsiplay : ''}"
+                    href="${pdict.ctaLink}">${pdict.ctaLabel}</a>
+            </div>
+        </isif>
+    </div>
+</div>

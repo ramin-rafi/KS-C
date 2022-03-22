@@ -1,0 +1,98 @@
+{
+    "name": "Teaser",
+    "description": "Image, text overlay that links user to a category using the markup editor",
+    "group": "assets",
+    "attribute_definition_groups": [{
+        "id": "sliderOption",
+        "name": "Slider option",
+        "description": "Please select Yes if you want to make it slider",
+        "attribute_definitions": [
+        {
+            "id": "spaceTop",
+            "name": "Space from Top",
+            "type": "string",
+            "required": false
+        },
+        {
+            "id": "spaceBottom",
+            "name": "Space from Bottom",
+            "type": "string",
+            "required": false
+        },
+        {
+            "id": "sliderOption",
+            "name": "Slider option",
+            "type": "enum",
+            "values": ["Yes", "No"],
+            "default_value": "No",
+            "required": true
+        },
+        {
+            "id": "sliderType",
+            "name": "Slider Type",
+            "type": "enum",
+            "values": ["dots", "arrows", "both"],
+            "default_value": "dots",
+            "required": false
+        },
+        {
+            "id": "teaser_option",
+            "name": "Teaser Type Options",
+            "description": "The visual display of Promotional Teaser, teaser size, HL and SL size and button alignment.",
+            "type": "enum",
+            "values": ["large", "medium", "small"],
+            "default_value": "large",
+            "required": true
+        },
+        {
+            "id": "teaserColor",
+            "name": "Teaser Control Color Options",
+            "description": "Teaser Control Color Options.",
+            "type": "enum",
+            "values": ["white-option", "black-option"],
+            "default_value": "white-option",
+            "required": false
+        },
+        {
+            "id": "teaser_text",
+            "name": "Teaser Text",
+            "description": "The text below Promotional Teaser.",
+            "type": "string",
+            "required": false
+        },{
+            "id": "teaser_text_alignment",
+            "name": "Teaser Text Alignment",
+            "description": "The text below Promotional Teaser.",
+            "type": "enum",
+            "values": ["full-width", "right-3offset"],
+            "default_value": "full-width",
+            "required": false
+        }]
+    }],
+    "region_definitions": [{
+        "id": "slides",
+        "name": "Slides",
+        "component_type_exclusions": [{
+                "type_id": "layouts.1column"
+            },
+            {
+                "type_id": "layouts.2column"
+            },
+            {
+                "type_id": "layouts.3column"
+            },
+            {
+                "type_id": "layouts.4column"
+            },
+            {
+                "type_id": "layouts.gridcomponentlayout"
+            },
+            {
+                "type_id": "einstein.noanchorgrid"
+            },
+            {
+                "type_id": "layouts.carousel"
+            }
+        ]
+    }]
+}

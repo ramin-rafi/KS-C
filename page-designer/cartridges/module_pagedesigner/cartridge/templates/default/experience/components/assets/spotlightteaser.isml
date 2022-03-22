@@ -1,0 +1,38 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('css/skuCarousel.css');
+    assets.addCss('css/spotlight-teaser.css');
+</isscript>
+<div id="${pdict.container_id ? pdict.container_id : ''}" class="best-sellings spotlight-teaser ${pdict.customOpacity ? 'has-overlay' : ''} ${pdict.backgroundColour ? pdict.backgroundColour : ''}">
+    <div class="container gtm-crousel-impressions">
+        <h2 class="gtm-carousel-list">${pdict.headline}</h2>
+        <div class="row">
+            <div class="col-md-6 spotlight-teaser__one">
+                <a class="dl-promo" data-id="${pdict.headline}" data-creative="Spotlight Teaser" href="${pdict.url}">
+                    <div class="image-holder">
+                        <picture>
+                            <source media="(min-width:768px)" srcset="${pdict.image.src.desktop}"/>
+                            <img src="${pdict.imagemobile.src.mobile}" alt="${pdict.image.alt}"/>
+                        </picture>
+                        <div class="caption ${pdict.SlideColor ? pdict.SlideColor : ''}">
+                                <div>
+                                    <isif condition="${pdict.logo}">
+                                        <img class="img-fluid logo" src="${pdict.logo.src.desktop}" alt="${pdict.alt_logo}" />
+                                    </isif>
+                                </div>
+                            <div>
+                                <span class="btn-overlay">
+                                    <isprint value="${pdict.text_link}" encoding="off" /></span>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="products-slider-holder col-md-6 spotlight-teaser__two">
+                <div class="products-slider">
+                    <isinclude url="${pdict.renderProductsUrl}"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

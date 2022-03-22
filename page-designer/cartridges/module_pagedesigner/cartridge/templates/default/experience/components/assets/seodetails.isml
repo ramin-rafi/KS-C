@@ -1,0 +1,19 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/detailssection.css');
+</isscript>
+<div class='container'>
+    <section class="details-section">
+        <h2><isprint value="${pdict.title}" encoding="off" /></h2>
+        <div class="less-details">
+            <isprint value="${pdict.details.substr(0, pdict.lessShowCount + pdict.details.substr(pdict.lessShowCount).indexOf(' '))}" encoding="off" />...<a href="javascript:void(0)" class="btn-more-detail">Mehr</a>
+        </div>
+
+        
+        <div class="all-details">
+            <isprint value="${pdict.details}" encoding="off" />
+            <isprint value="${pdict.moredetails}" encoding="off" />
+            <a href="javascript:void(0)" class="btn-more-detail">Mehr</a>
+        </div>
+    </section>
+</div>

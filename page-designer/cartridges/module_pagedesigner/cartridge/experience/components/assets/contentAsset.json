@@ -1,0 +1,25 @@
+{
+    "name": "Content Asset",
+    "description": "--description here--",
+    "group": "assets",
+    "attribute_definition_groups": [{
+        "id": "contentAsset",
+        "name": "Content Asset Configuration",
+        "description": "--description here--",
+        "attribute_definitions": [
+            {
+                "id": "addClass",
+                "name": "Add Custom Class",
+                "type": "string",
+                "required": false
+            },
+            {
+                "id": "contentAssetId",
+                "name": "Add Content Asset Reference ID",
+                "type": "string",
+                "required": true
+            }
+        ]
+    }],
+    "region_definitions": []
+}

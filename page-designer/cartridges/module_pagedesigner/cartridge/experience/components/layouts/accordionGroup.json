@@ -1,0 +1,41 @@
+{
+    "name": "Accordion Group",
+    "description": "Parent layout for Accordion Item Component",
+    "group": "assets",
+    "attribute_definition_groups": [{
+        "id": "accordionGroup",
+        "name": "Accordion Group Configuration",
+        "description": "--description here--",
+        "attribute_definitions": [
+            {
+                "id": "addClass",
+                "name": "Add Custom Class",
+                "type": "string",
+                "required": false
+            },
+            {
+                "id": "groupName",
+                "name": "Accordion Group Name",
+                "type": "string",
+                "required": true
+            },
+            {
+                "id": "groupHeading",
+                "name": "Accordion Group Heading",
+                "type": "string",
+                "required": false
+            },
+            {
+                "id": "colPadding",
+                "name": "Remove Padding (Horizontal)",
+                "type": "enum",
+                "values": ["px-0"],
+                "required": false
+            }
+        ]
+    }],
+    "region_definitions": [{
+        "id": "accordion",
+        "name": "Add Accordion Item"
+    }]
+}

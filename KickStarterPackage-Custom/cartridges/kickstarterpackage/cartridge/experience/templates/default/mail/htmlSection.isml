@@ -1,0 +1,14 @@
+Content-Type: multipart/related; boundary="------------000001030701020908040700"
+
+--------------000001030701020908040700
+Content-Type: multipart/alternative; boundary="------------000001030701020908040800"
+
+--------------000001030701020908040800
+Content-Type: text/html; charset=iso-8859-1
+Content-Transfer-Encoding: 8bit
+
+<isinclude template="checkout/confirmation/confirmationEmail" />
+
+--------------000001030701020908040800--
+
+--------------000001030701020908040700--

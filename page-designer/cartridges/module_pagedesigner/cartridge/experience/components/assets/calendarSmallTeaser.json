@@ -1,0 +1,83 @@
+{
+  "name": "Calendar Small Teaser",
+  "description": "Shows calendar section",
+  "group": "assets",
+  "attribute_definition_groups": [
+    {
+      "id": "textcontent",
+      "name": "Text Content",
+      "description": "The content to show in this component",
+      "attribute_definitions": [
+        {
+          "id": "htmlclass",
+          "name": "Select Newsletter Teaser Options",
+          "type": "enum",
+          "values": ["option-one-black", "option-two-black", "option-three-black", "option-one-white", "option-two-white", "option-three-white"],
+          "default_value": "option-one-black",
+          "required": true
+        },
+        {
+          "id": "heading",
+          "name": "Heading",
+          "type": "string",
+          "required": true
+        },
+        {
+            "id": "subHeading",
+            "name": "Sub Heading",
+            "type": "string",
+            "required": true
+        },
+        {
+            "id": "addToCalenderText",
+            "name": "Add To Calender Text",
+            "type": "string",
+            "required": true
+        },
+        {
+          "id": "addContentAsset",
+          "name": "Add To Content Asset",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "afterSuccessText",
+          "name": "After Selection Success Text",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "gmailText",
+          "name": "Gmail Text",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "outlookText",
+          "name": "Outlook Text",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "outlookFileName",
+          "name": "Outlook File Name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "appleFileName",
+          "name": "Apple File Name",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "iCalText",
+          "name": "iCal Text",
+          "type": "string",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "region_definitions": []
+}

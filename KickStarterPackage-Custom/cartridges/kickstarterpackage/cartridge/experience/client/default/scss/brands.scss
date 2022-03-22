@@ -1,0 +1,163 @@
+@import "variables";
+@import "~base/bootstrap-custom-import";
+
+.allbrands {
+    padding-top: 0;
+    padding-bottom: 60px;
+
+    .nav-list {
+        li {
+            .brand-category {
+                text-transform: capitalize;
+                text-align: left;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 18px;
+                color: $primary;
+                border: 0;
+                padding: 0;
+                background: transparent;
+
+                &:hover,
+                &:active {
+                    text-decoration: underline;
+                }
+            }
+
+            .brand-category.selected {
+                font-weight: bold;
+            }
+        }
+    }
+
+    .nav-alpha {
+        padding: 0 5px;
+        margin: 0 0 20px;
+        font-weight: bold;
+        font-size: 14px;
+        list-style: none;
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        width: 100%;
+
+        li {
+            line-height: 1em;
+            margin-bottom: 2px;
+
+            a {
+                display: inline-block;
+                width: 100%;
+                font-size: 12px;
+                color: $primary;
+                font-weight: normal;
+            }
+        }
+    }
+
+    .alpha-nav-box {
+        display: inline-block;
+        vertical-align: top;
+        column-count: 5;
+        column-gap: 25px;
+        width: 100%;
+    }
+
+    .alpha {
+        position: absolute;
+        right: 100%;
+        top: 2px;
+        font-size: 12px;
+        font-weight: bold;
+        white-space: nowrap;
+        z-index: 2;
+
+        p {
+            line-height: 1;
+        }
+
+        strong {
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+    }
+
+    .total-count {
+        margin-left: -15px;
+        font-size: 12px;
+
+        b {
+            font-size: 12px;
+        }
+    }
+
+    span.total-number {
+        width: auto;
+    }
+
+    .nav-list {
+        li {
+            display: inline-block;
+            width: 100%;
+            padding-bottom: 3px;
+        }
+    }
+}
+
+.brand-breadcrumbs-area {
+    .brand-breadcrumbs {
+        margin: 0;
+        border: 0;
+        font-size: 0.875rem;
+        padding: 21px 0;
+        display: flex;
+        align-items: center;
+        text-transform: capitalize;
+        font-weight: 500;
+
+        .secondary {
+            font-weight: normal;
+        }
+    }
+
+    .bread-bar {
+        padding: 0 0.5rem;
+    }
+
+    .cat-breadcrumb {
+        font-weight: normal;
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .allbrands {
+        padding-top: 20px;
+        padding-bottom: 40px;
+
+        .alpha-nav-box {
+            margin-left: -10px;
+            margin-top: 20px;
+            column-count: 2;
+            width: calc(100% + 10px);
+        }
+
+        .nav-alpha {
+            padding: 0 0 0 32px;
+        }
+
+        .alpha {
+            right: auto;
+            left: 0;
+            width: 26px;
+            text-align: right;
+        }
+
+        .nav-list {
+            li {
+                width: auto;
+                padding-right: 20px;
+            }
+        }
+    }
+}

@@ -1,0 +1,12 @@
+<div style="font-size:14px; line-height:18px; font-weight:normal; font-family: 'futura-pt', Arial, sans-serif; text-align:left; ">
+    <isif condition="${pdict.order.shipping[0].shippingAddress.salutation === 'Frau'}">
+        <p style="margin-bottom:15px;"><isprint value="${Resource.msgf('label.email.confirm.dear.female', 'confirmation', null, pdict.order.shipping[0].shippingAddress.salutation || '', pdict.order.shipping[0].shippingAddress.title && pdict.order.shipping[0].shippingAddress.title !== '-' ? pdict.order.shipping[0].shippingAddress.title : '', !pdict.order.shipping[0].shippingAddress.salutation && pdict.order.shipping[0].shippingAddress.firstName ? pdict.order.shipping[0].shippingAddress.firstName : '', pdict.order.shipping[0].shippingAddress.lastName)}" encoding="off" /></p>
+    <iselseif condition="${pdict.order.shipping[0].shippingAddress.salutation === 'Herr'}"/>
+        <p style="margin-bottom:15px;"><isprint value="${Resource.msgf('label.email.confirm.dear.male', 'confirmation', null, pdict.order.shipping[0].shippingAddress.salutation || '', pdict.order.shipping[0].shippingAddress.title && pdict.order.shipping[0].shippingAddress.title !== '-' ? pdict.order.shipping[0].shippingAddress.title : '', !pdict.order.shipping[0].shippingAddress.salutation && pdict.order.shipping[0].shippingAddress.firstName ? pdict.order.shipping[0].shippingAddress.firstName : '', pdict.order.shipping[0].shippingAddress.lastName)}" encoding="off" /></p>
+    <iselse/>
+        <p style="margin-bottom:15px;"><isprint value="${Resource.msgf('label.email.confirm.dear', 'confirmation', null, pdict.order.shipping[0].shippingAddress.salutation || '', pdict.order.shipping[0].shippingAddress.title && pdict.order.shipping[0].shippingAddress.title !== '-' ? pdict.order.shipping[0].shippingAddress.title : '', !pdict.order.shipping[0].shippingAddress.salutation && pdict.order.shipping[0].shippingAddress.firstName ? pdict.order.shipping[0].shippingAddress.firstName : '', pdict.order.shipping[0].shippingAddress.lastName)}" encoding="off" /></p>
+    </isif>
+    <p style="margin-bottom:15px;"><isprint value="${Resource.msg('label.email.confirm.thankyou1', 'confirmation', null)}" encoding="off" /></p>
+    <p style="margin-bottom:15px;">${Resource.msg('label.email.confirm.description', 'confirmation', null)}</p>
+    <p style="margin:0;"><isprint value="${Resource.msg('label.email.confirm.detail', 'confirmation', null)}" encoding="off" /></p>
+</div>

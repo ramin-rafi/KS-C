@@ -1,0 +1,23 @@
+<!--- TEMPLATENAME: loqateFooter.isml --->
+<isset name="loqateAccountCode" value="${dw.system.Site.getCurrent().preferences.custom.loqateAccountCode}" scope="page" />
+<isset name="loqatePrefs" value="${require('*/cartridge/scripts/helpers/utilHelper').getLoqatePrefs()}" scope="page" />
+<isif condition="${loqatePrefs}">
+	<isset name="loqateBillingLookup" value="${loqatePrefs.billing.addressLookup}" scope="page" />
+	<isset name="loqateShippingLookup" value="${loqatePrefs.shipping.addressLookup}" scope="page" />
+	<isset name="loqateAddressBookLookup" value="${loqatePrefs.addressBook.addressLookup}" scope="page" />
+	<input type="hidden" id="loqateBillingValidation" value="${loqatePrefs.billing.addressValidation}">
+	<input type="hidden" id="loqateShippingValidation" value="${loqatePrefs.shipping.addressValidation}">
+	<input type="hidden" id="loqateAddressBookValidation" value="${loqatePrefs.addressBook.addressValidation}">
+<iselse>
+	<isset name="loqateBillingLookup" value="${false}" scope="page" />
+	<isset name="loqateShippingLookup" value="${false}" scope="page" />
+	<isset name="loqateAddressBookLookup" value="${false}" scope="page" />
+	<input type="hidden" id="loqateBillingValidation" value="${false}">
+	<input type="hidden" id="loqateShippingValidation" value="${false}">
+	<input type="hidden" id="loqateAddressBookValidation" value="${false}">
+</isif>
+<input type="hidden" id="enableAXLookup" value="${dw.system.Site.getCurrent().preferences.custom.enableAXLookup}">
+<input type="hidden" id="enableAXValidation" value="${dw.system.Site.getCurrent().preferences.custom.enableAXValidation}">
+<isif condition="${loqateAccountCode != null && (pdict.action == 'Checkout-Begin' && (loqateBillingLookup || loqateShippingLookup)) || loqateAccountCode != null && (pdict.action == 'Address-AddAddress' || pdict.action == 'Address-EditAddress') && loqateAddressBookLookup}">
+	<script>(function(n,t,i,r){var u,f;n[i]=n[i]||{},n[i].initial={accountCode:"${loqateAccountCode}",host:"${loqateAccountCode}"},n[i].on=n[i].on||function(){(n[i].onq=n[i].onq||[]).push(arguments)},u=t.createElement("script"),u.async=!0,u.src=r,f=t.getElementsByTagName("script")[0],f.parentNode.insertBefore(u,f)})(window,document,"pca","//${loqateAccountCode}.pcapredict.com/js/sensor.js")</script>
+</isif>

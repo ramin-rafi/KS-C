@@ -1,0 +1,34 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    // assets.addCss('/css/card.css');
+</isscript>
+
+<div class="col ${pdict.colPadding ? pdict.colPadding : ''}">
+    <div
+        class="card card-image ${pdict.addClass ? pdict.addClass : ''} ${pdict.cardTextColor ? pdict.cardTextColor : ''} ${pdict.cardBg ? pdict.cardBg : ''} ${pdict.cardTextAlign ? pdict.cardTextAlign : ''}">
+        <isif condition="${pdict.cardImage}">
+            <div class="card-img">
+                <isif condition="${pdict.cardImageLink}">
+
+                    <a href="${pdict.ctaImageLink}" target="">
+
+                        <img class="card-img-top" src="${pdict.cardImage}"
+                            alt="${pdict.cardImageAlt ? pdict.cardImageAlt : 'Image'}" />
+                    </a>
+
+                <iselse/>
+
+                    <img class="card-img-top" src="${pdict.cardImage}"
+                        alt="${pdict.cardImageAlt ? pdict.cardImageAlt : 'Image'}" />
+
+                </isif>
+            </div>
+        </isif>
+
+        <isif condition="${pdict.cardDescription}">
+            <div class="card-body">
+                <isprint value="${pdict.cardDescription}" encoding="off" />
+            </div>
+        </isif>
+    </div>
+</div>

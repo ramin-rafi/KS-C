@@ -1,0 +1,26 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+</isscript>
+
+<div class="col">
+    <div class="card card-text ${pdict.addClass ? pdict.addClass : ''}  ${pdict.textAlign ? pdict.textAlign : ''}">
+        <isif condition="${pdict.cardHeading}">
+            <h3 class="card-title">
+                <isprint value="${pdict.cardHeading}" encoding="off" />
+            </h3>
+        </isif>
+
+        <div
+            class="card-body ${pdict.contentLayout === 'Column-2' ? 'text-col-2' : ''} ${pdict.contentLayout === 'Column-3' ? 'text-col-3' : ''} ${pdict.contentLayout === 'Column-4' ? 'text-col-4' : ''}">
+            <isprint value="${pdict.cardContent}" encoding="off" />
+        </div>
+
+        <isif condition="${pdict.teaserCtaLink && pdict.teaserCtaLabel}">
+            <div class="card-footer">
+                <a class="btn-link btn-overlay" href="${pdict.teaserCtaLink}">
+                    <isprint value="${pdict.teaserCtaLabel}" encoding="off" />
+                </a>
+            </div>
+        </isif>
+    </div>
+</div>

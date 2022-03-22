@@ -1,0 +1,1 @@
+<button class="btn btn-light filter-pill ${pdict.addFilter && pdict.addFilter === 'all' ? 'js-isotope_all_filter' : ''} ${pdict.addClass ? pdict.addClass : ''}" data-filter=".${pdict.addFilter ? pdict.addFilter : ''}">${pdict.filterText ? pdict.filterText : ''}</button>

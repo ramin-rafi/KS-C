@@ -1,0 +1,36 @@
+{
+  "name": "Rich Text",
+  "description": "Shows rich text for text pages, such as help or FAQ pages",
+  "group": "assets",
+  "attribute_definition_groups": [
+    {
+      "id": "textcontent",
+      "name": "Text Content",
+      "description": "The content to show in this component",
+      "attribute_definitions": [
+        {
+          "id": "fontSize",
+          "name": "Font Size",
+          "type": "enum",
+          "values": ["10px", "12px", "14px", "16px"],
+          "required": false
+        },
+        {
+          "id": "richtext",
+          "name": "Content",
+          "type": "markup",
+          "required": true
+        },
+        {
+          "id": "colWidth",
+          "name": "Column Width",
+          "type": "enum",
+          "values": ["2", "4", "6", "8", "10", "12"],
+          "default_value": "12",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "region_definitions": []
+}

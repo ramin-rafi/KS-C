@@ -1,0 +1,39 @@
+{
+    "name": "SEO Details",
+    "description": "Details Section",
+    "group": "assets",
+    "attribute_definition_groups": [
+      {
+        "id": "details",
+        "name": "Details Section",
+        "description": "please Enter CLP Details",
+        "attribute_definitions": [
+            {
+                "id": "title",
+                "name": "Section Title",
+                "type": "string",
+                "required": true
+            },
+            {
+                "id": "details",
+                "name": "Details",
+                "type": "markup",
+                "required": true
+            },
+            {
+                "id": "moredetails",
+                "name": "More Details",
+                "type": "markup",
+                "required": true
+            },
+            {
+                "id": "lessShowCount",
+                "name": "Less Details length",
+                "type": "string",
+                "required": true
+            }
+        ]
+      }
+    ],
+    "region_definitions": []
+}

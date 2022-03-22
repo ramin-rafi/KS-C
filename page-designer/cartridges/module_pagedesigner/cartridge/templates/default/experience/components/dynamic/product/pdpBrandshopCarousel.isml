@@ -1,0 +1,17 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('css/productDetailCarousel.css');
+    var category = pdict.Category;
+</isscript>
+<div class="pdp-dynamic-carousel ${pdict.backgroundColour} ${pdict.titleAlignment ? pdict.titleAlignment : ''}">
+    <div class="container">
+        <div class="pdp-dynamic-wrapper">
+            <h2>${pdict.title}</h2>
+            <div class="products-slider-holder">
+                <div class="products-slider">
+                    <isinclude url="${pdict.renderProductsUrl}"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

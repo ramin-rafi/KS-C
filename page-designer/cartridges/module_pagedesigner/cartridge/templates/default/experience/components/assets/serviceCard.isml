@@ -1,0 +1,96 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    // assets.addCss('/css/card.css');
+</isscript>
+
+<div class="${pdict.colPadding ? 'col ' + pdict.colPadding : 'col'} service-card">
+    <div
+        class="card ${pdict.addClass ? pdict.addClass : ''} ${pdict.cardTextColor ? pdict.cardTextColor : ''} ${pdict.cardBg ? pdict.cardBg : ''} ${pdict.cardTextAlign ? pdict.cardTextAlign : ''}">
+        <isif condition="${pdict.cardHeading}">
+            <div class="card-header">
+                <h3 class="card-title service-title">
+                    <isprint value="${pdict.cardHeading}" encoding="off" />
+                </h3>
+            </div>
+        </isif>
+
+        <isif condition="${pdict.cardImage}">
+            <div class="card-img">
+                <isif condition="${pdict.cardImageLink}">
+
+                    <a href="${pdict.ctaLink}" target="">
+
+                        <img class="card-img-top" src="${pdict.cardImage}"
+                            alt="${pdict.cardImageAlt ? pdict.cardImageAlt : 'Image'}" />
+
+                    </a>
+
+                <iselse/>
+
+                    <img class="card-img-top" src="${pdict.cardImage}"
+                        alt="${pdict.cardImageAlt ? pdict.cardImageAlt : 'Image'}" />
+
+                </isif>
+
+            </div>
+        </isif>
+
+        <isif condition="${pdict.cardDescription || pdict.cardDescriptionContent}">
+            <div class="card-body service-detail">
+                <isif condition="${pdict.cardContactDetail || pdict.cardFloorDetail}">
+                    <div class="card-meta">
+                        <p>
+                            <strong>
+                                <isprint value="${pdict.cardContactDetail}" encoding="off" />
+                            </strong>
+                        </p>
+                        <p>
+                            <isprint value="${pdict.cardFloorDetail}" encoding="off" />
+                        </p>
+                    </div>
+                </isif>
+
+                <iscomment>
+                    <isif condition="${pdict.cardDescription}">
+                        <isprint value="${pdict.cardDescription}" encoding="off" />
+                    </isif>
+                </iscomment>
+
+                <isif condition="${pdict.cardDescriptionContent}">
+                    <div class="d-none js-service-content" data-maxchars="${pdict.cardContentLimit}">
+                        <isprint value="${pdict.cardDescriptionContent}" encoding="off" />
+                        <isif condition="${pdict.cardDescriptionContent.length > pdict.cardContentLimit}">
+                            <strong>
+                                <a class="d-none js-beauty-show-more" href="javascript:void(0)"> Weniger</a>
+                            </strong>
+                        </isif>
+                    </div>
+
+                    <div class="d-none js-service-content-min">
+                        <isprint value="${pdict.cardDescriptionContent.substring(0, pdict.cardContentLimit)}"
+                            encoding="off" />
+                        <isif condition="${pdict.cardDescriptionContent.length > pdict.cardContentLimit}">
+                            <strong>
+                                <a class="js-beauty-show-more" href="javascript:void(0)"> Mehr</a>
+                            </strong>
+                        </isif>
+                    </div>
+                </isif>
+            </div>
+        </isif>
+        <isif condition="${pdict.ctaLabel}">
+            <div class="card-footer">
+                <isif condition="${pdict.ctaMeetGreet === true}">
+                    <button
+                        class="js-meet-event btn ${pdict.ctaStyle ? pdict.ctaStyle : ''} ${pdict.ctaDisplay ? pdict.ctaDisplay : ''}">${pdict.ctaLabel}</button>
+                <iselse/>
+                    <isif condition="${pdict.ctaLink}">
+                        <a class="btn ${pdict.ctaStyle ? pdict.ctaStyle : ''} ${pdict.ctaDisplay ? pdict.ctaDisplay : ''}"
+                            href="${pdict.ctaLink}"
+                            target="${pdict.ctaTarget === true ? '_blank' : '_self'}">${pdict.ctaLabel}</a>
+                    </isif>
+                </isif>
+            </div>
+        </isif>
+    </div>
+</div>

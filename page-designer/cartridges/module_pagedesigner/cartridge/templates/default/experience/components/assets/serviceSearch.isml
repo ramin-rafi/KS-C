@@ -1,0 +1,25 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/component.css');
+</isscript>
+
+<div class="services-search">
+    <div class="input-group js-search-input-container">
+        <input class="js-search-input form-control" type="text" name="searchServices"
+            placeholder="${pdict.inputPlaceholder ? pdict.inputPlaceholder : 'Geben Sie den Dienstnamen ein'}" />
+
+        <div class="input-group-append">
+            <button class="js-btn-search btn btn-primary">
+                <i class="icon-search d-sm-none"></i>
+
+                <isif condition="${pdict.ctaLabel}">
+                    <span class="d-none d-sm-block">${pdict.ctaLabel}</span>
+                </isif>
+            </button>
+        </div>
+    </div>
+
+    <div class="js-alert alert alert-danger mt-3 d-none" role="alert">
+        <span>${pdict.errorMessage ? pdict.errorMessage : 'Kein Suchergebnis gefunden!'}</span>
+    </div>
+</div>

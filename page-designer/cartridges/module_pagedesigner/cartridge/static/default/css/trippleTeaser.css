@@ -1,0 +1,78 @@
+.pdp-tripple-teaser {
+    /* margin-bottom: 24px; */
+    padding: 40px 0;
+}
+
+.tripple-teaser-wrapper {
+    padding: 0 15px;
+}
+
+.tripple-teaser-wrapper .title-header {
+    margin-bottom: 10px;
+}
+
+.tripple-teaser-wrapper .title-header.left {
+    text-align: left;
+}
+
+.tripple-teaser-wrapper .title-header.center {
+    text-align: center;
+}
+
+.tripple-teaser-wrapper .title-header.right {
+    text-align: right;
+}
+
+.tripple-teaser-wrapper .title-header h2{
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 38px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.tripple-teaser-wrapper .image-holder {
+    min-height: 230px;
+    margin-bottom: 10px;
+    max-height: 230px;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.tripple-teaser-wrapper .image-holder img {
+    width: 100%;
+}
+
+.tripple-teaser-wrapper .content-holder {
+    margin-bottom: 30px;
+}
+
+.tripple-teaser-wrapper .content-holder h5 {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.tripple-teaser-wrapper .content-holder p {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.tripple-teaser-wrapper .content-holder p:last-child {
+    margin-bottom: 0;
+}
+
+.tripple-teaser-wrapper.grey {
+    background: #f5f5f5;
+}
+
+.tripple-teaser-wrapper.white {
+    background: #fff;
+}
+
+@media (max-width: 767px) {
+
+}

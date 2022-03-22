@@ -1,0 +1,58 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/component.css');
+    assets.addCss('/css/contentteasers.css');
+</isscript>
+<section class="trending-section best-sellings">
+    <div class="container">
+        <h2>${pdict.content_headline}</h2>
+        <div class="trends-slider-holder">
+            <div class="trends-slider ${pdict.portraitView === true ? 'portrait' : ''}">
+                <div class="slide">
+                    <a href="${pdict.url1}">
+                        <div class="img-holder">
+                            <img src="${pdict.image1.src.desktop}" alt="${pdict.image1.alt}">
+                        </div>
+                        <strong class="category-name">
+                            <isprint value="${pdict.text_headline1}" encoding="off" /></strong>
+                        <span class="tag">
+                            <isprint value="${pdict.text_subline1}" encoding="off" /></span>
+                    </a>
+                </div>
+                <div class="slide">
+                    <a href="${pdict.url2}">
+                        <div class="img-holder">
+                            <img src="${pdict.image2.src.desktop}" alt="${pdict.image2.alt}">
+                        </div>
+                        <strong class="category-name">
+                            <isprint value="${pdict.text_headline2}" encoding="off" /></strong>
+                        <span class="tag">
+                            <isprint value="${pdict.text_subline2}" encoding="off" /></span>
+                    </a>
+                </div>
+                <div class="slide">
+                    <a href="${pdict.url3}">
+                        <div class="img-holder">
+                            <img src="${pdict.image3.src.desktop}" alt="${pdict.image3.alt}">
+                        </div>
+                        <strong class="category-name">
+                            <isprint value="${pdict.text_headline3}" encoding="off" /></strong>
+                        <span class="tag">
+                            <isprint value="${pdict.text_subline3}" encoding="off" /></span>
+                    </a>
+                </div>
+                <div class="slide">
+                    <a href="${pdict.url4}">
+                        <div class="img-holder">
+                            <img src="${pdict.image4.src.desktop}" alt="${pdict.image4.alt}">
+                        </div>
+                        <strong class="category-name">
+                            <isprint value="${pdict.text_headline4}" encoding="off" /></strong>
+                        <span class="tag">
+                            <isprint value="${pdict.text_subline4}" encoding="off" /></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

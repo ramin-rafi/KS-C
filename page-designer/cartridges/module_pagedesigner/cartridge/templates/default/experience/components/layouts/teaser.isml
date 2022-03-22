@@ -1,0 +1,21 @@
+
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('css/clp-teaser.css');
+    assets.addCss('/css/component.css');
+</isscript>
+
+<div class="visual-top-banner ${pdict.teaser_option}" style="${pdict.spaceTop ? 'padding-top:' + pdict.spaceTop + ';' : ''}${pdict.spaceBottom ? 'padding-bottom:' + pdict.spaceBottom + ';' : ''}">
+    <div class="mainteaser mb-slider ${pdict.sliderOption} ${pdict.sliderType} ${pdict.teaserColor === 'white-option' ? 'white-option' : 'black-option'}">
+        <isprint value="${pdict.regions.slides.setClassName("teaser-slide").render()}" encoding="off"/>
+    </div>
+    <isif condition="${pdict.teaser_text}">
+        <div class="container d-none d-md-block">
+            <div class="main-teaser-description ${pdict.teaser_text_alignment === 'right-3offset' ? 'offset-md-3' : 'offset-md-0'}">
+                <div class="teaser-text for-desktop">
+                    ${pdict.teaser_text}
+                </div>
+            </div>
+        </div>
+    </isif>
+</div>

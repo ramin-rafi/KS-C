@@ -1,0 +1,79 @@
+@import "menu";
+
+header
+{
+   .header-promotion {
+       height: 32px;
+       font-size: 12px;
+       line-height: 16px;
+       letter-spacing: 1.4px;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+   }
+   .header {
+        padding: 20px 0;
+        max-width: 90%;
+        margin: 0 auto;
+        .header-content
+        {
+            display: flex;
+            align-items: center;
+            .side-nav
+            {
+                border-bottom: 2px solid black ;
+                padding-bottom: 10px;
+                width: 100%;
+                .menu
+                {
+                    display: flex;
+                    justify-content: flex-end;
+                    list-style: none;
+                    padding-left: 0;
+                    li
+                    {
+                        font-size: 12px;
+                        margin-left: 25px;
+                        a
+                        {
+                            color: #444;
+                            text-decoration: none;
+                        }
+                    }
+                    li:nth-child(1):hover,li:nth-child(2):hover
+                    {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+        .navigation-bar
+        {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .site-logo {
+                padding-top: 10px;
+                img {
+                    max-width: 100%;
+                }
+            }
+            ul {
+                display: flex;
+                align-items: center;
+                list-style: none;
+                justify-content: flex-end;
+                padding-left: 0;
+                padding-top: 20px;
+                li {
+                    margin: 0 25px;
+                    a {
+                        font-size: 15px;
+                        text-decoration: none;
+                        color: #000;
+                    }
+                }
+            }
+        }
+    }
+}

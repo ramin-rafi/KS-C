@@ -1,0 +1,32 @@
+.trends-slider-holder {
+  max-height: inherit;
+  overflow: auto;
+}
+.trends-slider-holder .trends-slider {
+  height: auto;
+  padding-bottom: 10px;
+}
+.trends-slider .slide {
+  font-size: 0.875rem;
+  line-height: 1.0625rem;
+  display: block;
+}
+.trends-slider-holder .category-name {
+  font-size: 0.875rem;
+  line-height: 1.0625rem;
+  font-weight: 600;
+}
+@media (min-width: 768px) {
+  .trends-slider {
+    justify-content: inherit;
+  }
+  .trends-slider-holder {
+    margin: 0 -15px;
+  }
+}
+@media (min-width: 1200px) {
+  .trends-slider .slide {
+    flex-basis: 25%;
+    min-width: 25%;
+  }
+}

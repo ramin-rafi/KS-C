@@ -1,0 +1,61 @@
+<isdecorate template="common/layout/page">
+<isinclude template="/components/modules" sf-toolkit="off" />
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets');
+        assets.addJs('/js/brand.js');
+        assets.addCss('/css/brands.css');
+    </isscript>
+    <isset name="prevIntial" value="${''}" scope="page" />
+    <isset name="numericshown" value="${false}" scope="page" />
+    <isset name="numericClosing" value="${false}" scope="page" />
+    <div class="brand-breadcrumbs-area">
+        <div class="container">
+            <div class="brand-breadcrumbs" data-brandtext="${pdict.mainCat}">
+                <span>${pdict.mainCat}</span>
+            </div>
+        </div>
+    </div>
+    <div class="allbrands container brands-page text-uppercase">
+        <div class="row">
+            <div class="filter-options col-12 col-sm-12 col-md-2">
+                <ul class="category-btns nav nav-list">
+                    <isloop items="${pdict.categories}" var="category" status="loopstatus">
+                        <li><button type="button" id="${category.replace(/\'/g, "-").replace(/ /g, '_')}" class="brand-category">${category}</button></li>
+                    </isloop>
+                </ul>
+            </div>
+            <div class="brands-section col-12 col-sm-12 col-md-10">
+                <div class="alpha-nav-box">
+                    <isloop items="${pdict.JSONBrand}" var="brand" status="loopstatus">
+                        <isif condition="${brand.brand[0].match(/[a-z]/i) && prevIntial != brand.brand[0]}">
+                            <isset name="prevIntial" value="${brand.brand[0]}" scope="page" />
+                            <ul class="brands-set nav-alpha">
+                                <li class="set-label alpha">
+                                    <p id="${brand.brand[0]}"> ${brand.brand[0]} </p>
+                                </li>
+                        </isif>
+                        <isif condition="${!(brand.brand[0].match(/[a-z]/i)) && !numericshown}">
+                            <ul class="brands-set nav-alpha">
+                                <li class="set-label alpha">
+                                    <p id="0-9">0-9</p>
+                                </li>
+                                <isset name="numericshown" value="${true}" scope="page" />
+                        </isif>
+                        <li class="brand-item" data-brand="${brand.brand}"
+                            data-category="${brand.category1.replace(/\'/g, "-").replace(/ /g, '_')}">
+                            <a href="${URLUtils.url('Search-Show','cgid','root','prefn1','brand','prefv1',  brand.brand )}" class="brand-title">${brand.brand}</a>
+                        </li>
+                        <isif
+                            condition="${(brand.brand[0].match(/[a-z]/i) && prevIntial != pdict.JSONBrand[loopstatus.index + 1].brand[0])}">
+                            <isset name="numericClosing" value="${true}" scope="page" />
+                            </ul>
+                        </isif>
+                    </isloop>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <iscontentasset aid="stay-in-touch" />
+    </div>
+</isdecorate>

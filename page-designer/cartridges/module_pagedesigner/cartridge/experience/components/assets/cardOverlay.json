@@ -1,0 +1,194 @@
+{
+	"name": "Card - Overlay",
+	"description": "--description here--",
+	"group": "assets",
+	"attribute_definition_groups": [
+		{
+			"id": "cardConfig",
+			"name": "Card Basic Configuration",
+			"description": "--description here--",
+			"attribute_definitions": [
+				{
+					"id": "addClass",
+					"name": "Add Custom Class",
+					"type": "string",
+					"required": false
+				},
+				{
+					"id": "cardBg",
+					"name": "Card Style",
+					"type": "enum",
+					"values": [
+						"bg-light",
+						"bg-dark",
+						"bg-primary",
+						"bg-secondary",
+						"bg-warning"
+					],
+					"required": false
+				},
+				{
+					"id": "cardTextColor",
+					"name": "Card Text Color",
+					"type": "enum",
+					"values": ["text-dark", "text-white"],
+					"required": false
+				},
+				{
+					"id": "cardTextAlign",
+					"name": "Card Text Align",
+					"type": "enum",
+					"values": ["text-center", "text-right"],
+					"required": false
+				},
+				{
+					"id": "colPadding",
+					"name": "Remove Padding (Horizontal)",
+					"type": "enum",
+					"values": ["px-0"],
+					"required": false
+				}
+			]
+		},
+		{
+			"id": "cardOverlayConfig",
+			"name": "Card Overlay Configuration",
+			"description": "--description here--",
+			"attribute_definitions": [
+				{
+					"id": "overlayPositionX",
+					"name": "Overlay Align (Horizontal)",
+					"type": "enum",
+					"values": [
+						"justify-content-start",
+						"justify-content-center",
+						"justify-content-end"
+					],
+					"default_value": "justify-content-start",
+					"required": false
+				},
+				{
+					"id": "overlayPositionY",
+					"name": "Overlay Align (Vertical)",
+					"type": "enum",
+					"values": [
+						"align-items-start",
+						"align-items-center",
+						"align-items-end"
+					],
+					"default_value": "align-items-end",
+					"required": false
+				}
+			]
+		},
+		{
+			"id": "cardContentConfig",
+			"name": "Card Content Configuration",
+			"description": "--description here--",
+			"attribute_definitions": [
+				{
+					"id": "cardImage",
+					"name": "Select Card Image",
+					"type": "image",
+					"required": false
+				},
+				{
+					"id": "cardImageAlt",
+					"name": "Add Image Alt Text",
+					"type": "string",
+					"required": false
+				},
+				{
+                    "id": "cardImageLink",
+                    "name": "Make Image Clickable",
+                    "type": "boolean",
+                    "required": false
+                },
+				{
+					"id": "cardHeading",
+					"name": "Card Heading",
+					"type": "string",
+					"required": false
+				},
+				{
+					"id": "cardSubHeading",
+					"name": "Card Sub Heading",
+					"type": "string",
+					"required": false
+				},
+				{
+					"id": "cardSubLine",
+					"name": "Card Sub Line",
+					"type": "string",
+					"required": false
+				}
+			]
+		},
+		{
+			"id": "cardTextBlockConfig",
+			"name": "Card Text Block Configuration",
+			"description": "--description here--",
+			"attribute_definitions": [
+				{
+					"id": "cardDescription",
+					"name": "Card Text",
+					"description": "--description here--",
+					"type": "markup",
+					"required": false
+				},
+				{
+					"id": "textBlock",
+					"name": "Select Text Format (Newspaper Format)",
+					"type": "enum",
+					"values": ["column-2", "column-3"],
+					"required": false
+				}
+			]
+		},
+		{
+			"id": "cardCtaConfig",
+			"name": "Card CTA Configuration",
+			"description": "--description here--",
+			"attribute_definitions": [
+				{
+					"id": "ctaLabel",
+					"name": "CTA Label",
+					"type": "string",
+					"required": false
+				},
+				{
+					"id": "ctaUrl",
+					"name": "URL For CTA",
+					"type": "url",
+					"required": false
+				},
+				{
+					"id": "ctaDsiplay",
+					"name": "CTA Display",
+					"type": "enum",
+					"values": ["btn-block"],
+					"required": false
+				},
+				{
+					"id": "ctaStyle",
+					"name": "CTA Style",
+					"type": "enum",
+					"values": [
+						"btn-underline",
+						"btn-light",
+						"btn-dark",
+						"btn-primary",
+						"btn-secondary",
+						"btn-outline-light",
+						"btn-outline-dark",
+						"btn-outline-primary",
+						"btn-outline-secondary"
+					],
+					"default_value": "btn-outline-primary",
+					"required": false
+				}
+			]
+		}
+	],
+	"region_definitions": []
+}

@@ -1,0 +1,18 @@
+<iscontent type="multipart/mixed; boundary=------------000001030701020908040900" charset="UTF-8" encoding="off">  
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+This is a multi-part message in MIME format.
+
+<isloop items="${pdict.files}" var="attachedFile">
+
+--------------000001030701020908040900
+
+<isinclude template="mail/attachmentSection" />
+
+</isloop>
+
+--------------000001030701020908040900
+
+<isinclude template="mail/htmlSection" />
+
+--------------000001030701020908040900--

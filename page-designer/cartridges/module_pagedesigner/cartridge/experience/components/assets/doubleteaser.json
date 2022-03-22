@@ -1,0 +1,171 @@
+{
+  "name": "Double Teaser",
+  "description": "Image, text and link to a category, product or static content",
+  "group": "assets",
+  "attribute_definition_groups": [
+    {
+      "id": "container",
+      "name": "Container",
+      "description": "The visual display of the category in the background.",
+      "attribute_definitions": [
+        {
+          "id": "container_id",
+          "name": "Section ID",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "addContainer",
+          "name": "check to make it full bleed",
+          "type": "boolean",
+          "required": false,
+          "default_value": false
+        }
+      ]
+    },
+    {
+      "id": "20perOpacity",
+      "name": "Custom Opacity",
+      "attribute_definitions": [   {
+        "id": "customOpacity",
+        "name": "Add 20% black opacity",
+        "type": "boolean",
+        "required": false,
+        "default_value": false
+      }]
+    },
+    {
+      "id": "teaser1",
+      "name": "Teaser 1",
+      "description": "The details of first teaser",
+      "attribute_definitions": [
+        {
+          "id": "url1",
+          "name": "URL",
+          "type": "url",
+          "required": false
+        },
+        {
+          "id": "brand1",
+          "name": "Brand",
+          "type": "string",
+          "description": "Give a brand to apply a brand filter on category search.",
+          "required": false
+        },
+        {
+          "id": "image1",
+          "name": "Desktop image",
+          "type": "image",
+          "required": true
+        },
+        {
+          "id": "mblimage1",
+          "name": "Mobile image",
+          "type": "image",
+          "required": true
+        },
+        {
+          "id": "text_headline1",
+          "name": "Heading",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "text_subline1",
+          "name": "Subheading",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "text_link1",
+          "name": "Link Text",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "font_option1",
+          "name": "Font Option",
+          "type": "enum",
+          "values": ["option1", "option2", "option3"],
+          "default_value": "option1",
+          "required": false
+        },
+        {
+          "id": "font_color1",
+          "name": "Font Color",
+          "type": "enum",
+          "values": ["black", "white"],
+          "default_value": "black",
+          "required": false
+        }
+      ]
+    },
+    {
+      "id": "teaser2",
+      "name": "Teaser 2",
+      "description": "The details of second teaser",
+      "attribute_definitions": [
+        {
+          "id": "url2",
+          "name": "URL",
+          "type": "url",
+          "required": false
+        },
+        {
+          "id": "brand2",
+          "name": "Brand",
+          "type": "string",
+          "description": "Give a brand to apply a brand filter on category search.",
+          "required": false
+        },
+        {
+          "id": "image2",
+          "name": "Desktop Image",
+          "type": "image",
+          "required": true
+        },
+        {
+          "id": "mblimage2",
+          "name": "Mobile Image",
+          "type": "image",
+          "required": true
+        },
+        {
+          "id": "text_headline2",
+          "name": "Heading",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "text_subline2",
+          "name": "Subheading",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "text_link2",
+          "name": "Link Text",
+          "type": "string",
+          "required": false
+        },
+        {
+          "id": "font_option2",
+          "name": "Font Option",
+          "type": "enum",
+          "values": ["option1", "option2", "option3"],
+          "default_value": "option1",
+          "required": false
+        },
+        {
+          "id": "font_color2",
+          "name": "Font Color",
+          "type": "enum",
+          "values": ["black", "white"],
+          "default_value": "black",
+          "required": false
+        }
+      ]
+    }
+  ],
+  "region_definitions": []
+}

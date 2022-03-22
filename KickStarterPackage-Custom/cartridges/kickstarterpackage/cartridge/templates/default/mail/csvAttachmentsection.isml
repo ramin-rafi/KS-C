@@ -1,0 +1,5 @@
+Content-Type: text/csv;name="${pdict.fileName}"
+Content-Disposition: attachment; filename="${pdict.fileName}"
+Content-Transfer-Encoding: 8bit
+
+${pdict.file}

@@ -1,0 +1,19 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets');
+    assets.addJs('/js/search.js');
+    assets.addCss('/css/search.css');
+</isscript>
+
+<isinclude template="/components/modules" sf-toolkit="off" />
+<div class="product-list-module js-plm-left-nav" data-moduleProductLimit="${pdict.moduleProductLimit}">
+    <div class="search-results">
+        <div class="" id="product-search-results">
+            <isif condition="${pdict.productSearch.productIds.length > 0}">
+                <!--- Refinement bar --->
+                <div class="refinement-bar no-back-arrow">
+                    <isinclude url="${pdict.refineurl}"/>
+                </div>
+            </isif>
+        </div>
+    </div>
+</div>

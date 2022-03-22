@@ -1,0 +1,45 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/threeColTeaser.css');
+</isscript>
+<iscomment> Three Column Teaser  </iscomment>
+<section class="slide three-col-teaser ${pdict.backgroundColour} ${pdict.customOpacity ? 'has-overlay' : ''}">
+    <div class="container">
+        <div class="teaser-item-option ${pdict.teaserConfig}">
+            <div class="teaser-list-wrapper">
+                <isloop items="${pdict.teaserArray}" var="teaser" status="loopstatus">
+                    <isif condition="${!empty(teaser.url)}">
+                        <a class="dl-promo teaser-list-item" data-id="${teaser.title}" data-slot = "slot ${loopstatus.index}" data-creative="Three Col Teaser" href="${teaser.url}" class="teaser-list-item">
+                    <iselse/>
+                        <div class="teaser-list-item">
+                    </isif>
+                    <div class="content-holder ${teaser.textColor}">
+                        <isif condition="${!empty(teaser.image)}">
+                            <div class="image-holder img-desktop d-none d-md-block">
+                                <img src="${teaser.image.src.desktop}" alt="${teaser.image.alt}" class="img-fluid" />
+                            </div>
+                        </isif>
+                         <isif condition="${!empty(teaser.mobileImage)}">
+                            <div class="image-holder img-mobile d-md-none">
+                                <img src="${teaser.mobileImage.src.desktop}" alt="${teaser.mobileImage.alt}" class="img-fluid" />
+                            </div>
+                        </isif>
+                        <div class="content-caption">
+                            <isif condition="${!empty(teaser.copy)}">
+                                <div class="info-label">${teaser.copy}</div>
+                            </isif>
+                            <isif condition="${!empty(teaser.title)}">
+                                <h2>${teaser.title}</h2>
+                            </isif>
+                        </div>
+                    </div>
+                    <isif condition="${teaser.url}">
+                        </a>
+                    <iselse/>
+                        </div>
+                    </isif>
+                </isloop>
+            </div>
+        </div>
+    </div>
+</section>

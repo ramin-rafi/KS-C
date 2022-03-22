@@ -1,0 +1,63 @@
+{
+    "name": "Blockquote-SL",
+    "description": "--description here--",
+    "group": "assets",
+    "attribute_definition_groups": [
+        {
+            "id": "teaserBlockquoteConfig",
+            "name": "Teaser Basic Configuration",
+            "description": "--description here--",
+            "attribute_definitions": [
+                {
+                    "id": "addClass",
+                    "name": "Add Custom Class",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "teaserBlockquoteConfig",
+                    "name": "Teaser Blockquote Configuration",
+                    "description": "Please select the container blockquote layout as fixed width Or full width",
+                    "type": "enum",
+                    "values": ["Fixed", "Full"],
+                    "default_value": "Full",
+                    "required": true
+                },
+                {
+                    "id": "teaserBlockquotePadY",
+                    "name": "Teaser Layout Space (Vertical/Y)",
+                    "type": "enum",
+                    "values": ["20px", "40px"],
+                    "required": false
+                },
+                {
+                    "id": "teaserLayoutBlockquote",
+                    "name": "Teaser Layout Blockquote",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "teaserBlockquoteAlignment",
+                    "name": "Quote Text Align",
+                    "type": "enum",
+                    "values": ["Center", "Right"],
+                    "required": false
+                },
+                {
+                    "id": "teaserLayoutBlockquoteFooter",
+                    "name": "Teaser Blockquote Footer",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "teaserBlockquoteFooterAlignment",
+                    "name": "Blockquote footer Text Align",
+                    "type": "enum",
+                    "values": ["Center", "Right"],
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

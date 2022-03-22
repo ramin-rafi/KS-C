@@ -1,0 +1,51 @@
+{
+  "name": "Livebuy Slot Module",
+  "description": "Image, text and link to a category, product or static content",
+  "group": "assets",
+  "attribute_definition_groups": [
+    {
+      "id": "content_details",
+      "name": "Content Details",
+      "description": "The details of first teaser",
+      "attribute_definitions": [
+        {
+          "id": "headline",
+          "name": "Headline",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "subline",
+          "name": "Subline",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "liveNowText",
+          "name": "Live Now Text",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "liveNowColor",
+          "name": "Live Now Hex Color",
+          "type": "string",
+          "required": true
+        },
+        {
+          "id": "image",
+          "name": "Image",
+          "type": "image",
+          "required": true
+        },
+        {
+          "id": "playLogoColor",
+          "name": "Play Logo Color",
+          "type": "string",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "region_definitions": []
+}

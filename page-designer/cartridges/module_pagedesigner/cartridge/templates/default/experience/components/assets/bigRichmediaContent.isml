@@ -1,0 +1,55 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/teaserSlide.css');
+    assets.addCss('/css/bigrichmediacontent.css');
+</isscript>
+
+<section class="slide big-rich-media-content ${pdict.customOpacity === 'yes' ? 'has-overlay' : ''}
+    <isif condition=" ${pdict.htmlclass}">
+    <isprint value="${pdict.htmlclass}" encoding="off" />
+    </isif>">
+
+    <isif condition="${pdict.title}">
+        <isif condition="${pdict.titleClickable && pdict.titleClickable === 'yes' && pdict.categoryUrl}">
+            <h2><a href="${pdict.categoryUrl}" class="no-underline">${pdict.title}</a></h2>
+        <iselse/>
+            <h2>${pdict.title}</h2>
+        </isif>
+
+    </isif>
+
+    <isif condition="${pdict.url && pdict.width && pdict.height}">
+        <div class="video-wrapper">
+            <iframe src="${pdict.url}" width="${pdict.width}" height="${pdict.height}" frameborder="0"
+                allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    <iselseif condition="${pdict.image && pdict.imagemobile}" />
+        <div class="img-holder d-none d-md-block">
+            <img src="${pdict.image.src.desktop}" alt="${pdict.image.alt}" />
+        </div>
+        <div class="img-holder d-md-none img-mobile">
+            <img src="${pdict.imagemobile.src.desktop}" alt="${pdict.imagemobile.alt}" />
+        </div>
+    </isif>
+
+    <isif condition="${pdict.teaser_text}">
+        <div class="content">
+            ${pdict.teaser_text}
+        </div>
+    </isif>
+
+    <isif condition="${pdict.disclaimer}">
+        <div class="disclaimer-txt">
+            <p>
+                <isprint value="${pdict.disclaimer}" encoding="off" />
+            </p>
+        </div>
+    </isif>
+
+    <isif condition="${pdict.text_link && pdict.categoryUrl}">
+        <a href="${pdict.categoryUrl}" class="big-media-link btn-overlay no-underline dl-promo"
+            data-id="${pdict.title}">
+            <isprint value="${pdict.text_link}" encoding="off" />
+        </a>
+    </isif>
+</section>

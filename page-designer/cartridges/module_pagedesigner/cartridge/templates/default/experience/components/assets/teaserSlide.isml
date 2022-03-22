@@ -1,0 +1,82 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('/css/teaserSlide.css');
+    assets.addCss('/css/mainTeaserSlide.css');
+</isscript>
+
+<section id="${pdict.container_id ? pdict.container_id : ''}"
+    class="slide ${pdict.customOpacity ? 'has-overlay' : ''} ${pdict.htmlclass ?  pdict.htmlclass : ''} ${pdict.customClass ?  pdict.customClass : ''}">
+    <isif condition="${pdict.categoryLink}">
+        <a class='dl-promo brandshop-slide-item' data-id='${pdict.text_headline}' data-creative='CLP > Promo Teaser'
+            href="${pdict.categoryLink}">
+        <iselse/>
+            <div class='brandshop-slide-item' data-id='${pdict.text_headline}'
+                data-creative='<isif condition="${pdict.pageType}"><isprint value="${pdict.pageType} " /></isif>Promo Teaser'
+                class="brandshop-slide-item">
+    </isif>
+
+    <div class="banner-slide-image">
+        <picture class="image-holder">
+            <div class="image img-desktop focuspoint d-none d-md-block" data-focus-x="${pdict.focusX}"
+                data-focus-y="${pdict.focusY}">
+                <img class="promo-image" src="${pdict.image.src.desktop}" alt="${pdict.alt_desktop}" style="" />
+            </div>
+
+            <div class="image img-mobile d-md-none">
+                <img class="promo-image" src="${pdict.mobileImage.src.mobile}" alt="${pdict.alt_mobile}" style="" />
+            </div>
+        </picture>
+    </div>
+
+    <isif condition="${pdict.text_headline || pdict.text_headline2 || pdict.text_subline || pdict.teaser_text || (pdict.text_link && pdict
+                     .categoryLink)}">
+        <div
+            class="clp-teaser-text_container slide-overlay d-flex ${pdict.captionAlign === 'TL' ? 'align-items-start justify-content-start' : ''} ${pdict.captionAlign === 'ML' ? 'align-items-center justify-content-start' : ''} ${pdict.captionAlign === 'BL' ? 'align-items-end justify-content-start' : ''} ${pdict.captionAlign === 'TC' ? 'align-items-start justify-content-center' : ''} ${pdict.captionAlign === 'MC' ? 'align-items-center justify-content-center' : ''} ${pdict.captionAlign === 'BC' ? 'align-items-end justify-content-center' : ''} ${pdict.captionAlign === 'TR' ? 'align-items-start justify-content-end' : ''} ${pdict.captionAlign === 'MR' ? 'align-items-center justify-content-end' : ''} ${pdict.captionAlign === 'BR' ? 'align-items-end justify-content-end' : ''} ${pdict.SlideColor}">
+            <div
+                class="${pdict.captionTextAlign === 'Left' ? 'caption' : ''} ${pdict.captionTextAlign === 'Center' ? 'caption text-center' : ''} ${pdict.captionTextAlign === 'Right' ? 'caption text-right' : ''}">
+                <isif condition=" ${pdict.text_headline}">
+                    <div class="clp-teaser-text clp-teaser-text_heading">
+                        <h1 class="clp-teaser-wrap">
+                            <isprint value="${pdict.text_headline}" encoding="off" />
+                        </h1>
+
+                        <isif condition="${pdict.text_headline2}">
+                            <h1 class="clp-teaser-wrap">
+                                <isprint value="${pdict.text_headline2}" encoding="off" />
+                            </h1>
+                        </isif>
+                    </div>
+                </isif>
+
+                <isif condition="${pdict.text_subline}">
+                    <div class="clp-teaser-text clp-teaser-text_subheading">
+                        <p>
+                            <isprint value="${pdict.text_subline}" encoding="off" />
+                        </p>
+                    </div>
+                </isif>
+
+                <isif condition="${pdict.teaser_text}">
+                    <div class="main-teaser-description d-sm-none">
+                        <div class="teaser-text">${pdict.teaser_text}</div>
+                    </div>
+                </isif>
+
+                <isif condition="${pdict.text_link && pdict.categoryLink}">
+                    <span class="btn-overlay">
+                        <isprint value="${pdict.text_link}" encoding="off" />
+                    </span>
+                </isif>
+            </div>
+        </div>
+    </isif>
+
+    <isif condition="${pdict.categoryLink}">
+        </a>
+    <iselse/>
+        </div>
+    </isif>
+
+    <button class="slick-prev slick-arrow" aria-label="Previous" type="button"></button>
+    <button class="slick-next slick-arrow" aria-label="Previous" type="button"></button>
+</section>

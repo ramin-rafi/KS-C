@@ -1,0 +1,48 @@
+<!--- TEMPLATENAME: gaDataLayer.isml --->
+
+<input type="hidden" id="currencyCode" value="${dw.system.Site.current.getDefaultCurrency()}"/>
+<isset name="emailAddress" value="" scope="page" />
+<isif condition="${pdict.CurrentUser.authenticated}">
+	<isset name="emailAddress" value="${pdict.CurrentUser.profile.email}" scope="page" />
+</isif>
+<isset name="currencySymbol" value="${session.currency.symbol}" scope="page" />
+<isset name="gaHelper" value="${require('*/cartridge/scripts/helpers/gaHelper.js')}" scope="page" />
+<input type="hidden" id="ga_productsBatchCount" value="${dw.system.Site.getCurrent().getCustomPreferenceValue('ga_productsBatchCount') ? dw.system.Site.getCurrent().getCustomPreferenceValue('ga_productsBatchCount') : 10}">
+<input type="hidden" id="pixelCurrencyCode" value="${session.currency.currencyCode}">
+<isif condition="${pdict.action == 'Product-Show' || pdict.pageType === 'PDP'}">
+	<isif condition="${!empty(pdict.product)}">
+		<input type="hidden" id="page-action" value="${pdict.action}" />
+		<input type="hidden" id="productData" value="${gaHelper.gaProductDetailObject(pdict.product)}" />
+		<input type="hidden" id="page-view" value="${gaHelper.getGAPageViewProducObject('Product', pdict.product)}">
+	<iselse/>
+		<input type="hidden" id="page-view" value="${gaHelper.getGAPageViewObject('Product')}">
+	</isif>
+<iselseif condition="${pdict.action == 'Order-Confirm' && !empty(pdict.order)}" />
+	<input type="hidden" id="page-action" value="${pdict.action}"/>
+	<input type="hidden" id="orderData" value="${gaHelper.gaOrderObject(pdict.order)}" />
+	<input type="hidden" id="page-view" value="${gaHelper.getGAPageViewObject('Order Confirmation')}">
+<iselseif condition="${pdict.action == 'Checkout-Begin' && !empty(pdict.order)}" />
+	<input type="hidden" id="checkoutProductList" value="${gaHelper.gaCheckoutProducts(pdict.order)}">
+	<input type="hidden" id="checkoutObject" value="${gaHelper.gaCheckoutObject(pdict.order)}">
+	<input type="hidden" id="page-view" value="${gaHelper.getGAPageViewObject('Checkout')}">
+<iselseif condition="${pdict.action == 'Home-Show' || pdict.action === 'Sites-KaDeWe-Site' || pdict.pageType == 'Home'}" />
+	<input type="hidden" id="page-view" value="${gaHelper.getGAPageViewObject('Home')}">
+<iselseif condition="${pdict.action == 'Account-Show' || pdict.action == 'Account-Data' || pdict.action == 'Order-History' || pdict.action == 'Address-List' || pdict.action == 'Login-Show'}" />
+	<input type="hidden" id="page-view" value="${gaHelper.getGAPageViewObject('Account')}">
+<iselseif condition="${pdict.action == 'Cart-Show'}" />
+	<input type="hidden" id="page-view" value="${gaHelper.getGAPageViewObject('Cart')}">
+<iselseif condition="${pdict.action == 'Search-Show'}" />
+	<input type="hidden" id="page-view" value="${gaHelper.getGAPageViewSearchObject('Search', pdict.productSearch, pdict.breadcrumbs)}">
+<iselseif condition="${pdict.action == 'Page-Show' && pdict.queryString == 'cid=newsletter'}" />
+	<input type="hidden" id="page-view" value="${gaHelper.getGAPageViewObject('Other')}">
+<iselseif condition="${pdict.action == 'Page-Show'}" />
+	<input type="hidden" id="page-view" value="${gaHelper.getGAPageViewObject('Info')}">
+<iselseif condition="${pdict.pageType == 'CLP'}" />
+	<input type="hidden" id="page-view" value="${gaHelper.getGAPageViewObject('CLP')}">
+<iselseif condition="${pdict.pageType == 'Brand'}" />
+	<input type="hidden" id="page-view" value="${gaHelper.getGAPageViewObject('Brand')}">
+<iselseif condition="${pdict.action == 'Checkout-Login'}" />
+    <input type="hidden" id="page-view" value="${gaHelper.getGAPageViewObject('Checkout')}">
+<iselse>
+    <input type="hidden" id="page-view" value="">
+</isif>

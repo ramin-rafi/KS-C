@@ -1,0 +1,29 @@
+<isdecorate template="common/layout/page">
+<isinclude template="/components/modules" sf-toolkit="off" />
+    <isscript>
+        var assets = require('*/cartridge/scripts/assets');
+        assets.addJs('/js/allBrands.js');
+        assets.addCss('/css/brands.css');
+    </isscript>
+    <div class="brand-breadcrumbs-area">
+        <div class="container">
+            <div class="brand-breadcrumbs">
+                <span class="categoryCrumbs">${Resource.msg('label.all.brands','search',null)} <span class="secondary">${pdict.mainCat != 'KaDeWe' ? '/ ' + pdict.mainCat : ''}</span></span>
+            </div>
+        </div>
+    </div>
+    <div class="allbrands container brands-page">
+        <div class="row">
+            <div class="filter-options col-12 col-sm-12 col-md-2">
+                <div class="top-categories">
+                    <isinclude template="brand/categories" />
+                </div>
+            </div>
+            <div class="brands-section col-12 col-sm-12 col-md-10">
+                <div class="all-brands">
+                    <isinclude template="brand/brands" />
+                </div>
+            </div>
+        </div>
+    </div>
+</isdecorate>

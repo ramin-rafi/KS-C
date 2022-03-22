@@ -1,0 +1,22 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+</isscript>
+
+
+<div class="${pdict.teaserBlockquoteConfig === 'Full' ? 'container-fluid' : 'container'}">
+    <blockquote
+        class="blockquote ${pdict.teaserBlockquotePadY === '20px' ? 'py-3' : ''} ${pdict.teaserBlockquotePadY === '' ? '40px' : 'py-5'}">
+        <p
+            class="quote ${pdict.teaserBlockquoteAlignment === 'Center' ? 'text-center' : ''} ${pdict.teaserBlockquoteAlignment === 'Right' ? 'text-right' : ''}">
+            <isprint value="${pdict.teaserLayoutBlockquote}" encoding="off" />
+        </p>
+        <isif condition="${pdict.teaserLayoutBlockquoteFooter}">
+            <div class="blockquote-footer">
+                <small
+                    class="${pdict.teaserBlockquoteFooterAlignment === 'Center' ? 'text-center' : ''} ${pdict.teaserBlockquoteFooterAlignment === 'Right' ? 'text-right' : ''}">
+                    <isprint value="${pdict.teaserLayoutBlockquoteFooter}" encoding="off" />
+                </small>
+            </div>
+        </isif>
+    </blockquote>
+</div>

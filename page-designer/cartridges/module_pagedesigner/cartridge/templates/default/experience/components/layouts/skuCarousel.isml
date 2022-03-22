@@ -1,0 +1,15 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    assets.addCss('css/skuCarousel.css');
+    var category = pdict.Category;
+</isscript>
+<div class="best-sellings">
+    <div class="container gtm-crousel-impressions">
+        <h2 class="gtm-carousel-list">${pdict.title}</h2>
+        <div class="products-slider-holder">
+            <div class="products-slider">
+                  <isinclude url="${URLUtils.url('Search-RenderProducts', 'cgid', category.ID, 'start', 0, 'sz', pdict.prodLimit, 'prefn1', 'brand', 'prefv1', pdict.brand, 'prefn2', 'refinementColor', 'prefv2', pdict.color)}"/>
+            </div>
+        </div>
+    </div>
+</div>

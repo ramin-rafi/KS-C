@@ -1,0 +1,90 @@
+{
+	"name": "Card - Image",
+	"description": "--description here--",
+	"group": "assets",
+	"attribute_definition_groups": [
+		{
+			"id": "cardConfig",
+			"name": "Card Configuration",
+			"description": "--description here--",
+			"attribute_definitions": [
+				{
+					"id": "addClass",
+					"name": "Add Custom Class",
+					"type": "string",
+					"required": false
+				},
+				{
+					"id": "cardBg",
+					"name": "Card Style",
+					"type": "enum",
+					"values": [
+						"bg-primary",
+						"bg-secondary",
+						"bg-success",
+						"bg-danger",
+						"bg-warning",
+						"bg-info",
+						"bg-light",
+						"bg-dark"
+					],
+					"required": false
+				},
+				{
+					"id": "cardTextColor",
+					"name": "Card Text Color",
+					"type": "enum",
+					"values": ["text-dark", "text-white"],
+					"required": false
+				},
+				{
+					"id": "cardTextAlign",
+					"name": "Card Text Align",
+					"type": "enum",
+					"values": ["text-center", "text-right"],
+					"required": false
+				},
+				{
+					"id": "colPadding",
+					"name": "Add Padding (Horizontal)",
+					"type": "enum",
+					"values": ["px-0", "px-1", "px-2", "px-3", "px-4", "px-5"],
+					"required": false
+				}
+			]
+		},
+		{
+			"id": "cardContent",
+			"name": "Card Content",
+			"description": "--description here--",
+			"attribute_definitions": [
+				{
+					"id": "cardImage",
+					"name": "Card Image",
+					"type": "image",
+					"required": false
+				},
+				{
+					"id": "cardImageLink",
+					"name": "Make Image Clickable",
+					"type": "boolean",
+					"required": false
+				},
+				{
+                    "id": "ctaImageLink",
+                    "name": "URL For Image Link",
+                    "type": "url",
+                    "required": false
+                },
+				{
+					"id": "cardDescription",
+					"name": "Card Text",
+					"description": "--description here--",
+					"type": "markup",
+					"required": false
+				}
+			]
+		}
+	],
+	"region_definitions": []
+}

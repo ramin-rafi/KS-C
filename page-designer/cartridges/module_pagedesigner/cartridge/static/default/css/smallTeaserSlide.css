@@ -1,0 +1,54 @@
+
+.small-teaser-wrapper {
+    padding: 40px 0;
+}
+
+.small-teaser-banner .image {
+    height: auto;
+}
+
+@media (min-width: 768px){
+    /* Small Teaser Slide*/
+    .small-teaser-banner {
+        height: 190px;
+    }
+
+    .small-teaser-banner .image {
+        object-fit: cover;
+        height: 190px;
+        min-height: auto;
+    }
+
+    .small-teaser-banner .caption {
+        padding: 0 30px 30px;
+    }
+
+    .small-teaser-banner .caption.right {
+        left: auto;
+        right: 0;
+        text-align: right;
+    }
+
+    .small-teaser-banner .small-teaser-text .teaser-title {
+        font-size: 26px;
+        line-height: 38px;
+        letter-spacing: 0.02em;
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+
+    .brandshop-page-wrapper .small-teaser-banner .btn-overlay {
+        display: inline-block;
+    }
+}
+
+@media (max-width: 992px) and (min-width: 768px){
+    .small-teaser-banner .image {
+        height: 150px;
+    }
+}
+
+
+
+
+

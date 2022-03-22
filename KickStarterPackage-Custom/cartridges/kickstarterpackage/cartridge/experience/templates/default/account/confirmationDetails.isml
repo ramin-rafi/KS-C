@@ -1,0 +1,61 @@
+<div class="card-body">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="card-header-custom detail-title">${Resource.msg('title.receipt', 'confirmation', null)}
+                <div class="order-info">
+                    (<span class="summary-section-label order-number-label">${Resource.msg('label.order.number',
+                        'confirmation', null)}:</span>
+                    <span class="order-number">${pdict.order.orderNumber}</span>)
+                </div>
+            </h2>
+        </div>
+        <div class="col-12">
+            <div class="order-detail-area">
+                <div class="summary-box">
+                    <p><span class="order-heading">${Resource.msg('label.orderhistory.dateordered','account',null)}</span> <isprint value="${pdict.order.creationDate}"/></p>
+                </div>
+                <div class="summary-box">
+                    <p><span class="order-heading">${Resource.msg('label.orderhistory.orderstatus','account',null)}</span> <span class="dashboard-order-card-status">${pdict.order.orderStatus}</span></p>
+                </div>
+                <div class="summary-box">
+                    <isinclude template="checkout/shipping/shippingSummary" />
+                </div>
+                <div class="summary-box payment">
+                    <isinclude template="checkout/billing/billingSummary" />
+                </div>
+                <!--- Billing Address --->
+                <div class="summary-box billing">
+                    <span class="summary-section-label billing-addr-label">${Resource.msg('label.order.billing.address',
+                        'confirmation', null)}</span>
+                    <isif condition="${pdict.order.billing.billingAddress.address !== null}">
+                        <isset name="address" value="${pdict.order.billing.billingAddress.address}" scope="page" />
+                        <iselse>
+                            <isset name="address" value="{}" scope="page" />
+                    </isif>
+                    <isinclude template="checkout/addressSummary" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="receipt-row">
+    <strong class="title">${Resource.msg('title.added.product','confirmation',null)}</strong>
+    <div class="row">
+        <div class="col-12">
+            <isinclude template="checkout/orderProductSummary" />
+        </div>
+        <div class="col-12">
+            <div class="card checkout-order-total-summary totals">
+                <div class="card-body order-total-summary account-order-summary">
+                    <isset name="detailPageSummary" value="${true}" scope="page" />
+                    <isinclude template="checkout/orderTotalSummary" />
+                    <a href="${URLUtils.url('Home-Show')}"
+                        class="home-link btn btn-block btn-primary float-right order-confirmation-continue-shopping"
+                        role="button" aria-pressed="true">
+                        ${Resource.msg('button.continue.shopping','confirmation',null)}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

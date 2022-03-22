@@ -1,0 +1,223 @@
+{
+    "name": "Teaser Slide",
+    "description": "Image, text overlay that links user to a category using the markup editor",
+    "group": "assets",
+    "attribute_definition_groups": [
+        {
+            "id": "background",
+            "name": "images",
+            "description": "The visual display of the banner image in the background.",
+            "attribute_definitions": [
+
+                {
+                    "id": "image",
+                    "name": "Desktop Image",
+                    "type": "image",
+                    "required": true
+                },
+                {
+                    "id": "customClass",
+                    "name": "Custom Class",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "alt_desktop",
+                    "name": "Alt Text",
+                    "description": "The image alt text shown by the component.",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "mobileImage",
+                    "name": "Mobile Image",
+                    "type": "image",
+                    "required": true
+                },
+                {
+                    "id": "alt_mobile",
+                    "name": "Alt Text",
+                    "description": "The image alt text shown by the component.",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                  "id": "url",
+                  "name": "URL For CTA",
+                  "type": "url",
+                  "required": false
+                },
+                {
+                  "id": "container_id",
+                  "name": "Section ID",
+                  "type": "string",
+                  "required": false
+                }
+            ]
+        },
+        {
+            "id": "textoverlay",
+            "name": "Text Overlay",
+            "description": "The overlay text on top of the banner image.",
+            "attribute_definitions": [{
+                    "id": "text_headline",
+                    "name": "Heading",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "text_headline2",
+                    "name": "Heading 2",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "text_subline",
+                    "name": "Subheading",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "teaser_text",
+                    "name": "Teaser Text",
+                    "description": "The text below Promotional Teaser.",
+                    "type": "string",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "focuspoint",
+            "name": "Image focus points for desktop",
+            "description": "Values of image focuspoints",
+            "attribute_definitions": [{
+                    "id": "focusX",
+                    "name": "Focus points x",
+                    "type": "text",
+                    "required": false
+                },
+                {
+                    "id": "focusY",
+                    "name": "Focus points y",
+                    "type": "text",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "shopNowLink",
+            "name": "Shop Now Link",
+            "description": "The Shop Now link on the banner image",
+            "attribute_definitions": [
+                {
+                    "id": "categoryLink",
+                    "name": "Category Link",
+                    "type": "category",
+                    "required": false
+                },
+                {
+                    "id": "isSale",
+                    "name": "Sale",
+                    "type": "boolean",
+                    "required": false,
+                    "default_value": false
+                },
+                {
+                    "id": "showInNewArrival",
+                    "name": "New Arrival",
+                    "type": "boolean",
+                    "required": false,
+                    "default_value": false
+                }
+            ]
+        },
+        {
+            "id": "filters",
+            "name": "Filters",
+            "description": "Filter with a brand.",
+            "attribute_definitions":[
+                {
+                "id": "brand",
+                "name": "Brand",
+                "type": "string",
+                "required": false
+                }
+            ]
+        },
+        {
+            "id": "forBrandShopORnot",
+            "name": "For BrandShop Or Not",
+            "description": "Please select an option ",
+            "attribute_definitions": [{
+                "id": "forBrandShop",
+                "name": "For BrandShop Or Not",
+                "type": "enum",
+                "values": ["yes", "no"],
+                "default_value": "no",
+                "required": true
+            }]
+        },
+        {
+            "id": "20perOpacity",
+            "name": "Custom Opacity",
+            "attribute_definitions": [{
+                "id": "customOpacity",
+                "name": "Add 20% black opacity",
+                "type": "boolean",
+                "required": false,
+                "default_value": false
+              }]
+        },
+        {
+            "id": "captionOverlayAlignment",
+            "name": "Text Overlay Position",
+            "description": "Please select an option ",
+            "attribute_definitions": [{
+                "id": "captionAlign",
+                "name": "Text Position",
+                "type": "enum",
+                "values": ["TL", "ML", "BL", "TC", "MC", "BC", "TR", "MR", "BR"],
+                "default_value": "BL",
+                "required": false
+            }]
+        },
+        {
+            "id": "TextOverlayAlignment",
+            "name": "Text Alignment ",
+            "description": "Please select an option ",
+            "attribute_definitions": [{
+                "id": "captionTextAlign",
+                "name": "Text Alignment",
+                "type": "enum",
+                "values": ["Left", "Center", "Right"],
+                "default_value": "Left",
+                "required": false
+            }]
+        },
+        {
+            "id": "SlideColor",
+            "name": "Slide color",
+            "description": "Please select which color you want black/white ",
+            "attribute_definitions": [{
+                "id": "SlideColor",
+                "name": "Slide color",
+                "type": "enum",
+                "values": ["white", "black"],
+                "default_value": "black",
+                "required": true
+            }]
+        },
+        {
+            "id": "text_link",
+            "name": "CTA Text",
+            "description": "The explore more link on the banner image",
+            "attribute_definitions": [{
+                "id": "text_link",
+                "name": "Explore More text",
+                "type": "text",
+                "required": false
+            }]
+        }
+    ],
+    "region_definitions": []
+}

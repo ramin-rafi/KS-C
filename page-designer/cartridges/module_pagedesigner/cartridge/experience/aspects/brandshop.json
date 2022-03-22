@@ -1,0 +1,16 @@
+{
+  "name": "Brandshop page",
+  "description": "A Brandshop Home Page",
+  "attribute_definitions": [
+    {
+      "id": "category",
+      "name": "Category",
+      "description": "The brand specific page for-",
+      "type": "category",
+      "required": false
+    }
+  ],
+  "supported_object_types": [
+    "category"
+  ]
+}

@@ -1,0 +1,52 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+</isscript>
+
+<div class="slide-item ${pdict.addClass ? pdict.addClass : ''} ${pdict.captionTextColor == 'White' ? 'text-white' : ''} ${pdict.captionTextColor == 'Black' ? 'text-black' : ''}">
+    <isif condition="${pdict.video_url}">
+        <div class="video-wrapper">
+            <iscomment> <iframe src="${pdict.video_url}?autoplay=1&mute=1&controls=0&loop=1" frameborder="0" allow="autoplay; fullscreen;" allowfullscreen></iframe> </iscomment>
+            <video id="banVideo" class="bs-video" autoplay playsinline muted loop>
+                <source src="${pdict.video_url}" type="video/mp4">
+            </video>
+            <div class="pause-bt"><i class="icon-pause"></i>PAUSE</div>
+            <div class="play-bt" style="display:none;"><i class="icon-play"></i>PLAY</div>
+            <div class="unmute-bt" style="display:none;"><i class="icon-sound"></i></div>
+            <div class="mute-bt"><i class="icon-mute"></i></div>
+        </div>
+
+    <iselseif condition="${pdict.image && pdict.mobileImage}">
+            <picture>
+                <source media="(max-width:767px)" srcset="${pdict.mobileImage.src.mobile}" alt="${pdict.alt_mobile}">
+                <img class="img-fluid focuspoint" src="${pdict.image.src.desktop}" alt="${pdict.alt_desktop}"
+                    data-focus-x="${pdict.focusX}" data-focus-y="${pdict.focusY}" style="object-position:${pdict.focusX}px  ${pdict.focusY}px;"/>
+            </picture>
+    </isif>
+        <div
+            class="hsa-double-caption slide-overlay d-flex">
+            <div class="slide-caption d-flex ${pdict.captionPositionLHS == 'TL' ? 'align-items-start justify-content-start' : ''} ${pdict.captionPositionLHS == 'ML' ? 'align-items-center justify-content-start' : ''} ${pdict.captionPositionLHS == 'BL' ? 'align-items-end justify-content-start' : ''} ${pdict.captionPositionLHS == 'TC' ? 'align-items-start justify-content-center' : ''} ${pdict.captionPositionLHS == 'MC' ? 'align-items-center justify-content-center' : ''} ${pdict.captionPositionLHS == 'BC' ? 'align-items-end justify-content-center' : ''} ${pdict.captionPositionLHS == 'TR' ? 'align-item-start justify-content-end' : ''} ${pdict.captionPositionLHS == 'MR' ? 'align-items-center justify-content-end' : ''} ${pdict.captionPositionLHS == 'BR' ? 'align-items-end justify-content-end' : ''} ${pdict.captionResizeLHS == true ? 'caption-resize' : ' '} ${pdict.captionTextColor == 'White' ? 'text-white' : ''} ${pdict.captionTextColor == 'Black' ? 'text-black' : ''} ${pdict.captionTextAlign == 'Center' ? 'align-items-center text-center' : ''} ${pdict.captionTextAlign == 'Left' ? 'align-items-left text-left' : ''} ${pdict.captionTextAlign == 'Right' ? 'align-items-end text-right' : ''}">
+                <div>
+                    <isif condition="${pdict.teaserCaptionLHS}">
+                        <isprint value="${pdict.teaserCaptionLHS}" encoding="off" />
+                    </isif>
+
+                    <isif condition="${pdict.cta_text_1 && pdict.cta_link_1}">
+                        <a class="btn ${pdict.captionTextColor == 'White' ? 'text-white border-light' : ''} ${pdict.captionTextColor == 'Black' ? 'text-black' : ''}" href="${pdict.cta_link_1}" title="${pdict.cta_text_1}">
+                            <isprint value="${pdict.cta_text_1}" encoding="off" /></a>
+                    </isif>
+                </div>
+            </div>
+
+            <div class="slide-caption d-flex ${pdict.captionPositionRHS == 'TL' ? 'align-items-start justify-content-start' : ''} ${pdict.captionPositionRHS == 'ML' ? 'align-items-center justify-content-start' : ''} ${pdict.captionPositionRHS == 'BL' ? 'align-items-end justify-content-start' : ''} ${pdict.captionPositionRHS == 'TC' ? 'align-items-start justify-content-center' : ''} ${pdict.captionPositionRHS == 'MC' ? 'align-items-center justify-content-center' : ''} ${pdict.captionPositionRHS == 'BC' ? 'align-items-end justify-content-center' : ''} ${pdict.captionPositionRHS == 'TR' ? 'align-item-start justify-content-end' : ''} ${pdict.captionPositionRHS == 'MR' ? 'align-items-center justify-content-end' : ''} ${pdict.captionPositionRHS == 'BR' ? 'align-items-end justify-content-end' : ''} ${pdict.captionResizeRHS == true ? 'caption-resize' : ' '} ${pdict.captionTextColor2 == 'White' ? 'text-white' : ''} ${pdict.captionTextColor2 == 'Black' ? 'text-black' : ''} ${pdict.captionTextAlign2 == 'Center' ? 'align-items-center text-center' : ''} ${pdict.captionTextAlign2 == 'Left' ? 'align-items-left text-left' : ''} ${pdict.captionTextAlign2 == 'Right' ? 'align-items-end text-right' : ''}">
+                <div>
+                    <isif condition="${pdict.teaserCaptionRHS}">
+                        <isprint value="${pdict.teaserCaptionRHS}" encoding="off" />
+                    </isif>
+                    <isif condition="${pdict.cta_text_2 && pdict.cta_link_2}">
+                        <a class="btn ${pdict.captionTextColor2 == 'White' ? 'text-white border-light' : ''}  ${pdict.captionTextColor2 == 'Black' ? 'text-black' : ''}" href="${pdict.cta_link_2}" title="${pdict.cta_text_2}">
+                            <isprint value="${pdict.cta_text_2}" encoding="off" /></a>
+                    </isif>
+                </div>
+            </div>
+        </div>
+</div>

@@ -1,0 +1,11 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    // assets.addCss('/css/rowGrid.css');
+</isscript>
+
+
+
+<isset name="classCombination"
+    value="${'row row-grid ' + pdict.rowGridCol + " " + pdict.smRowGridCol + " " + pdict.mdRowGridCol + " " + (pdict.rowGridAlign ?
+           pdict.rowGridAlign : '')}" scope="page" />
+<isprint value="${pdict.regions.rowGridRegion.setClassName(classCombination).render()}" encoding="off" />

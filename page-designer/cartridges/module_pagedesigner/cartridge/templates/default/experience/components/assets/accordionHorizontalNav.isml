@@ -1,0 +1,11 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+</isscript>
+
+<div class="${pdict.addClass ? pdict.addClass + " " : ''}${pdict.sectionPaddingY ? pdict.sectionPaddingY : ''}">
+    <div class="wrap ${pdict.containerType ? pdict.containerType : ''}">
+        <div id="hScroll" class="horizonral-nav">
+            <ul class="js-accordion-nav nav"></ul>
+        </div>
+    </div>
+</div>

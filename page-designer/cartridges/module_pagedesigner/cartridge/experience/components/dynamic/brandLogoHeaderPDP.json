@@ -1,0 +1,24 @@
+{
+    "name": "Brand Logo Header PDP Module",
+    "description": "brand Logo Details",
+    "group": "assets",
+    "attribute_definition_groups": [
+        {
+            "id": "productDetail",
+            "name": "Brand from Product Detail Settings",
+            "description": "Product dynamic Detail Settings will provide Brand.",
+            "attribute_definitions": [
+              {
+                "id": "product",
+                "name": "Product",
+                "type": "product",
+                "required": true,
+                "dynamic_lookup":{
+                    "aspect_attribute_alias": "product"
+                }
+              }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

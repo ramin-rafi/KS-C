@@ -1,0 +1,71 @@
+.experience-assets-teasertrends .trending-section .titles-col a.mobile-link {
+    text-decoration: none;
+    cursor: pointer;
+    pointer-events: auto;
+    display: inline-block;
+    position: relative;
+    padding-right: 25px;
+}
+.experience-assets-teasertrends
+    .trending-section
+    .titles-col
+    a.mobile-link:after {
+    content: '\e909';
+    font-family: 'icomoon' !important;
+    font-size: 14px;
+    line-height: 14px;
+    position: absolute;
+    bottom: 41px;
+    right: 0;
+}
+
+.experience-assets-teasertrends .trending-section .titles-col h2 {
+    margin-bottom: 0;
+    font-size: 26px;
+    line-height: 38px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.experience-assets-teasertrends .trending-section .titles-col .read-more {
+    margin-top: 30px;
+}
+@media screen and (max-width: 1199.98px) {
+    .experience-assets-teasertrends .trending-section .titles-col h2 {
+        margin-bottom: 30px;
+        display: inline-block;
+    }
+    .experience-assets-teasertrends
+        .trending-section
+        .titles-col
+        h2:first-of-type {
+        padding-right: 6px;
+    }
+}
+
+@media (min-width: 768px) {
+    .experience-assets-teasertrends
+        .trending-section
+        .titles-col
+        a.mobile-link {
+        text-decoration: none;
+        pointer-events: none;
+        cursor: auto;
+        display: block;
+        padding-right: 0;
+    }
+    .experience-assets-teasertrends
+        .trending-section
+        .titles-col
+        a.mobile-link:after {
+        content: none;
+    }
+
+    .experience-assets-teasertrends .trending-section.align-right .titles-col {
+        order: 2;
+        text-align: left;
+    }
+
+    .experience-assets-teasertrends .trending-section.align-right .col-lg-9 {
+        order: 1;
+    }
+}

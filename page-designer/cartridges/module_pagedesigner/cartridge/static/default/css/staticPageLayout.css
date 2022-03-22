@@ -1,0 +1,1850 @@
+html {
+    scroll-behavior: smooth;
+    -o-scroll-behavior: smooth;
+    -webkit-scroll-behavior: smooth;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.jb-layout {
+    font-size: 14px;
+    /* line-height: 21px; */
+}
+
+p {
+    line-height: 21px;
+    margin: 0;
+}
+
+h1,
+.s1 {
+    font-size: 38px;
+    line-height: 56px;
+}
+
+.s1 {
+    font-weight: 400;
+}
+
+h2,
+.s2 {
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 38px;
+    margin-bottom: 15px;
+}
+
+h3,
+h4 {
+    font-size: 20px;
+    line-height: 26px;
+    margin-bottom: 15px;
+}
+
+h4 {
+    line-height: 23px;
+}
+
+h5 {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+h6 {
+    font-weight: 600;
+}
+
+/* Common CSS Selector Style */
+.py-3 {
+    padding: 15px 0 !important;
+}
+
+.pt-5 {
+    padding-top: 40px !important;
+}
+
+.pb-5 {
+    padding-bottom: 40px !important;
+}
+
+.py-5 {
+    padding: 40px 0 !important;
+}
+
+.mt-5 {
+    margin-top: 40px !important;
+}
+
+.mb-5 {
+    margin-bottom: 40px !important;
+}
+
+.my-5 {
+    margin: 40px 0 !important;
+}
+
+.bg-light {
+    background-color: #f9f9f9 !important;
+}
+
+.advance-heading {
+    margin-bottom: 30px;
+}
+
+.cta {
+    display: inline-flex;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.cta img {
+    height: 198px;
+    object-fit: cover;
+    max-width: 100%;
+}
+
+.cta .cta-overlay {
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    bottom: 0;
+    color: #fff;
+    display: inline-flex;
+    font-size: 20px;
+    justify-content: center;
+    left: 0;
+    line-height: 23px;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    transition: all ease-in-out 0.2s;
+    top: 0;
+    text-align: center;
+}
+
+.cta:hover .cta-overlay,
+.cta:focus .cta-overlay {
+    opacity: 1;
+}
+
+/* Button CSS Style */
+.btn.btn-underline {
+    border: 0;
+    border-bottom: 1px solid #000;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    padding: 5px 10px;
+    text-transform: none;
+}
+
+.btn.btn-underline:hover,
+.btn.btn-underline:focus,
+.btn.btn-underline:active,
+.btn:not(:disabled):not(.disabled):active {
+    background-color: transparent;
+}
+
+.btn.btn-primary:hover,
+.btn.btn-primary:focus,
+.btn.btn-primary:active,
+.btn-primary:not(:disabled):not(.disabled):active,
+.btn-primary:not(:disabled):not(.disabled).active {
+    background-color: #000;
+}
+
+/* List Toggle CSS Style */
+.list-toggle {
+    margin-top: 50px;
+    position: relative;
+}
+
+.list-toggle > div .col:nth-child(12) ~ .col {
+    height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all ease-in-out 0.3s;
+    visibility: hidden;
+}
+
+.list-toggle.expand > div .col:nth-child(12) ~ .col {
+    opacity: 1;
+    height: auto;
+    visibility: visible;
+}
+
+.list-toggle .card,
+.list-toggle .card:last-child {
+    margin-bottom: 50px;
+}
+
+.list-toggle .card .card-header {
+    margin-bottom: 15px;
+}
+
+.list-toggle .card-header h3 {
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.content-asset .list-toggle .card-body > * {
+    line-height: 21px;
+}
+
+.list-toggle .btn-underline {
+    position: relative;
+}
+
+/* See More/Less CTA */
+.text-block a[class*="-toggle"] {
+    text-decoration: underline;
+    font-weight: 500;
+    margin-left: 5px;
+}
+
+/* Default Table CSS Style */
+.table td,
+.table th {
+    padding: 0;
+}
+
+.table tr:last-child td,
+.table tr:last-child th {
+    padding-bottom: 0;
+}
+
+/* Breadcrumb CSS Style */
+.breadcrumb {
+    border-bottom: 0 !important;
+    font-size: 14px;
+    line-height: 16px;
+    margin: 0;
+    padding: 20px 0;
+}
+
+.breadcrumb-item + .breadcrumb-item {
+    padding-left: 8px;
+}
+
+.breadcrumb-item + .breadcrumb-item:before {
+    content: "\e909";
+    font-family: icomoon;
+    font-size: 9px;
+    line-height: 12px;
+    padding-right: 5px;
+}
+
+/* Card Basic CSS Style */
+.card {
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 0;
+}
+
+.card:last-child {
+    margin-bottom: 0;
+}
+
+.card,
+.card-header,
+.card-body,
+.card-footer {
+    background-color: transparent;
+}
+
+.card .card-header,
+.card .card-footer {
+    border: 0;
+    padding: 0;
+}
+
+.card .card-header,
+.card .card-img {
+    margin-bottom: 30px;
+}
+
+.card .card-header h1,
+.card .card-header h1,
+.card .card-header h3,
+.card .card-header h4,
+.card .card-header h5,
+.card .card-header h6,
+.card .card-header .card-title {
+    margin-bottom: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    /* white-space: nowrap; */
+}
+
+.card .card-body {
+    padding: 0;
+}
+
+.card .card-body > p,
+.card .card-body > span,
+.card .card-body > ul,
+.card .card-body > ol,
+.card .card-body > h1,
+.card .card-body > h2,
+.card .card-body > h3,
+.card .card-body > h4,
+.card .card-body > h5,
+.card .card-body > h6 {
+    margin: 0;
+}
+
+.card .card-body > h1,
+.card .card-body > h2,
+.card .card-body > h3,
+.card .card-body > h4 {
+    font-weight: 500;
+    line-height: 23px;
+    margin-bottom: 30px;
+}
+
+.card img {
+    max-width: 100%;
+}
+
+.card .table {
+    margin: 0;
+    width: 100%;
+}
+
+.card .table tr td:not(:first-child):last-child {
+    padding-left: 25px;
+}
+
+.card .card-footer {
+    margin-top: 30px;
+}
+
+.card .card-footer .btn {
+    border-width: 1px;
+    line-height: 16px;
+    padding: 11px 16px;
+}
+
+/* Card Horizontal CSS Style */
+.card-horizontal .card-body {
+    padding-left: 0;
+}
+
+.card-horizontal .flex-row-reverse .card-body {
+    padding-left: 20px;
+    padding-right: 0;
+}
+
+/* Card Overlay CSS Style */
+.card-overlay {
+    position: relative;
+}
+
+.card-overlay::before {
+    background-color: rgba(0, 0, 0, 0.2);
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 9;
+}
+
+.card-img-overlay {
+    padding: 15px;
+    z-index: 99;
+}
+
+.card-contet-overlay {
+    margin-bottom: 65px;
+    max-width: 650px;
+    padding: 0 15px;
+    position: relative;
+    z-index: 10;
+}
+
+.card-contet-overlay .card-title {
+    font-size: 68px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    line-height: 79px;
+    margin-bottom: 0;
+    text-transform: uppercase;
+}
+
+.card-contet-overlay .sub-title {
+    font-size: 48px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    line-height: 58px;
+    margin-bottom: 0;
+}
+
+.card-contet-overlay .subline {
+    font-size: 38px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    line-height: 56px;
+}
+
+.card-contet-overlay .s2 {
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+
+.card-contet-overlay .card-cta {
+    margin-top: 15px;
+}
+
+.card-overlay .card-img {
+    margin-bottom: 0;
+}
+
+.text-white .card-contet-overlay .btn-light {
+    color: #ffffff !important;
+    border: 1px solid #ffffff;
+}
+
+/* Card Horizontal CSS Style */
+.card-horizontal .card-img {
+    margin-bottom: 0;
+}
+
+/* Teaser Slide CSS Style */
+.container-fluid .card-overlay .card-img-overlay,
+.teaser .card-img-overlay {
+    margin: 0 auto;
+    max-width: 1140px;
+}
+
+.container-fluid .card-contet-overlay,
+.teaser .card-contet-overlay {
+    padding: 0;
+}
+
+.teaser .card-overlay .card-img > img {
+    height: 460px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.teaser .card-horizontal .row {
+    margin: 0 auto;
+    max-width: 1140px;
+    padding: 0 15px;
+}
+
+/* Card Image CSS Style */
+.card-image .card-img {
+    margin-bottom: 0;
+}
+
+/* Card Slider CSS Style */
+.card-slider {
+    margin-top: 50px;
+    overflow: hidden;
+    position: relative;
+}
+
+.card-slider .slick-list {
+    margin: 0 -15px;
+}
+
+.card-slider .slick-arrow {
+    background-color: #fff;
+    color: #000;
+    position: absolute;
+    /* top: 5px; */
+    top: 280px;
+    left: 0;
+    z-index: 99;
+}
+
+.card-slider .slick-next {
+    right: 0;
+    left: auto;
+}
+
+.card-slider .slick-disabled {
+    color: #bbb;
+}
+
+.card-slider .card-img {
+    margin-bottom: 60px;
+}
+
+/* Accordion CSS Style */
+.accordion > h1 {
+    font-size: 68px;
+    font-weight: 500;
+    line-height: 80px;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+.accordion > div > div:not(:last-child) {
+    margin-bottom: 52px;
+}
+
+.accordion > .card > .card-header {
+    margin-bottom: 0;
+}
+
+.accordion .card-header {
+    margin: 0;
+}
+
+.accordion .card-header,
+.accordion .card-body {
+    border: 0;
+    padding: 0;
+}
+
+.accordion .card-body {
+    margin: 30px 0 0;
+}
+
+.accordion .card-header .btn {
+    border: 0;
+    font-size: 20px;
+    padding: 5px 25px 5px 0;
+    position: relative;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.accordion .card-header .btn:hover,
+.accordion .card-header .btn:focus {
+    background-color: transparent;
+}
+
+.accordion .card-header .btn[data-toggle="collapse"]:after {
+    content: "\e907";
+    font-family: "icomoon";
+    position: absolute;
+    right: 0;
+    transition: all ease-in-out 0.2s;
+    transform: rotate(0deg);
+}
+
+.accordion .card-header .btn[aria-expanded="true"]:after {
+    transform: rotate(180deg);
+}
+
+.accordion .text-block {
+    position: relative;
+}
+
+.accordion .text-block h5 {
+    margin-bottom: 24px;
+    text-transform: uppercase;
+}
+
+.accordion .text-block img:not(.qr-code img) {
+    margin: 52px 0;
+    object-fit: cover;
+}
+
+.accordion .text-block .row > .col-12 {
+    margin-bottom: 52px;
+}
+
+.accordion .text-block .qr-code {
+    margin-right: 25px;
+}
+
+.accordion .text-block ol,
+.accordion .text-block ul {
+    margin: 0;
+    padding: 0 0 0 15px;
+}
+
+.accordion .text-block .btn {
+    width: 255px;
+}
+
+.accordion .text-block .btn + .btn {
+    margin-left: 30px;
+}
+
+/* Loyalty Card Page CSS Style */
+
+.vorteile {
+    position: relative;
+}
+
+.content-asset .vorteile .card-body > * {
+    line-height: normal;
+}
+
+.vorteile .nav-scroll {
+    overflow-y: hidden;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    width: 100%;
+    scrollbar-color: transparent transparent;
+    scrollbar-width: thin;
+}
+
+.vorteile .nav-scroll::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}
+
+.vorteile .nav-scroll .nav-tabs {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    min-width: 100%;
+}
+
+.vorteile .nav-tabs {
+    border: 0;
+}
+
+.vorteile .nav-item {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    padding: 0 15px;
+}
+
+.vorteile .nav-link {
+    align-items: center;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    line-height: 21px;
+    padding: 0;
+    position: relative;
+    pointer-events: none;
+    text-align: center;
+}
+
+.vorteile .nav-link:after {
+    background-color: #000;
+    content: "";
+    bottom: 0;
+    height: 2px;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    width: 100px;
+}
+
+.vorteile .nav-link strong,
+.vorteile .nav-link span:last-child {
+    margin-bottom: 25px;
+}
+
+.vorteile .nav-tabs .nav-link.active {
+    border: 0;
+}
+
+.vorteile .nav-tabs,
+.vorteile .tab-content {
+    display: flex;
+    margin: 0 -15px;
+}
+
+.vorteile .tab-content {
+    margin-top: 35px;
+}
+
+.vorteile .tab-content > .tab-pane:not(.active) {
+    display: initial;
+    opacity: 1;
+}
+
+.vorteile .tab-pane {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    padding: 0 15px;
+}
+
+.vorteile .accordion {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.08);
+    margin-top: 50px;
+    padding: 0 12px;
+}
+
+.vorteile .accordion .card {
+    margin-bottom: 0;
+}
+
+.vorteile .accordion .card-header h4,
+.vorteile .accordion .card-header .btn {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: normal;
+    line-height: 22px;
+    text-transform: uppercase;
+}
+
+.vorteile .accordion .card-header .btn {
+    align-items: center;
+    display: flex;
+    padding: 17px 15px 17px 0;
+}
+
+.vorteile .accordion .btn i {
+    font-size: 18px;
+    margin-right: 15px;
+    margin-left: 1px;
+}
+
+.vorteile .accordion .card-body {
+    margin: 0;
+    padding: 24px 0;
+}
+
+.vorteile .card-body small {
+    display: inline-block;
+}
+
+.vorteile .card-body small,
+.vorteile .card-body p,
+.vorteile .card-body a {
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.vorteile .card-body h2 {
+    font-size: 26px;
+    font-weight: 500;
+    line-height: 30px !important;
+}
+
+.vorteile .card-body small:not(:last-child),
+.vorteile .card-body h2:not(:last-child),
+.vorteile .card-body p:not(:last-child) {
+    margin-bottom: 24px;
+}
+
+.vorteile .card-body a {
+    text-decoration: underline;
+}
+
+.footnote {
+    font-size: 14px;
+    line-height: 21px;
+    position: relative;
+}
+
+.footnote .note-header {
+    display: block;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+}
+
+.footnote .show-less .label-show-less {
+    display: block;
+    padding-bottom: 15px;
+}
+
+.footnote .show-less .collapsed .label-show-less,
+.footnote .show-less a:not(.collapsed) span:not(.label-show-less) {
+    display: none;
+}
+
+.footnote .note-body {
+    margin: 15px 0 20px;
+}
+
+.footnote .note-body a {
+    text-decoration: underline;
+}
+
+/* Location Page CSS Style */
+.schedual.special {
+    margin-top: 80px;
+}
+
+.schedual table {
+    line-height: 32px;
+    width: 100%;
+}
+
+/* Services Search CSS Style */
+.has-search .after-search,
+.has-search .advance-heading {
+    display: none;
+}
+
+.services-search,
+.services-search .form-control,
+.services-search .form-control:focus {
+    color: #000;
+    opacity: 1;
+}
+
+.services-search .advance-heading:not(h3.advance-heading) {
+    font-weight: 400;
+    line-height: 52px;
+}
+
+.services-search .input-group {
+    position: relative;
+}
+
+.services-search .input-group .form-control {
+    border-radius: 0;
+    border-width: 0;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.05);
+    height: 60px;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 21px 30px;
+    padding-right: 55px;
+}
+
+.services-search input::placeholder {
+    color: #606060;
+    opacity: 0.7;
+}
+
+.services-search input:-ms-input-placeholder {
+    color: #606060;
+}
+
+.services-search input::-ms-input-placeholder {
+    color: #606060;
+}
+
+.services-search .input-group .input-group-append {
+    height: 40px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 9;
+}
+
+.services-search .input-group .close-button button {
+    background: transparent;
+    border: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 21px;
+    z-index: 9;
+}
+
+.services-search .btn-primary {
+    background: #000;
+    border: 0;
+    font-size: 14px;
+    height: 60px;
+    line-height: 21px;
+    padding: 20px 30px;
+}
+
+.services-search .btn-primary:focus,
+.services-search .btn-primary:hover {
+    background-color: #000;
+}
+
+.services-search .btn-primary [class*="icon"] {
+    font-size: 20px;
+}
+
+.services-search .cta-action {
+    margin-top: 38px;
+}
+
+.services-search .cta-action .btn {
+    border: 1px solid;
+    height: 40px;
+    line-height: 16px;
+    padding: 11px 16px;
+}
+
+.services-search .cta-action .btn i {
+    font-size: 15px;
+    vertical-align: top;
+    margin-right: 10px;
+}
+
+.services-search .alert {
+    color: #606060;
+    font-size: 14px;
+    line-height: 21px;
+    margin: 60px 0 0;
+    padding: 0 15px;
+    text-align: center;
+}
+
+/* Beauty Service Page CSS Style */
+.row-grid .service-card {
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.row-grid > div.d-none + div:not(.d-none) .service-card {
+    margin-top: 0;
+}
+
+.row-grid[class*="md-3"] > div:nth-child(1) .service-card,
+.row-grid[class*="md-3"] > div:nth-child(2) .service-card,
+.row-grid[class*="md-3"] > div:nth-child(3) .service-card {
+    margin-top: 0;
+}
+
+.service-card,
+.service-card p {
+    line-height: 21px;
+}
+
+.service-card .card-meta {
+    line-height: 28px;
+    margin-bottom: 32px;
+}
+
+/* History Page CSS Style */
+.history {
+    font-size: 14px;
+    line-height: 21px;
+    position: relative;
+}
+
+.history .card-header h1 {
+    font-weight: 400;
+}
+
+.history .card + .text-block {
+    margin-top: 52px;
+}
+
+.history .text-block.text-col-2,
+.history .text-block.text-col-3 {
+    column-gap: 30px;
+}
+
+.history .text-block.text-col-2 {
+    column-count: 2;
+}
+
+.history .text-block.text-col-3 {
+    column-count: 3;
+}
+
+.history .text-block.text-col-3 p {
+    margin-bottom: 20px;
+}
+
+.history .row-grid[class*="md-2"] > .col:nth-child(2) ~ .col .card {
+    margin-top: 52px;
+}
+
+.history .row-grid[class*="md-3"] > .col:nth-child(3) ~ .col .card {
+    margin-top: 80px;
+}
+
+/* Horizontal Nav Tabs Scrollable CSS Style */
+.sticky-holder .horizonral-nav.fixed:before {
+    content: "";
+    display: block;
+    height: 60px;
+    position: relative;
+}
+
+.horizonral-nav.fixed {
+    margin: 0 auto;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: -60px;
+    z-index: 999;
+}
+
+.horizonral-nav.fixed.animate {
+    top: 0;
+}
+
+.horizonral-nav {
+    background-color: #fff;
+    margin: 0 -15px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    transition: all ease-in-out 0.3s;
+    z-index: 10;
+}
+
+.slick-goto::after,
+.horizonral-nav::after {
+    background-color: #f5f5f5;
+    content: "";
+    height: 2px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.horizonral-nav .nav {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    position: relative;
+    z-index: 10;
+}
+
+.horizonral-nav .nav-item {
+    position: relative;
+    padding: 0 15px;
+}
+
+.horizonral-nav .nav-item > .nav-link {
+    background-color: transparent;
+    color: #000;
+}
+
+.horizonral-nav .active .nav-link::after {
+    background-color: #000;
+    content: "";
+    height: 2px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.horizonral-nav .nav-link {
+    display: block;
+    line-height: 21px;
+    padding: 15px 0;
+    text-align: center;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.horizonral-nav .nav-link::before {
+    content: attr(title);
+    display: block;
+    font-weight: 600;
+    height: 0;
+    overflow: hidden;
+    text-align: center;
+    visibility: hidden;
+}
+
+.horizonral-nav .nav-link:hover,
+.horizonral-nav .active .nav-link {
+    font-weight: 600;
+}
+
+.horizonral-nav .active .nav-link::after {
+    background-color: #000000;
+    content: "";
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+
+/* Horozontal Nav Focus State */
+.horizonral-nav.fixed .active .nav-link::after {
+    /* content: none; */
+}
+
+.horizonral-nav.fixed .active .nav-link {
+    /* font-weight: 400; */
+}
+
+/* .horizonral-nav.fixed .active .nav-link.focus,
+.horizonral-nav.fixed .nav-link.focus {
+    font-weight: 600;
+} */
+
+.horizonral-nav.fixed .nav-link.focus::after {
+    /* background-color: #000000;
+    content: "";
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%; */
+}
+
+/* Click and Meet CTA CSS Style */
+.btn-float {
+    bottom: 20px;
+    position: fixed;
+    right: -1000px;
+    transition: all ease-in-out 0.5s;
+    z-index: 999;
+}
+
+.btn.btn-float {
+    height: 40px;
+    font-size: 14px;
+    line-height: 16px;
+    max-width: 350px;
+    padding: 11px 25px;
+    width: 100%;
+}
+
+.btn-float i {
+    margin-right: 13px;
+    vertical-align: middle;
+}
+
+.btn-float.animate {
+    right: 20px;
+}
+
+/* Career Page CSS Style */
+.career {
+    position: relative;
+}
+
+.career iframe {
+    height: 1250px;
+}
+
+.career .page-heading {
+    font-size: 68px;
+    font-weight: 400;
+    line-height: 79px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.career .career-overlay figure {
+    text-align: center;
+}
+
+.career .career-overlay .card-img-top {
+    max-width: 415px;
+    max-height: 190px;
+}
+
+.career p {
+    line-height: 21px;
+}
+
+.career .text-block.text-col-2 {
+    display: flex;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.career .text-block.text-col-2 p {
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding: 0 15px;
+}
+
+.career .advance-heading {
+    text-transform: uppercase;
+}
+
+.career .card-header h2 {
+    font-weight: 500;
+    margin: 0;
+}
+
+.career .card-header h5 {
+    line-height: 21px;
+    margin: 0;
+}
+
+.career .card-image {
+    margin-bottom: 30px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.career [class*="-md-3"] .card-image img,
+.career [class*="-md-4"] .card-image img {
+    object-fit: cover;
+    object-position: center;
+}
+
+.career [class*="-md-3"] .card-image img {
+    height: 250px;
+}
+
+.career [class*="-md-4"] .card-image img {
+    height: 182px;
+}
+
+.career .department {
+    margin: 30px 0;
+    position: relative;
+}
+
+.career .department .sa,
+.career .department .s2 {
+    font-weight: 400;
+    line-height: 30px;
+    margin-bottom: 60px;
+}
+
+/* Slick Nav Tabs */
+.slick-nav-tabs {
+    position: relative;
+}
+
+.slick-nav-tabs .slick-list {
+    margin: 0 -15px;
+}
+
+/* Slick Custom GoTo Nav CSS Style */
+.slick-goto {
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.slick-nav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    z-index: 10;
+}
+
+.slick-nav.dragged {
+    cursor: move;
+}
+
+.slick-nav .nav-item {
+    position: relative;
+}
+
+.slick-nav .nav-link {
+    color: #000;
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none !important;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.slick-nav .nav-link::before {
+    content: attr(title);
+    display: block;
+    font-weight: 600;
+    height: 0;
+    overflow: hidden;
+    text-align: center;
+    transition: all ease-in-out 0.2s;
+    visibility: hidden;
+}
+
+.slick-nav .active .nav-link,
+.slick-nav .nav-link:hover {
+    font-weight: 600;
+    background-color: transparent;
+}
+
+.slick-nav .active .nav-link::after {
+    background-color: #000;
+    content: "";
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+/* Slick Default Dots as Custom Paging CSS */
+.slick-nav-tabs .slick-dots {
+    border-bottom: 1px solid #f5f5f5;
+    display: flex;
+    justify-content: start;
+    justify-content: flex-start;
+    margin: 30px 0 0;
+    /* overflow-x: auto; */
+    overflow: hidden;
+    position: relative;
+}
+
+.slick-nav-tabs .slick-dots li {
+    margin: 0 2px;
+    padding: 0;
+    position: relative;
+}
+
+.slick-nav-tabs .slick-dots .btn.btn-link {
+    border: 0;
+    color: #000;
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none !important;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.slick-nav-tabs .slick-dots .btn-link::before {
+    content: attr(title);
+    display: block;
+    font-weight: 600;
+    height: 0;
+    overflow: hidden;
+    text-align: center;
+    transition: all ease-in-out 0.2s;
+    visibility: hidden;
+}
+
+.slick-nav-tabs .slick-dots .btn-link:hover,
+.slick-nav-tabs .slick-dots .slick-active .btn-link {
+    font-weight: 600;
+}
+
+.slick-nav-tabs .slick-dots .slick-active::after {
+    background-color: #000;
+    content: "";
+    height: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.career-faq {
+    padding-bottom: 60px;
+}
+
+.career-faq a {
+    text-decoration: underline;
+}
+
+.career-faq .filter {
+    margin-top: -25px;
+    text-align: center;
+}
+
+.career-faq .filter .btn {
+    border: 1px solid transparent;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    margin: 15px 5px;
+    padding: 15px;
+}
+
+.career-faq .filter .btn-light {
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.05) !important;
+}
+
+.career-faq .filter .btn-light:focus,
+.career-faq .filter .btn-light:hover {
+    background-color: transparent;
+    border: 1px solid #000000;
+    box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.15) !important;
+}
+
+.career-faq .col {
+    margin: 60px 0 0;
+}
+
+.career-faq .card {
+    margin-bottom: 30px;
+}
+
+.career-faq .card-header .card-title {
+    font-weight: 600;
+    line-height: 21px;
+    text-overflow: initial;
+    text-transform: uppercase;
+    white-space: normal;
+}
+
+.career-faq .card .btn {
+    height: 40px;
+    line-height: 18px;
+}
+
+/* Go to Top/Back Button CSS */
+.btn-goTop {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px solid #000;
+    color: #000;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    height: 30px;
+    line-height: 20px;
+    margin-top: 15px;
+    padding: 4px 6px;
+    text-align: center;
+}
+
+/* .btn-goTop.show {
+    bottom: 50px;
+    opacity: 1;
+    visibility: visible;
+} */
+
+#magazine .teaser-layout .card .card-title,
+#magazine .teaser-layout .card p {
+    margin: 0 0 15px !important;
+}
+
+#magazine .teaser-layout .card a{
+    margin-top: 0 !important;
+}
+
+@media (min-width: 1200px) {
+    .career iframe {
+        height: 1200px;
+        transform: scale(1.145);
+    }
+
+    .career .iframe {
+        padding: 80px 0;
+    }
+}
+
+@media (max-width: 1200px) {
+    /* Header Fix with Black Bar */
+    .sticky-holder header.withTopbanner ~ div .horizonral-nav.fixed:before {
+        height: 100px;
+    }
+
+    .career iframe {
+        height: 1280px;
+    }
+}
+
+@media (max-width: 992px) {
+    /* Media query to adjust iframe height */
+    .career iframe {
+        height: 1710px;
+    }
+}
+
+/* Mobile Responsive CSS Style */
+@media (max-width: 767px) {
+    #magazine .section-title{
+        padding: 0 15px;
+    }
+    /* Header Fix with Black Bar */
+    .sticky-holder header.withTopbanner ~ div .horizonral-nav.fixed:before {
+        height: 120px;
+    }
+
+    .card .card-footer {
+        padding: 0 15px;
+    }
+
+    .card .card-header h1,
+    .card .card-header h1,
+    .card .card-header h3,
+    .card .card-header .card-title {
+        text-overflow: initial;
+        white-space: normal;
+        font-size: 18px;
+    }
+
+    .card {
+        font-size: 14px;
+    }
+
+    .card .card-img img {
+        min-height: 250px;
+        object-fit: cover;
+    }
+
+    .row-grid > div:not(:last-child) .card {
+        margin-bottom: 80px;
+    }
+
+    .row-grid > div:not(:last-child) .service-card .card {
+        margin-bottom: 0;
+    }
+
+    .row-grid[class*="md-3"] > div:nth-child(2) .service-card,
+    .row-grid[class*="md-3"] > div:nth-child(3) .service-card {
+        margin-top: 50px;
+    }
+
+    /* Card Overlay CSS Style */
+    .career .career-overlay .card-img-top {
+        max-width: 345px;
+    }
+
+    .card-overlay {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-overlay::before {
+        content: none;
+    }
+
+    .card-overlay.text-white {
+        color: #000 !important;
+    }
+
+    .card-img-overlay {
+        padding: 15px 0;
+        position: relative;
+        top: auto;
+        bottom: auto;
+        left: auto;
+        right: auto;
+    }
+
+    .card-contet-overlay {
+        margin-bottom: 0;
+        padding: 0;
+    }
+
+    .card-overlay .card-title {
+        font-size: 38px;
+        font-weight: 400;
+        line-height: 56px;
+        margin-bottom: 15px;
+    }
+
+    .card-overlay .subline {
+        font-size: 26px;
+        line-height: 30px;
+    }
+
+    .text-white .card-contet-overlay .btn-light {
+        color: #000 !important;
+        border: 1px solid #000;
+    }
+
+    /* Teaser Slide CSS Style */
+    .teaser .card-img > img {
+        height: auto;
+        min-height: 250px;
+    }
+
+    .teaser .card-img-overlay {
+        padding: 15px;
+    }
+
+    /* Location/Store Visit */
+
+    .content-asset .schedual.special .col:not(:last-child) > .card {
+        margin-bottom: 0;
+    }
+
+    .schedual div[class*="col"]:not(:first-child) .card {
+        margin-top: 80px;
+    }
+
+    /* Card Horizontal CSS Style */
+    .card-horizontal .card-body {
+        padding: 20px 0;
+    }
+
+    #unsere-stores-service .card {
+        margin-bottom: 0 !important;
+    }
+
+    .content-asset .col:not(:last-child) > .card {
+        margin-bottom: 80px;
+    }
+
+    /* Loyalty Card Page CSS Style */
+    .vorteile .nav-item {
+        margin-bottom: 15px;
+        padding: 0;
+    }
+
+    .vorteile .nav-link {
+        align-items: flex-start;
+        min-width: 270px;
+        pointer-events: initial;
+        padding: 0 15px 15px;
+    }
+
+    .vorteile .nav-link:after {
+        margin: 0;
+        width: 100%;
+    }
+
+    .vorteile .nav-link:not(.active):after {
+        background-color: #f5f5f5;
+    }
+
+    .vorteile .nav-link strong {
+        margin-bottom: 10px;
+    }
+
+    .vorteile .nav-link span:last-child {
+        margin-bottom: 0;
+    }
+
+    .vorteile .tab-content {
+        display: block;
+    }
+
+    .vorteile .tab-pane {
+        margin: 0 auto;
+        max-width: 460px;
+    }
+
+    .vorteile .tab-content > .tab-pane:not(.active) {
+        display: none;
+        opacity: 0;
+    }
+
+    /* Card Slider CSS Style */
+    .card-slider {
+        max-width: 460px;
+        margin: 0 auto;
+    }
+
+    .card-slider .slick-list {
+        margin: 0;
+    }
+
+    .card-slider .card-img {
+        margin-bottom: 30px;
+        overflow: hidden;
+    }
+
+    .card-slider .card-img img {
+        height: 250px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .card-slider .col {
+        padding: 0;
+    }
+
+    /* Accordion CSS Style */
+    .accordion .card-header .btn {
+        line-height: 26px;
+    }
+
+    .accordion .text-block img:not(.qr-code img) {
+        min-height: 250px;
+    }
+
+    .accordion .text-block .qr-code {
+        margin-right: 0;
+        margin-bottom: 24px;
+        text-align: center;
+    }
+
+    .accordion .text-block .mb-md-0 + .mb-md-0 {
+        margin-bottom: 0;
+    }
+
+    .accordion .text-block .btn {
+        max-width: 345px;
+        width: 100%;
+    }
+
+    .accordion .text-block .btn + .btn {
+        margin-top: 24px;
+        margin-left: 0;
+    }
+
+    /* List Toggle CSS Style */
+    .list-toggle > div .col:nth-child(3) ~ .col {
+        height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: all ease-in-out 0.3s;
+        visibility: hidden;
+    }
+
+    .list-toggle.expand > div .col:nth-child(3) ~ .col {
+        opacity: 1;
+        height: auto;
+        visibility: visible;
+    }
+
+    /* Beauty Service Page CSS Style */
+    .row-grid > div:not(:last-child) .service-card {
+        margin-bottom: 30px;
+    }
+
+    /* History Page CSS Style */
+    .history .card-header h1 {
+        font-size: 38px;
+    }
+
+    .content-asset .history .row > .col + .col {
+        margin-top: 52px;
+    }
+
+    .content-asset .history .col:not(:last-child) > .card,
+    .content-asset .history .row-grid > div:not(:last-child) .card {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .history .card-overlay {
+        flex-direction: column-reverse;
+    }
+
+    .history .card-img-overlay {
+        margin-top: 52px;
+        padding: 0;
+    }
+
+    .history .card-overlay .card-title {
+        margin: 0;
+    }
+
+    .history .card-overlay h2 {
+        font-size: 14px;
+        line-height: 21px;
+        margin: 24px 0 0;
+    }
+
+    .history .card-overlay .s1,
+    .history .card-overlay .s2,
+    .history .card-overlay .sub-title {
+        margin-top: 15px;
+    }
+
+    .history .card-image + .text-block,
+    .history .card-overlay + .text-block {
+        margin-top: 52px;
+    }
+
+    .history .text-block.text-col-2,
+    .history .text-block.text-col-3 {
+        column-count: 1;
+        display: block;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .history .text-block.text-col-2 p,
+    .history .text-block.text-col-3 p {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .history .row-grid[class*="md-2"] > .col:nth-child(2) ~ .col .card,
+    .history .row-grid[class*="md-3"] > .col:nth-child(3) ~ .col .card {
+        margin-top: 0;
+    }
+
+    /* Click and Meet CTA CSS Style */
+    .btn.btn-float {
+        height: 48px;
+        font-size: 15px;
+        line-height: 18px;
+        padding: 15px 25px;
+    }
+
+    /* Career Page CSS Style */
+    .career .career-overlay .page-heading {
+        font-size: 38px;
+        margin-bottom: 30px;
+        line-height: 56px;
+    }
+
+    .career iframe {
+        height: 1710px;
+    }
+
+    .career .card-image > img {
+        max-width: 345px;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .career .text-block.text-col-2 {
+        display: block;
+        margin: 0;
+    }
+
+    .career .text-block.text-col-2 p {
+        display: block;
+        max-width: initial;
+        padding: 0;
+    }
+
+    .career-faq .card {
+        margin: 0 !important;
+    }
+
+    /* CUSTOM CSS STYLE FOR AN EXISTING KADEWE STYLE RULES */
+    .medium .mainteaser .slide-overlay {
+        background-color: #ffffff;
+    }
+
+    .has-overlay .clp-teaser-text_container {
+        max-width: 100%;
+    }
+}
+
+/* Mobile Responsive CSS Style for iframe */
+@media (max-width: 520px) {
+    .career iframe {
+        height: 2300px;
+    }
+}
+
+/* Mobile Responsive CSS Style */
+@media (max-width: 360px) {
+    /* Click and Meet CTA CSS Style */
+    .btn.btn-float {
+        max-width: calc(100% - 40px);
+        padding: 15px;
+    }
+
+    .career iframe {
+        height: 2550px;
+    }
+}
+
+@media (max-width: 992px) and (min-width: 768px) {
+    .schedual .col-lg-6 .card {
+        margin-top: 80px;
+    }
+}
+
+.unsere-magazine .card .card-title,
+.unsere-magazine .card p {
+    margin: 0 0 15px !important;
+}
+
+.unsere-magazine .card a {
+    margin-top: 0 !important;
+}
+
+.unsere-magazine .section-title {
+    font-size: 26px;
+    font-weight: 500;
+    margin-bottom: 40px;
+}
+
+.unsere-magazine .magazine-disclaimer {
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    .unsere-magazine .magazine-disclaimer {
+        padding: 0 15px;
+    }
+}

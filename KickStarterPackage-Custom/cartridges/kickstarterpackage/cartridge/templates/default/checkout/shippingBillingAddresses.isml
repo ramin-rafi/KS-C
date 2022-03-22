@@ -1,0 +1,57 @@
+<iscomment> checkout shipping section </iscomment>
+<div class="shipping-section">
+    <div class="single-shipping">
+        <isset name="shippingModel" value="${pdict.order.shipping[0]}" scope="page" />
+        <isset name="shipmentLoopState" value="${null}" scope="page" />
+        <isset name="lineItem" value="${null}" scope="page" />
+        <div class="card" data-shipment-uuid="${shippingModel.UUID}">
+            <div class="card-header shipping-address-heading ${pdict.customer.registeredUser && pdict.customer.addresses.length > 0 ? 'd-none' : ''}">
+                <h2 class="card-header-title">${Resource.msg('heading.checkout.shipping', 'checkout', null)}</h2>
+            </div>
+            <div class="shipping-possible">
+                <div class="notification-area">
+                    <span class="icon-notification"></span>
+                    <span>Lieferung aktuell nur innerhalb Deutschlands möglich</span>
+                </div>
+            </div>
+            <iscomment> shipping & billing errors part </iscomment>
+                <div class="shipping-error"></div>
+                <form class="shipping-form" autocomplete="on" novalidate
+                    action="${shipmentLoopState
+                    ? URLUtils.url('CheckoutAddressServices-AddNewAddress')
+                    : URLUtils.url('CheckoutAddressServices-SubmitAddresses')}"
+                    data-address-mode="${shippingModel.matchingAddressId || pdict.customer.addresses.length > 0 ? 'edit' : 'new'}"
+                    data-address-lookup-url="${URLUtils.url('Address-Lookup')}"
+                    data-address-matcher-url="${URLUtils.url('Address-Matcher')}"
+                    <isprint value=${pdict.forms.shippingForm.attributes} encoding="off"/>
+                    >
+                    <isinclude template="checkout/shipping/shipmentCard" />
+                    <isinclude template="checkout/billing/billingCard" />
+                    <!-- Cancel and Save Buttons -->
+                    <isif condition="${pdict.customer.registeredUser}">
+                        <div class="row reg-address-cta-group d-none">
+                            <div class="col-12 col-md-6">
+                                <button type="save" name="save" data-url="${URLUtils.url('CheckoutAddressServices-SaveAddress')}"
+                                    class="btn btn-save checkout-button-save btn-block btn-primary bg-black" disabled>${Resource.msg('button.save', 'checkout', null)}</button>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <button class="btn btn-block btn-outline-primary cancel-save-address">${Resource.msg('button.cancel', 'checkout', null)}</button>
+                            </div>
+                        </div>
+                    </isif>
+                </form>
+        </div>
+    </div>
+    <!-- Cancel and Save Buttons -->
+    <isif condition="${!pdict.customer.registeredUser}">
+        <div class="row address-cta-group ${pdict.currentStage === 'address' ? 'd-none' : ''}">
+            <div class="col-12 col-md-6">
+                <button type="submit" name="save"
+                                    class="btn btn-save checkout-button-save btn-block btn-primary bg-black" disabled>${Resource.msg('button.save.and.weiter', 'checkout', null)}</button>
+            </div>
+            <div class="col-12 col-md-6">
+                <a href="#" class="btn btn-block btn-outline-primary cancel-stage">${Resource.msg('button.cancel', 'checkout', null)}</a>
+            </div>
+        </div>
+    </isif>
+</div>

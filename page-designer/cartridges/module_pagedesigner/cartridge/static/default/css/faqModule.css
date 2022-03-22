@@ -1,0 +1,33 @@
+.experience-assets-faqModuleMarkup {
+    margin-top: 78px;
+}
+
+.experience-assets-faqModuleMarkup .rich-text-content h2:first-child {
+    margin-bottom: 32px;
+}
+
+.rich-text-content h1, .rich-text-content h2, .rich-text-content h3, 
+.rich-text-content h4, .rich-text-content h5, .rich-text-content h6{
+    font-weight: 600;
+    color: #000;
+    font-family: futura-pt,sans-serif;
+    margin-bottom: 24px;
+}
+
+.rich-text-content h1 strong, .rich-text-content h2 strong, .rich-text-content h3 strong, 
+.rich-text-content h4 strong, .rich-text-content h5 strong, .rich-text-content h6 strong{
+    font-weight: 600;
+}
+
+.rich-text-content h2 {
+    font-size: 26px;
+    line-height: 38px;
+    margin-bottom: 24px;
+}
+
+.rich-text-content p {
+    font-size: 14px;
+    line-height: 21px;
+    font-family: futura-pt,sans-serif;
+    margin-bottom: 32px;
+}

@@ -1,0 +1,90 @@
+.trends-slider-holder {
+    max-height: inherit;
+    overflow: auto;
+}
+
+.trends-slider-holder .trends-slider {
+    height: auto;
+    padding-bottom: 10px;
+}
+
+.trends-slider .slide {
+    font-size: 0.875rem;
+    line-height: 1rem;
+    display: block;
+}
+
+.trends-slider-holder .category-name {
+    font-size: 0.875rem;
+    line-height: 1rem;
+    font-weight: 600;
+}
+
+.heading-position.left {
+    text-align: left;
+}
+
+.heading-position.center {
+    text-align: center;
+}
+
+.heading-position.right {
+    text-align: right;
+}
+
+.fourTeaser-categories {
+    /* padding: 0 0 24px; */
+}
+
+.fourTeaser-categories h2 {
+    margin: 0 0 30px;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 26px;
+    line-height: 30px;
+}
+
+.fourTeaser-categories .trends-slider .slide .img-holder {
+    margin-bottom: 15px;
+}
+
+@media (min-width: 768px) {
+    .fourTeaser-categories .trends-slider {
+        justify-content: inherit;
+    }
+
+    .fourTeaser-categories .trends-slider-holder {
+        overflow-y: hidden;
+        overflow-x: auto;
+        margin: 0 -15px;
+    }
+
+    .fourTeaser-categories .trends-slider-holder .trends-slider {
+        margin: 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .fourTeaser-categories {
+        /* padding: 0 0 24px; */
+    }
+
+    .fourTeaser-categories .slide {
+        flex-basis: 25%;
+        max-width: 25%;
+    }
+}
+
+@media (max-width: 767px) {
+    .brandshop-page-wrapper .fourTeaser-categories {
+        /* padding: 24px 0; */
+    }
+
+    .fourTeaser-categories .trends-slider-holder {
+        margin: 0;
+    }
+
+    .fourTeaser-categories .trends-slider-holder .trends-slider {
+        margin: 0 -10px;
+    }
+}

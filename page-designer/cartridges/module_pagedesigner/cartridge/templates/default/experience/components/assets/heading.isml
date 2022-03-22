@@ -1,0 +1,24 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    // assets.addCss('/css/heading.css');
+</isscript>
+
+<isif condition="${pdict.headingLevel}">
+    <${pdict.headingLevel}
+        class="${pdict.headingAlign || pdict.addClass ? 'advance-heading ' + pdict.headingAlign || pdict.addClass : 'advance-heading'} ${pdict.addClass ? pdict.addClass : ''}">
+        <span>
+            <isprint value="${pdict.headingLabel}" encoding="off" />
+
+            <isif condition="${pdict.headingLabel2}">
+                <br />
+                <isprint value="${pdict.headingLabel2}" encoding="off" />
+            </isif>
+        </span>
+
+        <isif condition="${pdict.subHeadingLabel}">
+            <small>
+                <isprint value="${pdict.subHeadingLabel}" encoding="off" />
+            </small>
+        </isif>
+    </${pdict.headingLevel}>
+</isif>

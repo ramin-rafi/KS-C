@@ -1,0 +1,223 @@
+<isinclude template="/components/modules" sf-toolkit="off" />
+<isscript>
+    var assets = require('*/cartridge/scripts/assets');
+    assets.addJs('/js/productDetail.js');
+    assets.addCss('/css/product/detail.css');
+</isscript>
+<script defer type="text/javascript" src="https://f.vimeocdn.com/js/froogaloop2.min.js"></script>
+<isset name="currencySymbol" value="${session.currency.symbol}" scope="page" />
+<input type="hidden" id="page-action" value="${pdict.action}" />
+<input type="hidden" id="productData" value="${pdict.gaProduct}" />
+
+<isset name="product" value="${pdict.product}" scope="page" />
+<isset name="isQuickView" value="${false}" scope="page" />
+<isset name="isProductSet" value="${pdict.product.productType === 'set'}" scope="page" />
+<isset name="productHelpers" value="${require('*/cartridge/scripts/helpers/productHelpers')}" scope="page" />
+<isset name="tileType" value="${productHelpers.getTileType(product.primaryCategory)}" scope="page" />
+<isset name="utilHelper" value="${require('*/cartridge/scripts/helpers/utilHelper')}" scope="page" />
+<isset name="storefrontPrefs" value="${utilHelper.getStorefrontPrefs()}" scope="page" />
+
+<isobject object="${product.raw}" view="detail">
+
+        <div class="product-detail product-wrapper ${product.productStorefrontPrefs && product.productStorefrontPrefs.noPriceDropdownPDP && product.productStorefrontPrefs.noPriceDropdownPDP.indexOf(product.primaryRootCategory) > -1 ? 'no-price-drop' : ''} ${product.productStorefrontPrefs && product.productStorefrontPrefs.blackPriceCategories && product.productStorefrontPrefs.blackPriceCategories.indexOf(product.primaryRootCategory) > -1 ? 'black-price' : ''} js-category-data"
+            data-maincategory="${product.primaryRootCategory ? (product.primaryRootCategory === 'brandshopsbeauty' ? 'master_beauty' : product.primaryRootCategory):''}"
+            data-pid="${product.id}"
+            data-master-pid="${product.masterProductId}"
+            >
+            <div class="breadcrumbs-wrap">
+                <div class="container">
+                    <isinclude template="components/breadcrumbs/pageBreadcrumbs" />
+                </div>
+            </div>
+            <div class="${pdict.fontForBrand ? 'fontclass-' + pdict.fontForBrand : ''}">
+                <div class="container">
+                    <isinclude template="experience/components/assets/brandLogoHeader" />
+                </div>
+                <div class="product-detail-columns">
+                    <div class="container" data-pid="${product.id}">
+
+                        <div class="row">
+                            <!-- Product Images Carousel -->
+                            <div class="col-12 col-md-8 product-images">
+                                <isinclude template="product/components/imageCarousel" />
+                            </div>
+                            
+                            <isset name="cgidValue" value ="root" scope="page">
+                            <isloop items="${pdict.breadcrumbs}" var="breadcrumbValue" status="loopState">
+                                <isif condition="${loopState.first}">
+                                    <isset name="cgidValue" value ="${breadcrumbValue.categoryID}" scope="page">
+                                </isif>
+                            </isloop>
+                        
+                            <div class="col-12 col-md-4 product-description">
+                                <isif condition="${product.brand && product.brand.toLowerCase() === 'chanel' && storefrontPrefs && storefrontPrefs.chanelSpecialDescPDP && storefrontPrefs.chanelSpecialDescPDP === 'yes'}">
+                                    <div class="spacific-brand-holder">
+                                        <isif condition="${product.brand}">
+                                            <div class="brand-name"><a href="${URLUtils.url('Search-Show','cgid',cgidValue,'prefn1','brand','prefv1',  product.brand )}">${product.brand}</a></div>
+                                        </isif>
+                                        <isif condition="${product.productShortDescription || product.shortDescription}">
+                                            <isif condition="${product.brandSpecificCustomizations && product.brandSpecificCustomizations.threeTileSecondLineTitleCasePDP === 'true'}">
+                                                <div class="brand-description-title-case"><strong><isprint value="${product.productShortDescription || product.shortDescription}" encoding="off" /></strong></div>
+                                            <iselse>
+                                                <div class="brand-description"><strong><isprint value="${product.productShortDescription || product.shortDescription}" encoding="off" /></strong></div>
+                                            </isif>
+                                        </isif>
+                                        
+                                        <span class="prod-description">
+                                            <isif condition="${product.productName2}">
+                                                <isprint value="${product.productName2}" encoding="off" />
+                                             </isif>
+                                        </span>
+                                        
+                                    </div>
+                                <iselseif condition="${tileType && tileType === 'threeLineSkuTile'}">
+                                    <isif condition="${product.brand}">
+                                        <div class="brand-name"><a href="${URLUtils.url('Search-Show','cgid',cgidValue,'prefn1','brand','prefv1',  product.brand )}">${product.brand}</a></div>
+                                    </isif>
+                                    <isif condition="${product.productShortDescription || product.shortDescription}">
+                                        <isif condition="${product.brandSpecificCustomizations && product.brandSpecificCustomizations.threeTileSecondLineTitleCasePDP === 'true'}">
+                                            <div class="brand-description-title-case"><isprint value="${product.productShortDescription || product.shortDescription}" encoding="off" /></div>
+                                        <iselse>
+                                            <div class="brand-description"><isprint value="${product.productShortDescription || product.shortDescription}" encoding="off" /></div>
+                                        </isif>
+                                    </isif>
+                                    
+                                   <span class="prod-description">
+	                                   	<isif condition="${product.productName2}">
+	                                       	<isprint value="${product.productName2}" encoding="off" />
+                                       </isif>
+                                   </span>
+                                    
+                                <iselse/>
+                                    <isif condition="${product.brand}">
+                                        <div class="brand-name"><a href="${URLUtils.url('Search-Show','cgid',cgidValue,'prefn1','brand','prefv1',  product.brand )}">${product.brand}</a></div>
+                                    <iselseif condition="${product.productName}">
+                                        <div class="brand-description">${product.productName.toLowerCase()}</div>
+                                    </isif>
+                                    <isif condition="${product.productShortDescription || product.shortDescription}">
+                                        <span class="prod-description">
+                                            <isprint value="${product.productShortDescription || product.shortDescription}" encoding="off" />
+                                        </span>
+                                    </isif>
+                                </isif>
+                                <div class="call-out-message">
+                                    <isinclude template="product/components/promotions" />
+                                </div>
+                                <div class="prices-actions prices">
+                                    <isset name="price" value="${product.price}" scope="page" />
+                                    <isinclude template="product/components/pricing/main" />
+                                    <span class="vat-msg">
+                                        ${Resource.msg("label.included.vat", 'product', null)}
+                                    </span>
+                                    <isif
+                                        condition="${(product.variationAttributes && product.variationAttributes.length === 1 && product.variationAttributes[0].id === 'color') || product.productType === 'standard'}">
+                                        <isif
+                                            condition="${product.grosseMlGr && product.grosseMlGr >= 10 && product.einheit && (product.produktSet !== 'Ja')}">
+                                            <isif condition="${product.price && product.price.sales && product.price.sales.value}">
+                                                <isset name="priceValue" value="${product.price.sales.value}" scope="page" />
+                                            <iselseif condition="${product.price && product.price.list && product.price.list.value}">
+                                                    <isset name="priceValue" value="${product.price.list.value}" scope="page" />
+                                            </isif>
+                                            <isif condition="${priceValue !== ((priceValue / product.grosseMlGr) * 100)}">
+                                                <isif condition="${product.grosseMlGr <= 250}">
+                                                    <isif condition="${product.einheit === 'gr'}">
+                                                    <span class="nominal-price">(${((priceValue / product.grosseMlGr) * 100).toFixed(2).toString().replace('.', ',')} € / 100g)</span>
+                                                    <iselse>
+                                                        <span class="nominal-price">(${((priceValue / product.grosseMlGr) * 100).toFixed(2).toString().replace('.', ',')} € / 100${product.einheit})</span>
+                                                    </isif>
+                                                <iselseif condition="${product.grosseMlGr > 250}">
+                                                        <isif condition="${product.einheit === 'ml'}">
+                                                            <span class="nominal-price">(${((priceValue / product.grosseMlGr) * 1000).toFixed(2).toString().replace('.', ',')} € /
+                                                                1 L)</span>
+                                                        <iselseif condition="${product.einheit === 'gr'}">
+                                                                <span class="nominal-price">(${((priceValue / product.grosseMlGr) * 1000).toFixed(2).toString().replace('.', ',')}
+                                                                    € / 1 kg)</span>
+                                                        </isif>
+                                                </isif>
+                                            </isif>
+                                        </isif>
+                                    </isif>
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <isinclude template="product/components/pidRating" />
+                                    </div>
+                                </div>
+
+                                <div class="attributes">
+                                    <!-- Attributes and Quantity -->
+                                    <isinclude template="product/components/mainAttributes" />
+
+                                    <isset name="isBundle" value="${false}" scope="page" />
+                                    <isset name="loopState" value="{count: 1}" scope="page" />
+                                    <isif condition="${product.productType !== 'standard'}">
+                                        <isloop items="${product.variationAttributes}" var="attr" status="attributeStatus">
+                                            <isinclude template="product/components/variationAttribute" /> 
+
+                                            <isif condition="${attributeStatus.last && !isBundle}">
+                                                <div class="attribute quantity d-none">
+                                                    <isinclude template="product/components/quantity" />
+                                                </div>
+                                            </isif>
+                                        </isloop>
+                                    <iselseif condition="${empty(product.variants) && product.productType === 'standard'}">
+                                        <isinclude template="product/components/addToCartProduct" />
+                                        <div class="attribute quantity d-none">
+                                            <isinclude template="product/components/quantity" />
+                                        </div>  
+                                    </isif>
+                                    <iscomment> FDC delivery time check </iscomment>
+                                    <isif condition="${product.FDCCheck}">
+                                        <iscontentasset aid="standard-delivery-time-fdc" />
+                                    <iselse/>
+                                        <iscontentasset aid="standard-delivery-time"/>
+                                    </isif>
+                                    <div class="attribute size-msgs">
+                                        <div class="pdp-error">
+                                            <div class="pdp-error-msg add-to-cart-oos d-none"><i class="icon-alert"></i><span class="add-to-cart-oos-msg" data-oos-msg="${Resource.msg('msg.alert.can.not.add.to.cart', 'cart', null)}"></span></div>
+                                        </div>
+                                        <div class="size-chart-alert d-flex align-items-center">
+                                            <isif condition="${product.pdpAttrs && product.pdpAttrs.dropDown}">
+                                                <div class="text-danger add-to-cart-size-chose d-none">${Resource.msgf('msg.alert.choose.price', 'product', null, product.pdpAttrs.dropDown.toLowerCase())}</div>
+                                            </isif>
+                                            <!-- Product size chart -->
+                                            <isif condition="${product.variationAttributes && product.sizeChartId}">
+                                                <div class="text-danger add-to-cart-size-chose d-none">${Resource.msg('msg.alert.choose.size', 'product', null)}</div>
+                                                <div class="modal fade size-chart-modal" id="${sizeChartId}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                                                    aria-hidden="true">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header p-0 m-0">
+                                                                <button type="button" class="close p-0 m-0" data-dismiss="modal" aria-label="Close">
+                                                                    <span class="icon-cross"></span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body p-0">
+                                                                <div class="size-chart-data"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </isif>
+                                        </div>
+                                    </div>
+                                    <!-- Product features tabss -->
+                                    <isinclude template="product/components/productFeatures" />
+
+                                    <div class="d-none">
+                                        <!-- Social Sharing Icons -->
+                                        <div class="row">
+                                            <isinclude template="product/components/socialIcons" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <isset name="loopState" value="{count: 1}" scope="page" />
+        </div>
+        
+    </isobject>
+<input type="hidden" id="currencyCode" value="${session.currency.currencyCode}">

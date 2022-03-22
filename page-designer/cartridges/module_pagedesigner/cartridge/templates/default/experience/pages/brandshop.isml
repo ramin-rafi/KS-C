@@ -1,0 +1,41 @@
+<iscontent type="text/html" charset="UTF-8" compact="true" />
+<script defer type="text/javascript" src="https://f.vimeocdn.com/js/froogaloop2.min.js"></script>
+<isdecorate template="common/layout/page">
+    <div class="storepage js-category-data" id="${pdict.page.ID}"
+        data-maincategory="${pdict.cookieCat ? pdict.cookieCat : ''}">
+        <isif condition="${pdict.breadcrumbs}">
+            <div class="breadcrumbs-wrap">
+                <div class="container">
+                    <div class="content-holder">
+                        <isinclude template="components/breadcrumbs/pageBreadcrumbs" />
+                        <div
+                            class="js-brand-mobile-menu brand-mobile-menu d-md-none ${pdict.fontForBrand ? 'fontclass-' + pdict.fontForBrand : ''}">
+                            <isprint value="${pdict.regions.sideNavigation.setClassName(" brand-menu-nav").render()}"
+                                encoding="off" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </isif>
+        <div class="brandshop-page-wrapper">
+            <div class="container js-brand-desktop-menu ${pdict.fontForBrand ? 'fontclass-' + pdict.fontForBrand : ''}">
+                <isprint value="${pdict.regions.top.setClassName("").render()}" encoding="off" />
+            </div>
+            <div class="container ${pdict.fontForBrand ? 'fontclass-' + pdict.fontForBrand : ''}">
+                <div class="row">
+                    <div class="aside-filter d-none col-md-3 d-md-block">
+                        <isprint value="${pdict.regions.sideNavigation.setClassName("").render()}" encoding="off" />
+                    </div>
+                    <div class="col-md-9">
+                        <isprint value="${pdict.regions.main.setClassName("").render()}" encoding="off" />
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <isprint value="${pdict.regions.bottom.setClassName("col-12").render()}" encoding="off" />
+                </div>
+            </div>
+        </div>
+    </div>
+</isdecorate>

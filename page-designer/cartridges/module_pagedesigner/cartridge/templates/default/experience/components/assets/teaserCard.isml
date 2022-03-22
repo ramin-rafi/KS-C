@@ -1,0 +1,80 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+</isscript>
+
+<div class="col">
+    <div
+        class="card ${pdict.addClass ? pdict.addClass : ''} ${pdict.teaserCardOverlay === true ? 'has-overlay' : ''} ${pdict.teaserCardTextColor ? pdict.teaserCardTextColor : ''} ${pdict.teaserCardBg ? pdict.teaserCardBg : ''} ${pdict.teaserCardTextAlign ? pdict.teaserCardTextAlign : ''}">
+        <isif condition="${pdict.teaserImageAsCta && pdict.teaserCtaLink}">
+            <isif condition="${pdict.teaserCardImage}">
+                <isif condition="${pdict.teaserCardMagazineTarget}">
+                    <a class="card-img-top img-cta" target="${pdict.teaserCardMagazineTargetName}"
+                        href="${pdict.teaserCardMagazineIframeURL}">
+                        <img src="${pdict.teaserCardImage}"
+                            alt="${pdict.teaserCardImageAlt ? pdict.teaserCardImageAlt : 'Image'}" />
+                    </a>
+                <iselse/>
+                    <a class="card-img-top img-cta" href="${pdict.teaserCtaLink}">
+                        <img src="${pdict.teaserCardImage}"
+                            alt="${pdict.teaserCardImageAlt ? pdict.teaserCardImageAlt : 'Image'}" />
+                    </a>
+                </isif>
+            </isif>
+        <iselse/>
+            <isif condition="${pdict.teaserCardImage}">
+                <img class="card-img-top" src="${pdict.teaserCardImage}"
+                    alt="${pdict.teaserCardImageAlt ? pdict.teaserCardImageAlt : 'Image'}" />
+            </isif>
+        </isif>
+
+        <isif condition="${pdict.teaserCardHeading || pdict.teaserCardDescription}">
+            <div class="card-body">
+                <isif condition="${pdict.teaserCardHeading}">
+                    <h3 class="card-title">
+                        <isprint value="${pdict.teaserCardHeading}" encoding="off" />
+                    </h3>
+                </isif>
+
+                <isif condition="${pdict.teaserCardDescription}">
+                    <isprint value="${pdict.teaserCardDescription}" encoding="off" />
+                </isif>
+
+                <isif condition="${pdict.teaserCardOverlay}">
+                    <isif condition="${pdict.teaserCtaLink && pdict.teaserCtaLabel}">
+                        <isif condition="${pdict.teaserCardMagazineTarget}">
+                            <a class="btn-overlay ${pdict.teaserCtaStyle ? pdict.teaserCtaStyle : ''}"
+                                href="${pdict.teaserCardMagazineIframeURL}"
+                                target="${pdict.teaserCardMagazineTargetName}">
+                                <h2>
+                                    <isprint value="${pdict.teaserCtaLabel}" encoding="off" />
+                                </h2>
+                            </a>
+                        <iselse/>
+                            <a class="btn-overlay ${pdict.teaserCtaStyle ? pdict.teaserCtaStyle : ''}"
+                                href="${pdict.teaserCtaLink}">
+                                <h2>
+                                    <isprint value="${pdict.teaserCtaLabel}" encoding="off" />
+                                </h2>
+                            </a>
+                        </isif>
+                    </isif>
+                    <iselse>
+                        <isif condition="${pdict.teaserCtaLink && pdict.teaserCtaLabel}">
+                            <isif condition="${pdict.teaserCardMagazineTarget}">
+                                <a class="btn-overlay magazine-cta ${pdict.teaserCtaStyle ? pdict.teaserCtaStyle : ''}"
+                                    href="${pdict.teaserCardMagazineIframeURL}"
+                                    target="${pdict.teaserCardMagazineTargetName}">
+                                    <isprint value="${pdict.teaserCtaLabel}" encoding="off" />
+                                </a>
+                            <iselse/>
+                                <a class="btn-overlay magazine-cta ${pdict.teaserCtaStyle ? pdict.teaserCtaStyle : ''}"
+                                    href="${pdict.teaserCtaLink}">
+                                    <isprint value="${pdict.teaserCtaLabel}" encoding="off" />
+                                </a>
+                            </isif>
+                        </isif>
+                </isif>
+            </div>
+        </isif>
+    </div>
+</div>

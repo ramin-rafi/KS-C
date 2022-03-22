@@ -1,0 +1,21 @@
+{
+  "name": "Top Category",
+  "description": "Image, text overlay that links user to a category using the markup editor",
+  "group": "assets",
+  "attribute_definition_groups": [
+    {
+      "id": "contentAsset",
+      "name": "Content Asset",
+      "description": "Enter Content Asset ID",
+      "attribute_definitions": [
+        {
+          "id": "contentid",
+          "name": "Content ID",
+          "type": "string",
+          "required": true
+        }
+      ]
+    }
+  ],
+  "region_definitions": []
+}

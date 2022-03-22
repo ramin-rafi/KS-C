@@ -1,0 +1,74 @@
+{
+    "name": "FAQ's Search",
+    "description": "Search Configuration",
+    "group": "assets",
+    "attribute_definition_groups": [
+        {
+            "id": "faqSearchConfig",
+            "name": "Layout Configuration",
+            "description": "Select the container layout for this component. Fixed width is 1140px and Full width is 100%",
+            "attribute_definitions": [
+                {
+                    "id": "addClass",
+                    "name": "Add Custom Class",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "containerType",
+                    "name": "Container Layout",
+                    "type": "enum",
+                    "values": ["Fixed Width", "Full Width"],
+                    "required": true
+                },
+                {
+                    "id": "layoutPaddingY",
+                    "name": "Layout Padding (Top/Bottom)",
+                    "description": "Padding will add white inside the layout vertically at top and bottom",
+                    "type": "enum",
+                    "values": ["0px", "40px"],
+                    "required": true
+                }
+            ]
+        },
+        {
+            "id": "faqSearchOption",
+            "name": "Search Options",
+            "description": "Add Heading and other info",
+            "attribute_definitions": [
+                {
+                    "id": "headingLabel",
+                    "name": "Search Section Heading",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "headingAlign",
+                    "name": "Heading Text Align",
+                    "type": "enum",
+                    "values": ["text-center", "text-right"],
+                    "required": false
+                },
+                {
+                    "id": "searchPlaceholder",
+                    "name": "Search Input Placeholder",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "errorMessage",
+                    "name": "Search Error Message",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "ctaLabel",
+                    "name": "CTA Label",
+                    "type": "string",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

@@ -1,0 +1,40 @@
+{
+    "name": "Teaser Video Slide",
+    "description": "Image, text overlay that links user to a category using the markup editor",
+    "group": "assets",
+    "attribute_definition_groups": [
+        {
+            "id": "videoDetails",
+            "name": "Video Details",
+            "description": "The visual display of the banner image in the background.",
+            "attribute_definitions": [
+                {
+                    "id": "url",
+                    "name": "Video URL",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "id": "width",
+                    "name": "Video Width",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "id": "height",
+                    "name": "Video Height",
+                    "type": "string",
+                    "required": true
+                },
+                {
+                    "id": "teaser_text",
+                    "name": "Teaser Text",
+                    "description": "The text below Promotional Teaser.",
+                    "type": "string",
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}

@@ -1,0 +1,11 @@
+.content-header-position.left  .recommendations .best-sellings h2 {
+    text-align: left;
+}
+
+.content-header-position.center .recommendations .best-sellings h2 {
+    text-align: center;
+}
+
+.content-header-position.right  .recommendations .best-sellings h2 {
+    text-align: left;
+}

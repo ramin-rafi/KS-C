@@ -1,0 +1,103 @@
+
+<h3>${Resource.msg('page.overview.salutation','account',null)} ${pdict.account.profile.salutation || ''} ${pdict.account.profile.title || ''} ${!pdict.account.profile.salutation && pdict.account.profile.firstName ? pdict.account.profile.firstName : ''} ${pdict.account.profile.lastName}!</h3>
+<p>${pdict.accountActivityTopics && pdict.accountActivityTopics.length > 0 ? Resource.msg('account.complete.profile.activity','account',null) : Resource.msg('account.complete.profile.noactivity','account',null)}</p>
+<isif condition="${!empty(pdict.accountActivityTopics)}">
+    <div class="activity-cont row">
+        <isloop items="${pdict.accountActivityTopics}" var="activityTopic" status="loopstatus">
+            <isif condition="${activityTopic.ID === 'order' && pdict.account.orderHistory.orderNumber && activityTopic.showFlag}">
+                <div class="activity-teaser activity-${activityTopic.ID} text-center col-lg-4">
+                    ${Resource.msg('account.activity.order','account',null)} ${pdict.account.orderHistory.orderNumber}
+                    <br>${Resource.msg('account.activity.order.date','account',null)} <isprint value="${pdict.account.orderHistory.creationDate}"/>
+                    <br><a href="${URLUtils.url('Order-Details', 'orderID', pdict.account.orderHistory.orderNumber)}">${Resource.msg('account.activity.view.order','account',null)}</a>
+                </div>
+            <iselseif condition="${activityTopic.showFlag && activityTopic.helpingText}"/>
+                <div class="activity-teaser activity-${activityTopic.ID} text-center col-lg-4">
+                    ${activityTopic.helpingText}
+                    <isif condition="${activityTopic.link !== '' && activityTopic.link && activityTopic.cid}">
+                        <a href="${URLUtils.url(activityTopic.link , 'cid', activityTopic.cid)}">${Resource.msg('account.activity.learnmore','account',null)}</a>
+                    </isif>
+                </div>
+            </isif>
+        </isloop>
+    </div>
+</isif>
+
+<isset name="isRatePayEnabled" value="${require('dw/system/Site').getCurrent().getCustomPreferenceValue('AdyenRatePay_enabled')}" scope="page" />
+<div class="notification-cont ${!pdict.account.profile.phone || (!pdict.account.profile.birthDay && isRatePayEnabled) || pdict.account.addresses.length === 0 ? '' : 'd-none'}" data-url="${URLUtils.url('Account-SaveMissingInfo')}">
+    <h4>${Resource.msg('heading.account.complete.profile','account',null)}</h4>
+    <p>${Resource.msg('account.complete.profile.detail','account',null)}</p>
+    <form data-form-name="Save Phone or Date of Birth" class="savePhoneOrBirthday">
+    <div class="row">
+        <isif condition="${!pdict.account.profile.phone || pdict.account.addresses.length === 0}">
+        <div class="col-lg-6">
+            <isif condition="${!pdict.account.profile.phone}">
+                <div class="notification-teaser phone-teaser">
+                    <div class="form-group-overview">
+                        <label class="form-control-label">
+                            ${Resource.msg('label.account.notification.profile.telephone', 'account', null)}
+                        </label>
+                        <div class="input-part">
+                            <input
+                                type="tel"
+                                data-form-name="Save Phone"
+                                class="form-control notification-input"
+                                name="telephone"
+                                placeholder="${Resource.msg('label.profile.phone.field', 'account', null)}"
+                                pattern="^[0-9]*$"
+                                maxlength="20"
+                                minlength="10"
+                                data-missing-error="${Resource.msg('error.message.required','forms',null)}"
+                                data-pattern-mismatch="${Resource.msg('error.message.parse.phone.profile.form','forms',null)}"
+                                data-range-error="${Resource.msg('error.message.range.10to20','forms',null)}"
+                                aria-describedby="form-phone-error"
+                            />
+                            <div class="invalid-feedback"></div>
+                        </div>
+                    </div>
+                </div>
+            </isif>
+            <isif condition="${pdict.account.addresses.length === 0}">
+                <div class="notification-teaser address-teaser">
+                    <div class="form-group-overview">
+                        <label class="form-control-label">
+                            ${Resource.msg('label.account.notification.profile.addresses', 'account', null)}
+                        </label>
+                        <a href="${URLUtils.url('Address-AddAddress')}" aria-label="${Resource.msg('link.account.notification.profile.addresses','account',null)}">${Resource.msg('link.account.notification.profile.addresses','account',null)}</a>
+                    </div>
+                </div>
+            </isif>
+        </div>
+        </isif>
+        <div class="col-lg-6">
+            <isif condition="${!pdict.account.profile.birthDay && isRatePayEnabled}">
+                <div class="notification-teaser birthday-teaser">
+                    <div class="form-group-overview">
+                        <label class="form-control-label">
+                            ${Resource.msg('label.account.notification.profile.dateofbirth', 'account', null)}
+                        </label>
+                        <div class="input-part">
+                            <input
+                                type="text"
+                                data-form-name="Save Date of Birth"
+                                name="birthday"
+                                id="birthday"
+                                inputmode="numeric"
+                                pattern="[0-9]*.[0-9]*.[0-9]*"
+                                class="form-control notification-input"
+                                placeholder="${Resource.msg('account.profile.notification.dateofbirth.placeholder','account',null)}"
+                            />
+                            <div class="invalid-feedback"></div>
+                        </div>
+                    </div>
+                </div>
+            </isif>
+        </div>
+    </div>
+    </form>
+</div>
+
+<div class="empty-orders-list">
+    <a href="${URLUtils.url('Home-Show')}" class="btn btn-primary bg-black">
+        ${Resource.msg('label.profile.countinue.shopping','account',null)}
+    </a>
+</div>

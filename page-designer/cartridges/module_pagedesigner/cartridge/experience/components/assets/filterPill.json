@@ -1,0 +1,29 @@
+{
+    "name": "Filters Pill",
+    "group": "assets",
+    "attribute_definition_groups": [{
+        "id": "filtersPill",
+        "name": "Filters Pill Configuration",
+        "attribute_definitions": [
+            {
+                "id": "addClass",
+                "name": "Add Custom Class",
+                "type": "string",
+                "required": false
+            },
+            {
+                "id": "addFilter",
+                "name": "Add Filter Keyword",
+                "type": "string",
+                "required": true
+            },
+            {
+                "id": "filterText",
+                "name": "Filter Text",
+                "type": "string",
+                "required": true
+            }
+        ]
+    }],
+    "region_definitions": []
+}

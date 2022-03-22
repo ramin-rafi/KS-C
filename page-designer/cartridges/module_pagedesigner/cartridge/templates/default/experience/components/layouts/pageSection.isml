@@ -1,0 +1,14 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+    // assets.addCss('/css/pageSection.css');
+</isscript>
+
+<div
+    class="${pdict.addClass ? pdict.addClass + " " : ''}${pdict.sectionBg ? pdict.sectionBg + " " : ''}${pdict.sectionPaddingY ? pdict.sectionPaddingY : ''}">
+    <div class="${pdict.containerType ? pdict.containerType : ''}">
+        <isif condition="${pdict.sectionHeading}">
+            <h1 class="section-heading">${pdict.sectionHeading}</h1>
+        </isif>
+        <isprint value="${pdict.regions.pageSection.render()}" encoding="off" />
+    </div>
+</div>

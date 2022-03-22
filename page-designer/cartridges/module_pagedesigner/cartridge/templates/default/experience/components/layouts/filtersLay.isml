@@ -1,0 +1,10 @@
+<div class="filters-lay">
+    <div class="filters-grid ${pdict.addClass ? pdict.addClass : ''}" data-filter-group="filters">
+        <isprint value="${pdict.regions.filtersRegion.setClassName("btn-group d-flex flex-wrap align-items-center justify-content-center").render()}" encoding="off" />
+    </div>
+    <div class="js-alert-detail alert text-center d-none" data-errorMsg="${pdict.errorMessage ? pdict.errorMessage : ''}" 
+    role="alert">
+        <span>${pdict.errorMessage ? pdict.errorMessage : ''}</span>
+    </div>
+</div>
+
