@@ -3,133 +3,132 @@
 @import "../variables";
 
 footer {
-  background-color: #031e2f;
-  font-family: 'Archivo', sans-serif;
-  color: white;
-  .footer-container {
-    max-width: 90%;
-    margin: 0 auto;
-    .footer-item {
-      padding: 0 65px;
-      @include media-breakpoint-down(md) {
-        padding: 0 30px;
-      }
-      @include media-breakpoint-down(sm) {
-        padding: 0 15px;
-      }
-    }
-  }
-  h4 {
-    letter-spacing: .5px;
-    margin: 0;
-    font-size: 24px;
-    list-style: 30px;
-    font-family: '';
-  }
-  a {
-    color:white;
-    &:hover,
-    &:focus,
-    &:active {
-      color: white;
-      text-decoration: underline;
-    }
-  }
-  .signup-form {
-    input {
-      background: #021623;
-      border: #021623;
-      width: 100%;
-      margin-top: 24px;
-      padding: 8px 2px 8px 16px;
-      max-height: 32px;
-      &::placeholder {
-        text-overflow: ellipsis;
-        color: white;
-        font-size: 12px;
-        &:active,
-        &:focus {
-          color: white;
-        }
-      }
-    }
-    .signup-checkbox {
-      padding: 20px 0;
-      label {
-        font-family: 'Archivo';
-        letter-spacing: 1px;
-        position: relative;
-        padding-left: 35px;
-        font-size: 10px;
-        line-height: 14px;
-        cursor: pointer;
-        input {
-          display: none;
-          &:checked~.checkmark {
-            background-color: black;
-          }
-          &:checked~.checkmark:after {
-            display: block;
-          }
-        }
-        .checkmark {
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 18px;
-          width: 18px;
-          background-color: #eee;
-          &::after {
-            content: "";
-            position: absolute;
-            display: none;
-            left: 7px;
-            top: 4px;
-            width: 4px;
-            height: 8px;
-            border: solid white;
-            border-width: 0 3px 3px 0;
-            -webkit-transform: rotate(45deg);
-            -ms-transform: rotate(45deg);
-            transform: rotate(45deg);
-          }
-        }
-      }
-    }
-    .signup-button {
-      background: #042b43;
-      border: #042b43;
-      padding: 8px 32px;
-      letter-spacing: 1px;
-      font-size: 12px;
-      cursor: pointer;
-      color: white;
-    }
-  }
-  h2 {
-    font-size: 12px;
-    line-height: 30px;
-    text-transform: uppercase;
-    font-weight: 400;
-  }
-  ul {
-    opacity: 0.7;
-    letter-spacing: 1px;
-    padding: 0;
-    li {
-      list-style: none;
-      &:not(:first-child)
-      {
-        padding-top: 15px;
-      }
-      a {
-        font-size: 12px;
-        line-height: 18px;
-      }
-    }
-  }
+	background-color: #031e2f;
+	font-family: "Archivo", sans-serif;
+	color: white;
+	.footer-container {
+		max-width: 90%;
+		margin: 0 auto;
+		.footer-item {
+			padding: 0 65px;
+			@include media-breakpoint-down(md) {
+				padding: 0 30px;
+			}
+			@include media-breakpoint-down(sm) {
+				padding: 0 15px;
+			}
+		}
+	}
+	h4 {
+		letter-spacing: 0.5px;
+		margin: 0;
+		font-size: 24px;
+		list-style: 30px;
+		font-family: "";
+	}
+	a {
+		color: white;
+		&:hover,
+		&:focus,
+		&:active {
+			color: white;
+			text-decoration: underline;
+		}
+	}
+	.signup-form {
+		input {
+			background: #021623;
+			border: #021623;
+			width: 100%;
+			margin-top: 24px;
+			padding: 8px 2px 8px 16px;
+			max-height: 32px;
+			&::placeholder {
+				text-overflow: ellipsis;
+				color: white;
+				font-size: 12px;
+				&:active,
+				&:focus {
+					color: white;
+				}
+			}
+		}
+		.signup-checkbox {
+			padding: 20px 0;
+			label {
+				font-family: "Archivo";
+				letter-spacing: 1px;
+				position: relative;
+				padding-left: 35px;
+				font-size: 10px;
+				line-height: 14px;
+				cursor: pointer;
+				input {
+					display: none;
+					&:checked ~ .checkmark {
+						background-color: black;
+					}
+					&:checked ~ .checkmark:after {
+						display: block;
+					}
+				}
+				.checkmark {
+					position: absolute;
+					top: 0;
+					left: 0;
+					height: 18px;
+					width: 18px;
+					background-color: #eee;
+					&::after {
+						content: "";
+						position: absolute;
+						display: none;
+						left: 7px;
+						top: 4px;
+						width: 4px;
+						height: 8px;
+						border: solid white;
+						border-width: 0 3px 3px 0;
+						-webkit-transform: rotate(45deg);
+						-ms-transform: rotate(45deg);
+						transform: rotate(45deg);
+					}
+				}
+			}
+		}
+		.signup-button {
+			background: #042b43;
+			border: #042b43;
+			padding: 8px 32px;
+			letter-spacing: 1px;
+			font-size: 12px;
+			cursor: pointer;
+			color: white;
+		}
+	}
+	h2 {
+		font-size: 12px;
+		line-height: 30px;
+		text-transform: uppercase;
+		font-weight: 400;
+	}
+	ul {
+		opacity: 0.7;
+		letter-spacing: 1px;
+		padding: 0;
+		li {
+			list-style: none;
+			&:not(:first-child) {
+				padding-top: 15px;
+			}
+			a {
+				font-size: 12px;
+				line-height: 18px;
+			}
+		}
+	}
 }
 
 .text-underline {
-  text-decoration: underline !important;
+	text-decoration: underline !important;
 }

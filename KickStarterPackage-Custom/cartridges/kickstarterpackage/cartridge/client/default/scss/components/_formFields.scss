@@ -1,7 +1,6 @@
-
 .form-group {
-    &.required .form-control-label::before {
-        content: "*";
-        color: $danger;
-    }
+	&.required .form-control-label::before {
+		content: "*";
+		color: $danger;
+	}
 }

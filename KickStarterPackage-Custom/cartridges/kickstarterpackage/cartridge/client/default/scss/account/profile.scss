@@ -4,14 +4,14 @@
 @import "account";
 
 .profile-back-to-account-link {
-    color: #{var(--skin-primary-color-1)};
-    text-decoration: underline;
-    display: block;
-    text-align: center;
+	color: #{var(--skin-primary-color-1)};
+	text-decoration: underline;
+	display: block;
+	text-align: center;
 }
 
 .tracking-consent {
-    color: #{var(--skin-link-color-1)};
-    text-decoration: underline;
-    cursor: pointer;
+	color: #{var(--skin-link-color-1)};
+	text-decoration: underline;
+	cursor: pointer;
 }

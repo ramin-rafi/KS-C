@@ -1,97 +1,97 @@
 @import "../variables";
 
 .cookies {
-    bottom: 30px;
-    font-family: $font-primary;
-    height: 335px;
-    position: fixed;
-    right: 30px;
-    left: auto;
-    text-align: center;
-    width: 375px;
+	bottom: 30px;
+	font-family: $font-primary;
+	height: 335px;
+	position: fixed;
+	right: 30px;
+	left: auto;
+	text-align: center;
+	width: 375px;
 
-    @include media-breakpoint-down(sm) {
-        width: 100%;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-    }
+	@include media-breakpoint-down(sm) {
+		width: 100%;
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
 
-    .btn-link {
-        @include rem-font-size(14px, 18px);
+	.btn-link {
+		@include rem-font-size(14px, 18px);
 
-        color: $primary;
-        margin-top: 15px;
-        text-decoration: underline;
-        width: 100%;
-    }
+		color: $primary;
+		margin-top: 15px;
+		text-decoration: underline;
+		width: 100%;
+	}
 
-    .btn-primary {
-        @include rem-font-size(15px, 26px);
+	.btn-primary {
+		@include rem-font-size(15px, 26px);
 
-        background-color: $primary;
-        border-radius: 0;
-        color: $white;
-        font-weight: 700;
-        padding: 10px 20px;
-        text-transform: uppercase;
-        width: calc(100% - 40px);
+		background-color: $primary;
+		border-radius: 0;
+		color: $white;
+		font-weight: 700;
+		padding: 10px 20px;
+		text-transform: uppercase;
+		width: calc(100% - 40px);
 
-        i {
-            font-size: 24px;
-            margin-right: 10px;
-        }
-    }
+		i {
+			font-size: 24px;
+			margin-right: 10px;
+		}
+	}
 
-    .cookie-body {
-        padding: 20px;
-        background-color: $white-smoke;
+	.cookie-body {
+		padding: 20px;
+		background-color: $white-smoke;
 
-        h4 {
-            text-align: left;
-            width: 90% !important;
-        }
+		h4 {
+			text-align: left;
+			width: 90% !important;
+		}
 
-        .close-button {
-            button {
-                font-size: 14px;
-                color: $primary;
-            }
-        }
+		.close-button {
+			button {
+				font-size: 14px;
+				color: $primary;
+			}
+		}
 
-        .jcf-scrollable {
-            padding-right: 10px;
-        }
-    }
+		.jcf-scrollable {
+			padding-right: 10px;
+		}
+	}
 
-    h3 {
-        @include rem-font-size(20px, 23px);
+	h3 {
+		@include rem-font-size(20px, 23px);
 
-        color: $primary;
-        font-weight: 700;
-        margin-bottom: 18px;
-    }
+		color: $primary;
+		font-weight: 700;
+		margin-bottom: 18px;
+	}
 
-    p {
-        @include rem-font-size(14px, 21px);
+	p {
+		@include rem-font-size(14px, 21px);
 
-        text-align: justify;
-    }
+		text-align: justify;
+	}
 
-    .jcf-scrollable {
-        height: 95px;
-        overflow-y: scroll;
-        overflow-x: hidden;
-        text-align: left;
-    }
+	.jcf-scrollable {
+		height: 95px;
+		overflow-y: scroll;
+		overflow-x: hidden;
+		text-align: left;
+	}
 
-    .cookie-footer {
-        background-color: $white;
-        padding: 20px;
+	.cookie-footer {
+		background-color: $white;
+		padding: 20px;
 
-        .btn-link {
-            margin-top: 20px;
-        }
-    }
+		.btn-link {
+			margin-top: 20px;
+		}
+	}
 }

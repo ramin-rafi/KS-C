@@ -1,68 +1,68 @@
 @import "../variables";
 
 .cat-teaser {
-    margin: 0 -15px;
-    padding: 40px 0;
+	margin: 0 -15px;
+	padding: 40px 0;
 
-    .heading {
-        color: $black;
+	.heading {
+		color: $black;
 
-        @include rem-font-size(26px, 38px);
+		@include rem-font-size(26px, 38px);
 
-        font-weight: 400;
-        margin-bottom: 30px;
-    }
+		font-weight: 400;
+		margin-bottom: 30px;
+	}
 
-    .teaser-track {
-        flex-wrap: nowrap;
-        overflow-y: hidden;
-        overflow-x: auto;
+	.teaser-track {
+		flex-wrap: nowrap;
+		overflow-y: hidden;
+		overflow-x: auto;
 
-        &.vertical {
-            overflow-x: hidden;
-        }
-    }
+		&.vertical {
+			overflow-x: hidden;
+		}
+	}
 
-    @include media-breakpoint-down(sm) {
-        .vertical {
-            &.row-cols-3 {
-                align-items: center;
-                flex-flow: column wrap;
-            }
+	@include media-breakpoint-down(sm) {
+		.vertical {
+			&.row-cols-3 {
+				align-items: center;
+				flex-flow: column wrap;
+			}
 
-            .slide {
-                &:not(:first-child) {
-                    margin-top: 45px;
-                }
-            }
-        }
-    }
+			.slide {
+				&:not(:first-child) {
+					margin-top: 45px;
+				}
+			}
+		}
+	}
 
-    .slide {
-        position: relative;
+	.slide {
+		position: relative;
 
-        @include media-breakpoint-down(sm) {
-            flex: 0 0 375px;
-            max-width: 375px;
-            width: 375px;
-        }
-    }
+		@include media-breakpoint-down(sm) {
+			flex: 0 0 375px;
+			max-width: 375px;
+			width: 375px;
+		}
+	}
 
-    .img-holder {
-        margin-bottom: 15px;
+	.img-holder {
+		margin-bottom: 15px;
 
-        img {
-            max-width: 100%;
-            width: 100%;
-        }
-    }
+		img {
+			max-width: 100%;
+			width: 100%;
+		}
+	}
 
-    .slide-title {
-        display: block;
+	.slide-title {
+		display: block;
 
-        @include rem-font-size(14px, 21px);
+		@include rem-font-size(14px, 21px);
 
-        font-weight: 700;
-        text-transform: uppercase;
-    }
+		font-weight: 700;
+		text-transform: uppercase;
+	}
 }

@@ -1,17 +1,17 @@
 @import "../variables";
 
 .blockquote {
-    .quote {
-        @include rem-font-size(26px, 30px);
+	.quote {
+		@include rem-font-size(26px, 30px);
 
-        color: $primary;
-        margin-bottom: 30px;
-    }
+		color: $primary;
+		margin-bottom: 30px;
+	}
 
-    .blockquote-footer {
-        @include rem-font-size(14px, 21px);
+	.blockquote-footer {
+		@include rem-font-size(14px, 21px);
 
-        color: $primary;
-        text-transform: uppercase;
-    }
+		color: $primary;
+		text-transform: uppercase;
+	}
 }

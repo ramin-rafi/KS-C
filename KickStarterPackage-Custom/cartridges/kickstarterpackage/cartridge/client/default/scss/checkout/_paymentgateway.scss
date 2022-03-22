@@ -6,38 +6,38 @@
  * https://github.com/wirecard/salesforce-ee/blob/master/LICENSE
  */
 .pg-payment {
-    img {
-        &.pg-logo {
-            vertical-align: middle;
-            max-height: 50px;
-            max-width: 40px;
-            margin: 0 8px 0 0;
-        }
-    }
+	img {
+		&.pg-logo {
+			vertical-align: middle;
+			max-height: 50px;
+			max-width: 40px;
+			margin: 0 8px 0 0;
+		}
+	}
 }
 
 .summary-details {
-    .payment-details {
-        img {
-            &.pg-logo {
-                vertical-align: middle;
-                max-height: 50px;
-                max-width: 40px;
-                margin: 0 8px 0 0;
-            }
-        }
-    }
+	.payment-details {
+		img {
+			&.pg-logo {
+				vertical-align: middle;
+				max-height: 50px;
+				max-width: 40px;
+				margin: 0 8px 0 0;
+			}
+		}
+	}
 }
 
 .paypal-tab {
-    img {
-        &.credit-card-option {
-            vertical-align: middle;
-            margin: 0 8px 0 0;
-        }
-    }
+	img {
+		&.credit-card-option {
+			vertical-align: middle;
+			margin: 0 8px 0 0;
+		}
+	}
 
-    span {
-        vertical-align: middle;
-    }
+	span {
+		vertical-align: middle;
+	}
 }
