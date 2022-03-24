@@ -73,4 +73,26 @@
             </run-once>
         </triggers>
     </job>
+<job job-id="EmailToCustomer" priority="0">
+        <description/>
+        <parameters/>
+        <flow>
+            <context site-id="RefArch"/>
+            <step step-id="EmailToCustomer" type="ExecuteScriptModule" enforce-restart="false">
+                <description/>
+                <parameters>
+                    <parameter name="ExecuteScriptModule.Module">kickstarterCartridge/cartridge/scripts/Job/EmailToCustomer.js</parameter>
+                    <parameter name="ExecuteScriptModule.FunctionName">execute</parameter>
+                    <parameter name="ExecuteScriptModule.Transactional">false</parameter>
+                </parameters>
+            </step>
+        </flow>
+        <rules/>
+        <triggers>
+            <run-once enabled="false">
+                <date>2022-03-21Z</date>
+                <time>09:22:50.000Z</time>
+            </run-once>
+        </triggers>
+    </job>
 </jobs>
