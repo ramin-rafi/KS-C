@@ -1,0 +1,22 @@
+<div class="row cart-and-ipay">
+    <div class="col-sm-12">
+        <div class="form-group">
+            <input type="text" class="form-control email" id="email"
+                placeholder="Write email for unavailable products..">
+            <div class="invalid-feedback" id="emailInvalidMessage"></div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="mb-sm-3">
+                    <button class="btn btn-primary notify-me btn-block submit-customer-login" type="submit"
+                        name="submit" value="submit-login" data-pid="${product.id}"
+                        data-url="${URLUtils.url('Cart-NotifyMe', 'pid', product.id)}">
+                        ${Resource.msg('Notify Me', 'checkout', null)}
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <isinclude template="product/components/addToCartButtonExtension" />
+    </div>
+</div>
