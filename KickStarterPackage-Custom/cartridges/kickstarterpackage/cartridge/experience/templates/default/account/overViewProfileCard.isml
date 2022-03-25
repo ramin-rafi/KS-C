@@ -1,7 +1,0 @@
-<isinclude template="account/components/accountSideNav"/>
-<div class="account-overview">
-    <isinclude template="account/components/accountOverview"/>
-    <div class="notification-box">
-        <iscontentasset aid="cart-notification" />
-    </div>
-</div>

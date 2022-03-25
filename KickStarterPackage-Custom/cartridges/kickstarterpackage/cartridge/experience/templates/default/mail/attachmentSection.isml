@@ -1,5 +1,0 @@
-Content-Type: application/pdf;name="${attachedFile.fileName}"
-Content-Disposition: attachment; filename="${attachedFile.fileName}"
-Content-Transfer-Encoding: base64
-
-${attachedFile.file}

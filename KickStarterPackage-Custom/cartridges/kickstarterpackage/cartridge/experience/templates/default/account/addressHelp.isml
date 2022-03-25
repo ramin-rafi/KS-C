@@ -1,4 +1,0 @@
-<div class="help-cont">
-    <h2 class="card-header-title">${Resource.msg('label.profile.needhelp','account',null)}</h2>
-    ${Resource.msg('account.help.address.text','account',null)}<a href="${URLUtils.url('Page-Show', 'cid', 'hilfe-kontakt')}">${Resource.msg('link.profile.sidenav.helpandcontact', 'account', null)}</a>
-</div>            

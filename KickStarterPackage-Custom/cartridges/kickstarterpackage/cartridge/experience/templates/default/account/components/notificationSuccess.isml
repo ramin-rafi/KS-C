@@ -1,4 +1,0 @@
-<div class="notification-profile-success">
-    <i class="icon-check"></i>
-    <div>${Resource.msg('account.notification.profile.thanks', 'account', null)}</div>
-</div>

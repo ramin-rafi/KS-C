@@ -1,3 +1,0 @@
-<isif condition="${pdict.reportingURLs && pdict.reportingURLs.length}">
-        <isinclude template="reporting/reportingUrls" />
-</isif>
