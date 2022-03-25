@@ -1,8 +1,7 @@
 @import "../variables";
 
 .teaser-layout {
-	font-family: $font-primary;
-
+	font-family: Arial, Helvetica, sans-serif;
 	.container {
 		@include media-breakpoint-down(sm) {
 			padding-left: 0;
@@ -15,7 +14,6 @@
 			}
 		}
 	}
-
 	.advance-heading {
 		font-weight: 400;
 		margin-bottom: 52px;
@@ -28,11 +26,9 @@
 
 	.card {
 		border: 0;
-
-		@include rem-font-size(14px, 21px);
-
+		font-size: 14px;
+		line-height: 21px;
 		position: relative;
-
 		@include media-breakpoint-down(sm) {
 			margin-bottom: 30px !important;
 		}
@@ -42,7 +38,7 @@
 
 			.card-body {
 				color: $white;
-				background: $grey-transparent-2;
+				background: rgba(0,0,0,0.3);
 				position: absolute;
 				top: 0;
 				right: 0;
@@ -55,7 +51,7 @@
 				text-align: center;
 
 				a {
-					color: $white;
+					color: $white !important;
 					border-bottom: 1px solid $white;
 				}
 			}
@@ -67,8 +63,8 @@
 			}
 
 			.card-title {
-				@include rem-font-size(26px, 38px);
-
+				font-size: 26px;
+				line-height: 38px;
 				font-weight: 400;
 				margin-top: 0;
 				margin-bottom: 52px;
@@ -115,17 +111,17 @@
 			}
 
 			blockquote {
-				@include rem-font-size(26px, 30px);
-
-				color: $primary;
+				font-size: 26px;
+				line-height: 38px;
+				color: $black;
 				margin-bottom: 30px;
 				margin-top: 80px;
 			}
 		}
 
 		.card-title {
-			@include rem-font-size(26px, 38px);
-
+			font-size: 26px;
+			line-height: 38px;
 			margin: 0 0 30px;
 		}
 
@@ -134,10 +130,10 @@
 		}
 
 		a:not(.img-cta) {
-			@include rem-font-size(14px, 21px);
-
-			border-bottom: 1px solid $primary;
-			color: $primary;
+			font-size: 26px;
+			line-height: 38px;
+			border-bottom: 1px solid $black;
+			color: $black !important;
 			letter-spacing: 0.02em;
 			padding: 0 6px 5px;
 			margin-top: 15px !important;
@@ -233,16 +229,14 @@
 	}
 }
 
-.jb-layout {
-	.blockquote {
-		margin: 0;
-	}
 
-	.best-sellings {
-		background-color: $white;
-
-		.products-slider {
-			margin: 0 -15px;
-		}
-	}
+.btn-overlay,
+.btn-underline {
+	font-size: 12px;
+	line-height: 18px;
+    border-bottom: solid 1px $white;
+    letter-spacing: 1.5px;
+	color: $black;
+    text-transform: uppercase;
+    cursor: pointer;
 }

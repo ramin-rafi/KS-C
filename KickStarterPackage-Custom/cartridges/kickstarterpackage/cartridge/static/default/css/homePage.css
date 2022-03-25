@@ -8,7 +8,7 @@
     left: 1.875rem;
     color: #fff; }
   .category-tile::before {
-    content: '';
+    content: "";
     position: absolute;
     width: 100%;
     height: 100%;

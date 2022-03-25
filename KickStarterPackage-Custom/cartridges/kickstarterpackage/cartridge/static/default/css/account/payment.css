@@ -48,7 +48,7 @@
 .card-number-wrapper {
   position: relative; }
   .card-number-wrapper::after {
-    content: '';
+    content: "";
     position: absolute;
     right: 3px;
     background-repeat: no-repeat;

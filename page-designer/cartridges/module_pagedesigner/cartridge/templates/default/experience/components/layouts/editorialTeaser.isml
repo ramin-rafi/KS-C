@@ -3,7 +3,7 @@
 </isscript>
 
 <isset name="teaserClass" value="${'editorial-teaser-slide'}" scope="page" />
-<div class="${pdict.addtransparency === true ? 'editorial-teaser addtransparency' : 'editorial-teaser'} ${pdict.teaserCapConfig === true ? 'double-caption' : ''} ${pdict.addClass ? pdict.addClass : ''}${pdict.teaserLayoutPadY === 'Bottom-40px' ? 'mb-5' : ''} ${pdict.teaserLayoutPadY === 'Top/Bottom-40px' ? 'my-5' : ''} ${pdict.teaserConfig === 'Single' ? 'single' : 'double'} ${pdict.teaserColor === 'White' ? 'white' : 'black'} ${pdict.teaserLayoutConfig === 'Full' ? '' : 'container'} ${pdict.opacityOverlayConfig === true ? 'has-overlay' : ''}"
+<div class="${pdict.addtransparency === true ? 'editorial-teaser addtransparency' : 'editorial-teaser'} ${pdict.teaserCapConfig === true ? 'double-caption' : ''} ${pdict.addClass ? pdict.addClass : ''}${pdict.teaserLayoutPadY === 'Bottom-40px' ? 'mb-5' : ''} ${pdict.teaserLayoutPadY === 'Top/Bottom-40px' ? 'my-5' : ''} ${pdict.teaserConfig === 'Single' ? 'single' : 'double'} ${pdict.teaserColor === 'White' ? 'white' : 'black'} ${pdict.teaserLayoutConfig === 'Fixed' ? 'container' : ''} ${pdict.teaserLayoutConfig === 'Full' ? 'container-fluid' : ''} ${pdict.opacityOverlayConfig === true ? 'has-overlay' : ''}"
     data-indicator="${pdict.indicatorConfig === true ? 'true' : 'false'}"
     data-navigation="${pdict.navigationConfig === true ? 'true' : 'false'}">
     <isprint value="${pdict.regions.addEidtorialSlide.setClassName(teaserClass).render()}" encoding="off" />

@@ -45,16 +45,12 @@
                             <a class="btn-overlay ${pdict.teaserCtaStyle ? pdict.teaserCtaStyle : ''}"
                                 href="${pdict.teaserCardMagazineIframeURL}"
                                 target="${pdict.teaserCardMagazineTargetName}">
-                                <h2>
-                                    <isprint value="${pdict.teaserCtaLabel}" encoding="off" />
-                                </h2>
+                                <isprint value="${pdict.teaserCtaLabel}" encoding="off" />
                             </a>
                         <iselse/>
                             <a class="btn-overlay ${pdict.teaserCtaStyle ? pdict.teaserCtaStyle : ''}"
                                 href="${pdict.teaserCtaLink}">
-                                <h2>
-                                    <isprint value="${pdict.teaserCtaLabel}" encoding="off" />
-                                </h2>
+                                <isprint value="${pdict.teaserCtaLabel}" encoding="off" />
                             </a>
                         </isif>
                     </isif>
