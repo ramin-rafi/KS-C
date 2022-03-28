@@ -1,9 +1,0 @@
-<isscript>
-    var assets = require('*/cartridge/scripts/assets.js');
-    assets.addCss('/css/faqModule.css');
-</isscript>
-<div class='container'>
-    <section class="rich-text-content">
-        <isprint value="${pdict.details}" encoding="off" />
-    </section>
-</div>
