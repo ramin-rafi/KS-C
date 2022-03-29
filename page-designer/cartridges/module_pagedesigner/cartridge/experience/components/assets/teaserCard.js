@@ -23,6 +23,10 @@ module.exports.render = function (context) {
         model.teaserCardTextAlign = content.teaserCardTextAlign;
     }
 
+    if (content.addPadding) {
+        model.addPadding = content.addPadding;
+    }
+
     if (content.teaserCardHeading) {
         model.teaserCardHeading = content.teaserCardHeading;
     }

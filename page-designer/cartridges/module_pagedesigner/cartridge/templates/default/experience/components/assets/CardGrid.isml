@@ -1,0 +1,37 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+</isscript>
+
+<div class="col d-flex">
+    <div
+        class="card ${pdict.addClass ? pdict.addClass : ''} ${pdict.addPadding === true ? 'has-padding' : ''} ${pdict.CardGridTextColor ? pdict.CardGridTextColor : ''} ${pdict.CardGridTextAlign ? pdict.CardGridTextAlign : ''}">
+        <isif condition="${pdict.CardGridOverlay}">
+                <isif condition="${pdict.CardGridImage}">
+                    <img class="card-img-top" src="${pdict.CardGridImage}"
+                        alt="${pdict.CardGridImageAlt ? pdict.CardGridImageAlt : 'Image'}" />
+                </isif>
+                <isif condition="${pdict.CardGridCtaLink && pdict.CardGridCtaLabel}">
+                    <div class="cta-overlay">
+                        <a class="${pdict.CardGridCtaStyle ? pdict.CardGridCtaStyle : 'btn-overlay'}"
+                            href="${pdict.CardGridCtaLink}">
+                            <isprint value="${pdict.CardGridCtaLabel}" encoding="off" />
+                        </a>
+                    </div>
+                </isif>
+        <iselse/>
+                <isif condition="${pdict.CardGridImage}">
+                    <img class="card-img-top" src="${pdict.CardGridImage}"
+                        alt="${pdict.CardGridImageAlt ? pdict.CardGridImageAlt : 'Image'}" />
+                </isif>
+                <isif condition="${pdict.CardGridCtaLink && pdict.CardGridCtaLabel}">
+                    <div>
+                        <a class="${pdict.CardGridCtaStyle ? pdict.CardGridCtaStyle : 'btn-overlay'}"
+                            href="${pdict.CardGridCtaLink}">
+                            <isprint value="${pdict.CardGridCtaLabel}" encoding="off" />
+                        </a>
+                    </div>
+                </isif>
+
+        </isif>
+    </div>
+</div>

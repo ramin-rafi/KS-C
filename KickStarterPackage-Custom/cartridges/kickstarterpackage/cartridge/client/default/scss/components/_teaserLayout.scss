@@ -14,6 +14,10 @@
 			}
 		}
 	}
+	.col {
+		padding: 0;
+		height: 100%;
+	}
 	.advance-heading {
 		font-weight: 400;
 		margin-bottom: 52px;
@@ -31,6 +35,46 @@
 		position: relative;
 		@include media-breakpoint-down(sm) {
 			margin-bottom: 30px !important;
+		}
+
+		.cta-overlay {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			background-color: rgba(0,0,0,0.1);
+			display: flex;
+			align-items: end;
+			justify-content: center;
+			text-align: center;
+			cursor: pointer;
+
+			&:hover,
+			&:focus,
+			&:active {
+				background-color: rgba(0,0,0,0.2);
+			}
+
+			.btn-overlay {
+				background-color: $white;
+				padding: 10px 24px;
+				letter-spacing: 1.5px;
+				text-transform: uppercase;
+				border-bottom: 0;
+				margin-bottom: 30px;
+				font-weight: 600;
+				&:hover,
+				&:focus,
+				&:active {
+					background-color: #b8b8b8;
+				}
+			}
+		}
+
+		&.has-padding {
+			padding: 80px;
+			height: 100%;
 		}
 
 		&.has-overlay {
@@ -100,6 +144,10 @@
 		}
 
 		.card-img-top {
+			object-fit: cover;
+		}
+
+		.card-img-top {
 			+ .card-body {
 				margin-top: 30px;
 			}
@@ -122,7 +170,8 @@
 		.card-title {
 			font-size: 26px;
 			line-height: 38px;
-			margin: 0 0 30px;
+			margin: 0 0 20px;
+			text-align: left;
 		}
 
 		p {
@@ -130,8 +179,6 @@
 		}
 
 		a:not(.img-cta) {
-			font-size: 26px;
-			line-height: 38px;
 			border-bottom: 1px solid $black;
 			color: $black !important;
 			letter-spacing: 0.02em;
@@ -179,6 +226,29 @@
 		}
 	}
 
+	.row-cols-4-8 {
+		> * {
+			max-width: calc(100% / 12 * 4);
+			flex: 0 0 calc(100% / 12 * 4);
+
+			&:nth-child(2n) {
+				max-width: calc(100% / 12 * 8);
+				flex: 0 0 calc(100% / 12 * 8);
+			}
+
+			@include media-breakpoint-down(sm) {
+				max-width: 100%;
+				flex: 0 0 100%;
+
+				&:nth-child(2n) {
+					max-width: 100%;
+					flex: 0 0 100%;
+				}
+			}
+		}
+	}
+
+
 	.row-cols-7-5 {
 		> * {
 			max-width: calc(100% / 12 * 7);
@@ -200,6 +270,29 @@
 			}
 		}
 	}
+
+	.row-cols-8-4 {
+		> * {
+			max-width: calc(100% / 12 * 8);
+			flex: 0 0 calc(100% / 12 * 8);
+
+			&:nth-child(2n) {
+				max-width: calc(100% / 12 * 4);
+				flex: 0 0 calc(100% / 12 * 4);
+			}
+
+			@include media-breakpoint-down(sm) {
+				max-width: 100%;
+				flex: 0 0 100%;
+
+				&:nth-child(2n) {
+					max-width: 100%;
+					flex: 0 0 100%;
+				}
+			}
+		}
+	}
+
 
 	.iframe {
 		line-height: 0;

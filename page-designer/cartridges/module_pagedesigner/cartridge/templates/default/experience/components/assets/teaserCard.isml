@@ -4,7 +4,7 @@
 
 <div class="col">
     <div
-        class="card ${pdict.addClass ? pdict.addClass : ''} ${pdict.teaserCardOverlay === true ? 'has-overlay' : ''} ${pdict.teaserCardTextColor ? pdict.teaserCardTextColor : ''} ${pdict.teaserCardBg ? pdict.teaserCardBg : ''} ${pdict.teaserCardTextAlign ? pdict.teaserCardTextAlign : ''}">
+        class="card ${pdict.addClass ? pdict.addClass : ''} ${pdict.teaserCardOverlay === true ? 'has-overlay' : ''} ${pdict.addPadding === true ? 'has-padding' : ''} ${pdict.teaserCardTextColor ? pdict.teaserCardTextColor : ''} ${pdict.teaserCardBg ? pdict.teaserCardBg : ''} ${pdict.teaserCardTextAlign ? pdict.teaserCardTextAlign : ''}">
         <isif condition="${pdict.teaserImageAsCta && pdict.teaserCtaLink}">
             <isif condition="${pdict.teaserCardImage}">
                 <isif condition="${pdict.teaserCardMagazineTarget}">

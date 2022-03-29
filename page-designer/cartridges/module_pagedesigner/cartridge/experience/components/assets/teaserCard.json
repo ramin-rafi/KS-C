@@ -15,6 +15,12 @@
                     "required": false
                 },
                 {
+                    "id": "addPadding",
+                    "name": "Add Padding Inside Cards",
+                    "type": "boolean",
+                    "required": false
+                },
+                {
                     "id": "teaserCardTextColor",
                     "name": "Card Text Color",
                     "type": "enum",

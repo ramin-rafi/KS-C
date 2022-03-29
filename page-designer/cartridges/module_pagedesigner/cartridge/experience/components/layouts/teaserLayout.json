@@ -33,7 +33,7 @@
                 "id": "teaserLayoutCol",
                 "name": "Teaser Column Layout (Desktop)",
                 "type": "enum",
-                "values": ["Column-1", "Column-2", "Column-3", "Column-4", "Column-5/7", "Column-7/5"],
+                "values": ["Column-1", "Column-2", "Column-3", "Column-4", "Column-5/7", "Column-7/5" , "Column-4/8", "Column-8/4"],
                 "required": true
             },
             {

@@ -6,7 +6,7 @@
     value="${'row' + " " + (pdict.teaserLayoutCol === 'Column-1' ? 'row-cols-md-1' : '') + " " + (pdict.teaserLayoutCol ===
            'Column-2' ? 'row-cols-md-2' : '') + " " + (pdict.teaserLayoutCol === 'Column-3' ? 'row-cols-md-3' : '') + " " + (
            pdict.teaserLayoutCol === 'Column-4' ? 'row-cols-md-4' : '') + " " + (pdict.teaserLayoutCol === 'Column-5/7' ?
-           'row-cols-5-7' : '') + " " + (pdict.teaserLayoutCol === 'Column-7/5' ? 'row-cols-7-5' : '')}"
+           'row-cols-5-7' : '') + " " + (pdict.teaserLayoutCol === 'Column-7/5' ? 'row-cols-7-5' : '') + " " + (pdict.teaserLayoutCol === 'Column-8/4' ? 'row-cols-8-4' : '') + " " + (pdict.teaserLayoutCol === 'Column-4/8' ? 'row-cols-4-8' : '')}"
     scope="page" />
 <div
     class="teaser-layout ${pdict.addClass ? pdict.addClass : ''} ${pdict.teaserLayoutPadY === '20px' ? 'py-3' : ''} ${pdict.teaserLayoutPadY === '40px' ? 'py-5' : ''}">

@@ -3,16 +3,20 @@
 header {
 	position: sticky !important;
 	top: -32px;
-	z-index: 9999999;
+	z-index: 999;
 	background-color: white;
-	.header-promotion {
-		height: 32px;
-		font-size: 12px;
-		line-height: 16px;
-		letter-spacing: 1.4px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
+	.header-banner {
+		background-color: $black;
+		color: $white;
+		.header-promotion {
+			height: 32px;
+			font-size: 12px;
+			line-height: 16px;
+			letter-spacing: 1.4px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
 	}
 	.header {
 		padding: 20px 0;
@@ -21,7 +25,7 @@ header {
 		.header-content {
 			display: flex;
 			align-items: center;
-			z-index: 99999;
+			z-index: 999;
 			.side-nav {
 				border-bottom: 2px solid black;
 				padding-bottom: 10px;
