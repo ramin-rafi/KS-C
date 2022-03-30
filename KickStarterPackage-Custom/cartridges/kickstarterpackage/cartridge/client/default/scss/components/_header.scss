@@ -1,10 +1,11 @@
 @import "menu";
 
 header {
+	font-family: 'Raleway', sans-serif;
 	position: sticky !important;
 	top: -32px;
 	z-index: 999;
-	background-color: white;
+	background-color: $white;
 	.header-banner {
 		background-color: $black;
 		color: $white;

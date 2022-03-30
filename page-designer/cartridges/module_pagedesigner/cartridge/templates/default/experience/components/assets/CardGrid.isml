@@ -4,7 +4,7 @@
 
 <div class="col d-flex">
     <div
-        class="card ${pdict.addClass ? pdict.addClass : ''} ${pdict.addPadding === true ? 'has-padding' : ''} ${pdict.CardGridTextColor ? pdict.CardGridTextColor : ''} ${pdict.CardGridTextAlign ? pdict.CardGridTextAlign : ''}">
+        class="card card-grid ${pdict.addClass ? pdict.addClass : ''} ${pdict.addPadding === true ? 'has-padding' : ''} ${pdict.CardGridTextColor ? pdict.CardGridTextColor : ''} ${pdict.CardGridTextAlign ? pdict.CardGridTextAlign : ''}">
         <isif condition="${pdict.CardGridOverlay}">
                 <isif condition="${pdict.CardGridImage}">
                     <img class="card-img-top" src="${pdict.CardGridImage}"

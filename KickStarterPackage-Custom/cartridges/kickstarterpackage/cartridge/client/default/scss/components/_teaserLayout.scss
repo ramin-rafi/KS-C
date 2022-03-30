@@ -1,7 +1,7 @@
 @import "../variables";
 
 .teaser-layout {
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: 'Raleway', sans-serif;
 	.container {
 		@include media-breakpoint-down(sm) {
 			padding-left: 0;
@@ -14,10 +14,12 @@
 			}
 		}
 	}
+
 	.col {
 		padding: 0;
 		height: 100%;
 	}
+
 	.advance-heading {
 		font-weight: 400;
 		margin-bottom: 52px;
@@ -98,6 +100,7 @@
 					color: $white !important;
 					border-bottom: 1px solid $white;
 				}
+
 			}
 		}
 
@@ -165,6 +168,17 @@
 				margin-bottom: 30px;
 				margin-top: 80px;
 			}
+
+			h3 {
+				text-align: left;
+			}
+
+			h2 {
+				font-size: 38px;
+				line-height: 46px;
+				font-weight: 400;
+				font-family: 'Raleway', sans-serif;
+			}
 		}
 
 		.card-title {
@@ -201,6 +215,12 @@
 					width: 100%;
 				}
 			}
+		}
+	}
+
+	.card-grid {
+		.card-img-top {
+			height: 100%;
 		}
 	}
 
@@ -332,4 +352,8 @@
 	color: $black;
     text-transform: uppercase;
     cursor: pointer;
+}
+
+.teaser-text {
+	background: url(https://zzrx-048.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Library-Sites-RefArchSharedLibrary/default/dw29641d25/homepage-3fs-background.jpg);
 }
