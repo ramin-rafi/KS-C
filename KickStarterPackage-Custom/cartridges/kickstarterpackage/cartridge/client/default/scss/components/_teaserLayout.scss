@@ -35,8 +35,10 @@
 		font-size: 14px;
 		line-height: 21px;
 		position: relative;
+
 		@include media-breakpoint-down(sm) {
 			margin-bottom: 30px !important;
+			width: 100%;
 		}
 
 		.cta-overlay {
@@ -77,6 +79,10 @@
 		&.has-padding {
 			padding: 80px;
 			height: 100%;
+
+			@include media-breakpoint-down(sm) {
+				padding: 40px;
+			}
 		}
 
 		&.has-overlay {
@@ -354,6 +360,26 @@
     cursor: pointer;
 }
 
+@keyframes slide-down {
+	0% {
+		transform: translateY(-50px);
+		opacity: 0.3;
+	}
+	100% {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
 .teaser-text {
 	background: url(https://zzrx-048.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Library-Sites-RefArchSharedLibrary/default/dw29641d25/homepage-3fs-background.jpg);
+
+	.card-text {
+		&.animate {
+			animation-name: slide-down;
+			animation-duration: 2.5s;
+			animation-delay: 0.5s;
+			animation-fill-mode: both;
+		}
+	}
 }

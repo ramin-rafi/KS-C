@@ -11,12 +11,17 @@ header {
 		color: $white;
 		.header-promotion {
 			height: 32px;
-			font-size: 12px;
+			font-size: 10px;
 			line-height: 16px;
 			letter-spacing: 1.4px;
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			text-align: center;
+
+			@include media-breakpoint-down(sm) {
+				height: 44px;
+			}
 		}
 	}
 	.header {

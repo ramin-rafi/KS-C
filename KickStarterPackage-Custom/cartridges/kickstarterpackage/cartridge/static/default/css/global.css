@@ -11665,7 +11665,7 @@ header {
     color: #fff; }
     header .header-banner .header-promotion {
       height: 32px;
-      font-size: 12px;
+      font-size: 10px;
       line-height: 16px;
       letter-spacing: 1.4px;
       display: -ms-flexbox;
@@ -11673,7 +11673,11 @@ header {
       -ms-flex-align: center;
           align-items: center;
       -ms-flex-pack: center;
-          justify-content: center; }
+          justify-content: center;
+      text-align: center; }
+      @media (max-width: 768.98px) {
+        header .header-banner .header-promotion {
+          height: 44px; } }
   header .header {
     padding: 20px 0;
     max-width: 90%;
@@ -13330,7 +13334,8 @@ div.availability {
     position: relative; }
     @media (max-width: 768.98px) {
       .teaser-layout .card {
-        margin-bottom: 30px !important; } }
+        margin-bottom: 30px !important;
+        width: 100%; } }
     .teaser-layout .card .cta-overlay {
       position: absolute;
       top: 0;
@@ -13361,6 +13366,9 @@ div.availability {
     .teaser-layout .card.has-padding {
       padding: 80px;
       height: 100%; }
+      @media (max-width: 768.98px) {
+        .teaser-layout .card.has-padding {
+          padding: 40px; } }
     .teaser-layout .card.has-overlay {
       padding-bottom: 0; }
       .teaser-layout .card.has-overlay .card-body {
@@ -13545,8 +13553,21 @@ div.availability {
   text-transform: uppercase;
   cursor: pointer; }
 
+@keyframes slide-down {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0.3; }
+  100% {
+    transform: translateY(0);
+    opacity: 1; } }
+
 .teaser-text {
   background: url(https://zzrx-048.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Library-Sites-RefArchSharedLibrary/default/dw29641d25/homepage-3fs-background.jpg); }
+  .teaser-text .card-text.animate {
+    animation-name: slide-down;
+    animation-duration: 2.5s;
+    animation-delay: 0.5s;
+    animation-fill-mode: both; }
 
 html {
   scroll-behavior: smooth;
