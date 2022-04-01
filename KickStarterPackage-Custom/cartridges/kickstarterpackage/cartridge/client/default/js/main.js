@@ -1,17 +1,6 @@
 "use strict";
 window.jQuery = window.$ = require('jquery');
-// var element = document.getElementByClass("teaser-text");
-// element.scrollIntoView(
-// 	$(".card-text").removeClass("animate")
-// );
-
-// $(window).scroll(function (event) {
-// 	$(".card-text").addClass("animate");
-// });
-
-// $(window).scroll(function() {
-//     $(this).find(".card-text").addClass("animate");
-// }); //missing );
+require('slick-carousel');
 
 function isScrolledIntoView(elem) {
    var docViewTop = $(window).scrollTop();
@@ -34,17 +23,13 @@ $(window).on('scroll', function() {
    });
  });
 
-// $(".graph").each(function() {
-//    if (isScrolledIntoView($(this))) {
-//      $(this).find(".graph-line").addClass("graph-75");
-//      $(this).find(".graph-line-2").addClass("opacity");
-//    }
-//  });
-
-// $(window).scroll(function(){
-//     if ($(this).scrollTop() > 120) {
-//        $('.card-text').addClass('animate');
-//     } else {
-//        $('.card-text').removeClass('animate');
-//     }
-// });
+ $('.slider').slick({
+  prevArrow: false,
+  nextArrow: false,
+  autoplay: true,
+  dots: true,
+  infinite: false,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1
+ });

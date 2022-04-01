@@ -42,6 +42,7 @@
     "font-awesome": "^4.7.0",
     "jquery": "^3.5.1",
     "makefile-help": "0.0.2",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "slick-slider": "^1.8.2"
   }
 }
