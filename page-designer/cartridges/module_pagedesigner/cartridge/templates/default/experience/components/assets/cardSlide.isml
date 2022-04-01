@@ -9,4 +9,10 @@
             <img class="img-fluid focuspoint" src="${pdict.image.src.desktop}" alt="${pdict.alt_desktop}" />
         </picture>
     </isif>
+    <isif condition="${pdict.LayoutCaption}">
+        <h4
+            class="card-caption ${pdict.CaptionAlignment === 'Center' ? 'text-center' : ''} ${pdict.CaptionAlignment === 'Left' ? 'text-left' : ''} ${pdict.CaptionAlignment === 'Right' ? 'text-right' : ''}">
+            <isprint value="${pdict.LayoutCaption}" encoding="off" />
+        </h4>
+    </isif>
 </div>

@@ -22,6 +22,14 @@ module.exports.render = function(context) {
         model.teaserLayoutPadY = content.teaserLayoutPadY;
     }
 
+    if (content.LayoutHeading) {
+        model.LayoutHeading = content.LayoutHeading;
+    }
+
+    if (content.HeadingAlignment) {
+        model.HeadingAlignment = content.HeadingAlignment;
+    }
+
     if (content.teaserLayoutConfig) {
         model.teaserLayoutConfig = content.teaserLayoutConfig;
     }

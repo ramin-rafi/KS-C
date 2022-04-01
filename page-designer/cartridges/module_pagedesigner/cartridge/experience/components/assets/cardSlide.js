@@ -19,6 +19,14 @@ module.exports.render = function(context) {
         model.addClass = content.addClass;
     }
 
+    if (content.CaptionAlignment) {
+        model.CaptionAlignment = content.CaptionAlignment;
+    }
+
+    if (content.LayoutCaption) {
+        model.LayoutCaption = content.LayoutCaption;
+    }
+
     // image details
     if (content.image) {
         model.image = {

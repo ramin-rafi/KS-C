@@ -12,6 +12,19 @@
                 "required": false
             },
             {
+                "id": "LayoutCaption",
+                "name": "Layout Caption",
+                "type": "string",
+                "required": false
+            },
+            {
+                "id": "CaptionAlignment",
+                "name": "Caption Text Align",
+                "type": "enum",
+                "values": ["Left","Center", "Right"],
+                "required": false
+            },
+            {
                 "id": "image",
                 "name": "Desktop Image",
                 "type": "image",

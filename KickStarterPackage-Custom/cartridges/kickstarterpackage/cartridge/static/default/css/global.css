@@ -7711,6 +7711,44 @@ dt {
 .form-control.is-invalid {
   background-image: none; }
 
+.slider-layout {
+  font-family: 'Raleway', sans-serif; }
+  .slider-layout .section-title {
+    font-weight: 500; }
+  .slider-layout .card-slider {
+    position: relative; }
+    .slider-layout .card-slider .card-slide {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+      padding: 0 30px;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+      .slider-layout .card-slider .card-slide h4 {
+        padding: 15px 0;
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 0.5px; }
+    .slider-layout .card-slider .slick-prev {
+      background-color: transparent !important;
+      position: absolute;
+      top: 50% !important;
+      left: 19% !important;
+      z-index: 9999; }
+    .slider-layout .card-slider .slick-prev::before {
+      color: dimgray; }
+    .slider-layout .card-slider .slick-next {
+      background-color: transparent !important;
+      position: absolute;
+      top: 50% !important;
+      right: 19% !important;
+      z-index: 9999; }
+    .slider-layout .card-slider .slick-next::before {
+      color: dimgray; }
+    .slider-layout .card-slider .draggable {
+      padding: 0 21% !important; }
+
 .pull-left-xs {
   float: left; }
 
@@ -13752,8 +13790,10 @@ div.availability {
 
 @keyframes slide-down {
   0% {
-    transform: translateY(-50px);
-    opacity: 0.3; }
+    transform: translateY(-80px);
+    opacity: 0; }
+  50% {
+    opacity: 0; }
   100% {
     transform: translateY(0);
     opacity: 1; } }
@@ -13762,9 +13802,7 @@ div.availability {
   background: url(https://zzrx-048.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Library-Sites-RefArchSharedLibrary/default/dw29641d25/homepage-3fs-background.jpg); }
   .teaser-text .card-text.animate {
     animation-name: slide-down;
-    animation-duration: 2.5s;
-    animation-delay: 0.5s;
-    animation-fill-mode: both; }
+    animation-duration: 1.5s; }
 
 html {
   scroll-behavior: smooth;

@@ -40,6 +40,7 @@
     "fancybox": "^3.0.1",
     "flag-icon-css": "^3.5.0",
     "font-awesome": "^4.7.0",
+    "husky": "^7.0.4",
     "jquery": "^3.5.1",
     "makefile-help": "0.0.2",
     "slick-carousel": "^1.8.1",
