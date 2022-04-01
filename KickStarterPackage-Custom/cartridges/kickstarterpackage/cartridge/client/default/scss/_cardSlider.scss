@@ -1,0 +1,42 @@
+@import "variables";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins/breakpoints";
+.card-slider {
+    position: relative;
+    .card-slide {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 30px;
+        // margin: 0 65px;
+        // .image {
+        //     width: 48%;
+        //     img {
+        //         width: 100%;
+        //     }
+        // }
+    }
+    .slick-prev {
+        background-color: transparent !important;
+        position: absolute;
+        top: 50% !important;
+        left: 19% !important;
+        z-index: 9999;
+    }
+    .slick-prev::before {
+        color: dimgray;
+    }
+    .slick-next {
+        background-color: transparent !important;
+        position: absolute;
+        top: 50% !important;
+        right: 19% !important;
+        z-index: 9999;
+    }
+    .slick-next::before {
+        color: dimgray;
+    }
+}
+
+.draggable {
+    padding: 0 21% !important;
+}

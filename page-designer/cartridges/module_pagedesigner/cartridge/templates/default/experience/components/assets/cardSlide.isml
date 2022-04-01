@@ -1,0 +1,12 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+</isscript>
+
+<div class="card-slide ${pdict.addClass ? pdict.addClass : ''}">
+    <isif condition="${pdict.image && pdict.mobileImage}">
+        <picture>
+            <source media="(max-width:767px)" srcset="${pdict.mobileImage.src.mobile}" alt="${pdict.alt_mobile}">
+            <img class="img-fluid focuspoint" src="${pdict.image.src.desktop}" alt="${pdict.alt_desktop}" />
+        </picture>
+    </isif>
+</div>
