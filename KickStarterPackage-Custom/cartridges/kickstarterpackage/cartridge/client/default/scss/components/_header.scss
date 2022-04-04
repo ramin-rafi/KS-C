@@ -68,7 +68,7 @@ header {
 			.site-logo {
 				padding-top: 10px;
 				img {
-					max-width: 100%;
+					max-width: 60%;
 				}
 			}
 			.menu-mobile {
@@ -101,6 +101,7 @@ header {
 					}
 					.dropdown
 					{
+						justify-content: space-evenly;
 						display: none;
 						.menu
 						{
@@ -147,9 +148,10 @@ header {
 				{
 					position: absolute;
 					left: 0px;
-					padding: 40px 72px;
+					padding: 40px 80px;
 					background-color: white;
 					display: flex;
+					top:145px;
 					grid-gap: 20px;
 					color: black;
 					width: 100%;

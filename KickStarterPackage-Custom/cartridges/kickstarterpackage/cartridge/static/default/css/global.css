@@ -11970,7 +11970,7 @@ header {
       header .header .navigation-bar .site-logo {
         padding-top: 10px; }
         header .header .navigation-bar .site-logo img {
-          max-width: 100%; }
+          max-width: 60%; }
       header .header .navigation-bar .menu-mobile {
         display: none; }
         @media (max-width: 991.98px) {
@@ -11999,6 +11999,8 @@ header {
             text-decoration: none;
             color: #000; }
           header .header .navigation-bar ul li .dropdown {
+            -ms-flex-pack: space-evenly;
+                justify-content: space-evenly;
             display: none; }
             header .header .navigation-bar ul li .dropdown .menu {
               margin-right: 30px;
@@ -12028,10 +12030,11 @@ header {
         header .header .navigation-bar ul li:hover .dropdown {
           position: absolute;
           left: 0px;
-          padding: 40px 72px;
+          padding: 40px 80px;
           background-color: white;
           display: -ms-flexbox;
           display: flex;
+          top: 145px;
           grid-gap: 20px;
           color: black;
           width: 100%; }
