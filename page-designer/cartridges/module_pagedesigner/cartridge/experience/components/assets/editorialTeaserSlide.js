@@ -43,14 +43,6 @@ module.exports.render = function (context) {
         model.alt_mobile = content.alt_mobile;
     }
 
-    // focus details
-    if (content.focusX) {
-        model.focusX = content.focusX;
-    }
-    if (content.focusY) {
-        model.focusY = content.focusY;
-    }
-
      // CTA content details
     if (content.captionResize) {
         model.captionResize = content.captionResize;
