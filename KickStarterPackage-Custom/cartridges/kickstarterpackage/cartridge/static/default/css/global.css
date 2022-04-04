@@ -7711,6 +7711,44 @@ dt {
 .form-control.is-invalid {
   background-image: none; }
 
+.slider-layout {
+  font-family: 'Raleway', sans-serif; }
+  .slider-layout .section-title {
+    font-weight: 500; }
+  .slider-layout .card-slider {
+    position: relative; }
+    .slider-layout .card-slider .card-slide {
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+      padding: 0 30px;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+      .slider-layout .card-slider .card-slide h4 {
+        padding: 15px 0;
+        font-size: 16px;
+        line-height: 20px;
+        letter-spacing: 0.5px; }
+    .slider-layout .card-slider .slick-prev {
+      background-color: transparent !important;
+      position: absolute;
+      top: 50% !important;
+      left: 19% !important;
+      z-index: 9999; }
+    .slider-layout .card-slider .slick-prev::before {
+      color: dimgray; }
+    .slider-layout .card-slider .slick-next {
+      background-color: transparent !important;
+      position: absolute;
+      top: 50% !important;
+      right: 19% !important;
+      z-index: 9999; }
+    .slider-layout .card-slider .slick-next::before {
+      color: dimgray; }
+    .slider-layout .card-slider .draggable {
+      padding: 0 21% !important; }
+
 .pull-left-xs {
   float: left; }
 
@@ -10071,6 +10109,203 @@ dt {
   overflow: visible;
   clip: auto; }
 
+/* Slider */
+.slick-slider {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -ms-touch-action: pan-y;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent; }
+
+.slick-list {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0; }
+  .slick-list:focus {
+    outline: none; }
+  .slick-list.dragging {
+    cursor: pointer;
+    cursor: hand; }
+
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+  transform: translate3d(0, 0, 0); }
+
+.slick-track {
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
+  .slick-track:before, .slick-track:after {
+    content: "";
+    display: table; }
+  .slick-track:after {
+    clear: both; }
+  .slick-loading .slick-track {
+    visibility: hidden; }
+
+.slick-slide {
+  float: left;
+  height: 100%;
+  min-height: 1px;
+  display: none; }
+  [dir="rtl"] .slick-slide {
+    float: right; }
+  .slick-slide img {
+    display: block; }
+  .slick-slide.slick-loading img {
+    display: none; }
+  .slick-slide.dragging img {
+    pointer-events: none; }
+  .slick-initialized .slick-slide {
+    display: block; }
+  .slick-loading .slick-slide {
+    visibility: hidden; }
+  .slick-vertical .slick-slide {
+    display: block;
+    height: auto;
+    border: 1px solid transparent; }
+
+.slick-arrow.slick-hidden {
+  display: none; }
+
+/* Slider */
+.slick-loading .slick-list {
+  background: #fff url("./ajax-loader.gif") center center no-repeat; }
+
+/* Icons */
+@font-face {
+  font-family: "slick";
+  src: url("./fonts/slick.eot");
+  src: url("./fonts/slick.eot?#iefix") format("embedded-opentype"), url("./fonts/slick.woff") format("woff"), url("./fonts/slick.ttf") format("truetype"), url("./fonts/slick.svg#slick") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+/* Arrows */
+.slick-prev,
+.slick-next {
+  position: absolute;
+  display: block;
+  height: 20px;
+  width: 20px;
+  line-height: 0px;
+  font-size: 0px;
+  cursor: pointer;
+  background: transparent;
+  color: transparent;
+  top: 50%;
+  transform: translate(0, -50%);
+  padding: 0;
+  border: none;
+  outline: none; }
+  .slick-prev:hover, .slick-prev:focus,
+  .slick-next:hover,
+  .slick-next:focus {
+    outline: none;
+    background: transparent;
+    color: transparent; }
+    .slick-prev:hover:before, .slick-prev:focus:before,
+    .slick-next:hover:before,
+    .slick-next:focus:before {
+      opacity: 1; }
+  .slick-prev.slick-disabled:before,
+  .slick-next.slick-disabled:before {
+    opacity: 0.25; }
+  .slick-prev:before,
+  .slick-next:before {
+    font-family: "slick";
+    font-size: 20px;
+    line-height: 1;
+    color: white;
+    opacity: 0.75;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
+
+.slick-prev {
+  left: -25px; }
+  [dir="rtl"] .slick-prev {
+    left: auto;
+    right: -25px; }
+  .slick-prev:before {
+    content: "\2190"; }
+    [dir="rtl"] .slick-prev:before {
+      content: "\2192"; }
+
+.slick-next {
+  right: -25px; }
+  [dir="rtl"] .slick-next {
+    left: -25px;
+    right: auto; }
+  .slick-next:before {
+    content: "\2192"; }
+    [dir="rtl"] .slick-next:before {
+      content: "\2190"; }
+
+/* Dots */
+.slick-dotted.slick-slider {
+  margin-bottom: 30px; }
+
+.slick-dots {
+  position: absolute;
+  bottom: -25px;
+  list-style: none;
+  display: block;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  width: 100%; }
+  .slick-dots li {
+    position: relative;
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    margin: 0 5px;
+    padding: 0;
+    cursor: pointer; }
+    .slick-dots li button {
+      border: 0;
+      background: transparent;
+      display: block;
+      height: 20px;
+      width: 20px;
+      outline: none;
+      line-height: 0px;
+      font-size: 0px;
+      color: transparent;
+      padding: 5px;
+      cursor: pointer; }
+      .slick-dots li button:hover, .slick-dots li button:focus {
+        outline: none; }
+        .slick-dots li button:hover:before, .slick-dots li button:focus:before {
+          opacity: 1; }
+      .slick-dots li button:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "\2022";
+        width: 20px;
+        height: 20px;
+        font-family: "slick";
+        font-size: 6px;
+        line-height: 20px;
+        text-align: center;
+        color: black;
+        opacity: 0.25;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale; }
+    .slick-dots li.slick-active button:before {
+      color: black;
+      opacity: 0.75; }
+
 .flag-icon-background, .flag-icon {
   background-size: contain;
   background-position: 50%;
@@ -11665,7 +11900,7 @@ header {
     color: #fff; }
     header .header-banner .header-promotion {
       height: 32px;
-      font-size: 12px;
+      font-size: 10px;
       line-height: 16px;
       letter-spacing: 1.4px;
       display: -ms-flexbox;
@@ -11673,7 +11908,11 @@ header {
       -ms-flex-align: center;
           align-items: center;
       -ms-flex-pack: center;
-          justify-content: center; }
+          justify-content: center;
+      text-align: center; }
+      @media (max-width: 768.98px) {
+        header .header-banner .header-promotion {
+          height: 44px; } }
   header .header {
     padding: 20px 0;
     max-width: 90%;
@@ -13330,7 +13569,8 @@ div.availability {
     position: relative; }
     @media (max-width: 768.98px) {
       .teaser-layout .card {
-        margin-bottom: 30px !important; } }
+        margin-bottom: 30px !important;
+        width: 100%; } }
     .teaser-layout .card .cta-overlay {
       position: absolute;
       top: 0;
@@ -13361,6 +13601,9 @@ div.availability {
     .teaser-layout .card.has-padding {
       padding: 80px;
       height: 100%; }
+      @media (max-width: 768.98px) {
+        .teaser-layout .card.has-padding {
+          padding: 40px; } }
     .teaser-layout .card.has-overlay {
       padding-bottom: 0; }
       .teaser-layout .card.has-overlay .card-body {
@@ -13545,8 +13788,21 @@ div.availability {
   text-transform: uppercase;
   cursor: pointer; }
 
+@keyframes slide-down {
+  0% {
+    transform: translateY(-80px);
+    opacity: 0; }
+  50% {
+    opacity: 0; }
+  100% {
+    transform: translateY(0);
+    opacity: 1; } }
+
 .teaser-text {
   background: url(https://zzrx-048.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Library-Sites-RefArchSharedLibrary/default/dw29641d25/homepage-3fs-background.jpg); }
+  .teaser-text .card-text.animate {
+    animation-name: slide-down;
+    animation-duration: 1.5s; }
 
 html {
   scroll-behavior: smooth;

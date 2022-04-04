@@ -1,0 +1,56 @@
+{
+    "name": "Card Slide",
+    "group": "assets",
+    "attribute_definition_groups": [{
+        "id": "background",
+        "name": "Images",
+        "description": "The visual display of the banner image in the background.",
+        "attribute_definitions": [{
+                "id": "addClass",
+                "name": "Add Custom Class",
+                "type": "string",
+                "required": false
+            },
+            {
+                "id": "LayoutCaption",
+                "name": "Layout Caption",
+                "type": "string",
+                "required": false
+            },
+            {
+                "id": "CaptionAlignment",
+                "name": "Caption Text Align",
+                "type": "enum",
+                "values": ["Left","Center", "Right"],
+                "required": false
+            },
+            {
+                "id": "image",
+                "name": "Desktop Image",
+                "type": "image",
+                "required": false
+            },
+            {
+                "id": "alt_desktop",
+                "name": "Alt Text",
+                "description": "The image alt text shown by the component.",
+                "type": "string",
+                "required": false
+            },
+            {
+                "id": "mobileImage",
+                "name": "Mobile Image",
+                "type": "image",
+                "required": false
+            },
+            {
+                "id": "alt_mobile",
+                "name": "Alt Text",
+                "description": "The image alt text shown by the component.",
+                "type": "string",
+                "required": false
+            }
+        ]
+    }],
+    "region_definitions": []
+}

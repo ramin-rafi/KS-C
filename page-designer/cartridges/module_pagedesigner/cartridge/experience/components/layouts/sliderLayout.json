@@ -1,0 +1,72 @@
+{
+    "name": "Slider Layout",
+    "description": "-- description --",
+    "group": "assets",
+    "attribute_definition_groups": [{
+        "id": "sliderLayoutConfig",
+        "name": "Slider Layout Configuration",
+        "description": "-- description --",
+        "attribute_definitions": [{
+                "id": "addClass",
+                "name": "Add Custom Class",
+                "type": "string",
+                "required": false
+            },
+            {
+                "id": "teaserLayoutPadY",
+                "name": "Teaser Layout Top/Bottom Space",
+                "type": "enum",
+                "values": ["Bottom-40px", "Top/Bottom-40px"],
+                "required": false
+            },
+            {
+                "id": "teaserLayoutConfig",
+                "name": "Layout Configuration",
+                "description": "Please select the container layout as fixed width Or full width",
+                "type": "enum",
+                "values": ["Fixed", "Full"],
+                "default_value": "Full",
+                "required": false
+            },
+            {
+                "id": "LayoutHeading",
+                "name": "Layout Heading",
+                "type": "string",
+                "required": false
+            },
+            {
+                "id": "HeadingAlignment",
+                "name": "Heading Text Align",
+                "type": "enum",
+                "values": ["Left","Center", "Right"],
+                "required": false
+            }
+        ]
+    }],
+    "region_definitions": [{
+        "id": "addSlide",
+        "name": "Add Card Slide",
+        "component_type_exclusions": [{
+                "type_id": "layouts.1column"
+            },
+            {
+                "type_id": "layouts.2column"
+            },
+            {
+                "type_id": "layouts.3column"
+            },
+            {
+                "type_id": "layouts.4column"
+            },
+            {
+                "type_id": "layouts.gridcomponentlayout"
+            },
+            {
+                "type_id": "einstein.noanchorgrid"
+            },
+            {
+                "type_id": "layouts.carousel"
+            }
+        ]
+    }]
+}
