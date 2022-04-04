@@ -1,7 +1,7 @@
 <header>
     <isinclude template="/components/header/skipNav" />
     <div class="header-banner slide-up d-none">
-        <div class="container">
+        <iscomment> <div class="container"> </iscomment>
             <div class="d-flex justify-content-between">
                 <div></div>
                 <div class="content">
@@ -10,7 +10,7 @@
                 <div>
                 </div>
             </div>
-        </div>
+        <iscomment> </div> </iscomment>
     </div>
     <div class="header">
         <div class="header-content ">

@@ -25,6 +25,7 @@ header {
 		margin: 0 auto;
 		.header-content {
 			display: flex;
+			position: relative;
 			align-items: center;
 			z-index: 999;
 			.side-nav {
@@ -55,6 +56,7 @@ header {
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
+			// position: relative;
 			.site-logo {
 				padding-top: 10px;
 				img {
@@ -68,13 +70,74 @@ header {
 				justify-content: flex-end;
 				padding-left: 0;
 				padding-top: 20px;
-				li {
+				li 
+				{
 					margin: 0 25px;
-					a {
+					a 
+					{
 						font-size: 15px;
 						text-decoration: none;
 						color: #000;
 					}
+					.dropdown
+					{
+						display: none;
+						.menu
+						{
+							margin-right: 30px;
+							margin-top: 30px;
+							text-align: left;
+							h2 
+							{
+								font-size: 12px;
+								margin-bottom: 25px;
+								font-weight: bold;
+							}
+							.menu-list
+							{
+								padding: 0;
+								list-style: none;
+								display: block;
+								.item
+								{
+									margin: 0;
+									.item-link
+									{
+										color:  grey;
+										border-bottom: 0;
+										text-decoration: none;
+										display: block;
+										font-size: 10px;
+										margin-bottom: 10px;
+										
+									}
+								}
+							}
+						}
+						.image
+						{
+							margin-top: 20px;
+							img
+							{
+								width: 100%;
+							}
+						}
+					}
+				}
+				li:hover .dropdown
+				{
+					position: absolute;
+					left: 0px;
+					padding: 40px 72px;
+					background-color: white;
+					display: flex;
+					grid-gap: 20px;
+					color: black;
+					width: 100%;
+				}
+				li:hover a 
+				{
+					border-bottom: 2px solid black;
 				}
 			}
 		}
