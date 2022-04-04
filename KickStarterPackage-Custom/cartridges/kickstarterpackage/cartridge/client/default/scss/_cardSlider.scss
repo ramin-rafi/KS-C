@@ -1,7 +1,6 @@
 @import "variables";
 @import "~bootstrap/scss/variables";
 @import "~bootstrap/scss/mixins/breakpoints";
-
 .slider-layout {
     font-family: 'Raleway', sans-serif;
     .section-title {
@@ -38,13 +37,13 @@
             }
         }
         .slick-prev {
-            left: 18.5%;
+            left: 19%;
             @include media-breakpoint-down(md) {
                 left: 17.5%;
             }
         }
         .slick-next {
-            right: 18.5%;
+            right: 19%;
             @include media-breakpoint-down(md) {
                 right: 17.5%;
             }
