@@ -37,6 +37,9 @@ header {
 				border-bottom: 2px solid black;
 				padding-bottom: 10px;
 				width: 100%;
+				@include media-breakpoint-down(md) {
+					display: none !important;
+				}
 				.menu {
 					display: flex;
 					justify-content: flex-end;
@@ -68,6 +71,12 @@ header {
 					max-width: 100%;
 				}
 			}
+			.menu-mobile {
+				display: none;
+				@include media-breakpoint-down(md) {
+					display: block;
+				}
+			}
 			ul {
 				display: flex;
 				align-items: center;
@@ -75,10 +84,16 @@ header {
 				justify-content: flex-end;
 				padding-left: 0;
 				padding-top: 20px;
-				li 
+				@include media-breakpoint-down(md) {
+					display: none !important;
+				}
+				li
 				{
 					margin: 0 25px;
-					a 
+					@include media-breakpoint-down(lg) {
+						margin: 0 15px;
+					}
+					a
 					{
 						font-size: 15px;
 						text-decoration: none;
@@ -114,7 +129,6 @@ header {
 										display: block;
 										font-size: 10px;
 										margin-bottom: 10px;
-										
 									}
 								}
 							}

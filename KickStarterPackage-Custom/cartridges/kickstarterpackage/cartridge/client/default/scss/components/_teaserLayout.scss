@@ -72,7 +72,7 @@
 				&:focus,
 				&:active {
 					background-color: $black;
-					color: $white;
+					color: $white !important;
 				}
 			}
 		}
@@ -82,7 +82,7 @@
 			height: 100%;
 
 			@include media-breakpoint-down(sm) {
-				padding: 40px;
+				padding: 20px;
 			}
 		}
 

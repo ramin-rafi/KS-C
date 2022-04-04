@@ -7725,25 +7725,38 @@ dt {
       padding: 0 30px;
       -ms-flex-direction: column;
           flex-direction: column; }
+      @media (max-width: 991.98px) {
+        .slider-layout .card-slider .card-slide {
+          padding: 0 20px; } }
       .slider-layout .card-slider .card-slide h4 {
         padding: 15px 0;
         font-size: 16px;
         line-height: 20px;
         letter-spacing: 0.5px; }
+      .slider-layout .card-slider .card-slide img {
+        width: 100%; }
+    .slider-layout .card-slider .slick-next,
     .slider-layout .card-slider .slick-prev {
       background-color: transparent !important;
       position: absolute;
       top: 50% !important;
-      left: 19% !important;
-      z-index: 9999; }
+      z-index: 99; }
+      @media (max-width: 1199.98px) {
+        .slider-layout .card-slider .slick-next,
+        .slider-layout .card-slider .slick-prev {
+          top: 40% !important; } }
+    .slider-layout .card-slider .slick-prev {
+      left: 18.5%; }
+      @media (max-width: 991.98px) {
+        .slider-layout .card-slider .slick-prev {
+          left: 17.5%; } }
+    .slider-layout .card-slider .slick-next {
+      right: 18.5%; }
+      @media (max-width: 991.98px) {
+        .slider-layout .card-slider .slick-next {
+          right: 17.5%; } }
     .slider-layout .card-slider .slick-prev::before {
       color: dimgray; }
-    .slider-layout .card-slider .slick-next {
-      background-color: transparent !important;
-      position: absolute;
-      top: 50% !important;
-      right: 19% !important;
-      z-index: 9999; }
     .slider-layout .card-slider .slick-next::before {
       color: dimgray; }
     .slider-layout .card-slider .draggable {
@@ -11920,6 +11933,7 @@ header {
     header .header .header-content {
       display: -ms-flexbox;
       display: flex;
+      position: relative;
       -ms-flex-align: center;
           align-items: center;
       z-index: 999; }
@@ -11927,6 +11941,9 @@ header {
         border-bottom: 2px solid black;
         padding-bottom: 10px;
         width: 100%; }
+        @media (max-width: 991.98px) {
+          header .header .header-content .side-nav {
+            display: none !important; } }
         header .header .header-content .side-nav .menu {
           display: -ms-flexbox;
           display: flex;
@@ -11954,6 +11971,11 @@ header {
         padding-top: 10px; }
         header .header .navigation-bar .site-logo img {
           max-width: 100%; }
+      header .header .navigation-bar .menu-mobile {
+        display: none; }
+        @media (max-width: 991.98px) {
+          header .header .navigation-bar .menu-mobile {
+            display: block; } }
       header .header .navigation-bar ul {
         display: -ms-flexbox;
         display: flex;
@@ -11964,12 +11986,57 @@ header {
             justify-content: flex-end;
         padding-left: 0;
         padding-top: 20px; }
+        @media (max-width: 991.98px) {
+          header .header .navigation-bar ul {
+            display: none !important; } }
         header .header .navigation-bar ul li {
           margin: 0 25px; }
+          @media (max-width: 1199.98px) {
+            header .header .navigation-bar ul li {
+              margin: 0 15px; } }
           header .header .navigation-bar ul li a {
             font-size: 15px;
             text-decoration: none;
             color: #000; }
+          header .header .navigation-bar ul li .dropdown {
+            display: none; }
+            header .header .navigation-bar ul li .dropdown .menu {
+              margin-right: 30px;
+              margin-top: 30px;
+              text-align: left; }
+              header .header .navigation-bar ul li .dropdown .menu h2 {
+                font-size: 12px;
+                margin-bottom: 25px;
+                font-weight: bold; }
+              header .header .navigation-bar ul li .dropdown .menu .menu-list {
+                padding: 0;
+                list-style: none;
+                display: block; }
+                header .header .navigation-bar ul li .dropdown .menu .menu-list .item {
+                  margin: 0; }
+                  header .header .navigation-bar ul li .dropdown .menu .menu-list .item .item-link {
+                    color: grey;
+                    border-bottom: 0;
+                    text-decoration: none;
+                    display: block;
+                    font-size: 10px;
+                    margin-bottom: 10px; }
+            header .header .navigation-bar ul li .dropdown .image {
+              margin-top: 20px; }
+              header .header .navigation-bar ul li .dropdown .image img {
+                width: 100%; }
+        header .header .navigation-bar ul li:hover .dropdown {
+          position: absolute;
+          left: 0px;
+          padding: 40px 72px;
+          background-color: white;
+          display: -ms-flexbox;
+          display: flex;
+          grid-gap: 20px;
+          color: black;
+          width: 100%; }
+        header .header .navigation-bar ul li:hover a {
+          border-bottom: 2px solid black; }
 
 @media (max-width: 543.98px) {
   .collapsible-xs .title {
@@ -13597,13 +13664,14 @@ div.availability {
         margin-bottom: 30px;
         font-weight: 600; }
         .teaser-layout .card .cta-overlay .btn-overlay:hover, .teaser-layout .card .cta-overlay .btn-overlay:focus, .teaser-layout .card .cta-overlay .btn-overlay:active {
-          background-color: #b8b8b8; }
+          background-color: #000;
+          color: #fff !important; }
     .teaser-layout .card.has-padding {
       padding: 80px;
       height: 100%; }
       @media (max-width: 768.98px) {
         .teaser-layout .card.has-padding {
-          padding: 40px; } }
+          padding: 20px; } }
     .teaser-layout .card.has-overlay {
       padding-bottom: 0; }
       .teaser-layout .card.has-overlay .card-body {
@@ -16351,9 +16419,7 @@ h6 {
         font-size: 15px;
         line-height: 18px;
         height: 48px;
-        max-width: 350px;
-        padding: 14px 15px;
-        width: 100%; } }
+        padding: 14px 15px; } }
   .editorial-teaser .slick-arrow {
     color: #000;
     position: absolute;

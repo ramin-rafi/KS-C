@@ -39,18 +39,11 @@ $('.card-slider').slick({
   slidesToScroll: 2,
 
   responsive: [{
-    breakpoint: 768,
+    breakpoint: 1024,
     settings: {
-      arrows: false,
       centerMode: true,
-      slidesToShow: 1
-    }
-  }, {
-    breakpoint: 480,
-    settings: {
-      arrows: false,
-      centerMode: true,
-      slidesToShow: 1
+      slidesToShow: 1,
+      slidesToScroll: 1,
     }
   }]
 });
