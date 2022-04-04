@@ -18,8 +18,7 @@
     <iselseif condition="${pdict.image && pdict.mobileImage}">
             <picture>
                 <source media="(max-width:767px)" srcset="${pdict.mobileImage.src.mobile}" alt="${pdict.alt_mobile}">
-                <img class="img-fluid focuspoint" src="${pdict.image.src.desktop}" alt="${pdict.alt_desktop}"
-                    data-focus-x="${pdict.focusX}" data-focus-y="${pdict.focusY}" style="object-position:${pdict.focusX}px  ${pdict.focusY}px;"/>
+                <img class="img-fluid focuspoint" src="${pdict.image.src.desktop}" alt="${pdict.alt_desktop}"/>
             </picture>
     </isif>
 
