@@ -13621,7 +13621,9 @@ div.availability {
       padding: 0 15px; } }
   .teaser-layout .col {
     padding: 0;
-    height: 100%; }
+    height: 100%;
+    -ms-flex-direction: column;
+        flex-direction: column; }
   .teaser-layout .advance-heading {
     font-weight: 400;
     margin-bottom: 52px;
@@ -13633,7 +13635,8 @@ div.availability {
     border: 0;
     font-size: 14px;
     line-height: 21px;
-    position: relative; }
+    position: relative;
+    height: 100%; }
     @media (max-width: 768.98px) {
       .teaser-layout .card {
         margin-bottom: 30px !important;
@@ -16271,6 +16274,8 @@ h6 {
     display: none !important; }
   .editorial-teaser[data-navigation="false"] .slick-arrow {
     display: none !important; }
+  .editorial-teaser.has-overlay {
+    background-color: rgba(0, 0, 0, 0.2); }
   .editorial-teaser.single {
     height: 710px; }
     .editorial-teaser.single .video-wrapper {
@@ -16349,7 +16354,7 @@ h6 {
     bottom: 0;
     padding: 100px;
     z-index: 10;
-    max-width: 60%; }
+    width: 100%; }
     .editorial-teaser .slide-overlay[class*="-white"] a {
       color: #fff;
       border-bottom: 1px solid #fff; }
@@ -16359,7 +16364,8 @@ h6 {
         max-width: 100%; } }
   .editorial-teaser .slide-caption {
     font-size: 26px;
-    line-height: 38px; }
+    line-height: 38px;
+    max-width: 60%; }
     @media (max-width: 768.98px) {
       .editorial-teaser .slide-caption.caption-resize h1,
       .editorial-teaser .slide-caption.caption-resize h2 {

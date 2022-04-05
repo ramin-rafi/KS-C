@@ -22,6 +22,10 @@ $bp-xs: 400px;
 		}
 	}
 
+	&.has-overlay {
+		background-color: rgba(0,0,0,0.2);
+	}
+
 	&.single {
 		height: 710px;
 
@@ -159,7 +163,7 @@ $bp-xs: 400px;
 		bottom: 0;
 		padding: 100px;
 		z-index: 10;
-		max-width: 60%;
+		width: 100%;
 
 		&[class*="-white"] {
 			a {
@@ -178,6 +182,7 @@ $bp-xs: 400px;
 	.slide-caption {
 		font-size: 26px;
 		line-height: 38px;
+		max-width: 60%;
 
 		&.caption-resize {
 			h1,
