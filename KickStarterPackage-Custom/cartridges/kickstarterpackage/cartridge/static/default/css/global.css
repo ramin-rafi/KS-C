@@ -7746,12 +7746,12 @@ dt {
         .slider-layout .card-slider .slick-prev {
           top: 40% !important; } }
     .slider-layout .card-slider .slick-prev {
-      left: 18.5%; }
+      left: 19%; }
       @media (max-width: 991.98px) {
         .slider-layout .card-slider .slick-prev {
           left: 17.5%; } }
     .slider-layout .card-slider .slick-next {
-      right: 18.5%; }
+      right: 19%; }
       @media (max-width: 991.98px) {
         .slider-layout .card-slider .slick-next {
           right: 17.5%; } }
@@ -11939,9 +11939,8 @@ header {
       z-index: 999; }
       header .header .header-content .side-nav {
         border-bottom: 2px solid black;
-        padding-bottom: 10px;
         width: 100%; }
-        @media (max-width: 991.98px) {
+        @media (max-width: 1199.98px) {
           header .header .header-content .side-nav {
             display: none !important; } }
         header .header .header-content .side-nav .menu {
@@ -11970,10 +11969,10 @@ header {
       header .header .navigation-bar .site-logo {
         padding-top: 10px; }
         header .header .navigation-bar .site-logo img {
-          max-width: 60%; }
+          max-width: 50%; }
       header .header .navigation-bar .menu-mobile {
         display: none; }
-        @media (max-width: 991.98px) {
+        @media (max-width: 1199.98px) {
           header .header .navigation-bar .menu-mobile {
             display: block; } }
       header .header .navigation-bar ul {
@@ -11986,14 +11985,12 @@ header {
             justify-content: flex-end;
         padding-left: 0;
         padding-top: 20px; }
-        @media (max-width: 991.98px) {
+        @media (max-width: 1199.98px) {
           header .header .navigation-bar ul {
             display: none !important; } }
         header .header .navigation-bar ul li {
-          margin: 0 25px; }
-          @media (max-width: 1199.98px) {
-            header .header .navigation-bar ul li {
-              margin: 0 15px; } }
+          margin: 0 25px;
+          margin: 0 15px; }
           header .header .navigation-bar ul li a {
             font-size: 15px;
             text-decoration: none;
@@ -12034,7 +12031,7 @@ header {
           background-color: white;
           display: -ms-flexbox;
           display: flex;
-          top: 145px;
+          top: 165px;
           grid-gap: 20px;
           color: black;
           width: 100%; }
