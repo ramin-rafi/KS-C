@@ -51,9 +51,11 @@
 			right: 0;
 			background-color: rgba(0,0,0,0.1);
 			display: flex;
-			align-items: end;
-			justify-content: center;
+    		padding: 55px;
+			flex-direction: column;
 			text-align: center;
+			justify-content: end;
+			align-items: center;
 			cursor: pointer;
 
 			&:hover,
@@ -76,6 +78,10 @@
 					background-color: $black;
 					color: $white !important;
 				}
+			}
+			.btn-underline {
+				color: $white;
+				border-bottom: 1px solid $white;
 			}
 		}
 
@@ -203,7 +209,7 @@
 
 		a:not(.img-cta) {
 			border-bottom: 1px solid $black;
-			color: $black !important;
+			color: $black;
 			letter-spacing: 0.02em;
 			padding: 0 6px 5px;
 			margin-top: 15px !important;

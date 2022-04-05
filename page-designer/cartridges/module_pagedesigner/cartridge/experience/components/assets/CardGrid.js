@@ -50,6 +50,10 @@ module.exports.render = function (context) {
         model.CardGridCtaLabel = content.CardGridCtaLabel;
     }
 
+    if (content.CardGridHeading) {
+        model.CardGridHeading = content.CardGridHeading;
+    }
+
     if (content.CardGridCtaStyle) {
         model.CardGridCtaStyle = content.CardGridCtaStyle;
     }

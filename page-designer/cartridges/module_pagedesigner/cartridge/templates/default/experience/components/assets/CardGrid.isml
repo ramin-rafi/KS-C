@@ -11,7 +11,10 @@
                         alt="${pdict.CardGridImageAlt ? pdict.CardGridImageAlt : 'Image'}" />
                 </isif>
                 <isif condition="${pdict.CardGridCtaLink && pdict.CardGridCtaLabel}">
-                    <div class="cta-overlay">
+                    <div class="cta-overlay ">
+                        <isif condition="${pdict.CardGridHeading}">
+                            <h3><isprint value="${pdict.CardGridHeading}" encoding="off" /></h3>
+                        </isif>
                         <a class="${pdict.CardGridCtaStyle ? pdict.CardGridCtaStyle : 'btn-overlay'}"
                             href="${pdict.CardGridCtaLink}">
                             <isprint value="${pdict.CardGridCtaLabel}" encoding="off" />
@@ -25,6 +28,9 @@
                 </isif>
                 <isif condition="${pdict.CardGridCtaLink && pdict.CardGridCtaLabel}">
                     <div>
+                        <isif condition="${pdict.CardGridHeading}">
+                            <h3><isprint value="${pdict.CardGridHeading}" encoding="off" /></h3>
+                        </isif>
                         <a class="${pdict.CardGridCtaStyle ? pdict.CardGridCtaStyle : 'btn-overlay'}"
                             href="${pdict.CardGridCtaLink}">
                             <isprint value="${pdict.CardGridCtaLabel}" encoding="off" />
