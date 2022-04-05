@@ -380,10 +380,10 @@
 .teaser-text {
 	background: url(https://zzrx-048.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Library-Sites-RefArchSharedLibrary/default/dw29641d25/homepage-3fs-background.jpg);
 
-	.card-text {
-		&.animate {
-			animation-name: slide-down;
-			animation-duration: 1.5s;
-		}
-	}
+	// .card-text {
+	// 	&.animate {
+	// 		animation-name: slide-down;
+	// 		animation-duration: 1.5s;
+	// 	}
+	// }
 }

@@ -13871,9 +13871,6 @@ div.availability {
 
 .teaser-text {
   background: url(https://zzrx-048.sandbox.us01.dx.commercecloud.salesforce.com/on/demandware.static/-/Library-Sites-RefArchSharedLibrary/default/dw29641d25/homepage-3fs-background.jpg); }
-  .teaser-text .card-text.animate {
-    animation-name: slide-down;
-    animation-duration: 1.5s; }
 
 html {
   scroll-behavior: smooth;
@@ -16274,7 +16271,7 @@ h6 {
     display: none !important; }
   .editorial-teaser[data-navigation="false"] .slick-arrow {
     display: none !important; }
-  .editorial-teaser.has-overlay {
+  .editorial-teaser.has-overlay .slide-overlay {
     background-color: rgba(0, 0, 0, 0.2); }
   .editorial-teaser.single {
     height: 710px; }
