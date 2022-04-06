@@ -54,6 +54,10 @@ module.exports.render = function (context) {
         model.CardGridHeading = content.CardGridHeading;
     }
 
+    if (content.CardGridSubHeading) {
+        model.CardGridSubHeading = content.CardGridSubHeading;
+    }
+
     if (content.CardGridCtaStyle) {
         model.CardGridCtaStyle = content.CardGridCtaStyle;
     }

@@ -54,6 +54,12 @@
                     "required": false
                 },
                 {
+                    "id": "CardGridSubHeading",
+                    "name": "Card Grid Sub-Heading",
+                    "type": "string",
+                    "required": false
+                },
+                {
                     "id": "CardGridImage",
                     "name": "Card Grid - Image",
                     "type": "image",

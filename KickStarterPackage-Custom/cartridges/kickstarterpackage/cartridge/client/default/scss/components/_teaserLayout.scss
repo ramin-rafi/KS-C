@@ -59,6 +59,10 @@
 			align-items: center;
 			cursor: pointer;
 
+			.sub-heading{
+				margin: 0 !important;
+			}
+
 			&:hover,
 			&:focus,
 			&:active {
@@ -188,6 +192,8 @@
 			h3 {
 				text-align: left;
 			}
+
+
 
 			h2 {
 				font-size: 38px;
