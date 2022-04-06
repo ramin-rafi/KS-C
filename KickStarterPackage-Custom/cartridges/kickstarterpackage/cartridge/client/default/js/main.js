@@ -124,3 +124,39 @@ $(document).ready(function () {
       });
   }
 });
+
+
+
+$(".magazine-cta").on("click", function () {
+
+  if($("div.teaser-layout").hasClass("active")) {
+      $('.teaser-layout.active .iframe').addClass('d-none');
+      $("div.teaser-layout").removeClass("active");
+  }
+
+  $(this).closest("div.teaser-layout").addClass("active");
+
+  if($('.teaser-layout.active .iframe').hasClass('d-none')) {
+      $('.teaser-layout.active .iframe').removeClass('d-none');
+  }
+
+  var magTarget = document.querySelector(".teaser-layout.active .iframe");
+  magTarget.scrollIntoView();
+});
+
+$(".img-cta").on("click", function () {
+
+  if($("div.teaser-layout").hasClass("active")) {
+      $('.teaser-layout.active .iframe').addClass('d-none');
+      $("div.teaser-layout").removeClass("active");
+  }
+
+  $(this).closest("div.teaser-layout").addClass("active");
+
+  if($('.teaser-layout.active .iframe').hasClass('d-none')) {
+      $('.teaser-layout.active .iframe').removeClass('d-none');
+  }
+
+  var magTarget = document.querySelector(".teaser-layout.active .iframe");
+  magTarget.scrollIntoView();
+});

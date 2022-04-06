@@ -7,11 +7,12 @@
 			padding-left: 0;
 			padding-right: 0;
 		}
+	}
 
-		.section-title {
-			@include media-breakpoint-down(sm) {
-				padding: 0 15px;
-			}
+	.section-title {
+		font-weight: 500;
+		@include media-breakpoint-down(sm) {
+			padding: 0 15px;
 		}
 	}
 

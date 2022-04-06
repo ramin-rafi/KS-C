@@ -13616,9 +13616,11 @@ div.availability {
     .teaser-layout .container {
       padding-left: 0;
       padding-right: 0; } }
-  @media (max-width: 768.98px) {
-    .teaser-layout .container .section-title {
-      padding: 0 15px; } }
+  .teaser-layout .section-title {
+    font-weight: 500; }
+    @media (max-width: 768.98px) {
+      .teaser-layout .section-title {
+        padding: 0 15px; } }
   .teaser-layout .col {
     padding: 0;
     height: 100%;
@@ -13650,11 +13652,14 @@ div.availability {
       background-color: rgba(0, 0, 0, 0.1);
       display: -ms-flexbox;
       display: flex;
-      -ms-flex-align: end;
-          align-items: end;
-      -ms-flex-pack: center;
-          justify-content: center;
+      padding: 55px;
+      -ms-flex-direction: column;
+          flex-direction: column;
       text-align: center;
+      -ms-flex-pack: end;
+          justify-content: end;
+      -ms-flex-align: center;
+          align-items: center;
       cursor: pointer; }
       .teaser-layout .card .cta-overlay:hover, .teaser-layout .card .cta-overlay:focus, .teaser-layout .card .cta-overlay:active {
         background-color: rgba(0, 0, 0, 0.2); }
@@ -13669,8 +13674,11 @@ div.availability {
         .teaser-layout .card .cta-overlay .btn-overlay:hover, .teaser-layout .card .cta-overlay .btn-overlay:focus, .teaser-layout .card .cta-overlay .btn-overlay:active {
           background-color: #000;
           color: #fff !important; }
+      .teaser-layout .card .cta-overlay .btn-underline {
+        color: #fff;
+        border-bottom: 1px solid #fff; }
     .teaser-layout .card.has-padding {
-      padding: 80px;
+      padding: 40px;
       height: 100%; }
       @media (max-width: 768.98px) {
         .teaser-layout .card.has-padding {
@@ -13753,7 +13761,7 @@ div.availability {
       margin: 0 0 30px !important; }
     .teaser-layout .card a:not(.img-cta) {
       border-bottom: 1px solid #000;
-      color: #000 !important;
+      color: #000;
       letter-spacing: 0.02em;
       padding: 0 6px 5px;
       margin-top: 15px !important; }
@@ -16385,7 +16393,7 @@ h6 {
         word-break: break-all; } }
   .editorial-teaser h1 {
     font-size: 88px;
-    line-height: 98px;
+    line-height: 110px;
     letter-spacing: 0.5px;
     font-weight: 400;
     margin: 0;
