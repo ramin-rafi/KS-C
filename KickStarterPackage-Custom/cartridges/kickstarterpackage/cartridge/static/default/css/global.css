@@ -12196,7 +12196,7 @@ header {
     text-decoration: none; }
 
 footer {
-  background-color: #031e2f;
+  background-color: #000;
   font-family: 'Raleway', sans-serif;
   color: white; }
   footer .footer-container {
@@ -12222,8 +12222,8 @@ footer {
       color: white;
       text-decoration: underline; }
   footer .signup-form input {
-    background: #021623;
-    border: #021623;
+    background: #1a1d1fc9;
+    border: #1a1d1fc9;
     width: 100%;
     margin-top: 24px;
     padding: 8px 2px 8px 16px;
@@ -12275,8 +12275,8 @@ footer {
           border-width: 0 3px 3px 0;
           transform: rotate(45deg); }
   footer .signup-form .signup-button {
-    background: #042b43;
-    border: #042b43;
+    background: #1a1d1fc9;
+    border: #1a1d1fc9;
     padding: 8px 32px;
     letter-spacing: 1px;
     font-size: 12px;

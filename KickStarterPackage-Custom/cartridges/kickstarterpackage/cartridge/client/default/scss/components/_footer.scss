@@ -3,7 +3,7 @@
 @import "../variables";
 
 footer {
-	background-color: #031e2f;
+	background-color: $black;
 	font-family: 'Raleway', sans-serif;
 	color: white;
 	.footer-container {
@@ -37,8 +37,8 @@ footer {
 	}
 	.signup-form {
 		input {
-			background: #021623;
-			border: #021623;
+			background: #1a1d1fc9;
+			border: #1a1d1fc9;
 			width: 100%;
 			margin-top: 24px;
 			padding: 8px 2px 8px 16px;
@@ -97,8 +97,8 @@ footer {
 			}
 		}
 		.signup-button {
-			background: #042b43;
-			border: #042b43;
+			background: #1a1d1fc9;
+			border: #1a1d1fc9;
 			padding: 8px 32px;
 			letter-spacing: 1px;
 			font-size: 12px;
