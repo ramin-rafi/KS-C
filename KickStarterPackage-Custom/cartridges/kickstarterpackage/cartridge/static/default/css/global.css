@@ -13661,6 +13661,8 @@ div.availability {
       -ms-flex-align: center;
           align-items: center;
       cursor: pointer; }
+      .teaser-layout .card .cta-overlay .sub-heading {
+        margin: 0 !important; }
       .teaser-layout .card .cta-overlay:hover, .teaser-layout .card .cta-overlay:focus, .teaser-layout .card .cta-overlay:active {
         background-color: rgba(0, 0, 0, 0.2); }
       .teaser-layout .card .cta-overlay .btn-overlay {
@@ -13705,6 +13707,10 @@ div.availability {
         .teaser-layout .card.has-overlay .card-body a {
           color: #fff !important;
           border-bottom: 1px solid #fff; }
+        .teaser-layout .card.has-overlay .card-body h1 {
+          line-height: 56px; }
+      .teaser-layout .card.has-overlay .card-img-top + .card-body {
+        margin-top: 0; }
     @media (max-width: 768.98px) {
       .teaser-layout .card.card-text {
         padding: 0 15px !important; } }
@@ -13889,6 +13895,10 @@ html,
 body {
   margin: 0;
   padding: 0; }
+
+.jb-layout {
+  font-size: 14px;
+  /* line-height: 21px; */ }
 
 p {
   line-height: 21px;
@@ -14076,6 +14086,8 @@ h6 {
   padding-left: 8px; }
 
 .breadcrumb-item + .breadcrumb-item:before {
+  content: "\E909";
+  font-family: icomoon;
   font-size: 9px;
   line-height: 12px;
   padding-right: 5px; }
@@ -14318,6 +14330,17 @@ h6 {
 .accordion .card-header .btn:hover,
 .accordion .card-header .btn:focus {
   background-color: transparent; }
+
+.accordion .card-header .btn[data-toggle="collapse"]:after {
+  content: "\E907";
+  font-family: "icomoon";
+  position: absolute;
+  right: 0;
+  transition: all ease-in-out 0.2s;
+  transform: rotate(0deg); }
+
+.accordion .card-header .btn[aria-expanded="true"]:after {
+  transform: rotate(180deg); }
 
 .accordion .text-block {
   position: relative; }
@@ -14741,6 +14764,7 @@ h6 {
   white-space: nowrap; }
 
 .horizonral-nav .nav-link::before {
+  content: attr(title);
   display: block;
   font-weight: 600;
   height: 0;
@@ -14920,6 +14944,7 @@ h6 {
   white-space: nowrap; }
 
 .slick-nav .nav-link::before {
+  content: attr(title);
   display: block;
   font-weight: 600;
   height: 0;
@@ -14974,6 +14999,7 @@ h6 {
   white-space: nowrap; }
 
 .slick-nav-tabs .slick-dots .btn-link::before {
+  content: attr(title);
   display: block;
   font-weight: 600;
   height: 0;
@@ -16415,7 +16441,8 @@ h6 {
   .editorial-teaser h3,
   .editorial-teaser h4 {
     margin: 30px 0 0;
-    font-weight: 400; }
+    font-weight: 400;
+    line-height: 32px; }
   .editorial-teaser a {
     font-size: 14px;
     line-height: 16px;

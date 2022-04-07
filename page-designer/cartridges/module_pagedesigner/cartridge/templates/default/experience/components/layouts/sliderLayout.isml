@@ -3,7 +3,7 @@
 </isscript>
 
 <isset name="teaserCardClass" value="${'card-slider'}" scope="page" />
-<div class="slider-layout ${pdict.addClass ? pdict.addClass : ''}${pdict.teaserLayoutPadY === 'Bottom-40px' ? 'mb-5' : ''} ${pdict.teaserLayoutPadY === 'Top/Bottom-40px' ? 'my-5' : ''} ${pdict.teaserLayoutConfig === 'Fixed' ? 'container' : ''} ${pdict.teaserLayoutConfig === 'Full' ? 'container-fluid' : ''}"
+<div class="slider-layout ${pdict.addClass ? pdict.addClass : ''}${pdict.teaserLayoutPadY === 'Bottom-40px' ? 'pb-5' : ''} ${pdict.teaserLayoutPadY === 'Top/Bottom-40px' ? 'py-5' : ''} ${pdict.teaserLayoutConfig === 'Fixed' ? 'container' : ''} ${pdict.teaserLayoutConfig === 'Full' ? 'container-fluid' : ''}"
     data-indicator="${pdict.indicatorConfig === true ? 'true' : 'false'}"
     data-navigation="${pdict.navigationConfig === true ? 'true' : 'false'}">
     <isif condition="${pdict.LayoutHeading}">

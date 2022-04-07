@@ -121,6 +121,15 @@
 					border-bottom: 1px solid $white;
 				}
 
+				h1 {
+					line-height: 56px;
+				}
+
+			}
+			.card-img-top {
+				+ .card-body {
+					margin-top: 0;
+				}
 			}
 		}
 

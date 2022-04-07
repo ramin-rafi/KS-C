@@ -10,6 +10,11 @@ body {
     padding: 0;
 }
 
+.jb-layout {
+    font-size: 14px;
+    /* line-height: 21px; */
+}
+
 p {
     line-height: 21px;
     margin: 0;
@@ -228,8 +233,8 @@ h6 {
 }
 
 .breadcrumb-item + .breadcrumb-item:before {
-    // content: "\e909";
-    // font-family: icomoon;
+    content: "\e909";
+    font-family: icomoon;
     font-size: 9px;
     line-height: 12px;
     padding-right: 5px;
@@ -521,18 +526,18 @@ h6 {
     background-color: transparent;
 }
 
-// .accordion .card-header .btn[data-toggle="collapse"]:after {
-//     content: "\e907";
-//     font-family: "icomoon";
-//     position: absolute;
-//     right: 0;
-//     transition: all ease-in-out 0.2s;
-//     transform: rotate(0deg);
-// }
+.accordion .card-header .btn[data-toggle="collapse"]:after {
+    content: "\e907";
+    font-family: "icomoon";
+    position: absolute;
+    right: 0;
+    transition: all ease-in-out 0.2s;
+    transform: rotate(0deg);
+}
 
-// .accordion .card-header .btn[aria-expanded="true"]:after {
-//     transform: rotate(180deg);
-// }
+.accordion .card-header .btn[aria-expanded="true"]:after {
+    transform: rotate(180deg);
+}
 
 .accordion .text-block {
     position: relative;
@@ -1024,7 +1029,7 @@ h6 {
 }
 
 .horizonral-nav .nav-link::before {
-    // content: attr(title);
+    content: attr(title);
     display: block;
     font-weight: 600;
     height: 0;
@@ -1236,7 +1241,7 @@ h6 {
 }
 
 .slick-nav .nav-link::before {
-    // content: attr(title);
+    content: attr(title);
     display: block;
     font-weight: 600;
     height: 0;
@@ -1295,7 +1300,7 @@ h6 {
 }
 
 .slick-nav-tabs .slick-dots .btn-link::before {
-    // content: attr(title);
+    content: attr(title);
     display: block;
     font-weight: 600;
     height: 0;
