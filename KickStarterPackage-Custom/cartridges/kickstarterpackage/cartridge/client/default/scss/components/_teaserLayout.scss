@@ -11,6 +11,7 @@
 
 	.section-title {
 		font-weight: 500;
+		margin-bottom: 30px;
 		@include media-breakpoint-down(sm) {
 			padding: 0 15px;
 		}
@@ -91,7 +92,7 @@
 		}
 
 		&.has-padding {
-			padding: 40px;
+			padding: 0 40px;
 			height: 100%;
 
 			@include media-breakpoint-down(sm) {

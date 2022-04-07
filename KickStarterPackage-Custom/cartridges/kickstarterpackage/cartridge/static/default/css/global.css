@@ -13617,7 +13617,8 @@ div.availability {
       padding-left: 0;
       padding-right: 0; } }
   .teaser-layout .section-title {
-    font-weight: 500; }
+    font-weight: 500;
+    margin-bottom: 30px; }
     @media (max-width: 768.98px) {
       .teaser-layout .section-title {
         padding: 0 15px; } }
@@ -13680,7 +13681,7 @@ div.availability {
         color: #fff;
         border-bottom: 1px solid #fff; }
     .teaser-layout .card.has-padding {
-      padding: 40px;
+      padding: 0 40px;
       height: 100%; }
       @media (max-width: 768.98px) {
         .teaser-layout .card.has-padding {
