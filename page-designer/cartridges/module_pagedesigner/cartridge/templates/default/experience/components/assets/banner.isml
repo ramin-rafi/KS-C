@@ -1,0 +1,41 @@
+<isscript>
+    var assets = require('*/cartridge/scripts/assets.js');
+</isscript>
+
+<div class="col d-flex">
+    <div
+        class="banner ${pdict.addClass ? pdict.addClass : ''} ${pdict.addPadding === true ? 'has-padding' : ''} ${pdict.BannerTextColor ? pdict.BannerTextColor : ''} ${pdict.BannerTextAlign ? pdict.BannerTextAlign : ''}">
+            <isif condition="${pdict.BannerHeading}">
+                <h1><isprint value="${pdict.BannerHeading}" encoding="off" /></h1>
+            </isif>
+            <div class="banner-links">
+                <isif condition="${pdict.BannerCtaLink && pdict.BannerCtaLabel}">
+                    <a class="${pdict.BannerCtaStyle ? pdict.BannerCtaStyle : 'btn-underline'}"
+                    href="${pdict.BannerCtaLink}">
+                    <isprint value="${pdict.BannerCtaLabel}" encoding="off" />
+                    </a>
+                </isif>
+                <isif condition="${pdict.BannerCtaLink2 && pdict.BannerCtaLabel2}">
+                    <a class="${pdict.BannerCtaStyle ? pdict.BannerCtaStyle : 'btn-underline'}"
+                    href="${pdict.BannerCtaLink2}">
+                    <isprint value="${pdict.BannerCtaLabel2}" encoding="off" />
+                    </a>
+                </isif>
+                <isif condition="${pdict.BannerCtaLink3 && pdict.BannerCtaLabel3}">
+                    <a class="${pdict.BannerCtaStyle ? pdict.BannerCtaStyle : 'btn-underline'}"
+                    href="${pdict.BannerCtaLink3}">
+                    <isprint value="${pdict.BannerCtaLabel3}" encoding="off" />
+                    </a>
+                </isif>
+                <isif condition="${pdict.BannerCtaLink4 && pdict.BannerCtaLabel4}">
+                    <a class="${pdict.BannerCtaStyle ? pdict.BannerCtaStyle : 'btn-underline'}"
+                    href="${pdict.BannerCtaLink4}">
+                    <isprint value="${pdict.BannerCtaLabel4}" encoding="off" />
+                    </a>
+                </isif>
+            </div>
+            <isif condition="${pdict.BannerParagraph}">
+                <p><isprint value="${pdict.BannerParagraph}" encoding="off" /></p>
+            </isif>
+    </div>
+</div>

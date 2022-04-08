@@ -1,0 +1,120 @@
+{
+    "name": "Banner",
+    "description": "--description here--",
+    "group": "assets",
+    "attribute_definition_groups": [
+        {
+            "id": "BannerConfig",
+            "name": "Banner Configuration",
+            "description": "--description here--",
+            "attribute_definitions": [
+                {
+                    "id": "addClass",
+                    "name": "Add Custom Class",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "addPadding",
+                    "name": "Add Padding Inside Cards",
+                    "type": "boolean",
+                    "required": false
+                },
+                {
+                    "id": "BannerTextColor",
+                    "name": "Banner - Text Color",
+                    "type": "enum",
+                    "values": ["text-dark", "text-white"],
+                    "required": false
+                },
+                {
+                    "id": "BannerTextAlign",
+                    "name": "Banner - Text Align",
+                    "type": "enum",
+                    "values": ["text-center", "text-right"],
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "BannerContentConfig",
+            "name": "Banner - Content Configuration",
+            "attribute_definitions": [
+                {
+                    "id": "BannerHeading",
+                    "name": "Banner Heading",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "BannerParagraph",
+                    "name": "Banner Paragraph",
+                    "type": "string",
+                    "required": false
+                }
+            ]
+        },
+        {
+            "id": "BannerCtaConfig",
+            "name": "Banner - CTA Configuration",
+            "attribute_definitions": [
+                {
+                    "id": "BannerCtaLabel",
+                    "name": "Banner - CTA Label",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "BannerCtaLink",
+                    "name": "URL For CTA",
+                    "type": "url",
+                    "required": false
+                },
+                {
+                    "id": "BannerCtaLabel2",
+                    "name": "Banner - CTA Label-2",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "BannerCtaLink2",
+                    "name": "URL For CTA-2",
+                    "type": "url",
+                    "required": false
+                },
+                {
+                    "id": "BannerCtaLabel3",
+                    "name": "Banner - CTA Label-3",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "BannerCtaLink3",
+                    "name": "URL For CTA-3",
+                    "type": "url",
+                    "required": false
+                },
+                {
+                    "id": "BannerCtaLabel4",
+                    "name": "Banner - CTA Label-4",
+                    "type": "string",
+                    "required": false
+                },
+                {
+                    "id": "BannerCtaLink4",
+                    "name": "URL For CTA-4",
+                    "type": "url",
+                    "required": false
+                },
+                {
+                    "id": "BannerCtaStyle",
+                    "name": "Teaser CTA Style",
+                    "type": "enum",
+                    "values": ["btn-overlay", "btn-light", "btn-dark", "btn-primary", "btn-secondary", "btn-outline-dark", "btn-outline-primary", "btn-outline-secondary"],
+                    "required": false
+                }
+            ]
+        }
+    ],
+    "region_definitions": []
+}
