@@ -1,0 +1,49 @@
+@import "../variables";
+.banner
+{
+    background-color: brown;
+    height: 500px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+    .banner-links
+    {
+        margin-top: 50px;
+        display: flex;
+        a 
+        {
+            margin: 0 20px;
+            font-weight: bold;
+            font-size: 16px;
+            text-decoration: none;
+        }
+    }
+    .btn-overlay 
+    {
+        background-color: white;
+        padding: 10px 24px;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        border-bottom: 0;
+        margin-bottom: 30px;
+        font-weight: 600;
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: $black;
+            color: $white !important;
+        }
+    }
+    .btn-underline 
+    {
+        color: $white;
+        border-bottom: 1px solid $white;
+    }
+    p 
+    {
+        margin-top: 50px;
+    }
+}
