@@ -6,11 +6,6 @@
 	&.double {
 		.hsa-double-caption {
 			&.slide-overlay {
-				align-items: center;
-
-				@include media-breakpoint-down(up) {
-					justify-content: space-evenly;
-				}
 
 				@include media-breakpoint-down(md) {
 					flex-direction: column;
@@ -23,17 +18,17 @@
 					display: flex;
 					flex-direction: column;
 					flex-grow: 1;
-					height: 100%;
-					width: 50%;
+					// height: 100%;
+					max-width: 100%;
 
 					@include media-breakpoint-down(md) {
 						flex-grow: 0;
 						width: 100%;
 					}
 
-					@include media-breakpoint-down(sm) {
-						height: auto;
-					}
+					// @include media-breakpoint-down(sm) {
+					// 	height: auto;
+					// }
 				}
 			}
 		}
@@ -57,13 +52,12 @@
 
 			.hsa-double-caption {
 				&.slide-overlay {
-					justify-content: center;
 					height: auto;
 					padding: 25px 15px;
 				}
 
 				.slide-caption {
-					padding: 40px 0;
+					padding: 20px 0;
 				}
 			}
 		}
@@ -94,13 +88,12 @@
 
 				.hsa-double-caption {
 					&.slide-overlay {
-						justify-content: center;
 						height: auto;
 						padding: 25px 15px;
 					}
 
 					.slide-caption {
-						padding: 40px 0;
+						padding: 20px 0;
 						// width: 100%;
 
 						&.caption-resize {
