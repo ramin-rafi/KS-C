@@ -5,104 +5,75 @@
         assets.addCss('/css/contactUs.css');
     </isscript>
 
-    <div class="hero slant-down contact-us-banner">
-        <h1 class="page-title">${Resource.msg('title.contact.us.page', 'contactUs', null)}</h1>
+    <div class="hero contact-us-banner">
+        <h1>contact us</h1>
     </div>
+    <div class="contact-info">
+        <div class="contact-info-col">
+            <h2>virtual style studio</h2>
+            <div class="block">
+                <p>Collaborate in real-time with one of our specialists by video, real-time chat or phone. Available in
+                    English, Italian and French.
+                </p>
+            </div>
+            <div class="block">
+                <p>Book an appointment at</p>
+                <a href="virtualstyling@frette.com">virtualstyling@frette.com</a>
+            </div>
+            <h2>find a store</h2>
+            <a href="#">visit a store near you</a>
+        </div>
+        <div class="contact-info-col">
+            <h2>email</h2>
+            <div class="block">
+                <p>North America Customer Service</p>
+                <a href="assistance@frette.com">assistance@frette.com</a>
+            </div>
+            <div class="block">
+                <p>Europe Customer Service</p>
+                <a href="customerservice@frette.com">customerservice@frette.com</a>
+            </div>
+            <div class="block">
+                <p>Asia Pacific B2B Customer Service</p>
+                <a href="info.apac@frette.com">info.apac@frette.com</a>
+            </div>
+            <div class="block">
+                <p>Press Inquiries</p>
+                <a href="press@frette.com">press@frette.com</a>
+            </div>
+            <div class="block">
+                <p>Trade Program and Designers</p>
+                <a href="diamond@frette.com">diamond@frette.com</a>
+            </div>
 
-    <div class="container contact-us-landing-page">
-        <div class="row justify-content-center">
-            <div class="col-sm-8 col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <form action="${pdict.actionUrl}" class="contact-us" method="POST" name="contact-us">
-                            <!--- contact us first name, last name --->
-                            <div class="row contact-us-name">
-                                <div class="col-sm-6">
-                                    <div class="form-group required">
-                                        <label class="form-control-label" for="contact-first-name">
-                                            ${Resource.msg('label.input.contact-us-first-name', 'contactUs', null)}
-                                        </label>
-                                        <input type="text" required class="form-control required" aria-describedby="form-contact-first-name-error" id="contact-first-name" name="contactFirstName">
-                                        <div class="invalid-feedback" id="form-contact-first-name-error"></div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="form-group required">
-                                        <label class="form-control-label" for="contact-last-name">
-                                            ${Resource.msg('label.input.contact-us-last-name', 'contactUs', null)}
-                                        </label>
-                                        <input type="text" required class="form-control required" aria-describedby="form-contact-last-name-error" id="contact-last-name" name="contactLastName">
-                                        <div class="invalid-feedback" id="form-contact-last-name-error"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!--- contact us email --->
-                            <div class="row contact-us-email">
-                                <div class="col">
-                                    <div class="form-group required">
-                                        <label class="form-control-label" for="contact-email">
-                                            ${Resource.msg('label.input.contact-us-email', 'contactUs', null)}
-                                        </label>
-                                        <input type="email" required class="form-control required" aria-describedby="form-contact-email-error" id="contact-email" name="contactEmail">
-                                        <div class="invalid-feedback" id="form-contact-email-error"></div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!--- contact us topic --->
-                            <div class="row contact-us-topic">
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label class="form-control-label" for="contact-topic">
-                                            ${Resource.msg('label.input.contact-us-topic', 'contactUs', null)}
-                                        </label>
-                                        <select type="text" required class="form-control required" id="contact-topic" name="contactTopic">
-                                            <option value="GI">
-                                                ${Resource.msg('label.input.contact-topic-general-information', 'contactUs', null)}
-                                            </option>
-                                            <option value="OS">
-                                                ${Resource.msg('label.input.contact-topic-order-status', 'contactUs', null)}
-                                            </option>
-                                            <option value="MA">
-                                                ${Resource.msg('label.input.contact-topic-my-account', 'contactUs', null)}
-                                            </option>
-                                            <option value="O">
-                                                ${Resource.msg('label.input.contact-topic-other', 'contactUs', null)}
-                                            </option>
-                                        </select>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!--- contact us comment --->
-                            <div class="row contact-us-comment">
-                                <div class="col">
-                                    <div class="form-group">
-                                        <label class="form-control-label" for="contact-comment">
-                                            ${Resource.msg('label.input.contact-us-comment', 'contactUs', null)}
-                                        </label>
-                                        <textarea class="form-control" id="contact-comment" name="contactComment" rows="4" maxlength="250"></textarea>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!--- contact us submit --->
-                            <div class="row contact-us-submnit">
-                                <div class="col-sm-6">
-                                </div>
-                                <div class="col">
-                                    <div class="form-group">
-                                        <button class="btn btn-block btn-primary subscribe-contact-us" type="submit" name="submit" value="submit">
-                                            ${Resource.msg('label.input.contact-us-submit', 'contactUs', null)}
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+        </div>
+        <div class="contact-info-col">
+            <h2>call us</h2>
+            <div class="block">
+                <p>North America Customer Service</p>
+                <p>800.353.7388</p>
+                <p>212.299.0400 Ext 1</p>
+                <p>Text Us: 212.299.0400</p>
+                <p>Mon – Fri, 9am – 5pm EST</p>
+            </div>
+            <div class="block">
+                <p>Please note Customer Service will be closed the following dates:</p>
+                <p>November 25th</p>
+                <p>November 26th</p>
+                <p>December 23rd</p>
+                <p>December 24th</p>
+            </div>
+            <div class="block">
+                <p>Europe Customer Service</p>
+                <p>+39,039,6046.410</p>
+                <p>Mon – Fri, 9am – 5pm CET</p>
+            </div>
+            <div class="block">
+                <p>Asia Pacific B2B Customer Service</p>
+                <p>+852.2242.6100</p>
+                <p>Fax: +852.2242.6103</p>
             </div>
         </div>
     </div>
+
 </isdecorate>
