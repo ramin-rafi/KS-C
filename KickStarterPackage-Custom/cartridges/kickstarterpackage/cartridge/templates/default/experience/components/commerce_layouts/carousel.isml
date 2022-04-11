@@ -5,7 +5,7 @@
 </isscript>
 
 <isif condition="${pdict.title}">
-    <div class="row product-carousel">
+    <div class="row">
         <div class="col-12">
             <h3 class="text-center carousel-title">${pdict.title}</h3>
         </div>
@@ -13,7 +13,7 @@
 </isif>
 
 <div id="${pdict.id}"
-     class="carousel slide carousel-xs-${pdict.slidesToDisplay.xs}
+     class="carousel product-carousel slide carousel-xs-${pdict.slidesToDisplay.xs}
         carousel-sm-${pdict.slidesToDisplay.sm} carousel-md-${pdict.slidesToDisplay.md}
         ${pdict.displayIndicators.xs} ${pdict.displayIndicators.sm} ${pdict.displayIndicators.md}
         ${pdict.displayControls.xs} ${pdict.displayControls.sm} ${pdict.displayControls.md}

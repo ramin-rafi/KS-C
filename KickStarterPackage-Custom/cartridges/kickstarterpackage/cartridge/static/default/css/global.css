@@ -12387,6 +12387,45 @@ h1.page-title {
 h1, h2, h3, h4, h5, h6 {
   font-family: "Dosis", sans-serif; }
 
+.banner {
+  background-color: brown;
+  height: 500px;
+  padding: 20px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  margin-bottom: 30px; }
+  .banner .banner-links {
+    margin-top: 50px;
+    display: -ms-flexbox;
+    display: flex; }
+    .banner .banner-links a {
+      margin: 0 20px;
+      font-weight: bold;
+      font-size: 16px;
+      text-decoration: none; }
+  .banner .btn-overlay {
+    background-color: white;
+    padding: 10px 24px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    border-bottom: 0;
+    margin-bottom: 30px;
+    font-weight: 600; }
+    .banner .btn-overlay:hover, .banner .btn-overlay:focus, .banner .btn-overlay:active {
+      background-color: #000;
+      color: #fff !important; }
+  .banner .btn-underline {
+    color: #fff;
+    border-bottom: 1px solid #fff; }
+  .banner p {
+    margin-top: 50px; }
+
 .notify {
   position: fixed;
   top: 0; }
@@ -16568,6 +16607,29 @@ h6 {
     @media (max-width: 768.98px) and (max-width: 991.98px) {
       .editorial-teaser.double-caption.double .hsa-double-caption .slide-caption.caption-resize h3 {
         word-break: break-all; } }
+
+.carousel-title {
+  font-family: 'Raleway', sans-serif; }
+
+.product-carousel {
+  font-family: 'Raleway', sans-serif; }
+  .product-carousel .carousel-inner .product-tile-pd .product-tile-body {
+    font-family: 'Raleway', sans-serif;
+    padding: 15px 0;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between;
+    font-size: 16px; }
+    .product-carousel .carousel-inner .product-tile-pd .product-tile-body .product-name-link {
+      font-weight: 700; }
+    .product-carousel .carousel-inner .product-tile-pd .product-tile-body .product-price {
+      font-weight: 500;
+      text-align: right; }
+  .product-carousel .carousel-control-next,
+  .product-carousel .carousel-control-prev {
+    background-color: transparent !important;
+    color: #000; }
 
 .item-attributes {
   vertical-align: top;
