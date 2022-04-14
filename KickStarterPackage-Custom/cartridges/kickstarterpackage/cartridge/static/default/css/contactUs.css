@@ -3,28 +3,64 @@
   color: #c00; }
 
 .contact-us-banner {
-  background-image: url("../images/contact-us.jpg");
-  background-position-y: 20%; }
+  background-image: url("https://www.frette.com/on/demandware.static/-/Library-Sites-FretteSharedLibrary/default/dw94734550/images/fretteus/customerservice/customer-care.jpg");
+  max-width: 1300px;
+  margin: auto;
+  position: relative; }
+  .contact-us-banner h1 {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-align: center;
+    text-transform: capitalize;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 3rem; }
+    @media (max-width: 768.98px) {
+      .contact-us-banner h1 {
+        font-size: 1.5rem; } }
 
-.contact-us-signup-message {
-  transform: translate(-50%, -50%);
-  position: fixed;
-  top: 15%;
-  left: 50%; }
-
-.contact-us-signup-alert {
-  animation: fade 5s linear forwards;
-  box-shadow: 1px 1px 5px grey;
-  padding: 1em; }
-
-@keyframes fade {
-  0% {
-    opacity: 0; }
-  10% {
-    opacity: 1; }
-  90% {
-    opacity: 1; }
-  100% {
-    opacity: 0; } }
-  .contact-us-signup-alert.show {
-    display: block; }
+.contact-info {
+  max-width: 950px;
+  margin: 40px auto;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between; }
+  @media (max-width: 768.98px) {
+    .contact-info {
+      -ms-flex-flow: column;
+          flex-flow: column;
+      width: 70%; } }
+  .contact-info .contact-info-col {
+    width: 27%; }
+    @media (max-width: 768.98px) {
+      .contact-info .contact-info-col {
+        width: 100%; } }
+    .contact-info .contact-info-col h2 {
+      font-family: 'Raleway', sans-serif;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+      line-height: 1.51;
+      color: #031e2f;
+      text-transform: capitalize; }
+    .contact-info .contact-info-col .block {
+      text-align: justify;
+      margin-top: 1rem;
+      margin-bottom: 0.25rem; }
+      .contact-info .contact-info-col .block p {
+        line-height: 1.51;
+        letter-spacing: 0.7px;
+        font-family: 'Raleway', sans-serif;
+        font-size: .875rem;
+        color: #505050; }
+      .contact-info .contact-info-col .block a {
+        text-decoration: underline;
+        font-family: 'Raleway', sans-serif;
+        font-size: 0.875rem;
+        color: #031e2f;
+        letter-spacing: 0.7px;
+        line-height: 1.51;
+        margin-bottom: 1rem;
+        font-weight: 700; }

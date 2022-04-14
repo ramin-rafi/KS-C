@@ -13,10 +13,10 @@
            title="${Resource.msgf('button.quickview', 'common', null, product.productName)}"
            aria-label="${Resource.msgf('button.quickview', 'common', null, product.productName)}"
         >
-            <span class="fa-stack fa-lg">
+            <iscomment> <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-inverse fa-stack-2x"></i>
                 <i class="fa fa-expand fa-stack-1x"></i>
-            </span>
+            </span> </iscomment>
         </a>
     </isif>
 </div>

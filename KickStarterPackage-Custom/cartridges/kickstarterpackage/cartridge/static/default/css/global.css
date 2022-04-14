@@ -13574,6 +13574,56 @@ div.availability {
   text-align: center;
   margin-top: 1em; }
 
+.plp-custom {
+  font-family: "Raleway", sans-serif; }
+  .plp-custom .search-nav {
+    border-bottom: none !important; }
+  .plp-custom .product-grid .product-tile {
+    margin: 0 0 50px;
+    position: relative; }
+    .plp-custom .product-grid .product-tile .tile-detail {
+      font-family: "Raleway",sans-serif;
+      font-size: 14px;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-item-align: end;
+          align-self: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end; }
+      .plp-custom .product-grid .product-tile .tile-detail .product-names {
+        text-align: left;
+        -ms-flex: 70%;
+            flex: 70%;
+        -ms-flex-preferred-size: 70%;
+            flex-basis: 70%;
+        width: 70%;
+        overflow: hidden; }
+        .plp-custom .product-grid .product-tile .tile-detail .product-names .brand-name {
+          font-weight: 700;
+          margin: 0; }
+      .plp-custom .product-grid .product-tile .tile-detail .pricing {
+        -ms-flex: 30%;
+            flex: 30%;
+        -ms-flex-preferred-size: 30%;
+            flex-basis: 30%;
+        width: 30%;
+        overflow: hidden;
+        text-align: right;
+        font-size: 14px; }
+        .plp-custom .product-grid .product-tile .tile-detail .pricing .price .strike-through {
+          margin-right: 0; }
+    .plp-custom .product-grid .product-tile .tile-body {
+      padding: 10px 0;
+      width: 100%; }
+  .plp-custom .refinement-bar .refinements .card .card-header {
+    margin-bottom: 15px; }
+
+.btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active {
+  background-color: #000 !important;
+  color: #fff !important; }
+
 .form-nav .nav-tabs .nav-link {
   color: #333; }
 

@@ -1,23 +1,293 @@
-<div class="product-tile">
-    <!-- dwMarker="product" dwContentID="${product.uuid}" -->
-    <isinclude template="product/components/productTileImage" />
-    <div class="tile-body">
-        <isif condition="${pdict.display.swatches !== false}">
-            <isinclude template="product/components/productTileSwatch" />
+<isset name="plpProduct" value="${true}" scope="page" />
+<isset name="chanelSpecificProduct" value="${product.productStorefrontPrefs && product.productStorefrontPrefs.chanelSpecialDescPDP && product.productStorefrontPrefs.chanelSpecialDescPDP === 'yes' ? 'yes' : 'no'}" scope="page" />
+
+<div class="gtm product-tile ${product.productStorefrontPrefs && product.productStorefrontPrefs.blackPriceCategories && product.productStorefrontPrefs.blackPriceCategories.indexOf(product.primaryRootCategory) > -1 ? 'black-price' : ''}">
+    <span class="product-details-gtm"
+        data-id="${product.id}"
+        data-name="${product.productName}"
+        data-price="${(product.price && product.price.sales) ? product.price.sales.value : (product.price && product.price.list) ? product.price.list.value : ''}"
+        data-brand="${product.brand}"
+        data-category="${product.breadcrumbsPath}"
+        data-dimension5="${product.isNew === 'true' || product.isNew === true ? Resource.msg('label.isNew', 'product', null) : (product.percentageOff && product.percentageOff > 0 ? product.percentageOff + '%' : null)}"
+        data-dimension6="${product.percentageOff && product.percentageOff > 0 ? 'true' : 'false'}"
+        data-dimension10="${product.contract}"
+        data-dimension18="${product.EAN}"
+        data-metric1="${(product.price && product.price.list) ? product.price.list.value : (product.price && product.price.sales) ? product.price.sales.value : ''}"
+        data-metric3="null"
+    >
+    </span>
+
+    <div class="badge-wrapper">
+        <isif condition="${product.badges && product.badges.length > 0}">
+            <isloop items="${product.badges}" var="badge" end="1" status="loopState">
+                <span class="flag">
+                    ${badge}
+                </span>
+
+                <isif condition="${pdict.product && ((pdict.product.isNew === 'true' || pdict.product.isNew === true) || (pdict.product.percentageOff !== null && pdict.product.percentageOff > 0))}">
+                    <isbreak />
+                </isif>
+            </isloop>
         </isif>
 
-        <isinclude template="product/components/productTileName" />
+        <isif condition="${pdict.product && pdict.product.percentageOff !== null && pdict.product.percentageOff > 0}">
+            <isif condition="${product.price && ((product.price.list && product.price.list.formatted.indexOf('ab') > -1) || (product.price.sales && product.price.sales.formatted.indexOf('ab') > -1))}">
+                <span class="flag pink-text sales-flag up-to d-none" >
+                    ${Resource.msgf('label.prcentageoff', 'product', null, pdict.product.percentageOff)}
+                </span>
 
-        <isset name="price" value="${product.price}" scope="page" />
-        <isif condition="${product.productType === 'set'}">
-            <isinclude template="product/components/pricing/setPrice" />
-        <iselse>
-            <isinclude template="product/components/pricing/main" />
+            <iselse>
+                <span class="flag pink-text sales-flag d-none" >
+                    ${pdict.product.percentageOff}%
+                </span>
+            </isif>
         </isif>
 
-        <isif condition="${pdict.display.ratings !== false}">
-            <isinclude template="product/productTileFooter" />
+        <isif condition="${pdict.product && (pdict.product.isNew === 'true' || pdict.product.isNew === true)}">
+            <span class="flag new-flag d-none">
+                ${Resource.msg('label.isNew', 'product', null)}
+            </span>
         </isif>
     </div>
-    <!-- END_dwmarker -->
+
+    <isif condition="${product.brand === 'CHANEL'}">
+        <iscomment> Chanel Spcific </iscomment>
+        <a class="chanel tile-link product-link" href="${pdict.urls.product}">
+            <isinclude template="product/components/productTileImage" />
+
+            <isif condition="${pdict.display.swatches !== false || (product.variationAttributes[0].hexCodes && product.variationAttributes[0].hexCodes.length !== 0)}">
+                <isinclude template="product/components/productTileSwatch" />
+            </isif>
+
+            <div class="tile-detail">
+                <div class="product-names ${(pdict.tileType && pdict.tileType === 'threeLineSkuTile') || chanelSpecificProduct === 'yes' ? 'three-line-sku-tile' : ''}">
+                    <isif condition="${product.brand && product.brand.toLowerCase() === 'chanel' && chanelSpecificProduct === 'yes'}">
+                        <isif condition="${product.brand}">
+                            <div class="brand-name">${product.brand ? product.brand : ''}</div>
+                        </isif>
+
+                        <isif condition="${product.productShortDescription}">
+                            <isif condition="${product.brandSpecificCustomizations && product.brandSpecificCustomizations.showFullProductNamePLP === 'true'}">
+                                <div class="product-name full-name"><strong>${product.productShortDescription}</strong></div>
+                            <iselse/>
+                                <div class="product-name"><strong>${product.productShortDescription}</strong></div>
+                            </isif>
+                        </isif>
+
+                        <isif condition="${product.productName2}" >
+                            <div class="product-desc">${product.productName2}</div>
+                        </isif>
+
+                    <iselseif condition="${pdict.tileType && pdict.tileType === 'threeLineSkuTile'}">
+                        <isif condition="${product.brand}">
+                            <div class="brand-name">${product.brand ? product.brand : ''}</div>
+                        </isif>
+
+                        <isif condition="${product.productShortDescription}">
+                            <isif condition="${product.brandSpecificCustomizations && product.brandSpecificCustomizations.showFullProductNamePLP === 'true'}">
+                                <div class="product-name full-name">${product.productShortDescription}</div>
+                            <iselse/>
+                                <div class="product-name ">${product.productShortDescription}</div>
+                            </isif>
+                        </isif>
+
+                        <isif condition="${product.productName2}" >
+                            <div class="product-desc">${product.productName2}</div>
+                        </isif>
+
+                    <iselse/>
+                        <isif condition="${product.brand}">
+                            <div class="brand-name">${product.brand ? product.brand : ''}</div>
+                        <iselseif condition="${product.productName}">
+                            <div class="brand-name">${product.productName}</div>
+                        </isif>
+
+                        <isif condition="${product.productShortDescription}" >
+                            <isif condition="${product.brandSpecificCustomizations && product.brandSpecificCustomizations.showFullProductNamePLP === 'true'}">
+                                <div class="product-name full-name">${product.productShortDescription}</div>
+                            <iselse/>
+                                <div class="product-name ">${product.productShortDescription}</div>
+                            </isif>
+                        </isif>
+
+                        <isif condition="${product.productName2 && product.productStorefrontPrefs && product.productStorefrontPrefs.showProductLineTwo && product.productStorefrontPrefs.showProductLineTwo === 'yes'} " >
+                            <div class="product-desc">${product.productName2}</div>
+                        </isif>
+                    </isif>
+                </div>
+
+                <div class="pricing">
+                    <isset name="price" value="${product.price}" scope="page" />
+
+                    <isif condition="${product.productType === 'set'}">
+                        <isinclude template="product/components/pricing/setPrice" />
+
+                    <iselse>
+                        <isinclude template="product/components/pricing/main" />
+                    </isif>
+
+                    <isif condition="${product.grosseMlGr && product.grosseMlGr >= 10 && product.einheit && (product.produktSet !== 'Ja')}">
+                        <isif condition="${product.price && product.price.sales && product.price.sales.value}">
+                            <isset name="priceValue" value="${product.price.sales.value}" scope="page" />
+
+                        <iselseif condition="${product.price && product.price.list && product.price.list.value}">
+                            <isset name="priceValue" value="${product.price.list.value}" scope="page" />
+                        </isif>
+
+                        <iscomment><isif condition="${priceValue !== ((priceValue / product.grosseMlGr) * 100)}"></iscomment>
+                            <isif condition="${product.grosseMlGr <= 250}">
+
+                            <isif condition="${product.einheit === 'gr'}">
+                                <span class="price lessen">
+                                    ${((priceValue / product.grosseMlGr) * 100).toFixed(2).toString().replace('.', ',')} € / 100g
+                                </span>
+
+                                <iselse>
+                                <span class="price lessen">
+                                    ${((priceValue / product.grosseMlGr) * 100).toFixed(2).toString().replace('.', ',')} € / 100${product.einheit}
+                                </span>
+                            </isif>
+
+                            <iselseif condition="${product.grosseMlGr > 250}">
+                                <isif condition="${product.einheit === 'ml'}">
+                                    <span class="price lessen">
+                                        ${((priceValue / product.grosseMlGr) * 1000).toFixed(2).toString().replace('.', ',')}€ / 1 L
+                                    </span>
+
+                                <iselseif condition="${product.einheit === 'gr'}">
+                                    <span class="price lessen">
+                                        ${((priceValue / product.grosseMlGr) * 1000).toFixed(2).toString().replace('.', ',')} € / 1 kg
+                                    </span>
+                                </isif>
+                            </isif>
+                        <iscomment></isif></iscomment>
+                    </isif>
+                </div>
+            </div>
+
+            <isif condition="${pdict.display.ratings !== false}">
+                <isinclude template="product/productTileFooter" />
+            </isif>
+        </a>
+
+    <iselse/>
+        <iscomment> Other Than Chanel </iscomment>
+        <a class="tile-link product-link" href="${pdict.urls.product}">
+            <isinclude template="product/components/productTileImage" />
+
+            <div class="tile-body">
+                <div class="tile-detail">
+                    <div class="product-names ${(pdict.tileType && pdict.tileType === 'threeLineSkuTile') || chanelSpecificProduct === 'yes' ? 'three-line-sku-tile' : ''}">
+                        <isif condition="${product.brand && product.brand.toLowerCase() === 'chanel' && chanelSpecificProduct === 'yes'}">
+                            <isif condition="${product.brand}">
+                                <div class="brand-name">${product.brand ? product.brand : ''}</div>
+                            </isif>
+
+                            <isif condition="${product.productShortDescription}">
+                                <isif condition="${product.brandSpecificCustomizations && product.brandSpecificCustomizations.showFullProductNamePLP === 'true'}">
+                                    <div class="product-name full-name"><strong>${product.productShortDescription}</strong></div>
+                                <iselse/>
+                                    <div class="product-name"><strong>${product.productShortDescription}</strong></div>
+                                </isif>
+                            </isif>
+
+                            <isif condition="${product.productName2}" >
+                                <div class="product-desc">${product.productName2}</div>
+                            </isif>
+                        <iselseif condition="${pdict.tileType && pdict.tileType === 'threeLineSkuTile'}">
+                            <isif condition="${product.brand}">
+                                <div class="brand-name">${product.brand ? product.brand : ''}</div>
+                            </isif>
+
+                            <isif condition="${product.productShortDescription}">
+                                <isif condition="${product.brandSpecificCustomizations && product.brandSpecificCustomizations.showFullProductNamePLP === 'true'}">
+                                    <div class="product-name full-name">${product.productShortDescription}</div>
+                                <iselse/>
+                                    <div class="product-name ">${product.productShortDescription}</div>
+                                </isif>
+                            </isif>
+
+                            <isif condition="${product.productName2}" >
+                                <div class="product-desc">${product.productName2}</div>
+                            </isif>
+
+                        <iselse/>
+                            <isif condition="${product.brand}">
+                                <div class="brand-name">${product.brand ? product.brand : ''}</div>
+                            <iselseif condition="${product.productName}">
+                                <div class="brand-name">${product.productName}</div>
+                            </isif>
+
+                            <isif condition="${product.productShortDescription}" >
+                                <isif condition="${product.brandSpecificCustomizations && product.brandSpecificCustomizations.showFullProductNamePLP === 'true'}">
+                                    <div class="product-name full-name">${product.productShortDescription}</div>
+                                <iselse/>
+                                    <div class="product-name ">${product.productShortDescription}</div>
+                                </isif>
+                            </isif>
+
+                            <isif condition="${product.productName2 && product.productStorefrontPrefs && product.productStorefrontPrefs.showProductLineTwo && product.productStorefrontPrefs.showProductLineTwo === 'yes'} " >
+                                <div class="product-desc">${product.productName2}</div>
+                            </isif>
+                        </isif>
+                    </div>
+
+                    <div class="pricing">
+                        <isset name="price" value="${product.price}" scope="page" />
+
+                        <isif condition="${product.productType === 'set'}">
+                            <isinclude template="product/components/pricing/setPrice" />
+
+                        <iselse>
+                            <isinclude template="product/components/pricing/main" />
+                        </isif>
+
+                        <isif condition="${product.grosseMlGr && product.grosseMlGr >= 10 && product.einheit && (product.produktSet !== 'Ja')}">
+                            <isif condition="${product.price && product.price.sales && product.price.sales.value}">
+                                <isset name="priceValue" value="${product.price.sales.value}" scope="page" />
+
+                            <iselseif condition="${product.price && product.price.list && product.price.list.value}">
+                                <isset name="priceValue" value="${product.price.list.value}" scope="page" />
+                            </isif>
+
+                            <iscomment><isif condition="${priceValue !== ((priceValue / product.grosseMlGr) * 100)}"></iscomment>
+                                <isif condition="${product.grosseMlGr <= 250}">
+
+                                <isif condition="${product.einheit === 'gr'}">
+                                    <span class="price lessen">
+                                        (${((priceValue / product.grosseMlGr) * 100).toFixed(2).toString().replace('.', ',')} € / 100g)
+                                    </span>
+
+                                    <iselse>
+                                    <span class="price lessen">
+                                        (${((priceValue / product.grosseMlGr) * 100).toFixed(2).toString().replace('.', ',')} € / 100${product.einheit})
+                                    </span>
+                                </isif>
+
+                                <iselseif condition="${product.grosseMlGr > 250}">
+                                    <isif condition="${product.einheit === 'ml'}">
+                                        <span class="price lessen">
+                                            (${((priceValue / product.grosseMlGr) * 1000).toFixed(2).toString().replace('.', ',')}€ / 1 L)
+                                        </span>
+
+                                    <iselseif condition="${product.einheit === 'gr'}">
+                                        <span class="price lessen">
+                                            (${((priceValue / product.grosseMlGr) * 1000).toFixed(2).toString().replace('.', ',')} € / 1 kg)
+                                        </span>
+                                    </isif>
+                                </isif>
+                            <iscomment></isif></iscomment>
+                        </isif>
+                    </div>
+                </div>
+
+                <iscomment> <isif condition="${pdict.display.ratings !== false}">
+                    <isinclude template="product/productTileFooter" />
+                </isif> </iscomment>
+            </div>
+        </a>
+         <iscomment> <isif condition="${pdict.display.swatches !== false || (product.productType === 'standard' && product.hexCode)}">
+            <isinclude template="product/components/productTileSwatch" />
+        </isif> </iscomment>
+    </isif>
 </div>

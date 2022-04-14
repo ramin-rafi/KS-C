@@ -2,23 +2,7 @@
     <isinclude template="reporting/reportingUrls" />
 </isif>
 
-<!--- Search Results Banner --->
-<isif condition="${pdict.productSearch.isCategorySearch}">
-    <div class="hero slant-down search-banner"
-        <!--- If no image, default is specified in search.scss > .search-banner --->
-        <isif condition="${pdict.productSearch.bannerImageUrl}">
-            style="background-image: url(${pdict.productSearch.bannerImageUrl})"
-        </isif>
-    >
-        <h1 class="header page-title">
-            ${pdict.productSearch.category.name}
-        </h1>
-    </div>
-<iselse>
-    <isslot id="search-result-banner-m" description="Banner for search results" context="global" />
-</isif>
-
-<div class="container search-results">
+<div class="container search-results plp-custom">
     <div class="row search-nav">
         <isif condition="${!pdict.productSearch.isCategorySearch}">
             <div class="nav-tabs-wrapper">
